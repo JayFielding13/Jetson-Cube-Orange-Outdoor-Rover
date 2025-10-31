@@ -1,0 +1,121 @@
+permitted by applicable law.
+Last login: Mon Jul  7 18:25:10 2025 from 192.168.254.14
+jay@RoboPi:~ $ cd ~/rover_project
+jay@RoboPi:~/rover_project $ source venv/bin/activate
+(venv) jay@RoboPi:~/rover_project $ nano autonomous_lidar_navigator.py
+(venv) jay@RoboPi:~/rover_project $ python3 autonomous_lidar_navigator.py
+✅ RPLidar library found
+============================================================
+🚀 LIDAR AUTONOMOUS NAVIGATOR
+============================================================
+
+Mission: Navigate autonomously using LiDAR obstacle avoidance
+Controls: Switch to AUTONOMOUS mode (RC CH9) to start navigation
+
+🚀 LiDAR Navigator Initialized
+🎯 Mission: Autonomous obstacle avoidance
+✅ Arduino connected on /dev/ttyUSB0
+✅ LiDAR connected on /dev/ttyUSB1
+🚀 LiDAR Navigator started
+🧭 Autonomous navigation active
+✅ Navigator ready - switch to AUTONOMOUS mode to begin
+Press Ctrl+C to stop...
+🚨 DANGER! Obstacle at 19.1cm - turning left
+❌ Navigation error: '<' not supported between instances of 'NoneType' and 'float'
+❌ Navigation error: '<' not supported between instances of 'NoneType' and 'float'
+❌ Navigation error: '<' not supported between instances of 'NoneType' and 'float'
+❌ Navigation error: '<' not supported between instances of 'NoneType' and 'float'
+❌ Navigation error: '<' not supported between instances of 'NoneType' and 'float'
+❌ Navigation error: '<' not supported between instances of 'NoneType' and 'float'
+❌ Navigation error: '<' not supported between instances of 'NoneType' and 'float'
+❌ Navigation error: '<' not supported between instances of 'NoneType' and 'float'
+❌ Navigation error: '<' not supported between instances of 'NoneType' and 'float'
+❌ Navigation error: '<' not supported between instances of 'NoneType' and 'float'
+❌ Navigation error: '<' not supported between instances of 'NoneType' and 'float'
+❌ Navigation error: '<' not supported between instances of 'NoneType' and 'float'
+❌ Navigation error: '<' not supported between instances of 'NoneType' and 'float'
+❌ Navigation error: '<' not supported between instances of 'NoneType' and 'float'
+❌ Navigation error: '<' not supported between instances of 'NoneType' and 'float'
+❌ Navigation error: '<' not supported between instances of 'NoneType' and 'float'
+❌ Navigation error: '<' not supported between instances of 'NoneType' and 'float'
+❌ Navigation error: '<' not supported between instances of 'NoneType' and 'float'
+^C
+🛑 Shutdown requested...
+🛑 LiDAR Navigator stopped
+👋 Navigator shutdown complete
+(venv) jay@RoboPi:~/rover_project $ nano autonomous_lidar_navigator.py
+(venv) jay@RoboPi:~/rover_project $ python3 autonomous_lidar_navigator.py
+✅ RPLidar library found
+============================================================
+🚀 LIDAR AUTONOMOUS NAVIGATOR
+============================================================
+
+Mission: Navigate autonomously using LiDAR obstacle avoidance
+Controls: Switch to AUTONOMOUS mode (RC CH9) to start navigation
+
+🚀 LiDAR Navigator Initialized
+🎯 Mission: Autonomous obstacle avoidance
+✅ Arduino connected on /dev/ttyUSB0
+✅ LiDAR connected on /dev/ttyUSB1
+🚀 LiDAR Navigator started
+🧭 Autonomous navigation active
+✅ Navigator ready - switch to AUTONOMOUS mode to begin
+Press Ctrl+C to stop...
+🔍 Exploration turn right
+🔍 Exploration complete
+🧭 Mode: AUTONOMOUS | State: STRAIGHT | Closest: 200.0cm | Front: 200.0cm | LiDAR: 0pts
+🚨 DANGER! Obstacle at 32.7cm - turning right
+✅ Obstacle cleared - resuming straight
+🚨 DANGER! Obstacle at 30.6cm - turning left
+✅ Obstacle cleared - resuming straight
+🚨 DANGER! Obstacle at 20.3cm - turning left
+✅ Obstacle cleared - resuming straight
+🚨 DANGER! Obstacle at 32.1cm - turning right
+🧭 Mode: AUTONOMOUS | State: AVOIDING | Closest: 200.0cm | Front: 200.0cm | LiDAR: 0pts
+✅ Obstacle cleared - resuming straight
+🚨 DANGER! Obstacle at 22.4cm - turning right
+✅ Obstacle cleared - resuming straight
+🚨 DANGER! Obstacle at 27.1cm - turning left
+✅ Obstacle cleared - resuming straight
+Too many measurments in the input buffer: 315/300. Clearing buffer...
+🚨 DANGER! Obstacle at 15.5cm - turning left
+🧭 Mode: AUTONOMOUS | State: AVOIDING | Closest: 15.5cm | Front: 200.0cm | LiDAR: 0pts
+✅ Obstacle cleared - resuming straight
+🚨 DANGER! Obstacle at 9.8cm - turning right
+Too many measurments in the input buffer: 338/300. Clearing buffer...
+✅ Obstacle cleared - resuming straight
+🧭 Mode: AUTONOMOUS | State: STRAIGHT | Closest: 200.0cm | Front: 200.0cm | LiDAR: 0pts
+🚨 DANGER! Obstacle at 29.8cm - turning left
+✅ Obstacle cleared - resuming straight
+🧭 Mode: AUTONOMOUS | State: STRAIGHT | Closest: 200.0cm | Front: 200.0cm | LiDAR: 0pts
+🔍 Exploration turn right
+Too many measurments in the input buffer: 338/300. Clearing buffer...
+🔍 Exploration complete
+🚨 DANGER! Obstacle at 23.0cm - turning right
+🧭 Mode: AUTONOMOUS | State: AVOIDING | Closest: 20.8cm | Front: 200.0cm | LiDAR: 0pts
+✅ Obstacle cleared - resuming straight
+🔍 Exploration turn left
+🔍 Exploration complete
+🔍 Exploration turn right
+🔍 Exploration complete
+🧭 Mode: AUTONOMOUS | State: STRAIGHT | Closest: 200.0cm | Front: 200.0cm | LiDAR: 0pts
+🚨 DANGER! Obstacle at 31.7cm - turning left
+✅ Obstacle cleared - resuming straight
+🧭 Mode: AUTONOMOUS | State: STRAIGHT | Closest: 200.0cm | Front: 200.0cm | LiDAR: 0pts
+🚨 DANGER! Obstacle at 23.2cm - turning left
+✅ Obstacle cleared - resuming straight
+🚨 DANGER! Obstacle at 22.5cm - turning right
+🧭 Mode: AUTONOMOUS | State: AVOIDING | Closest: 8.2cm | Front: 200.0cm | LiDAR: 0pts
+🧭 Mode: AUTONOMOUS | State: AVOIDING | Closest: 8.2cm | Front: 200.0cm | LiDAR: 0pts
+Too many measurments in the input buffer: 338/300. Clearing buffer...
+✅ Obstacle cleared - resuming straight
+🔍 Exploration turn right
+🔍 Exploration complete
+🚨 DANGER! Obstacle at 24.3cm - turning left
+✅ Obstacle cleared - resuming straight
+Too many measurments in the input buffer: 338/300. Clearing buffer...
+🧭 Mode: AUTONOMOUS | State: STRAIGHT | Closest: 200.0cm | Front: 200.0cm | LiDAR: 0pts
+🔍 Exploration turn left
+🔍 Exploration complete
+🧭 Mode: AUTONOMOUS | State: STRAIGHT | Closest: 200.0cm | Front: 200.0cm | LiDAR: 0pts
+🚨 DANGER! Obstacle at 23.3cm - turning right

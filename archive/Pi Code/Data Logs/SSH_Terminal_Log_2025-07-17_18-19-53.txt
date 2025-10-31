@@ -1,0 +1,460 @@
+SSH Dashboard Terminal Log
+Session Date: 2025-07-17 18:19:59
+Connected to: 192.168.254.65:22
+Username: jay
+==================================================
+
+Uploading bluetooth_lidar_navigator_v8_lite.py...
+Successfully uploaded bluetooth_lidar_navigator_v8_lite.py to /home/jay/rover_project/bluetooth_lidar_navigator_v8_lite.py
+$ cd ~/rover_project && source venv/bin/activate && echo 'Starting program...' && python3 -u /home/jay/rover_project/bluetooth_lidar_navigator_v8_lite.py
+Starting program...
+✅ Bluetooth (bleak) library available
+✅ LiDAR (rplidar) library available
+================================================================================
+🚀 BLUETOOTH LIDAR NAVIGATOR V8-LITE
+================================================================================
+
+CORE FUNCTIONALITY ONLY:
+  ✅ Fixed LiDAR left/right orientation (CRITICAL)
+  ✅ LiDAR-enhanced navigation without visualization
+  ✅ Optimized Bluetooth target tracking
+  ✅ Multi-sensor fusion (LiDAR + Ultrasonic)
+  ✅ Robot body-aware obstacle avoidance
+  ✅ Automatic USB device detection
+  ✅ Fast autonomous mode response
+
+REMOVED FOR PERFORMANCE:
+  ❌ LiDAR visualization (caused Pi overload)
+  ❌ Matplotlib and GUI components
+  ❌ Excessive debug output
+
+SENSOR STATUS:
+  ✅ LiDAR Ready (Navigation Only)
+  ✅ Bluetooth Ready
+
+🔍 USB Device Detector initialized
+🤖 Robot Physical Profile Loaded:
+   Dimensions: 35.0cm × 28.0cm
+   LiDAR Position: 23.0cm from front, 13.0cm from left
+   Safe Distances: F=28.0cm R=17.0cm L=18.0cm R=20.0cm
+   Corridor Requirements: 38.0cm normal, 34.0cm tight
+🔄 LiDAR Processor initialized (LITE - NO VISUALIZATION)
+📏 Range: 100-8000mm
+🚧 Obstacle threshold: 600mm
+✅ Clear path threshold: 900mm
+🚀 Bluetooth LiDAR Navigator V8-LITE
+📊 Navigation: Danger=12.0cm | Caution=20.0cm | Safe=35.0cm
+🔄 LiDAR: Danger=12.0cm | Caution=20.0cm
+📡 Bluetooth: Target 0.3m ±0.2m
+🎯 LITE: No visualization - core navigation only
+🔍 Starting device detection...
+🔍 === USB Device Detection Started ===
+🔍 Scanning for USB devices...
+📋 Found 2 USB serial devices:
+   1. /dev/ttyUSB1 - CP2102 USB to UART Bridge Controller - CP2102 USB to UART Bridge Controller
+      VID:PID = 10C4:EA60
+      Manufacturer: Silicon Labs
+   2. /dev/ttyUSB0 - USB Serial
+      VID:PID = 1A86:7523
+\n🧪 Testing ports for device identification...
+\n📍 Testing /dev/ttyUSB1...
+🤖 Testing for Arduino on /dev/ttyUSB1...
+❌ Arduino test failed on /dev/ttyUSB1: 'utf-8' codec can't decode byte 0xd3 in position 0: invalid continuation byte
+📡 Testing for LiDAR on /dev/ttyUSB1...
+✅ LiDAR detected on /dev/ttyUSB1
+   Model: 24
+   Firmware: (1, 29)
+   Hardware: 7
+\n📍 Testing /dev/ttyUSB0...
+🤖 Testing for Arduino on /dev/ttyUSB0...
+❌ No Arduino detected on /dev/ttyUSB0
+📡 Testing for LiDAR on /dev/ttyUSB0...
+❌ LiDAR test failed on /dev/ttyUSB0: Descriptor length mismatch
+\n📊 Detection Results:
+   Arduino candidates: 0
+   LiDAR candidates: 1
+❌ No Arduino detected on any port
+✅ LiDAR assigned to: /dev/ttyUSB1
+\n📋 Final Device Assignment:
+   Arduino: Not found
+   LiDAR: /dev/ttyUSB1
+❌ No Arduino detected and no manual configuration provided
+❌ Arduino connection failed - continuing without Arduino
+📍 Using detected LiDAR: /dev/ttyUSB1
+🔗 Connecting to RPLidar A1 on /dev/ttyUSB1
+📋 LiDAR Device info: {'model': 24, 'firmware': (1, 29), 'hardware': 7, 'serialnumber': 'EF83EDF9C7E29BCEA7E39EF27F504304'}
+💚 LiDAR Health: ('Good', 0)
+🔄 Starting LiDAR motor...
+✅ LiDAR connected and ready
+📡 LiDAR scanning started - NAVIGATION ONLY
+✅ LiDAR navigation enhancement enabled
+📡 Starting BlueCharm tracking thread...
+📡 BlueCharm tracking scanner ready
+🚀 Navigator V8-LITE started with LiDAR + Ultrasonic + Bluetooth (NO VISUALIZATION)
+🎯 Ready for core navigation functionality
+✅ Navigator V8-LITE ready with LiDAR + Ultrasonic + Bluetooth
+📡 Switch to autonomous mode for navigation
+🚀 Core navigation optimized for performance
+Press Ctrl+C to stop...
+❌ Bluetooth thread error: [Errno 24] Too many open files
+Exception ignored in: <function BaseEventLoop.__del__ at 0x7f7fbc9bc0>
+Traceback (most recent call last):
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 694, in __del__
+    self.close()
+  File "/usr/lib/python3.11/asyncio/unix_events.py", line 68, in close
+    super().close()
+  File "/usr/lib/python3.11/asyncio/selector_events.py", line 91, in close
+    self._close_self_pipe()
+  File "/usr/lib/python3.11/asyncio/selector_events.py", line 98, in _close_self_pipe
+    self._remove_reader(self._ssock.fileno())
+                        ^^^^^^^^^^^
+AttributeError: '_UnixSelectorEventLoop' object has no attribute '_ssock'
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+��� Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+��� Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+❌ Bluetooth thread error: An asyncio.Future, a coroutine or an awaitable is required
+📡 Navigation scan #100: 75 points, 5/8 clear
+
+Attempting to stop program...
+
+^C (Interrupt signal sent)
+^C\n🛑 Shutdown requested by user...
+🛑 Stopping Navigator V8-LITE...
+✅ LiDAR disconnected
+❌ LiDAR scan error: 'NoneType' object cannot be interpreted as an integer
+SIGTERM sent to Python processes
+No Python processes running
+

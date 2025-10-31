@@ -1,0 +1,14 @@
+# Additional requirements for LiDAR telemetry controller
+# Install with: pip install -r requirements_telemetry.txt
+
+# System monitoring library
+psutil>=5.8.0
+
+# Serial communication (should already be installed)
+pyserial>=3.5
+
+# Optional: RPLidar library (install if you have a physical LiDAR)
+# rplidar-roboticia>=0.9.2
+
+# Note: Install rplidar library only if you have physical LiDAR hardware:
+# pip install rplidar-roboticia

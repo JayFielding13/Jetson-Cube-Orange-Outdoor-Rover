@@ -1,0 +1,193 @@
+jay@RoboPi:~/rover_project $ source venv/bin/activate
+(venv) jay@RoboPi:~/rover_project $ python3 autonomous_lidar_telemetry.py
+✅ psutil library found
+✅ RPLidar library found
+================================================================================
+🚀 LIDAR-INTEGRATED AUTONOMOUS CONTROLLER WITH TELEMETRY
+================================================================================
+
+Features:
+📡 Extended telemetry pipeline: Pi → Arduino → Dashboard
+🔍 LiDAR integration for enhanced obstacle detection
+📊 System monitoring: CPU, memory, temperature, disk usage
+🧠 Intelligent navigation with multi-sensor fusion
+🛡️ Arduino gatekeeper maintains safety authority
+
+🚀 LiDAR Telemetry Controller Initialized
+📡 Enhanced telemetry pipeline: Pi → Arduino → Dashboard
+✅ Connected to Arduino gatekeeper on /dev/ttyUSB0
+✅ LiDAR connected on /dev/ttyUSB1
+🚀 LiDAR Telemetry Controller started
+🧠 Pi navigation with LiDAR integration
+📡 Full telemetry pipeline active
+✅ Controller started successfully
+Press Ctrl+C to stop...
+❌ Navigation error: '<' not supported between instances of 'NoneType' and 'float'
+❌ Navigation error: '<' not supported between instances of 'NoneType' and 'float'
+❌ Navigation error: '<' not supported between instances of 'NoneType' and 'float'
+❌ Navigation error: '<' not supported between instances of 'NoneType' and 'float'
+❌ Navigation error: '<' not supported between instances of 'NoneType' and 'float'
+❌ Navigation error: '<' not supported between instances of 'NoneType' and 'float'
+❌ Navigation error: '<' not supported between instances of 'NoneType' and 'float'
+❌ Navigation error: '<' not supported between instances of 'NoneType' and 'float'
+❌ Navigation error: '<' not supported between instances of 'NoneType' and 'float'
+❌ Navigation error: '<' not supported between instances of 'NoneType' and 'float'
+⚠️ LiDAR communication error: Wrong body size
+❌ Arduino communication error: Expecting ',' delimiter: line 1 column 188 (char 187)
+❌ Arduino communication error: Expecting ',' delimiter: line 1 column 188 (char 187)
+❌ Arduino communication error: Expecting ',' delimiter: line 1 column 189 (char 188)
+❌ Arduino communication error: Expecting ',' delimiter: line 1 column 175 (char 174)
+⚠️ LiDAR communication error: Descriptor length mismatch
+❌ Arduino communication error: Expecting ',' delimiter: line 1 column 176 (char 175)
+❌ Arduino communication error: Expecting ',' delimiter: line 1 column 177 (char 176)
+❌ Arduino communication error: Expecting ',' delimiter: line 1 column 176 (char 175)
+❌ Arduino communication error: Expecting ',' delimiter: line 1 column 176 (char 175)
+❌ Arduino communication error: Expecting ',' delimiter: line 1 column 174 (char 173)
+⚠️ LiDAR communication error: Wrong body size
+❌ Arduino communication error: Expecting ',' delimiter: line 1 column 175 (char 174)
+❌ Arduino communication error: Expecting ',' delimiter: line 1 column 175 (char 174)
+❌ Arduino communication error: Expecting ',' delimiter: line 1 column 174 (char 173)
+❌ Arduino communication error: Expecting ',' delimiter: line 1 column 175 (char 174)
+❌ Arduino communication error: Expecting ',' delimiter: line 1 column 175 (char 174)
+📊 Mode: FAILSAFE | Nav: STRAIGHT | LiDAR: 304pts, 203.7cm | CPU: 1.9%
+📡 Telemetry sent: 44 commands
+⚠️ LiDAR communication error: Descriptor length mismatch
+❌ Arduino communication error: Expecting ',' delimiter: line 1 column 174 (char 173)
+❌ Arduino communication error: Expecting ',' delimiter: line 1 column 173 (char 172)
+❌ Arduino communication error: Expecting ',' delimiter: line 1 column 175 (char 174)
+❌ Arduino communication error: Expecting ',' delimiter: line 1 column 173 (char 172)
+❌ Arduino communication error: Expecting ',' delimiter: line 1 column 173 (char 172)
+⚠️ LiDAR communication error: Wrong body size
+❌ Arduino communication error: Expecting ',' delimiter: line 1 column 173 (char 172)
+❌ Arduino communication error: Expecting ',' delimiter: line 1 column 175 (char 174)
+🔍 Exploration turn right after 8.1s
+❌ Arduino communication error: Expecting ',' delimiter: line 1 column 175 (char 174)
+❌ Arduino communication error: Expecting ',' delimiter: line 1 column 177 (char 176)
+⚠️ LiDAR communication error: Descriptor length mismatch
+❌ Arduino communication error: Expecting ',' delimiter: line 1 column 171 (char 170)
+❌ Arduino communication error: Expecting ',' delimiter: line 1 column 171 (char 170)
+❌ Arduino communication error: Expecting ',' delimiter: line 1 column 172 (char 171)
+❌ Arduino communication error: Expecting ',' delimiter: line 1 column 177 (char 176)
+❌ Arduino communication error: Expecting ',' delimiter: line 1 column 176 (char 175)
+🔍 Exploration complete - resuming straight
+⚠️ LiDAR communication error: Wrong body size
+⚠️ LiDAR communication error: Incorrect descriptor starting bytes
+❌ Arduino communication error: Expecting ',' delimiter: line 1 column 178 (char 177)
+⚠️ LiDAR communication error: Incorrect descriptor starting bytes
+⚠️ LiDAR communication error: Incorrect descriptor starting bytes
+❌ Arduino communication error: Expecting ',' delimiter: line 1 column 174 (char 173)
+⚠️ LiDAR communication error: Incorrect descriptor starting bytes
+⚠️ LiDAR communication error: Incorrect descriptor starting bytes
+❌ Arduino communication error: Expecting ',' delimiter: line 1 column 173 (char 172)
+⚠️ LiDAR communication error: Incorrect descriptor starting bytes
+⚠️ LiDAR communication error: Incorrect descriptor starting bytes
+❌ Arduino communication error: Expecting ',' delimiter: line 1 column 174 (char 173)
+⚠️ LiDAR communication error: Incorrect descriptor starting bytes
+⚠️ LiDAR communication error: Incorrect descriptor starting bytes
+⚠️ LiDAR communication error: Incorrect descriptor starting bytes
+❌ Arduino communication error: Expecting ',' delimiter: line 1 column 172 (char 171)
+⚠️ LiDAR communication error: Incorrect descriptor starting bytes
+⚠️ LiDAR communication error: Incorrect descriptor starting bytes
+❌ Arduino communication error: Expecting ',' delimiter: line 1 column 171 (char 170)
+⚠️ LiDAR communication error: Incorrect descriptor starting bytes
+⚠️ LiDAR communication error: Incorrect descriptor starting bytes
+❌ Arduino communication error: Expecting ',' delimiter: line 1 column 173 (char 172)
+⚠️ LiDAR communication error: Incorrect descriptor starting bytes
+⚠️ LiDAR communication error: Incorrect descriptor starting bytes
+📊 Mode: FAILSAFE | Nav: STRAIGHT | LiDAR: 323pts, 197.9cm | CPU: 2.5%
+📡 Telemetry sent: 94 commands
+⚠️ LiDAR communication error: Incorrect descriptor starting bytes
+❌ Arduino communication error: Expecting ',' delimiter: line 1 column 172 (char 171)
+⚠️ LiDAR communication error: Incorrect descriptor starting bytes
+⚠️ LiDAR communication error: Incorrect descriptor starting bytes
+❌ Arduino communication error: Expecting ',' delimiter: line 1 column 172 (char 171)
+⚠️ LiDAR communication error: Incorrect descriptor starting bytes
+⚠️ LiDAR communication error: Incorrect descriptor starting bytes
+❌ Arduino communication error: Expecting ',' delimiter: line 1 column 174 (char 173)
+⚠️ LiDAR communication error: Incorrect descriptor starting bytes
+⚠️ LiDAR communication error: Incorrect descriptor starting bytes
+⚠️ LiDAR communication error: Incorrect descriptor starting bytes
+❌ Arduino communication error: Expecting ',' delimiter: line 1 column 172 (char 171)
+⚠️ LiDAR communication error: Incorrect descriptor starting bytes
+⚠️ LiDAR communication error: Incorrect descriptor starting bytes
+❌ Arduino communication error: Expecting ',' delimiter: line 1 column 171 (char 170)
+⚠️ LiDAR communication error: Incorrect descriptor starting bytes
+⚠️ LiDAR communication error: Incorrect descriptor starting bytes
+❌ Arduino communication error: Expecting ',' delimiter: line 1 column 172 (char 171)
+⚠️ LiDAR communication error: Incorrect descriptor starting bytes
+⚠️ LiDAR communication error: Incorrect descriptor starting bytes
+⚠️ LiDAR communication error: Incorrect descriptor starting bytes
+❌ Arduino communication error: Expecting ',' delimiter: line 1 column 177 (char 176)
+⚠️ LiDAR communication error: Incorrect descriptor starting bytes
+⚠️ LiDAR communication error: Incorrect descriptor starting bytes
+❌ Arduino communication error: Expecting ',' delimiter: line 1 column 177 (char 176)
+⚠️ LiDAR communication error: Incorrect descriptor starting bytes
+⚠️ LiDAR communication error: Incorrect descriptor starting bytes
+❌ Arduino communication error: Expecting ',' delimiter: line 1 column 177 (char 176)
+⚠️ LiDAR communication error: Wrong get_info reply length
+⚠️ LiDAR communication error: Incorrect descriptor starting bytes
+⚠️ LiDAR communication error: Incorrect descriptor starting bytes
+❌ Arduino communication error: Expecting ',' delimiter: line 1 column 176 (char 175)
+⚠️ LiDAR communication error: Incorrect descriptor starting bytes
+⚠️ LiDAR communication error: Incorrect descriptor starting bytes
+❌ Arduino communication error: Expecting ',' delimiter: line 1 column 175 (char 174)
+⚠️ LiDAR communication error: Incorrect descriptor starting bytes
+⚠️ LiDAR communication error: Incorrect descriptor starting bytes
+❌ Arduino communication error: Expecting ',' delimiter: line 1 column 177 (char 176)
+⚠️ LiDAR communication error: Incorrect descriptor starting bytes
+⚠️ LiDAR communication error: Incorrect descriptor starting bytes
+❌ Arduino communication error: Expecting ',' delimiter: line 1 column 175 (char 174)
+⚠️ LiDAR communication error: Incorrect descriptor starting bytes
+⚠️ LiDAR communication error: Wrong get_info reply length
+❌ Arduino communication error: Expecting ',' delimiter: line 1 column 174 (char 173)
+⚠️ LiDAR communication error: Incorrect descriptor starting bytes
+⚠️ LiDAR communication error: Incorrect descriptor starting bytes
+⚠️ LiDAR communication error: Incorrect descriptor starting bytes
+❌ Arduino communication error: Expecting ',' delimiter: line 1 column 176 (char 175)
+⚠️ LiDAR communication error: Incorrect descriptor starting bytes
+⚠️ LiDAR communication error: Incorrect descriptor starting bytes
+❌ Arduino communication error: Expecting ',' delimiter: line 1 column 177 (char 176)
+⚠️ LiDAR communication error: Incorrect descriptor starting bytes
+⚠️ LiDAR communication error: Incorrect descriptor starting bytes
+❌ Arduino communication error: Expecting ',' delimiter: line 1 column 177 (char 176)
+⚠️ LiDAR communication error: Incorrect descriptor starting bytes
+⚠️ LiDAR communication error: Incorrect descriptor starting bytes
+❌ Arduino communication error: Expecting ',' delimiter: line 1 column 179 (char 178)
+⚠️ LiDAR communication error: Wrong get_info reply length
+⚠️ LiDAR communication error: Incorrect descriptor starting bytes
+⚠️ LiDAR communication error: Incorrect descriptor starting bytes
+❌ Arduino communication error: Expecting ',' delimiter: line 1 column 177 (char 176)
+⚠️ LiDAR communication error: Incorrect descriptor starting bytes
+⚠️ LiDAR communication error: Incorrect descriptor starting bytes
+❌ Arduino communication error: Expecting ',' delimiter: line 1 column 177 (char 176)
+⚠️ LiDAR communication error: Incorrect descriptor starting bytes
+⚠️ LiDAR communication error: Incorrect descriptor starting bytes
+❌ Arduino communication error: Expecting ',' delimiter: line 1 column 178 (char 177)
+⚠️ LiDAR communication error: Incorrect descriptor starting bytes
+⚠️ LiDAR communication error: Incorrect descriptor starting bytes
+⚠️ LiDAR communication error: Incorrect descriptor starting bytes
+❌ Arduino communication error: Expecting ',' delimiter: line 1 column 179 (char 178)
+📊 Mode: FAILSAFE | Nav: STRAIGHT | LiDAR: 385pts, 144.0cm | CPU: 3.0%
+📡 Telemetry sent: 144 commands
+⚠️ LiDAR communication error: Wrong get_info reply length
+⚠️ LiDAR communication error: Incorrect descriptor starting bytes
+❌ Arduino communication error: Expecting ',' delimiter: line 1 column 178 (char 177)
+⚠️ LiDAR communication error: Incorrect descriptor starting bytes
+⚠️ LiDAR communication error: Incorrect descriptor starting bytes
+❌ Arduino communication error: Expecting ',' delimiter: line 1 column 179 (char 178)
+⚠️ LiDAR communication error: Incorrect descriptor starting bytes
+⚠️ LiDAR communication error: Incorrect descriptor starting bytes
+⚠️ LiDAR communication error: Incorrect descriptor starting bytes
+❌ Arduino communication error: Expecting ',' delimiter: line 1 column 177 (char 176)
+⚠️ LiDAR communication error: Incorrect descriptor starting bytes
+⚠️ LiDAR communication error: Incorrect descriptor starting bytes
+❌ Arduino communication error: Expecting ',' delimiter: line 1 column 177 (char 176)
+⚠️ LiDAR communication error: Incorrect descriptor starting bytes
+⚠️ LiDAR communication error: Wrong get_info reply length
+❌ Arduino communication error: Expecting ',' delimiter: line 1 column 179 (char 178)
+⚠️ LiDAR communication error: Incorrect descriptor starting bytes
+^C
+🛑 Shutdown requested...
+🔌 LiDAR Telemetry Controller disconnected
+👋 Controller stopped
+(venv) jay@RoboPi:~/rover_project $

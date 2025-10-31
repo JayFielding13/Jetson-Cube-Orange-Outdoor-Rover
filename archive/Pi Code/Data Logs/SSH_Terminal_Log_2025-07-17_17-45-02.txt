@@ -1,0 +1,157 @@
+SSH Dashboard Terminal Log
+Session Date: 2025-07-17 17:45:07
+Connected to: 192.168.254.65:22
+Username: jay
+==================================================
+
+Uploading cleanup_lidar.py...
+Successfully uploaded cleanup_lidar.py to /home/jay/rover_project/cleanup_lidar.py
+$ cd ~/rover_project && source venv/bin/activate && echo 'Starting program...' && python3 -u /home/jay/rover_project/cleanup_lidar.py
+Starting program...
+🔧 LiDAR Cleanup and Test Utility
+========================================
+🧹 Cleaning up LiDAR on /dev/ttyUSB1
+🔗 Attempting LiDAR connection...
+🛑 Stopping any running scans...
+🔄 Stopping motor...
+🔌 Disconnecting...
+✅ LiDAR cleanup completed
+🔧 Attempting raw serial reset...
+✅ Serial reset completed
+⏱️ Waiting 3 seconds...
+🧪 Testing LiDAR connection on /dev/ttyUSB1
+📋 Getting device info...
+✅ Device info: {'model': 24, 'firmware': (1, 29), 'hardware': 7, 'serialnumber': 'EF83EDF9C7E29BCEA7E39EF27F504304'}
+💚 Getting health status...
+✅ Health: ('Good', 0)
+✅ LiDAR connection test successful
+🎉 LiDAR is ready for use!
+Uploading bluetooth_lidar_navigator_v8.py...
+Successfully uploaded bluetooth_lidar_navigator_v8.py to /home/jay/rover_project/bluetooth_lidar_navigator_v8.py
+$ cd ~/rover_project && source venv/bin/activate && echo 'Starting program...' && python3 -u /home/jay/rover_project/bluetooth_lidar_navigator_v8.py
+Starting program...
+✅ Visualization (matplotlib) library available
+✅ Bluetooth (bleak) library available
+✅ LiDAR (rplidar) library available
+================================================================================
+🚀 BLUETOOTH LIDAR NAVIGATOR V8 - OPTIMIZED
+================================================================================
+
+NEW IN V8:
+  ✅ Fixed LiDAR visualization using proven working method
+  ✅ Reduced excessive course corrections and fidgety behavior
+  ✅ Optimized for closer Bluetooth target approach (0.3m vs 0.5m)
+  ✅ Faster navigation speeds and more decisive movement
+  ✅ Streamlined navigation logic reduces unnecessary turns
+  ✅ Limited course corrections to max 3 per minute
+  ✅ Working LiDAR visualization based on rplidar_realtime.py
+
+OPTIMIZATIONS:
+  🎯 Closer target approach: 0.3m target vs 0.5m
+  ⚡ Faster speeds: cruise 120, tracking 100, turn 100
+  🧠 Smarter thresholds: danger 12cm, caution 20cm
+  📡 Less sensitive signal analysis reduces false corrections
+  🔄 Limited course corrections prevent excessive turning
+  📊 Working visualization shows real LiDAR data
+
+SENSOR STATUS:
+  ✅ LiDAR Ready + Working Visualization
+  ✅ Bluetooth Ready
+  ✅ Visualization Ready (Fixed)
+
+🔍 USB Device Detector initialized
+🤖 Robot Physical Profile Loaded:
+   Dimensions: 35.0cm × 28.0cm
+   LiDAR Position: 23.0cm from front, 13.0cm from left
+   Safe Distances: F=28.0cm R=17.0cm L=18.0cm R=20.0cm
+📊 Working LiDAR Visualizer initialized
+📊 LiDAR Visualizer created for port None
+🔄 Optimized LiDAR Processor initialized
+📏 Range: 100-8000mm
+🚧 Obstacle threshold: 600mm (optimized)
+✅ Clear path threshold: 900mm (optimized)
+🚀 Optimized Bluetooth LiDAR Navigator V8
+📊 OPTIMIZED Navigation: Danger=12.0cm | Caution=20.0cm | Safe=35.0cm
+🔄 OPTIMIZED LiDAR: Danger=12.0cm | Caution=20.0cm
+📡 Bluetooth: Target 0.3m ±0.2m
+🎯 Optimizations: Faster speeds, closer approach, fewer corrections
+🔍 Starting optimized device detection...
+🔍 === USB Device Detection Started ===
+🔍 Scanning for USB devices...
+📋 Found 2 USB serial devices:
+   1. /dev/ttyUSB1 - CP2102 USB to UART Bridge Controller - CP2102 USB to UART Bridge Controller
+      VID:PID = 10C4:EA60
+   2. /dev/ttyUSB0 - USB Serial
+      VID:PID = 1A86:7523
+\n🧪 Testing ports for device identification...
+\n📍 Testing /dev/ttyUSB1...
+🤖 Testing for Arduino on /dev/ttyUSB1...
+❌ No Arduino detected on /dev/ttyUSB1
+📡 Testing for LiDAR on /dev/ttyUSB1...
+✅ LiDAR detected on /dev/ttyUSB1
+   Model: 24
+   Firmware: (1, 29)
+\n📍 Testing /dev/ttyUSB0...
+🤖 Testing for Arduino on /dev/ttyUSB0...
+✅ Arduino detected on /dev/ttyUSB0 at 115200 baud
+\n📊 Detection Results:
+   Arduino candidates: 1
+   LiDAR candidates: 1
+✅ Arduino assigned to: /dev/ttyUSB0 @ 115200 baud
+✅ LiDAR assigned to: /dev/ttyUSB1
+\n📋 Final Device Assignment:
+   Arduino: /dev/ttyUSB0
+   LiDAR: /dev/ttyUSB1
+📍 Using detected Arduino: /dev/ttyUSB0 @ 115200 baud
+✅ Arduino connected on /dev/ttyUSB0
+📍 Using detected LiDAR: /dev/ttyUSB1
+🔗 Connecting to RPLidar A1 on /dev/ttyUSB1
+📋 LiDAR Device info: {'model': 24, 'firmware': (1, 29), 'hardware': 7, 'serialnumber': 'EF83EDF9C7E29BCEA7E39EF27F504304'}
+💚 LiDAR Health: ('Good', 0)
+🔄 Starting LiDAR motor...
+✅ LiDAR connected and ready
+📊 Plot setup complete - using working method
+📊 Starting working LiDAR visualization...
+📊 Display detected (192.168.254.14:0) - starting visualization
+🎥 Animation frame 0: 91 points plotted | Queue had 4 items
+🎥 Animation frame 0: 97 points plotted | Queue had 4 items
+🎥 Animation frame 0: 96 points plotted | Queue had 4 items
+🎥 Animation frame 0: 100 points plotted | Queue had 4 items
+📡 Navigation scan #20: 94 points, 8/8 clear
+📡 Navigation scan #40: 100 points, 7/8 clear
+📊 Visualization queue updated: 87 points | Queue size: 5
+📊 Animation running: True
+❌ Matplotlib update error: main thread is not in main loop
+Too many measurments in the input buffer: 799/500. Clearing buffer...
+📡 Navigation scan #60: 89 points, 8/8 clear
+🎥 Animation frame 50: 90 points plotted | Queue had 1 items
+📡 Navigation scan #80: 98 points, 8/8 clear
+📊 Visualization queue updated: 91 points | Queue size: 2
+📊 Animation running: True
+❌ Matplotlib update error: main thread is not in main loop
+📡 Navigation scan #100: 91 points, 8/8 clear
+Too many measurments in the input buffer: 803/500. Clearing buffer...
+🎥 Animation frame 100: 99 points plotted | Queue had 0 items
+📡 Navigation scan #120: 100 points, 7/8 clear
+📡 Navigation scan #140: 92 points, 7/8 clear
+📊 Visualization queue updated: 90 points | Queue size: 4
+📊 Animation running: True
+❌ Matplotlib update error: main thread is not in main loop
+Too many measurments in the input buffer: 796/500. Clearing buffer...
+❌ LiDAR scan error: New scan flags mismatch
+
+Attempting to stop program...
+
+^C (Interrupt signal sent)
+^CSIGTERM sent to Python processes
+📊 Working visualization started successfully!
+❌ Visualization start error: 'FigureCanvasTkAgg' object has no attribute 'get_default_backend'
+📡 LiDAR scanning started with working visualization
+✅ LiDAR navigation enhancement enabled with working visualization
+📡 Starting BlueCharm tracking thread...📡 BlueCharm tracking scanner started
+
+📡 BlueCharm tracking scanner ready
+🚀 Optimized Navigator V8 started with LiDAR+Viz + Ultrasonic + Bluetooth
+🎯 Ready for optimized navigation with working visualization
+No Python processes running
+

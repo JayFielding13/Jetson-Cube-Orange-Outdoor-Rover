@@ -1,0 +1,389 @@
+SSH Dashboard Terminal Log
+Session Date: 2025-07-21 19:16:30
+Connected to: 192.168.254.65:22
+Username: jay
+==================================================
+
+Uploading bluetooth_lidar_navigator_v8_lite.py...
+Successfully uploaded bluetooth_lidar_navigator_v8_lite.py to /home/jay/rover_project/bluetooth_lidar_navigator_v8_lite.py
+$ cd ~/rover_project && source venv/bin/activate && echo 'Starting program...' && python3 -u /home/jay/rover_project/bluetooth_lidar_navigator_v8_lite.py
+Starting program...
+✅ Bluetooth (bleak) library available
+✅ LiDAR (rplidar) library available
+================================================================================
+🚀 BLUETOOTH LIDAR NAVIGATOR V8-LITE
+================================================================================
+
+CORE FUNCTIONALITY ONLY:
+  ✅ Fixed LiDAR left/right orientation (CRITICAL)
+  ✅ LiDAR-enhanced navigation without visualization
+  ✅ Optimized Bluetooth target tracking
+  ✅ Multi-sensor fusion (LiDAR + Ultrasonic)
+  ✅ Robot body-aware obstacle avoidance
+  ✅ Automatic USB device detection
+  ✅ Fast autonomous mode response
+
+REMOVED FOR PERFORMANCE:
+  ❌ LiDAR visualization (caused Pi overload)
+  ❌ Matplotlib and GUI components
+  ❌ Excessive debug output
+
+SENSOR STATUS:
+  ✅ LiDAR Ready (Navigation Only)
+  ✅ Bluetooth Ready
+
+🔍 USB Device Detector initialized
+🤖 Robot Physical Profile Loaded:
+   Dimensions: 35.0cm × 28.0cm
+   LiDAR Position: 23.0cm from front, 13.0cm from left
+   Safe Distances: F=28.0cm R=17.0cm L=18.0cm R=20.0cm
+   Corridor Requirements: 38.0cm normal, 34.0cm tight
+🔄 LiDAR Processor initialized (LITE - NO VISUALIZATION)
+📏 Range: 100-8000mm
+🚧 Obstacle threshold: 600mm
+✅ Clear path threshold: 900mm
+🚀 Bluetooth LiDAR Navigator V8-LITE
+📊 Navigation: Danger=12.0cm | Caution=20.0cm | Safe=35.0cm
+🔄 LiDAR: Danger=12.0cm | Caution=20.0cm
+📡 Bluetooth: Target 0.3m ±0.2m
+🎯 LITE: No visualization - core navigation only
+🔍 Starting device detection...
+🔍 === USB Device Detection Started ===
+🔍 Scanning for USB devices...
+📋 Found 2 USB serial devices:
+   1. /dev/ttyUSB1 - USB Serial
+      VID:PID = 1A86:7523
+   2. /dev/ttyUSB0 - CP2102 USB to UART Bridge Controller - CP2102 USB to UART Bridge Controller
+      VID:PID = 10C4:EA60
+      Manufacturer: Silicon Labs
+\n🧪 Testing ports for device identification...
+\n📍 Testing /dev/ttyUSB1...
+🤖 Testing for Arduino on /dev/ttyUSB1...
+   Trying 115200 baud...
+   Raw data: Arduino Gatekeeper v1.2 - Smart Safety Initialized...
+   🎯 Arduino Gatekeeper detected! Waiting for JSON data...
+   Raw data: 🛡️ Safety Authority: Arduino holds the keys...
+   Raw data: 🧠 Always listening to Pi, applying commands only in AUTONOMOUS mode...
+   Raw data: ⚠️ MANUAL mode: Full operator control - NO safety overrides...
+   Raw data: 🛡️ AUTONOMOUS mode: SMART safety systems active...
+   Raw data: 🚀 NEW: Smart obstacle avoidance - allows reverse/turning when stuck...
+   Raw data: 🔍 Emergency threshold: 15cm (improved from 10cm)...
+   Raw data: {"ch1":0,"ch2":0,"ch9":-992,"valid":true,"mode":0,"emergency":false,"distance":null,"pi_command_vali...
+✅ Arduino detected on /dev/ttyUSB1 at 115200 baud
+   Valid JSON data: {'ch1': 0, 'ch2': 0, 'ch9': -992, 'valid': True, 'mode': 0, 'emergency': False, 'distance': None, 'pi_command_valid': False, 'gatekeeper_mode': 'FAILSAFE'}
+📡 Testing for LiDAR on /dev/ttyUSB1...
+❌ LiDAR test failed on /dev/ttyUSB1: Descriptor length mismatch
+\n📍 Testing /dev/ttyUSB0...
+🤖 Testing for Arduino on /dev/ttyUSB0...
+   Trying 115200 baud...
+   Raw data: 1$   Raw data:    Raw data: x>3g>>9>>=:>%   Raw data: >...
+   Raw data: z>...
+   Raw data: ]>b>Ol>>>>[>>>!>_?>P>o>   Data received but not valid Arduino JSON
+   Trying 9600 baud...
+   No data received at 9600 baud
+   Trying 57600 baud...
+   No data received at 57600 baud
+❌ No Arduino detected on /dev/ttyUSB0 (tried [115200, 9600, 57600])
+📡 Testing for LiDAR on /dev/ttyUSB0...
+✅ LiDAR detected on /dev/ttyUSB0
+   Model: 24
+   Firmware: (1, 29)
+   Hardware: 7
+\n📊 Detection Results:
+   Arduino candidates: 1
+   LiDAR candidates: 1
+✅ Arduino assigned to: /dev/ttyUSB1 @ 115200 baud
+✅ LiDAR assigned to: /dev/ttyUSB0
+\n📋 Final Device Assignment:
+   Arduino: /dev/ttyUSB1
+   LiDAR: /dev/ttyUSB0
+📍 Using detected Arduino: /dev/ttyUSB1 @ 115200 baud
+✅ Arduino connected on /dev/ttyUSB1
+📍 Using detected LiDAR: /dev/ttyUSB0
+🔗 Connecting to RPLidar A1 on /dev/ttyUSB0
+📋 LiDAR Device info: {'model': 24, 'firmware': (1, 29), 'hardware': 7, 'serialnumber': 'EF83EDF9C7E29BCEA7E39EF27F504304'}
+💚 LiDAR Health: ('Good', 0)
+🔄 Starting LiDAR motor...
+✅ LiDAR connected and ready
+📡 LiDAR scanning started - NAVIGATION ONLY
+✅ LiDAR navigation enhancement enabled
+📡 Starting BlueCharm tracking thread...
+📡 BlueCharm tracking scanner ready
+📡 Starting BLE scanner...🚀 Navigator V8-LITE started with LiDAR + Ultrasonic + Bluetooth (NO VISUALIZATION)
+
+🎯 Ready for core navigation functionality
+✅ Navigator V8-LITE ready with LiDAR + Ultrasonic + Bluetooth
+📡 Switch to autonomous mode for navigation
+🚀 Core navigation optimized for performance
+Press Ctrl+C to stop...
+📡 BLE scanner active
+🚶 TRACKING MODE: BlueCharm at 4.5m
+📡 SIGNAL DETECTED: Switching to tracking mode (5.3m)
+🛑 AVOIDING! robot_fusion obstacle at 8.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.6cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.9cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.9cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.9cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.7cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.7cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.9cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.9cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.9cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.9cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.9cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.9cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.9cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.9cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.7cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.7cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.6cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.6cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.6cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.6cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.6cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.7cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.7cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.7cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.7cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.7cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.7cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.7cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.7cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.7cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.7cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.7cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.7cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.7cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.7cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.7cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.7cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.5cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.5cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.5cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.8cm - turning right
+🎯 AUTONOMOUS | AVOIDING | FUSION: 9cm | LiDAR: 110cm@54° | 8/8 clear | BT: 4.2m (-72dBm TRACK) | Runtime: 41s
+🛑 AVOIDING! robot_fusion obstacle at 8.8cm - turning right
+🎯 AUTONOMOUS | AVOIDING | FUSION: 9cm | LiDAR: Processing (51 scans) | BT: 4.2m (-72dBm TRACK) | Runtime: 41s
+🛑 AVOIDING! robot_fusion obstacle at 8.8cm - turning right
+🎯 AUTONOMOUS | AVOIDING | FUSION: 9cm | LiDAR: Processing (51 scans) | BT: 4.2m (-72dBm TRACK) | Runtime: 41s
+🛑 AVOIDING! robot_fusion obstacle at 8.8cm - turning right
+🎯 AUTONOMOUS | AVOIDING | FUSION: 9cm | LiDAR: 101cm@9° | 8/8 clear | BT: 4.2m (-72dBm TRACK) | Runtime: 41s
+🛑 AVOIDING! robot_fusion obstacle at 7.8cm - turning right
+🎯 AUTONOMOUS | AVOIDING | FUSION: 8cm | LiDAR: Processing (52 scans) | BT: 4.2m (-72dBm TRACK) | Runtime: 41s
+🛑 AVOIDING! robot_fusion obstacle at 7.8cm - turning right
+🎯 AUTONOMOUS | AVOIDING | FUSION: 8cm | LiDAR: 110cm@53° | 8/8 clear | BT: 4.2m (-72dBm TRACK) | Runtime: 41s
+🛑 AVOIDING! robot_fusion obstacle at 8.7cm - turning right
+🎯 AUTONOMOUS | AVOIDING | FUSION: 9cm | LiDAR: Processing (53 scans) | BT: 4.2m (-72dBm TRACK) | Runtime: 42s
+🛑 AVOIDING! robot_fusion obstacle at 8.7cm - turning right
+🎯 AUTONOMOUS | AVOIDING | FUSION: 9cm | LiDAR: Processing (53 scans) | BT: 4.2m (-72dBm TRACK) | Runtime: 42s
+🛑 AVOIDING! robot_fusion obstacle at 8.7cm - turning right
+🎯 AUTONOMOUS | AVOIDING | FUSION: 9cm | LiDAR: 102cm@14° | 8/8 clear | BT: 4.2m (-72dBm TRACK) | Runtime: 42s
+🛑 AVOIDING! robot_fusion obstacle at 7.9cm - turning right
+🎯 AUTONOMOUS | AVOIDING | FUSION: 8cm | LiDAR: Processing (54 scans) | BT: 4.2m (-72dBm TRACK) | Runtime: 42s
+🛑 AVOIDING! robot_fusion obstacle at 7.9cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.9cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.6cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.6cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.6cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.6cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.6cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.6cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.7cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.7cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.7cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.7cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.7cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.9cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.9cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.7cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.7cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.7cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.9cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.9cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.9cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.6cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.6cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.6cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.7cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.7cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.7cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.7cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.7cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.9cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.9cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.9cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.7cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.7cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.7cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.6cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.6cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.7cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.7cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.7cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.5cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.5cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.5cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.6cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.6cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.9cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.9cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.9cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.9cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.9cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.9cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.9cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.9cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.9cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.7cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.7cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.7cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.9cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.9cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.9cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.6cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.6cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.6cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.9cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.9cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.9cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.9cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.9cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.9cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.7cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.7cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.6cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.6cm - turning right
+📡 Navigation scan #100: 95 points, 8/8 clear
+🛑 AVOIDING! robot_fusion obstacle at 8.6cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.7cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.7cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.7cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.6cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.6cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.8cm - turning right
+⚠️ Arduino communication timeout (failures: 20)
+🛑 AVOIDING! robot_fusion obstacle at 8.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.9cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.9cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.9cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.7cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.7cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.7cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.9cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.9cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.9cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.9cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.9cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 7.8cm - turning right
+⚠️ Arduino communication timeout (failures: 40)
+🛑 AVOIDING! robot_fusion obstacle at 8.7cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.7cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.7cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.8cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.6cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.6cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.6cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.7cm - turning right
+🛑 AVOIDING! robot_fusion obstacle at 8.7cm - turning right
+❌ Too many Arduino communication failures
+🛑 EMERGENCY STOP EXECUTED
+
+Attempting to stop program...
+
+^C (Interrupt signal sent)
+^C\n🛑 Shutdown requested by user...
+🛑 Stopping Navigator V8-LITE...
+⏳ Waiting for threads to stop...
+SIGTERM sent to Python processes
+No Python processes running
+

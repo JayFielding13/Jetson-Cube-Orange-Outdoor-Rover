@@ -1,0 +1,220 @@
+===============================================================================
+ARDUINO MOTOR CONTROL WIRING GUIDE - UPDATED ARCHITECTURE
+===============================================================================
+
+ARDUINO NANO TO DROK MOTOR CONTROLLER - DIRECT CONTROL
+=======================================================
+
+CRITICAL ARCHITECTURE CHANGE:
+- Arduino now controls motors directly (instead of Pi GPIO)
+- Pi sends motor commands to Arduino via USB serial
+- Arduino provides better real-time motor control with hardware PWM
+- More reliable than Pi GPIO approach
+
+NEW ARDUINO PIN ASSIGNMENTS:
+===========================
+
+RC INPUT PINS (unchanged):
+- D2 → CH1 (RC Forward/Reverse)
+- D3 → CH2 (RC Steering)  
+- D4 → CH9 (RC Mode Switch)
+- D13 → Status LED
+
+MOTOR CONTROL PINS (as specified by user):
+- D5 → LEFT_IN1 (Left Motor Direction 1)
+- D6 → LEFT_IN2 (Left Motor Direction 2)
+- D9 → LEFT_ENA (Left Motor Speed - Hardware PWM)
+- D7 → RIGHT_IN3 (Right Motor Direction 1)
+- D10 → RIGHT_IN4 (Right Motor Direction 2)
+- D11 → RIGHT_ENA (Right Motor Speed - Hardware PWM)
+
+ARDUINO NANO PINOUT WITH NEW ASSIGNMENTS:
+========================================
+
+          USB
+      ┌─────────┐
+   D1 │○ TX    │ VIN
+   D0 │○ RX    │ GND  
+  RST │○       │ RST
+  GND │○       │ 5V ← DROK Logic Power
+   D2 │○ CH1   │ A7
+   D3 │○ CH2   │ A6
+   D4 │○ CH9   │ A5
+   D5 │○ L_IN1 │ A4
+   D6 │○ L_IN2 │ A3
+   D7 │○ R_IN3 │ A2
+   D8 │○       │ A1
+   D9 │○ L_ENA │ A0
+  D10 │○ R_IN4 │ REF
+  D11 │○ R_ENA │ 3V3
+  D12 │○       │ D13 ← LED
+      └─────────┘
+
+WIRING CONNECTIONS:
+==================
+
+ARDUINO → DROK MOTOR CONTROLLER:
+- D5 (LEFT_IN1) → DROK IN1 (Left Motor Forward)
+- D6 (LEFT_IN2) → DROK IN2 (Left Motor Reverse)
+- D9 (LEFT_ENA) → DROK ENA1 (Left Motor Speed PWM)
+- D7 (RIGHT_IN3) → DROK IN3 (Right Motor Forward)
+- D10 (RIGHT_IN4) → DROK IN4 (Right Motor Reverse)
+- D11 (RIGHT_ENA) → DROK ENA2 (Right Motor Speed PWM)
+- 5V → DROK 5V Logic Power
+- GND → DROK Signal Ground
+
+ARDUINO → RC RECEIVER:
+- D2 → FS-iA10B CH1 (Signal)
+- D3 → FS-iA10B CH2 (Signal)
+- D4 → FS-iA10B CH9 (Signal)
+- 5V → FS-iA10B VCC
+- GND → FS-iA10B GND
+
+ARDUINO → RASPBERRY PI:
+- USB Cable → Pi USB Port (Data + Power)
+
+PIN CAPABILITY VERIFICATION:
+===========================
+
+PWM CAPABLE PINS ON ARDUINO NANO:
+- D3, D5, D6, D9, D10, D11 (Timer PWM)
+
+SELECTED PWM PINS FOR MOTOR SPEED:
+- D9 (LEFT_ENA) ✅ PWM Capable
+- D11 (RIGHT_ENA) ✅ PWM Capable
+
+DIGITAL OUTPUT PINS FOR DIRECTION:
+- D5, D6, D7, D10 ✅ All suitable for digital output
+
+MOTOR CONTROL LOGIC:
+===================
+
+Left Motor Control:
+- Forward: D5=HIGH, D6=LOW, D9=PWM(0-255)
+- Reverse: D5=LOW, D6=HIGH, D9=PWM(0-255)
+- Stop: D5=LOW, D6=LOW, D9=0
+
+Right Motor Control:
+- Forward: D7=HIGH, D10=LOW, D11=PWM(0-255)
+- Reverse: D7=LOW, D10=HIGH, D11=PWM(0-255)
+- Stop: D7=LOW, D10=LOW, D11=0
+
+COMMUNICATION PROTOCOL:
+======================
+
+Pi → Arduino (Motor Commands):
+JSON Format: {"left":speed,"right":speed}
+- speed range: -255 to +255
+- negative = reverse, positive = forward
+
+Arduino → Pi (RC Data):
+JSON Format: {"ch1":value,"ch2":value,"ch9":value,"valid":bool,"timestamp":ms}
+- value range: -1000 to +1000
+- ch9 modes: <-500=Failsafe, -500to500=Manual, >500=Autonomous
+
+Arduino → Pi (Motor Acknowledgment):
+JSON Format: {"motor_ack":{"left":speed,"right":speed}}
+
+POWER REQUIREMENTS:
+==================
+
+ARDUINO POWER:
+- USB from Pi: 5V @ ~50mA (Arduino + logic)
+- Can also use 5V rail if needed
+
+MOTOR CONTROLLER POWER:
+- 12V Motor Power: Battery → DROK VCC (via fusing)
+- 5V Logic Power: Arduino 5V → DROK 5V Logic
+- Signal Ground: Arduino GND → DROK GND
+
+TOTAL POWER BUDGET:
+- Arduino: ~50mA @ 5V
+- DROK Logic: ~10mA @ 5V  
+- Motors: Handled by DROK from 12V battery
+
+ADVANTAGES OF ARDUINO MOTOR CONTROL:
+===================================
+
+1. REAL-TIME PERFORMANCE:
+   - Hardware PWM for smooth motor control
+   - No jitter from Pi GPIO software PWM
+   - Consistent 1kHz PWM frequency
+
+2. RELIABILITY:
+   - Arduino handles time-critical motor control
+   - Pi focuses on high-level logic and navigation
+   - Better separation of concerns
+
+3. SIMPLIFIED PI CODE:
+   - No GPIO setup for motors
+   - Simple serial communication
+   - Reduced CPU load on Pi
+
+4. EMERGENCY STOP CAPABILITY:
+   - Arduino can immediately stop motors on signal loss
+   - Doesn't depend on Pi communication for safety
+
+TESTING PROCEDURES:
+==================
+
+1. WIRING VERIFICATION:
+   □ Check all pin connections with multimeter
+   □ Verify 5V logic power to DROK
+   □ Confirm ground connections
+
+2. ARDUINO CODE UPLOAD:
+   □ Upload rover_arduino_motor_controller.ino
+   □ Monitor serial output for initialization message
+   □ Test RC signal reception
+
+3. MOTOR CONTROL TESTING:
+   □ Run arduino_motor_test.py on Pi
+   □ Verify bidirectional communication
+   □ Test motor speed and direction control
+
+4. INTEGRATION TESTING:
+   □ Test RC mode switching
+   □ Verify failsafe motor stop
+   □ Test autonomous mode motor commands
+
+TROUBLESHOOTING:
+===============
+
+Problem: Motors don't respond to Arduino commands
+- Check DROK 5V logic power connection
+- Verify pin assignments match code
+- Test individual direction pins with LED
+
+Problem: Jerky motor movement
+- Check PWM pins are correctly assigned (D9, D11)
+- Verify DROK motor power supply
+- Test with lower speeds first
+
+Problem: Communication issues
+- Check USB cable and connection
+- Verify baud rate (115200)
+- Monitor serial output for errors
+
+Problem: RC signals not detected
+- Check RC receiver power (5V)
+- Verify signal wire connections (D2, D3, D4)
+- Test transmitter binding
+
+WIRING CHECKLIST:
+================
+□ D5 → DROK IN1 (Left Forward)
+□ D6 → DROK IN2 (Left Reverse)  
+□ D9 → DROK ENA1 (Left Speed PWM)
+□ D7 → DROK IN3 (Right Forward)
+□ D10 → DROK IN4 (Right Reverse)
+□ D11 → DROK ENA2 (Right Speed PWM)
+□ Arduino 5V → DROK 5V Logic
+□ Arduino GND → DROK Signal GND
+□ D2 → RC CH1, D3 → RC CH2, D4 → RC CH9
+□ Arduino USB → Pi USB Port
+□ Battery 12V → DROK Motor Power (via fusing)
+
+===============================================================================
+This Arduino motor control architecture provides better performance and
+reliability compared to Pi GPIO control!
+===============================================================================

@@ -1,0 +1,269 @@
+SSH Dashboard Terminal Log
+Session Date: 2025-07-16 17:25:55
+Connected to: 192.168.254.65:22
+Username: jay
+==================================================
+
+Connected to Raspberry Pi
+$ xclock
+Uploading bluetooth_lidar_navigator_v7.py...
+Successfully uploaded bluetooth_lidar_navigator_v7.py to /home/jay/rover_project/bluetooth_lidar_navigator_v7.py
+$ cd ~/rover_project && source venv/bin/activate && echo 'Starting program...' && python3 -u /home/jay/rover_project/bluetooth_lidar_navigator_v7.py
+Starting program...
+✅ Bluetooth (bleak) library available
+✅ LiDAR (rplidar) library available
+================================================================================
+🤖 BLUETOOTH LIDAR NAVIGATOR V7
+================================================================================
+
+ENHANCED FEATURES:
+  ✅ All proven V6 Bluetooth navigation capabilities
+  ✅ Integrated RPLidar A1 for 360° obstacle detection
+  ✅ Multi-sensor fusion (ultrasonic + LiDAR)
+  ✅ Enhanced obstacle avoidance with sector analysis
+  ✅ Improved turn direction selection using LiDAR data
+  ✅ Real-time path clearance assessment
+  ✅ Fallback to ultrasonic if LiDAR fails
+  ✅ Thread-safe LiDAR data processing
+  ✅ Enhanced navigation decision making
+
+LIDAR ENHANCEMENTS:
+  🔄 360° obstacle detection vs single-direction ultrasonic
+  🎯 Sector-based path analysis (8 directions)
+  🧠 Intelligent turn direction selection
+  📏 Enhanced distance fusion for better accuracy
+  🚧 Real-time obstacle mapping
+  ✅ Graceful degradation if LiDAR unavailable
+
+NAVIGATION MODES:
+  🔍 SEARCHING: Enhanced search with LiDAR-guided turns
+  🚶 FORWARD_TRACKING: Movement with multi-sensor obstacle awareness
+  🔄 TURN_TESTING: Enhanced turn selection using LiDAR data
+  🧠 SMART_AVOIDING: Sector-based obstacle avoidance
+  🎯 APPROACHING: Sensor-fusion approach control
+  🏁 HOLDING: Enhanced position maintenance
+  🛡️ SAFETY: Multi-sensor emergency override
+
+SENSOR STATUS:
+  ✅ LiDAR Ready
+  ✅ Bluetooth Ready
+
+🔄 LiDAR Processor initialized
+📏 Range: 100-8000mm
+🚧 Obstacle threshold: 800mm
+✅ Clear path threshold: 1200mm
+🚀 Bluetooth LiDAR Navigator V7 - Enhanced Object Detection
+📊 Navigation: Danger=30.0cm | Caution=60.0cm | Safe=100.0cm
+🔄 LiDAR: Enabled | Danger=80.0cm | Caution=120.0cm
+📡 Bluetooth: Enabled | Target: DD:34:02:09:CA:1E
+🚶 Tracking: Target distance 0.5m ±0.15m
+📈 Signal: 1.0dBm improvement | 2.0dBm degradation
+🛡️ Safety: Ultrasonic + LiDAR fusion for enhanced obstacle detection
+✅ Arduino connected on /dev/ttyUSB0
+🔗 Connecting to RPLidar A1 on /dev/ttyUSB0
+❌ LiDAR connection error: Incorrect descriptor starting bytes
+⚠️ LiDAR connection failed - using ultrasonic only
+📡 Starting BlueCharm tracking thread...📡 BlueCharm tracking scanner started
+
+📡 BlueCharm tracking scanner ready🚀 Enhanced Navigator V7 started with Ultrasonic + Bluetooth
+
+🎯 Ready for enhanced object detection and navigation
+✅ Enhanced Navigator V7 ready with Ultrasonic + Bluetooth
+📡 Switch to autonomous mode for enhanced navigation
+🔄 LiDAR will provide 360° obstacle detection
+🎯 Multi-sensor fusion ensures robust navigation
+Press Ctrl+C to stop...
+📡 Starting BLE scanner...
+📡 BLE scanner active
+🧭 AUTONOMOUS | SEARCHING | ULTRASONIC: 200.0cm | BT: No signal | Det: 0 | Runtime: 7s
+🧭 AUTONOMOUS | SEARCHING | ULTRASONIC: 200.0cm | BT: No signal | Det: 0 | Runtime: 10s
+🧭 AUTONOMOUS | SEARCHING | ULTRASONIC: 200.0cm | BT: No signal | Det: 0 | Runtime: 13s
+🔄 BASIC SEARCH: Looking for signal...
+📡 Stopping BLE scanner...
+🔄 BASIC SEARCH: Looking for signal...
+📡 Starting BLE scanner...
+📡 BLE scanner active
+🧭 AUTONOMOUS | SEARCHING | ULTRASONIC: 200.0cm | BT: No signal | Det: 0 | Runtime: 49s
+🚶 TRACKING MODE: BlueCharm at 4.5m - forward tracking activated
+📡 SIGNAL DETECTED: Switching to forward_tracking mode (4.5m)
+🏁 TRACKING INITIALIZED: Starting at 4.5m
+🚶 ENHANCED TRACKING: 4.5m signal stable (t=0.5s)
+🧭 AUTONOMOUS | FORWARD_TRACKING | ULTRASONIC: 200.0cm | BT: 5.0m (-74dBm TRACK) | Det: 2 | Runtime: 52s
+🚨 WRONG DIRECTION: Distance increased 2.5m (4.5m → 7.0m)
+🔄 IMMEDIATE COURSE CORRECTION: Turning around to find BlueCharm
+🔄 ENHANCED TESTING: left turn for signal improvement
+🔄 TRYING RIGHT: Left turn didn't help, testing right
+🧭 AUTONOMOUS | TURN_TESTING | ULTRASONIC: 200.0cm | BT: 6.0m (-75dBm TRACK) | Det: 4 | Runtime: 55s
+🔄 ENHANCED TESTING: right turn for signal improvement
+⚠️ NO IMPROVEMENT: Continuing forward tracking
+🏁 TRACKING INITIALIZED: Starting at 6.6m
+🚶 ENHANCED TRACKING: 6.0m signal stable (t=0.5s)
+📡 BlueCharm TRACKING↘ #5:
+   RSSI: -81dBm (raw: -87) | Distance: ~9.8m | Avg: -76dBm
+🚨 WRONG DIRECTION: Distance increased 5.9m (6.6m → 12.5m)
+🔄 IMMEDIATE COURSE CORRECTION: Turning around to find BlueCharm
+🔄 ENHANCED TESTING: right turn for signal improvement
+✅ ENHANCED TEST SUCCESS: right improved by 7.8dBm - continuing right
+🧭 AUTONOMOUS | TURN_TESTING | ULTRASONIC: 200.0cm | BT: 6.0m (-73dBm TRACK↗) | Det: 6 | Runtime: 58s
+🔄 ENHANCED TESTING: right turn for signal improvement
+⚠️ NO IMPROVEMENT: Continuing forward tracking
+🏁 TRACKING INITIALIZED: Starting at 5.8m
+🚶 ENHANCED TRACKING: 6.4m signal ↗improving (t=0.5s)
+🧠 ENHANCED AVOIDING! ULTRASONIC obstacle at 24.3cm - turning left
+🧭 AUTONOMOUS | SMART_AVOIDING🧠 | ULTRASONIC: 24.3cm | BT: 6.4m (-74dBm TRACK↗) | Det: 7 | Runtime: 61s
+📊 === Enhanced Navigator V7 Statistics ===
+   Runtime: 61 seconds
+   Distance measurements: 326
+   Obstacle avoidances: 1
+   Emergency stops: 0
+   Stuck recoveries: 0
+🎯 === Enhanced Navigation Statistics ===
+   Smart turns: 1
+   Tracking activations: 1
+   Approach activations: 0
+   Hold activations: 0
+   Target reaches: 0
+   Signal improvements: 0
+   Course corrections: 2
+   Turn tests: 4
+   Long tracking phases: 0
+📡 === Bluetooth Ranging Statistics ===
+   Total detections: 7
+   Callback events: 7
+   Detection rate: 0.12/sec
+   Callback rate: 0.12/sec
+   Strongest RSSI: -72 dBm
+   Signal timeouts: 0
+   Average RSSI: -75.0 dBm
+   Average smoothed distance: 6.5m
+   Navigation rate: 5.4 measurements/sec
+✅ ENHANCED CLEAR: Path clear via ultrasonic at 200.0cm - resuming forward_tracking
+🚶 ENHANCED TRACKING: 5.8m signal ↗improving (t=0.5s)
+🧭 AUTONOMOUS | FORWARD_TRACKING | ULTRASONIC: 200.0cm | BT: 5.8m (-73dBm TRACK↗) | Det: 8 | Runtime: 64s
+📡 BlueCharm TRACKING↗ #10:
+   RSSI: -72dBm (raw: -70) | Distance: ~5.0m | Avg: -75dBm
+📡 Stopping BLE scanner...
+📡 Starting BLE scanner...
+📡 BLE scanner active
+🧭 AUTONOMOUS | FORWARD_TRACKING | ULTRASONIC: 200.0cm | BT: 5.0m (-72dBm TRACK↗) | Det: 10 | Runtime: 73s
+🚶 ENHANCED TRACKING: 5.5m signal ↗improving (t=12.0s)
+🚶 ENHANCED TRACKING: 5.4m signal ↗improving (t=12.5s)
+🧭 AUTONOMOUS | FORWARD_TRACKING | ULTRASONIC: 200.0cm | BT: 6.1m (-76dBm TRACK↗) | Det: 13 | Runtime: 76s
+📡 BlueCharm TRACKING↘ #15:
+   RSSI: -81dBm (raw: -88) | Distance: ~10.1m | Avg: -75dBm
+🚨 WRONG DIRECTION: Distance increased 7.2m (5.8m → 13.0m)
+🔄 IMMEDIATE COURSE CORRECTION: Turning around to find BlueCharm
+🔄 ENHANCED TESTING: right turn for signal improvement
+✅ ENHANCED TEST SUCCESS: right improved by 1.7dBm - continuing right
+🔄 ENHANCED TESTING: right turn for signal improvement
+🧭 AUTONOMOUS | TURN_TESTING | ULTRASONIC: 200.0cm | BT: 9.4m (-80dBm TRACK↗) | Det: 16 | Runtime: 79s
+✅ ENHANCED TEST SUCCESS: right improved by 3.8dBm - continuing right
+🔄 ENHANCED TESTING: right turn for signal improvement
+⚠️ NO IMPROVEMENT: Continuing forward tracking
+🏁 TRACKING INITIALIZED: Starting at 5.9m
+🚶 ENHANCED TRACKING: 7.1m signal ↗improving (t=0.5s)
+🧭 AUTONOMOUS | FORWARD_TRACKING | ULTRASONIC: 200.0cm | BT: 6.7m (-74dBm TRACK↗) | Det: 19 | Runtime: 82s
+📡 BlueCharm TRACKING↗ #20:
+   RSSI: -72dBm (raw: -70) | Distance: ~5.7m | Avg: -76dBm
+🧭 AUTONOMOUS | FORWARD_TRACKING | ULTRASONIC: 200.0cm | BT: 5.4m (-72dBm TRACK↗) | Det: 21 | Runtime: 85s
+🚶 ENHANCED TRACKING: 4.9m signal ↗improving (t=6.0s)
+🚶 ENHANCED TRACKING: 4.1m signal ↗improving (t=6.5s)
+🧭 AUTONOMOUS | FORWARD_TRACKING | ULTRASONIC: 200.0cm | BT: 4.1m (-70dBm TRACK↗) | Det: 24 | Runtime: 88s
+🧠 ENHANCED AVOIDING! ULTRASONIC obstacle at 18.4cm - turning left
+📡 BlueCharm TRACKING↗ #25:
+   RSSI: -70dBm (raw: -70) | Distance: ~3.9m | Avg: -72dBm
+✅ ENHANCED CLEAR: Path clear via ultrasonic at 200.0cm - resuming forward_tracking
+🚶 ENHANCED TRACKING: 3.9m signal ↗improving (t=0.5s)
+🧭 AUTONOMOUS | FORWARD_TRACKING | ULTRASONIC: 200.0cm | BT: 3.4m (-68dBm TRACK↗) | Det: 26 | Runtime: 91s
+📊 === Enhanced Navigator V7 Statistics ===
+   Runtime: 91 seconds
+   Distance measurements: 515
+   Obstacle avoidances: 2
+   Emergency stops: 0
+   Stuck recoveries: 0
+🎯 === Enhanced Navigation Statistics ===
+   Smart turns: 2
+   Tracking activations: 1
+   Approach activations: 0
+   Hold activations: 0
+   Target reaches: 0
+   Signal improvements: 0
+   Course corrections: 3
+   Turn tests: 7
+   Long tracking phases: 0
+📡 === Bluetooth Ranging Statistics ===
+   Total detections: 26
+   Callback events: 26
+   Detection rate: 0.29/sec
+   Callback rate: 0.29/sec
+   Strongest RSSI: -68.46730908712152 dBm
+   Signal timeouts: 0
+   Average RSSI: -71.1 dBm
+   Average smoothed distance: 4.3m
+   Navigation rate: 5.7 measurements/sec
+📡 Stopping BLE scanner...
+📡 Starting BLE scanner...
+📡 BLE scanner active
+📡 BlueCharm TRACKING↗ #30:
+   RSSI: -71dBm (raw: -72) | Distance: ~4.0m | Avg: -70dBm
+🧭 AUTONOMOUS | FORWARD_TRACKING | ULTRASONIC: 200.0cm | BT: 4.0m (-71dBm TRACK↗) | Det: 30 | Runtime: 100s
+🚶 ENHANCED TRACKING: 3.4m signal ↗improving (t=12.0s)
+🚶 ENHANCED TRACKING: 3.6m signal ↗improving (t=12.5s)
+🧭 AUTONOMOUS | FORWARD_TRACKING | ULTRASONIC: 200.0cm | BT: 3.6m (-70dBm TRACK↗) | Det: 32 | Runtime: 103s
+📡 BlueCharm TRACKING↗ #35:
+   RSSI: -58dBm (raw: -46) | Distance: ~2.7m | Avg: -68dBm
+🎯 SWITCHING TO APPROACH: 2.7m
+🧭 AUTONOMOUS | APPROACHING | ULTRASONIC: 200.0cm | BT: 2.7m (-58dBm TRACK↗) | Det: 35 | Runtime: 106s
+🧭 AUTONOMOUS | APPROACHING | ULTRASONIC: 200.0cm | BT: 2.7m (-49dBm TRACK↗) | Det: 38 | Runtime: 109s
+📡 BlueCharm TRACKING↗ #40:
+   RSSI: -45dBm (raw: -42) | Distance: ~2.7m | Avg: -55dBm
+🧭 AUTONOMOUS | APPROACHING | ULTRASONIC: 200.0cm | BT: 2.7m (-45dBm TRACK↗) | Det: 40 | Runtime: 112s
+🧭 AUTONOMOUS | APPROACHING | ULTRASONIC: 200.0cm | BT: 2.7m (-43dBm TRACK↗) | Det: 42 | Runtime: 115s
+📡 BlueCharm TRACKING↗ #45:
+   RSSI: -43dBm (raw: -43) | Distance: ~2.7m | Avg: -44dBm
+🧭 AUTONOMOUS | APPROACHING | ULTRASONIC: 200.0cm | BT: 2.7m (-43dBm TRACK↗) | Det: 45 | Runtime: 118s
+🧭 AUTONOMOUS | APPROACHING | ULTRASONIC: 200.0cm | BT: 2.7m (-43dBm TRACK↗) | Det: 48 | Runtime: 121s
+📊 === Enhanced Navigator V7 Statistics ===
+   Runtime: 121 seconds
+   Distance measurements: 707
+   Obstacle avoidances: 2
+   Emergency stops: 0
+   Stuck recoveries: 0
+🎯 === Enhanced Navigation Statistics ===
+   Smart turns: 2
+   Tracking activations: 1
+   Approach activations: 0
+   Hold activations: 0
+   Target reaches: 0
+   Signal improvements: 0
+   Course corrections: 3
+   Turn tests: 7
+   Long tracking phases: 0
+📡 === Bluetooth Ranging Statistics ===
+   Total detections: 48
+   Callback events: 48
+   Detection rate: 0.40/sec
+   Callback rate: 0.40/sec
+   Strongest RSSI: -41.37520599523454 dBm
+   Signal timeouts: 0
+   Average RSSI: -43.1 dBm
+   Average smoothed distance: 2.7m
+   Navigation rate: 5.9 measurements/sec
+📡 BlueCharm TRACKING↗ #50:
+   RSSI: -43dBm (raw: -44) | Distance: ~2.7m | Avg: -43dBm
+🧭 AUTONOMOUS | APPROACHING | ULTRASONIC: 200.0cm | BT: 2.7m (-43dBm TRACK↗) | Det: 51 | Runtime: 124s
+🧭 AUTONOMOUS | APPROACHING | ULTRASONIC: 200.0cm | BT: 2.7m (-42dBm TRACK↗) | Det: 53 | Runtime: 127s
+📡 BlueCharm TRACKING↗ #55:
+   RSSI: -42dBm (raw: -42) | Distance: ~2.7m | Avg: -43dBm
+🧭 AUTONOMOUS | APPROACHING | ULTRASONIC: 200.0cm | BT: 2.7m (-42dBm TRACK↗) | Det: 55 | Runtime: 130s
+📡 Stopping BLE scanner...
+
+Attempting to stop program...
+
+^C (Interrupt signal sent)
+^C
+🛑 Shutdown requested by user...
+🛑 Stopping Enhanced Navigator V7...
+SIGTERM sent to Python processes
+No Python processes running
+

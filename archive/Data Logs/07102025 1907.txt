@@ -1,0 +1,374 @@
+(venv) jay@RoboPi:~/rover_project $ nano bluetooth_seeking_navigator_v2.py
+(venv) jay@RoboPi:~/rover_project $ python3 bluetooth_seeking_navigator_v2.py
+✅ Bluetooth (bleak) library available
+================================================================================
+🤖 BLUECHARM SEEKING NAVIGATOR V2
+================================================================================
+
+ACTIVE SEEKING FEATURES:
+  ✅ Ultrasonic obstacle detection and avoidance
+  ✅ Enhanced stuck recovery system
+  ✅ Arduino gatekeeper integration
+  ✅ Real-time Bluetooth beacon ranging (0.8m - 11.2m)
+  ✅ Working RSSI values (-57dBm to -80dBm)
+  ✅ Thread-safe callback-based BLE scanning
+  🎯 NEW: Active BlueCharm seeking behavior
+  🎯 NEW: 0.5m target approach distance
+  🎯 NEW: Gentle final approach mode
+  🎯 NEW: Search patterns when signal lost
+  ✅ Safety-first design with ultrasonic priority
+  ✅ Clean shutdown with no task warnings
+
+SEEKING BEHAVIOR:
+  🔍 SEARCHING: Look for BlueCharm signal
+  🚶 SEEKING: Move toward detected signal (>1.0m)
+  🎯 APPROACHING: Gentle approach (<1.0m)
+  🏁 TARGET HOLD: Maintain 0.5m distance
+  🛡️ SAFETY: Ultrasonic overrides all Bluetooth behavior
+
+🚀 BlueCharm Seeking Navigator V2 Initialized
+📊 Navigation: Danger=30.0cm | Caution=60.0cm | Safe=100.0cm
+📡 Bluetooth: Enabled | Target: DD:34:02:09:CA:1E
+🎯 Seeking: Target distance 0.5m | Influence 30%
+🛡️ Safety: Ultrasonic navigation takes absolute priority
+✅ Arduino connected on /dev/ttyUSB0
+📡 Starting BlueCharm seeking thread...
+📡 BlueCharm seeking scanner started
+🚀 Seeking Navigator V2 started
+📡 BlueCharm seeking scanner ready
+🎯 Ready for autonomous BlueCharm seeking and approach
+✅ Seeking Navigator V2 ready - switch to autonomous mode
+📡 BlueCharm seeking will activate automatically
+🎯 Rover will seek and approach to 0.5m distance
+Press Ctrl+C to stop...
+🔄 SEARCH PATTERN: Turn #1
+📡 Starting BLE seeking scanner...
+📡 BLE seeking scanner active
+🔍 SEEKING MODE: BlueCharm at 1.8m - active seeking activated
+📡 SIGNAL DETECTED: Switching to seeking mode (1.8m)
+📡 Stopping BLE seeking scanner...
+🔍 SEEKING: Moving toward 1.8m signal
+🧭 AUTONOMOUS | SEEKING | US: 200.0cm | BT: 1.8m (-64dBm SEEK) | Det: 1 | Runtime: 4s
+📡 Starting BLE seeking scanner...
+📡 BLE seeking scanner active
+🔍 SEEKING: Moving toward 1.8m signal
+🧭 AUTONOMOUS | SEEKING | US: 200.0cm | BT: 1.8m (-64dBm SEEK) | Det: 1 | Runtime: 7s
+🎯 APPROACH MODE: BlueCharm at 0.6m - gentle approach activated
+🏁 TARGET REACHED: 0.6m from BlueCharm (reach #1)
+🎯 SWITCHING TO APPROACH: 0.6m
+🐌 GENTLE APPROACH: 0.6m at 25 speed
+📡 Stopping BLE seeking scanner...
+📡 Starting BLE seeking scanner...
+📡 BLE seeking scanner active
+🧭 AUTONOMOUS | APPROACHING | US: 200.0cm | BT: 0.4m (-52dBm APP) | Det: 3 | Runtime: 10s
+📡 Stopping BLE seeking scanner...
+🧭 AUTONOMOUS | APPROACHING | US: 200.0cm | BT: 0.7m (-56dBm APP) | Det: 4 | Runtime: 13s
+📡 Starting BLE seeking scanner...
+📡 BLE seeking scanner active
+🧭 AUTONOMOUS | APPROACHING | US: 200.0cm | BT: 0.7m (-56dBm APP) | Det: 4 | Runtime: 16s
+🧭 AUTONOMOUS | APPROACHING | US: 200.0cm | BT: 0.7m (-56dBm APP) | Det: 4 | Runtime: 19s
+📡 BlueCharm APPROACH #5:
+   RSSI: -64dBm | Distance: ~1.8m | Avg: -58dBm
+🧭 AUTONOMOUS | APPROACHING | US: 200.0cm | BT: 2.2m (-66dBm APP) | Det: 6 | Runtime: 22s
+📡 Stopping BLE seeking scanner...
+📡 Starting BLE seeking scanner...
+📡 BLE seeking scanner active
+🧭 AUTONOMOUS | APPROACHING | US: 200.0cm | BT: 2.2m (-66dBm APP) | Det: 6 | Runtime: 25s
+🧭 AUTONOMOUS | APPROACHING | US: 200.0cm | BT: 2.2m (-66dBm APP) | Det: 6 | Runtime: 28s
+🧭 AUTONOMOUS | APPROACHING | US: 200.0cm | BT: 4.5m (-72dBm APP) | Det: 9 | Runtime: 31s
+📊 === Seeking Navigator V2 Statistics ===
+   Runtime: 31 seconds
+   Distance measurements: 198
+   Obstacle avoidances: 0
+   Exploration turns: 0
+   Emergency stops: 0
+   Stuck recoveries: 0
+🎯 === BlueCharm Seeking Statistics ===
+   Seeking activations: 1
+   Approach activations: 1
+   Target reaches: 2
+   Search patterns: 1
+📡 === Bluetooth Ranging Statistics ===
+   Total detections: 9
+   Callback events: 9
+   Detection rate: 0.29/sec
+   Callback rate: 0.29/sec
+   Strongest RSSI: -52 dBm
+   Signal timeouts: 0
+   Average RSSI: -61.8 dBm
+   Navigation rate: 6.5 measurements/sec
+📡 BlueCharm APPROACH #10:
+   RSSI: -80dBm | Distance: ~11.2m | Avg: -64dBm
+🚨 EMERGENCY! Obstacle at 22.4cm - overriding seeking
+🔄 STUCK: Backing up (count: 1)
+🧭 AUTONOMOUS | BACKING | US: 13.5cm | BT: 11.2m (-80dBm APP) | Det: 10 | Runtime: 34s
+   Stuck counter: 1/5
+🔄 RETRY: Switching to right turn (stuck: 1)
+✅ CLEAR: Path ahead at 200.0cm - resuming approaching
+🧭 AUTONOMOUS | APPROACHING | US: 200.0cm | BT: 2.8m (-68dBm APP) | Det: 11 | Runtime: 37s
+   Stuck counter: 1/5
+🧭 AUTONOMOUS | APPROACHING | US: 200.0cm | BT: 2.8m (-68dBm APP) | Det: 11 | Runtime: 40s
+   Stuck counter: 1/5
+🧭 AUTONOMOUS | APPROACHING | US: 200.0cm | BT: 5.6m (-74dBm APP) | Det: 12 | Runtime: 43s
+🧭 AUTONOMOUS | APPROACHING | US: 200.0cm | BT: 4.5m (-72dBm APP) | Det: 13 | Runtime: 46s
+🧭 AUTONOMOUS | APPROACHING | US: 200.0cm | BT: 4.5m (-72dBm APP) | Det: 13 | Runtime: 49s
+📡 BlueCharm APPROACH #15:
+   RSSI: -62dBm | Distance: ~1.4m | Avg: -69dBm
+🧭 AUTONOMOUS | APPROACHING | US: 200.0cm | BT: 1.4m (-62dBm APP) | Det: 15 | Runtime: 52s
+🚨 EMERGENCY! Obstacle at 13.5cm - overriding seeking
+🔄 STUCK: Backing up (count: 1)
+🧭 AUTONOMOUS | BACKING | US: 200.0cm | BT: 2.2m (-66dBm APP) | Det: 16 | Runtime: 55s
+   Stuck counter: 1/5
+🔄 RETRY: Switching to left turn (stuck: 1)
+✅ CLEAR: Path ahead at 200.0cm - resuming approaching
+🧭 AUTONOMOUS | APPROACHING | US: 200.0cm | BT: 8.9m (-78dBm APP) | Det: 17 | Runtime: 58s
+   Stuck counter: 1/5
+🚨 EMERGENCY! Obstacle at 26.0cm - overriding seeking
+✅ CLEAR: Path ahead at 200.0cm - resuming approaching
+🧭 AUTONOMOUS | APPROACHING | US: 200.0cm | BT: 8.9m (-78dBm APP) | Det: 17 | Runtime: 61s
+📊 === Seeking Navigator V2 Statistics ===
+   Runtime: 61 seconds
+   Distance measurements: 399
+   Obstacle avoidances: 3
+   Exploration turns: 0
+   Emergency stops: 0
+   Stuck recoveries: 0
+🎯 === BlueCharm Seeking Statistics ===
+   Seeking activations: 1
+   Approach activations: 1
+   Target reaches: 2
+   Search patterns: 1
+📡 === Bluetooth Ranging Statistics ===
+   Total detections: 17
+   Callback events: 17
+   Detection rate: 0.28/sec
+   Callback rate: 0.28/sec
+   Strongest RSSI: -52 dBm
+   Signal timeouts: 0
+   Average RSSI: -70.2 dBm
+   Navigation rate: 6.6 measurements/sec
+🧭 AUTONOMOUS | APPROACHING | US: 200.0cm | BT: 8.9m (-78dBm APP) | Det: 17 | Runtime: 64s
+📡 Signal timeout (9.0s) - ending seeking modes
+⚠️ Unknown navigation state - defaulting to search
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 4.5m (-72dBm PASS) | Det: 19 | Runtime: 67s
+🔄 SEARCH PATTERN: Turn #6
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 4.5m (-72dBm PASS) | Det: 19 | Runtime: 70s
+📡 BlueCharm PASSIVE #20:
+   RSSI: -82dBm | Distance: ~14.1m | Avg: -72dBm
+🔍 SEEKING MODE: BlueCharm at 2.8m - active seeking activated
+📡 SIGNAL DETECTED: Switching to seeking mode (2.8m)
+🔍 SEEKING: Moving toward 2.8m signal
+🧭 AUTONOMOUS | SEEKING | US: 200.0cm | BT: 2.8m (-68dBm SEEK) | Det: 21 | Runtime: 73s
+🚨 EMERGENCY! Obstacle at 9.6cm - overriding seeking
+🔄 STUCK: Backing up (count: 1)
+🧭 AUTONOMOUS | BACKING | US: 10.7cm | BT: 2.8m (-68dBm SEEK) | Det: 21 | Runtime: 76s
+   Stuck counter: 1/5
+🔄 RETRY: Switching to left turn (stuck: 1)
+✅ CLEAR: Path ahead at 200.0cm - resuming seeking
+🧭 AUTONOMOUS | SEEKING | US: 200.0cm | BT: 2.8m (-68dBm SEEK) | Det: 21 | Runtime: 79s
+   Stuck counter: 1/5
+🔍 SEEKING: Moving toward 2.8m signal
+📡 Signal timeout (8.6s) - ending seeking modes
+⚠️ Unknown navigation state - defaulting to search
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: No signal | Det: 21 | Runtime: 82s
+📡 Stopping BLE seeking scanner...
+🔄 SEARCH PATTERN: Turn #10
+📡 Starting BLE seeking scanner...
+📡 BLE seeking scanner active
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 5.6m (-74dBm PASS) | Det: 22 | Runtime: 88s
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 3.5m (-70dBm PASS) | Det: 24 | Runtime: 91s
+📊 === Seeking Navigator V2 Statistics ===
+   Runtime: 91 seconds
+   Distance measurements: 591
+   Obstacle avoidances: 4
+   Exploration turns: 0
+   Emergency stops: 1
+   Stuck recoveries: 0
+🎯 === BlueCharm Seeking Statistics ===
+   Seeking activations: 2
+   Approach activations: 1
+   Target reaches: 2
+   Search patterns: 14
+📡 === Bluetooth Ranging Statistics ===
+   Total detections: 24
+   Callback events: 24
+   Detection rate: 0.26/sec
+   Callback rate: 0.26/sec
+   Strongest RSSI: -52 dBm
+   Signal timeouts: 2
+   Average RSSI: -72.8 dBm
+   Navigation rate: 6.5 measurements/sec
+🔄 SEARCH PATTERN: Turn #15
+🔍 SEEKING MODE: BlueCharm at 1.8m - active seeking activated
+📡 BlueCharm SEEKING #25:
+   RSSI: -64dBm | Distance: ~1.8m | Avg: -73dBm
+📡 SIGNAL DETECTED: Switching to seeking mode (1.8m)
+🔍 SEEKING: Moving toward 1.8m signal
+🧭 AUTONOMOUS | SEEKING | US: 200.0cm | BT: 2.2m (-66dBm SEEK) | Det: 27 | Runtime: 94s
+🚨 EMERGENCY! Obstacle at 9.2cm - overriding seeking
+🔄 STUCK: Backing up (count: 1)
+🧭 AUTONOMOUS | BACKING | US: 9.2cm | BT: 3.5m (-70dBm SEEK) | Det: 28 | Runtime: 97s
+   Stuck counter: 1/5
+🔄 RETRY: Switching to right turn (stuck: 1)
+🧭 AUTONOMOUS | AVOIDING | US: 9.3cm | BT: 5.6m (-74dBm SEEK) | Det: 29 | Runtime: 100s
+   Stuck counter: 1/5
+🔄 STUCK: Backing up (count: 1)
+📡 BlueCharm SEEKING #30:
+   RSSI: -74dBm | Distance: ~5.6m | Avg: -70dBm
+🔄 RETRY: Switching to left turn (stuck: 1)
+🧭 AUTONOMOUS | AVOIDING | US: 9.3cm | BT: 5.6m (-74dBm SEEK) | Det: 30 | Runtime: 103s
+   Stuck counter: 1/5
+📡 Stopping BLE seeking scanner...
+^X^C
+🛑 Shutdown requested by user...
+🛑 Stopping Seeking Navigator V2...
+📊 Final runtime: 116.4 seconds
+📊 === Seeking Navigator V2 Statistics ===
+   Runtime: 116 seconds
+   Distance measurements: 737
+   Obstacle avoidances: 5
+   Exploration turns: 0
+   Emergency stops: 50
+   Stuck recoveries: 0
+🎯 === BlueCharm Seeking Statistics ===
+   Seeking activations: 3
+   Approach activations: 1
+   Target reaches: 2
+   Search patterns: 15
+📡 === Bluetooth Ranging Statistics ===
+   Total detections: 30
+   Callback events: 30
+   Detection rate: 0.26/sec
+   Callback rate: 0.26/sec
+   Strongest RSSI: -52 dBm
+   Signal timeouts: 2
+   Average RSSI: -70.4 dBm
+   Navigation rate: 6.3 measurements/sec
+👋 Seeking Navigator V2 shutdown complete
+(venv) jay@RoboPi:~/rover_project $ python3 bluetooth_seeking_navigator_v2.py
+✅ Bluetooth (bleak) library available
+================================================================================
+🤖 BLUECHARM SEEKING NAVIGATOR V2
+================================================================================
+
+ACTIVE SEEKING FEATURES:
+  ✅ Ultrasonic obstacle detection and avoidance
+  ✅ Enhanced stuck recovery system
+  ✅ Arduino gatekeeper integration
+  ✅ Real-time Bluetooth beacon ranging (0.8m - 11.2m)
+  ✅ Working RSSI values (-57dBm to -80dBm)
+  ✅ Thread-safe callback-based BLE scanning
+  🎯 NEW: Active BlueCharm seeking behavior
+  🎯 NEW: 0.5m target approach distance
+  🎯 NEW: Gentle final approach mode
+  🎯 NEW: Search patterns when signal lost
+  ✅ Safety-first design with ultrasonic priority
+  ✅ Clean shutdown with no task warnings
+
+SEEKING BEHAVIOR:
+  🔍 SEARCHING: Look for BlueCharm signal
+  🚶 SEEKING: Move toward detected signal (>1.0m)
+  🎯 APPROACHING: Gentle approach (<1.0m)
+  🏁 TARGET HOLD: Maintain 0.5m distance
+  🛡️ SAFETY: Ultrasonic overrides all Bluetooth behavior
+
+🚀 BlueCharm Seeking Navigator V2 Initialized
+📊 Navigation: Danger=30.0cm | Caution=60.0cm | Safe=100.0cm
+📡 Bluetooth: Enabled | Target: DD:34:02:09:CA:1E
+🎯 Seeking: Target distance 0.5m | Influence 30%
+🛡️ Safety: Ultrasonic navigation takes absolute priority
+✅ Arduino connected on /dev/ttyUSB0
+📡 Starting BlueCharm seeking thread...
+📡 BlueCharm seeking scanner started
+🚀 Seeking Navigator V2 started
+📡 BlueCharm seeking scanner ready
+🎯 Ready for autonomous BlueCharm seeking and approach
+✅ Seeking Navigator V2 ready - switch to autonomous mode
+📡 BlueCharm seeking will activate automatically
+🎯 Rover will seek and approach to 0.5m distance
+Press Ctrl+C to stop...
+🔄 SEARCH PATTERN: Turn #1
+📡 Starting BLE seeking scanner...
+📡 BLE seeking scanner active
+🔍 SEEKING MODE: BlueCharm at 2.8m - active seeking activated
+📡 Stopping BLE seeking scanner...
+📡 SIGNAL DETECTED: Switching to seeking mode (2.8m)
+🧭 AUTONOMOUS | SEEKING | US: 200.0cm | BT: 2.8m (-68dBm SEEK) | Det: 1 | Runtime: 5s
+🔍 SEEKING: Moving toward 2.8m signal
+📡 Starting BLE seeking scanner...
+📡 BLE seeking scanner active
+🧭 AUTONOMOUS | SEEKING | US: 200.0cm | BT: 4.5m (-72dBm SEEK) | Det: 2 | Runtime: 8s
+📡 Stopping BLE seeking scanner...
+🔍 SEEKING: Moving toward 4.5m signal
+🔍 SEEKING: Moving toward 4.5m signal
+📡 Starting BLE seeking scanner...
+📡 BLE seeking scanner active
+🧭 AUTONOMOUS | SEEKING | US: 200.0cm | BT: 2.0m (-65dBm SEEK) | Det: 3 | Runtime: 11s
+📡 Stopping BLE seeking scanner...
+📡 Starting BLE seeking scanner...
+📡 BLE seeking scanner active
+🔍 SEEKING: Moving toward 2.5m signal
+🔍 SEEKING: Moving toward 2.5m signal
+📡 BlueCharm SEEKING #5:
+   RSSI: -68dBm | Distance: ~2.8m | Avg: -68dBm
+🧭 AUTONOMOUS | SEEKING | US: 200.0cm | BT: 2.8m (-68dBm SEEK) | Det: 5 | Runtime: 14s
+🚨 EMERGENCY! Obstacle at 21.4cm - overriding seeking
+🔄 STUCK: Backing up (count: 1)
+📡 Stopping BLE seeking scanner...
+📡 Starting BLE seeking scanner...
+📡 BLE seeking scanner active
+🔄 RETRY: Switching to right turn (stuck: 1)
+🧭 AUTONOMOUS | AVOIDING | US: 200.0cm | BT: 4.0m (-71dBm SEEK) | Det: 7 | Runtime: 17s
+   Stuck counter: 1/5
+✅ CLEAR: Path ahead at 200.0cm - resuming seeking
+🔍 SEEKING: Moving toward 2.5m signal
+🧭 AUTONOMOUS | SEEKING | US: 200.0cm | BT: 2.5m (-67dBm SEEK) | Det: 9 | Runtime: 20s
+   Stuck counter: 1/5
+📡 BlueCharm SEEKING #10:
+   RSSI: -67dBm | Distance: ~2.5m | Avg: -69dBm
+🔍 SEEKING: Moving toward 3.5m signal
+🔍 SEEKING: Moving toward 3.5m signal
+🧭 AUTONOMOUS | SEEKING | US: 200.0cm | BT: 3.5m (-70dBm SEEK) | Det: 11 | Runtime: 23s
+📡 Stopping BLE seeking scanner...
+🧭 AUTONOMOUS | SEEKING | US: 200.0cm | BT: 3.2m (-69dBm SEEK) | Det: 14 | Runtime: 26s
+🔍 SEEKING: Moving toward 3.2m signal
+📡 Starting BLE seeking scanner...
+📡 BLE seeking scanner active
+🔍 SEEKING: Moving toward 3.2m signal
+🧭 AUTONOMOUS | SEEKING | US: 200.0cm | BT: 3.2m (-69dBm SEEK) | Det: 14 | Runtime: 29s
+📡 BlueCharm SEEKING #15:
+   RSSI: -70dBm | Distance: ~3.5m | Avg: -69dBm
+🔍 SEEKING: Moving toward 3.5m signal
+🔍 SEEKING: Moving toward 3.5m signal
+🧭 AUTONOMOUS | SEEKING | US: 200.0cm | BT: 7.1m (-76dBm SEEK) | Det: 17 | Runtime: 32s
+🔍 SEEKING: Moving toward 5.0m signal
+📡 BlueCharm SEEKING #20:
+   RSSI: -82dBm | Distance: ~14.1m | Avg: -72dBm
+📡 Stopping BLE seeking scanner...
+^C
+🛑 Shutdown requested by user...
+🛑 Stopping Seeking Navigator V2...
+📊 Final runtime: 69.0 seconds
+📊 === Seeking Navigator V2 Statistics ===
+   Runtime: 69 seconds
+   Distance measurements: 381
+   Obstacle avoidances: 1
+   Exploration turns: 0
+   Emergency stops: 0
+   Stuck recoveries: 0
+🎯 === BlueCharm Seeking Statistics ===
+   Seeking activations: 1
+   Approach activations: 0
+   Target reaches: 0
+   Search patterns: 1
+📡 === Bluetooth Ranging Statistics ===
+   Total detections: 20
+   Callback events: 20
+   Detection rate: 0.29/sec
+   Callback rate: 0.29/sec
+   Strongest RSSI: -65 dBm
+   Signal timeouts: 0
+   Average RSSI: -72.1 dBm
+   Navigation rate: 5.5 measurements/sec
+👋 Seeking Navigator V2 shutdown complete
+(venv) jay@RoboPi:~/rover_project $

@@ -1,0 +1,35 @@
+{
+    "mobile_rtk_hardware_config": {
+        "updated": "2025-09-14",
+        "hardware_changes": {
+            "gps_device": {
+                "old": "/dev/ttyUSB0",
+                "new": "/dev/ttyACM0", 
+                "model": "u-blox GNSS receiver",
+                "usb_id": "1546:01a9",
+                "baud_rate": 38400,
+                "protocol": "NMEA/UBX",
+                "status": "✅ Working - 12+ satellites, RTK capable"
+            },
+            "sik_antenna": {
+                "device": "/dev/ttyUSB0",
+                "model": "Silicon Labs CP210x UART Bridge", 
+                "usb_id": "10c4:ea60",
+                "baud_rate": 57600,
+                "protocol": "MAVLink",
+                "status": "✅ Working - Communication established"
+            }
+        },
+        "software_updates_needed": [
+            "Update GPS device path from /dev/ttyUSB0 to /dev/ttyACM0",
+            "Test RTK correction reception on new GPS",
+            "Verify Mission Planner connection via SiK antenna",
+            "Update mobile RTK station scripts"
+        ],
+        "performance_improvements": [
+            "Better GPS receiver with multi-constellation support",
+            "Improved SiK antenna for better range/reliability",
+            "Cleaner device separation (GPS on ACM0, SiK on USB0)"
+        ]
+    }
+}

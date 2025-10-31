@@ -1,0 +1,172 @@
+===============================================================================
+ULTRASONIC SENSOR WIRING GUIDE - HC-SR04
+===============================================================================
+
+ARDUINO ENHANCED VERSION (rover_arduino_enhanced)
+================================================
+
+HC-SR04 ULTRASONIC SENSOR CONNECTIONS:
+=====================================
+
+HC-SR04 Pin → Arduino Nano Pin
+VCC → 5V (Pin with 5V label)
+GND → GND (Any ground pin)
+Trig → D8 (Digital Pin 8)
+Echo → D12 (Digital Pin 12)
+
+UPDATED ARDUINO NANO PINOUT:
+===========================
+
+          USB
+      ┌─────────┐
+   D1 │○ TX    │ VIN
+   D0 │○ RX    │ GND ← HC-SR04 GND
+  RST │○       │ RST
+  GND │○       │ 5V ← HC-SR04 VCC
+   D2 │○ CH1   │ A7
+   D3 │○ CH2   │ A6
+   D4 │○ CH9   │ A5
+   D5 │○ L_IN1 │ A4
+   D6 │○ L_IN2 │ A3
+   D7 │○ R_IN3 │ A2
+   D8 │○ US_TR │ A1 ← Available
+   D9 │○ L_ENA │ A0 ← Available
+  D10 │○ R_IN4 │ REF
+  D11 │○ R_ENA │ 3V3
+  D12 │○ US_EC │ D13 ← LED
+      └─────────┘
+
+Legend:
+- US_TR = Ultrasonic Trigger (D8)
+- US_EC = Ultrasonic Echo (D12)
+
+PHYSICAL MOUNTING:
+=================
+
+Recommended Sensor Placement:
+- Mount HC-SR04 on front of rover
+- Face forward for obstacle detection
+- Height: 10-20cm above ground
+- Secure with bracket or double-sided tape
+- Ensure clear line of sight (no obstructions)
+
+Wire Management:
+- Use 4-pin JST connector or individual wires
+- Route wires to avoid motor interference
+- Secure wires to prevent disconnection
+- Keep wires away from moving parts
+
+COLLISION AVOIDANCE LOGIC:
+=========================
+
+Distance Zones:
+- COLLISION ZONE: 0-15cm → STOP (red zone)
+- WARNING ZONE: 15-30cm → SLOW DOWN (yellow zone)  
+- SAFE ZONE: 30cm+ → NORMAL SPEED (green zone)
+
+Smart Behavior:
+✅ Forward movement stopped at 15cm
+✅ Reverse movement always allowed
+✅ Turning allowed even when object detected
+✅ Gradual speed reduction in warning zone
+✅ Minimum 30% speed maintained for steering
+
+Status Indicators:
+- LED FAST BLINK: Collision detected
+- LED SOLID: Normal operation
+- LED SLOW BLINK: RC signal lost
+
+TESTING PROCEDURES:
+==================
+
+1. WIRING CHECK:
+   □ Verify 5V power to VCC
+   □ Confirm ground connection
+   □ Check trigger wire to D8
+   □ Check echo wire to D12
+
+2. SENSOR TEST:
+   □ Upload enhanced Arduino code
+   □ Open serial monitor (115200 baud)
+   □ Look for sensor initialization message
+   □ Check for distance readings every 500ms
+
+3. COLLISION AVOIDANCE TEST:
+   □ Place object 20cm in front of sensor
+   □ Try forward movement → should slow down
+   □ Move object to 10cm → should stop
+   □ Try reverse movement → should work normally
+   □ Try turning → should work normally
+
+4. DASHBOARD INTEGRATION:
+   □ Run rover_dashboard.py
+   □ Check ultrasonic display updates
+   □ Verify distance readings match physical measurement
+   □ Confirm collision detection status
+
+TROUBLESHOOTING:
+===============
+
+Problem: No distance readings
+- Check 5V power connection
+- Verify trigger/echo wire connections
+- Ensure sensor is not obstructed
+- Check serial monitor for error messages
+
+Problem: Incorrect distance readings
+- Calibrate with known distances
+- Check for electromagnetic interference
+- Ensure sensor is mounted securely
+- Verify wiring connections
+
+Problem: Collision avoidance not working
+- Test with serial monitor output
+- Check distance thresholds in code
+- Verify sensor readings are accurate
+- Test both RC and autonomous modes
+
+Problem: Robot stops unexpectedly
+- Check for false collision detection
+- Verify sensor mounting angle
+- Look for reflective surfaces causing errors
+- Adjust COLLISION_DISTANCE if needed
+
+EXPANSION POSSIBILITIES:
+=======================
+
+Future Enhancements:
+- Add rear ultrasonic sensor (A0/A1 pins available)
+- Add side sensors for mapping
+- Implement object avoidance algorithms
+- Add tilt compensation for angled surfaces
+
+Available Pins for Additional Sensors:
+- A0, A1: Rear ultrasonic (trig/echo)
+- A2, A3: Side ultrasonics or I2C sensors
+- A4, A5: I2C devices (gyro, compass, etc.)
+- A6: Battery voltage monitoring
+- A7: Additional analog sensor
+
+SPECIFICATIONS:
+==============
+
+HC-SR04 Specifications:
+- Operating Voltage: 5V DC
+- Operating Current: 15mA
+- Frequency: 40Hz
+- Range: 2cm - 4m
+- Accuracy: 3mm
+- Trigger Input: 10μs TTL pulse
+- Echo Output: 150μs - 25ms TTL
+
+Performance Settings:
+- Reading Interval: 100ms (10Hz)
+- Reporting Interval: 500ms (2Hz)
+- Timeout: 30ms (max range ~5m)
+- Stop Distance: 15cm
+- Warning Distance: 30cm
+
+===============================================================================
+SAFETY: Always test collision avoidance in a safe environment before
+operating the rover autonomously!
+===============================================================================

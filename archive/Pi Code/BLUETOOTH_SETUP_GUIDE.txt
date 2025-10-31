@@ -1,0 +1,278 @@
+===============================================================================
+BLUETOOTH NAVIGATION SETUP GUIDE - ROVER PROJECT
+===============================================================================
+
+OVERVIEW:
+This guide covers setting up dual USB Bluetooth dongles for RSSI-based navigation
+to track a BlueCharm BLE beacon and maintain a target distance of 2.5m ± 0.75m.
+
+HARDWARE REQUIREMENTS:
+- 2x TP-Link UB500 Bluetooth 5.0 USB dongles
+- BlueCharm BLE beacon (or compatible BLE device)
+- Raspberry Pi 4 with 2+ USB ports
+
+BLUETOOTH ADAPTER SETUP:
+
+1. INSTALL BLUETOOTH PACKAGES:
+   sudo apt update
+   sudo apt install bluetooth bluez libbluetooth-dev
+   sudo apt install python3-dev python3-pip
+
+2. PLUGIN USB DONGLES:
+   - Connect both TP-Link UB500 dongles to Pi USB ports
+   - Verify detection: lsusb | grep Bluetooth
+   - Should show 2x "Cambridge Silicon Radio" devices
+
+3. CONFIGURE BLUETOOTH ADAPTERS:
+   Check available adapters: hciconfig
+   Should show:
+   - hci0: First USB dongle (left sensor)
+   - hci1: Second USB dongle (right sensor)
+   - hci2: Built-in Pi Bluetooth (optional)
+
+4. ENABLE ADAPTERS:
+   sudo hciconfig hci0 up
+   sudo hciconfig hci1 up
+   
+   Verify status: hciconfig
+   Both should show "UP RUNNING"
+
+5. PYTHON DEPENDENCIES:
+   pip install bleak==0.21.1
+   pip install pybluez==0.23
+
+BEACON CONFIGURATION:
+
+1. BLUECHARM BEACON SETUP:
+   - Power on your BlueCharm beacon
+   - Note the MAC address (usually printed on device)
+   - Ensure beacon is in advertising mode
+   - Set appropriate advertising interval (100-500ms recommended)
+
+2. FIND BEACON MAC ADDRESS:
+   sudo hcitool lescan
+   or
+   bluetoothctl
+   > scan on
+   > devices
+   
+   Look for your beacon in the list
+
+3. TEST BEACON DETECTION:
+   python3 -c "
+   import asyncio
+   from bleak import BleakScanner
+   
+   async def scan():
+       devices = await BleakScanner.discover()
+       for device in devices:
+           print(f'{device.address}: {device.name} (RSSI: {device.rssi})')
+   
+   asyncio.run(scan())
+   "
+
+RSSI CALIBRATION:
+
+1. DISTANCE CALIBRATION:
+   The system uses RSSI to estimate distance. Default calibration:
+   - Reference RSSI: -59 dBm at 1 meter
+   - Path loss exponent: 2.0 (free space)
+   
+   For better accuracy, calibrate with your specific beacon:
+   
+   Measure RSSI at known distances:
+   - 1m: Record RSSI value
+   - 2m: Record RSSI value  
+   - 3m: Record RSSI value
+   - 5m: Record RSSI value
+
+2. UPDATE CALIBRATION VALUES:
+   Edit bluetooth_navigator.py:
+   - self.rssi_reference = -XX  # Your 1m RSSI reading
+   - self.path_loss_exponent = X.X  # Calculated from measurements
+
+NAVIGATION PARAMETERS:
+
+Target Distance: 2.5 meters
+Tolerance: ±0.75 meters (1.75m - 3.25m acceptable range)
+
+Configurable Parameters in bluetooth_navigator.py:
+- target_distance: 2.5 (meters)
+- distance_tolerance: 0.75 (meters)
+- min_rssi_threshold: -85 (dBm, below this = signal lost)
+- signal_timeout: 3.0 (seconds before signal considered lost)
+- rssi_difference_threshold: 5 (dBm, minimum difference to turn)
+
+NAVIGATION BEHAVIORS:
+
+1. SEARCHING STATE:
+   - No beacon detected
+   - Slow rotation to find signal
+   - Forward speed: 0, Turn rate: 30
+
+2. APPROACHING STATE:
+   - Beacon detected beyond 3.25m
+   - Navigate toward beacon
+   - Speed varies with distance (20-60%)
+   - Steering based on RSSI difference
+
+3. MAINTAINING STATE:
+   - Beacon within target range (1.75m - 3.25m)
+   - Minimal movement, just face beacon
+   - Forward speed: 0, Turn only
+
+4. TOO CLOSE STATE:
+   - Beacon closer than 1.75m
+   - Slow backward movement
+   - Continue facing beacon
+
+5. SIGNAL LOST STATE:
+   - No beacon signal for >3 seconds
+   - Gentle stop over 10 control cycles
+   - Safety priority
+
+TESTING PROCEDURES:
+
+1. BASIC BLUETOOTH TEST:
+   sudo hciconfig hci0 up
+   sudo hciconfig hci1 up
+   sudo hcitool -i hci0 lescan &
+   sudo hcitool -i hci1 lescan &
+   
+   Should show beacon on both adapters
+
+2. RSSI COMPARISON TEST:
+   python3 -c "
+   import asyncio
+   from bluetooth_navigator import BluetoothNavigator
+   
+   async def test():
+       nav = BluetoothNavigator('AA:BB:CC:DD:EE:FF')  # Your beacon MAC
+       for i in range(10):
+           await nav.run_navigation_cycle()
+           status = nav.get_navigation_status()
+           print(f'Left: {status[\"left_rssi\"]}, Right: {status[\"right_rssi\"]}')
+           await asyncio.sleep(1)
+   
+   asyncio.run(test())
+   "
+
+3. DISTANCE ACCURACY TEST:
+   Place beacon at known distances, verify estimated distance accuracy
+
+4. NAVIGATION BEHAVIOR TEST:
+   python3 bluetooth_navigator.py
+   
+   Move beacon around, observe navigation commands
+
+RUNNING THE SYSTEM:
+
+1. STANDALONE BLUETOOTH NAVIGATION:
+   python3 bluetooth_navigator.py
+
+2. INTEGRATED ROVER SYSTEM:
+   python3 rover_controller_with_bluetooth.py
+
+3. CONFIGURATION:
+   Edit main() function to set your beacon MAC address:
+   beacon_mac = "AA:BB:CC:DD:EE:FF"  # Replace with your beacon MAC
+
+TROUBLESHOOTING:
+
+Problem: Adapters not detected
+Solution: 
+- Check USB connections
+- Try different USB ports
+- Verify dongles with lsusb
+- Install additional drivers if needed
+
+Problem: Permission denied
+Solution:
+- Add user to bluetooth group: sudo usermod -a -G bluetooth pi
+- Reboot system
+
+Problem: Weak/No signal
+Solution:
+- Check beacon battery
+- Verify beacon is advertising
+- Reduce distance for testing
+- Check for interference
+
+Problem: Inconsistent RSSI
+Solution:
+- Ensure stable power supply
+- Check for WiFi interference
+- Calibrate in actual operating environment
+- Increase averaging window
+
+Problem: Navigation errors
+Solution:
+- Verify beacon MAC address
+- Check adapter assignments (hci0/hci1)
+- Monitor log output for errors
+- Test individual components
+
+PERFORMANCE OPTIMIZATION:
+
+1. SCAN TIMING:
+   - Default: 0.5 second scans on each adapter
+   - Adjust for faster/slower response
+   - Balance between responsiveness and CPU usage
+
+2. SIGNAL PROCESSING:
+   - Median filtering reduces noise
+   - Configurable averaging window
+   - Adjust thresholds for environment
+
+3. MOVEMENT SMOOTHING:
+   - Command history averaging
+   - Gentle acceleration/deceleration
+   - Prevents jerky movements
+
+SAFETY FEATURES:
+
+1. SIGNAL LOSS HANDLING:
+   - Automatic gentle stop
+   - 10-step deceleration
+   - No sudden stops
+
+2. RANGE LIMITING:
+   - Maximum approach distance
+   - Minimum retreat distance
+   - Speed limits based on distance
+
+3. ERROR RECOVERY:
+   - Automatic restart on failures
+   - Graceful degradation
+   - Comprehensive logging
+
+BLUETOOTH ADAPTER ASSIGNMENTS:
+
+hci0 (First USB dongle):  Left side sensor
+hci1 (Second USB dongle): Right side sensor
+
+Physical positioning:
+- Mount dongles on left/right sides of rover
+- Ensure clear line of sight to beacon
+- Avoid metal interference
+- Separate by at least 20cm for best directional sensing
+
+EXPECTED PERFORMANCE:
+
+Navigation Update Rate: 10Hz
+Distance Accuracy: ±0.5m (with calibration)
+Response Time: <1 second
+Signal Range: ~10-15 meters (depends on beacon and environment)
+Angular Resolution: ~5-10 degrees
+
+NEXT STEPS:
+
+1. Test basic Bluetooth scanning
+2. Calibrate RSSI-to-distance conversion
+3. Test navigation behaviors
+4. Integrate with RC control system
+5. Fine-tune parameters for your environment
+
+===============================================================================
+For questions or issues, refer to project documentation or contact developer.
+===============================================================================

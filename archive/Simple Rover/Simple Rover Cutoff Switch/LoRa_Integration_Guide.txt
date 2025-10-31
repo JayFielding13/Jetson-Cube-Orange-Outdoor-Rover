@@ -1,0 +1,189 @@
+================================================================================
+        LoRa RECEIVER - RASPBERRY PI INTEGRATION GUIDE
+================================================================================
+
+OVERVIEW:
+The Heltec LoRa receiver board sends mode commands to the Raspberry Pi via
+Serial (USB). The Pi needs to listen for these commands and respond accordingly.
+
+================================================================================
+HARDWARE CONNECTION:
+================================================================================
+
+Heltec Receiver → Raspberry Pi:
+  - Connect via USB cable
+  - The Heltec will appear as a serial device on the Pi
+
+Serial Device Names (check which one appears):
+  - /dev/ttyUSB0  (most common)
+  - /dev/ttyACM0  (alternative)
+  - /dev/ttyUSB1  (if multiple USB serial devices)
+
+To find your device, run on Pi:
+  ls /dev/ttyUSB* /dev/ttyACM*
+
+================================================================================
+SERIAL CONFIGURATION:
+================================================================================
+
+Baud Rate:    115200
+Data Bits:    8
+Parity:       None
+Stop Bits:    1
+
+================================================================================
+DATA FORMATS RECEIVED:
+================================================================================
+
+The Heltec receiver sends TWO lines for each LoRa command received:
+
+FORMAT 1 - Simple Text:
+  MODE:STOP
+  MODE:AUTONOMOUS
+
+FORMAT 2 - JSON:
+  {"mode":"STOP","rssi":-45,"time":12345}
+  {"mode":"AUTONOMOUS","rssi":-58,"time":67890}
+
+FIELDS:
+  - mode: "STOP" or "AUTONOMOUS"
+  - rssi: Signal strength in dBm (e.g., -45 means -45 dBm)
+  - time: Milliseconds since receiver started
+
+================================================================================
+MODES:
+================================================================================
+
+STOP:
+  - Rover should stop all movement
+  - Disable autonomous navigation
+  - Safe/idle state
+
+AUTONOMOUS:
+  - Enable autonomous navigation
+  - Rover can move freely
+  - Execute navigation algorithms
+
+================================================================================
+PYTHON INTEGRATION EXAMPLE:
+================================================================================
+
+import serial
+
+# Open serial connection
+ser = serial.Serial('/dev/ttyUSB0', 115200, timeout=1)
+
+# Read loop
+while True:
+    if ser.in_waiting > 0:
+        line = ser.readline().decode('utf-8').strip()
+
+        # Parse simple format
+        if line.startswith('MODE:'):
+            mode = line.split(':')[1]
+
+            if mode == "STOP":
+                # Stop the rover
+                print("Stopping rover")
+                # your_stop_function()
+
+            elif mode == "AUTONOMOUS":
+                # Start autonomous mode
+                print("Starting autonomous mode")
+                # your_autonomous_function()
+
+================================================================================
+TESTING THE CONNECTION:
+================================================================================
+
+1. Connect Heltec receiver to Pi via USB
+2. Find the serial port:
+   ls /dev/ttyUSB* /dev/ttyACM*
+
+3. Use screen or minicom to view serial output:
+   screen /dev/ttyUSB0 115200
+   OR
+   minicom -D /dev/ttyUSB0 -b 115200
+
+4. Press button on transmitter - you should see:
+   MODE:STOP or MODE:AUTONOMOUS
+   {"mode":"...","rssi":...,"time":...}
+
+5. Press Ctrl+A then K to exit screen
+   OR press Ctrl+A then X to exit minicom
+
+================================================================================
+CHANNEL CONFIGURATION (SYNC WORDS):
+================================================================================
+
+To prevent interference with other rovers, each rover pair uses a SYNC WORD.
+
+In the Arduino code, look for:
+  #define SYNC_WORD   0x12
+
+TRANSMITTER and RECEIVER must have MATCHING sync words!
+
+Example configurations for multiple rovers:
+  Rover 1: SYNC_WORD 0x12
+  Rover 2: SYNC_WORD 0x34
+  Rover 3: SYNC_WORD 0x56
+  Rover 4: SYNC_WORD 0x78
+
+Only devices with matching sync words can communicate.
+
+================================================================================
+ARDUINO CODE LOCATIONS:
+================================================================================
+
+Transmitter (Remote Control):
+  Arduino Code/Heltec Code/LoRa_KillSwitch_Transmitter_Channel/
+
+Receiver (On Rover):
+  Arduino Code/Heltec Code/LoRa_KillSwitch_Receiver_Channel/
+
+================================================================================
+WIRING:
+================================================================================
+
+TRANSMITTER BOARD (Remote Control):
+  - Momentary Button:
+      One side → GPIO 21
+      Other side → GND
+  - Power: USB or LiPo battery
+
+RECEIVER BOARD (On Rover):
+  - USB cable → Raspberry Pi (for power and serial communication)
+  - Optional Status LED:
+      GPIO 21 → LED → Resistor (220Ω) → GND
+
+================================================================================
+TROUBLESHOOTING:
+================================================================================
+
+No serial device appearing:
+  - Check USB cable (try different cable)
+  - Run: dmesg | tail  (to see USB connection logs)
+  - Try different USB port on Pi
+
+Messages not received:
+  - Check SYNC_WORD matches on both transmitter and receiver
+  - Check frequency (915.0 MHz for US)
+  - Check antennas are connected
+  - Move transmitter closer for testing
+
+Garbled serial output:
+  - Verify baud rate is 115200 on both sides
+  - Check USB cable quality
+
+================================================================================
+NEXT STEPS:
+================================================================================
+
+1. Upload transmitter code to remote Heltec board
+2. Upload receiver code to rover Heltec board
+3. Connect receiver to Pi via USB
+4. Test serial communication with screen/minicom
+5. Integrate into your rover control code
+6. Test range and reliability
+
+================================================================================

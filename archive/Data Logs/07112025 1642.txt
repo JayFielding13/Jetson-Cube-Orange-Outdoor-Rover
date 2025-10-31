@@ -1,0 +1,985 @@
+(venv) jay@RoboPi:~/rover_project $ python3 bluetooth_optimized_navigator_v6
+✅ Bluetooth (bleak) library available
+================================================================================
+🤖 BLUETOOTH OPTIMIZED NAVIGATOR V6
+================================================================================
+
+OPTIMIZED TRACKING FEATURES:
+  ✅ Ultrasonic obstacle detection and avoidance
+  ✅ Enhanced stuck recovery system
+  ✅ Arduino gatekeeper integration
+  ✅ Real-time Bluetooth beacon ranging (0.8m - 30m)
+  ✅ Working RSSI values with balanced noise reduction
+  ✅ Thread-safe callback-based BLE scanning
+  🚶 PROVEN: Forward movement signal strength tracking
+  🔄 PROVEN: Turn-and-test behavior for course corrections
+  🧠 BALANCED: Smart obstacle avoidance without over-turning
+  📊 OPTIMIZED: RSSI smoothing for stability without over-filtering
+  ⏱️ ENHANCED: Longer movement phases for effective gradient detection
+  🎯 PROVEN: Precise target hold at 0.5m ±0.15m
+  ✅ Safety-first design with ultrasonic priority
+  ✅ Clean shutdown with no task warnings
+
+OPTIMIZED NAVIGATION BEHAVIOR:
+  🔍 SEARCHING: Look for BlueCharm signal
+  🚶 FORWARD_TRACKING: Extended movement (8s) while monitoring signal
+  🔄 TURN_TESTING: Test left/right turns when signal degrades
+  🧠 SMART_AVOIDING: Balanced turning until path is clear
+  🎯 APPROACHING: Gentle approach to target
+  🏁 HOLDING: Maintain precise 0.5m distance
+  🛡️ SAFETY: Ultrasonic overrides all Bluetooth behavior
+
+KEY OPTIMIZATIONS:
+  📏 Tracking range: <15m (vs 3m) for real-world signal detection
+  ⏱️ Movement phases: 8s tracking (vs 3s) for gradient analysis
+  📊 RSSI smoothing: 50% new data (vs 30%) for responsiveness
+  🎯 Signal thresholds: 1.5dBm improvement | 4dBm degradation
+  🧠 Smart turning: 1-3.5s duration | Clear at >90cm
+  ⏱️ Exploration: 10s intervals for fewer interruptions
+
+🚀 Bluetooth Optimized Navigator V6 Initialized
+📊 Navigation: Danger=30.0cm | Caution=60.0cm | Safe=100.0cm
+📡 Bluetooth: Enabled | Target: DD:34:02:09:CA:1E
+🚶 Tracking: Target distance 0.5m ±0.15m | Influence 35%
+📈 Signal: 1.5dBm improvement | 4dBm degradation triggers
+📏 Ranges: Tracking <15.0m | Approach <1.2m | Target 0.5m
+⏱️ Timing: 8.0s tracking phases | 10.0s exploration
+🧠 Smart Turn: Clear >90.0cm | 1.0-3.5s
+📊 Smoothing: 50% new RSSI | 60% new distance | >3.0x outlier threshold
+🛡️ Safety: Ultrasonic navigation takes absolute priority
+✅ Arduino connected on /dev/ttyUSB0
+📡 Starting BlueCharm optimized tracking thread...
+📡 BlueCharm optimized tracking scanner started
+🚀 Optimized Navigator V6 started
+📡 BlueCharm optimized tracking scanner ready
+🎯 Ready for effective signal gradient tracking with longer movement phases
+✅ Optimized Navigator V6 ready - switch to autonomous mode
+📡 BlueCharm optimized tracking will activate automatically
+🎯 Rover will use longer movement phases for effective signal tracking
+📊 Balanced smoothing will provide stability without over-filtering
+Press Ctrl+C to stop...
+📡 Starting BLE optimized tracking scanner...
+📡 BLE optimized tracking scanner active
+🚶 TRACKING MODE: BlueCharm at 2.0m - forward tracking activated
+📡 SIGNAL DETECTED: Switching to forward_tracking mode (2.0m)
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 2.0m (-65dBm TRACK) | Det: 1 | Runtime: 3s
+📡 Stopping BLE optimized tracking scanner...
+🚶 EXTENDED TRACKING: 2.0m signal stable (t=0.5s)
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 30.1cm | BT: 2.0m (-65dBm TRACK) | Det: 1 | Runtime: 6s
+📡 Starting BLE optimized tracking scanner...
+📡 BLE optimized tracking scanner active
+🧠 SMART AVOIDING! Obstacle at 20.2cm - turning left until clear
+📡 Stopping BLE optimized tracking scanner...
+✅ SMART CLEAR: Path clear at 200.0cm after 1.0s turn - resuming forward_tracking
+🚶 EXTENDED TRACKING: 2.1m signal stable (t=0.5s)
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 2.1m (-66dBm TRACK) | Det: 2 | Runtime: 9s
+📡 Starting BLE optimized tracking scanner...
+📡 BLE optimized tracking scanner active
+📡 Stopping BLE optimized tracking scanner...
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 3.1m (-70dBm TRACK) | Det: 4 | Runtime: 12s
+📡 Starting BLE optimized tracking scanner...
+📡 BLE optimized tracking scanner active
+🚶 EXTENDED TRACKING: 3.1m signal stable (t=6.0s)
+🚶 EXTENDED TRACKING: 3.1m signal stable (t=6.5s)
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 3.1m (-70dBm TRACK) | Det: 4 | Runtime: 15s
+📡 BlueCharm TRACKING #5:
+   RSSI: -70dBm (raw: -71) | Distance: ~3.1m | Avg: -68dBm
+📡 Stopping BLE optimized tracking scanner...
+📡 Starting BLE optimized tracking scanner...
+📡 BLE optimized tracking scanner active
+🔄 SIGNAL DEGRADING: Testing left turn after 13.0s tracking
+🔄 TESTING: left turn for signal improvement
+🧭 AUTONOMOUS | TURN_TESTING | US: 200.0cm | BT: 4.2m (-73dBm TRACK↘) | Det: 6 | Runtime: 21s
+📡 Stopping BLE optimized tracking scanner...
+🔄 TESTING: left turn for signal improvement
+🔄 TESTING: left turn for signal improvement
+📡 Starting BLE optimized tracking scanner...
+📡 BLE optimized tracking scanner active
+🔄 TRYING RIGHT: Left turn didn't help, testing right
+🔄 TESTING: right turn for signal improvement
+🧭 AUTONOMOUS | TURN_TESTING | US: 200.0cm | BT: 4.0m (-72dBm TRACK↘) | Det: 8 | Runtime: 24s
+📡 Stopping BLE optimized tracking scanner...
+🔄 TESTING: right turn for signal improvement
+🔄 TESTING: right turn for signal improvement
+📡 Starting BLE optimized tracking scanner...
+📡 BLE optimized tracking scanner active
+📡 BlueCharm TRACKING↘ #10:
+   RSSI: -72dBm (raw: -72) | Distance: ~4.2m | Avg: -71dBm
+✅ TURN TEST SUCCESS: right improved by 1.5dBm
+🚶 EXTENDED TRACKING: 4.2m signal ↗improving (t=0.5s)
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 4.2m (-72dBm TRACK↗) | Det: 10 | Runtime: 27s
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 5.4m (-74dBm TRACK↗) | Det: 12 | Runtime: 30s
+📊 === Optimized Navigator V6 Statistics ===
+   Runtime: 30 seconds
+   Distance measurements: 187
+   Obstacle avoidances: 1
+   Emergency stops: 0
+   Stuck recoveries: 0
+🎯 === Optimized Navigation Statistics ===
+   Smart turns: 1
+   Tracking activations: 1
+   Approach activations: 0
+   Hold activations: 0
+   Target reaches: 0
+   Signal improvements: 0
+   Course corrections: 1
+   Turn tests: 2
+   Long tracking phases: 1
+📊 === Optimized RSSI Statistics ===
+   Outliers rejected: 0
+📡 === Bluetooth Ranging Statistics ===
+   Total detections: 12
+   Callback events: 12
+   Detection rate: 0.40/sec
+   Callback rate: 0.40/sec
+   Strongest RSSI: -65 dBm
+   Signal timeouts: 0
+   Average RSSI: -72.3 dBm
+   Average smoothed distance: 4.5m
+   Current modes: TRACKING
+   Navigation rate: 6.2 measurements/sec
+🚶 EXTENDED TRACKING: 3.5m signal ↗improving (t=6.0s)
+🚶 EXTENDED TRACKING: 3.5m signal ↗improving (t=6.5s)
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 3.5m (-67dBm TRACK↗) | Det: 13 | Runtime: 33s
+🎯 SWITCHING TO APPROACH: 3.5m
+⚠️ Unknown navigation state - defaulting to search
+📡 BlueCharm TRACKING↗ #15:
+   RSSI: -63dBm (raw: -59) | Distance: ~2.6m | Avg: -69dBm
+   Outliers rejected: 1
+📡 SIGNAL DETECTED: Switching to forward_tracking mode (2.6m)
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 2.6m (-63dBm TRACK↗) | Det: 15 | Runtime: 36s
+🚶 EXTENDED TRACKING: 2.6m signal ↗improving (t=0.5s)
+🎯 SWITCHING TO APPROACH: 2.6m
+⚠️ Unknown navigation state - defaulting to search
+📡 SIGNAL DETECTED: Switching to forward_tracking mode (2.6m)
+🎯 SWITCHING TO APPROACH: 2.6m
+⚠️ Unknown navigation state - defaulting to search
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 2.6m (-59dBm TRACK↗) | Det: 17 | Runtime: 39s
+📡 SIGNAL DETECTED: Switching to forward_tracking mode (2.6m)
+🎯 SWITCHING TO APPROACH: 1.6m
+⚠️ Unknown navigation state - defaulting to search
+📡 SIGNAL DETECTED: Switching to forward_tracking mode (1.8m)
+🚶 EXTENDED TRACKING: 1.8m signal ↗improving (t=0.5s)
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 1.8m (-63dBm TRACK↗) | Det: 19 | Runtime: 42s
+📡 BlueCharm TRACKING↗ #20:
+   RSSI: -58dBm (raw: -55) | Distance: ~1.3m | Avg: -61dBm
+   Outliers rejected: 3
+🎯 SWITCHING TO APPROACH: 1.3m
+⚠️ Unknown navigation state - defaulting to search
+🎯 APPROACH MODE: BlueCharm at 1.1m - gentle approach
+📡 SIGNAL DETECTED: Switching to approaching mode (1.1m)
+🎯 APPROACHING: Moving toward 1.1m signal at 60 speed
+🧭 AUTONOMOUS | APPROACHING | US: 200.0cm | BT: 1.1m (-57dBm APPR) | Det: 22 | Runtime: 45s
+🎯 APPROACHING: Moving toward 1.5m signal at 60 speed
+🧭 AUTONOMOUS | APPROACHING | US: 200.0cm | BT: 1.5m (-64dBm APPR) | Det: 23 | Runtime: 48s
+🎯 APPROACHING: Moving toward 1.5m signal at 60 speed
+📡 Stopping BLE optimized tracking scanner...
+📡 Starting BLE optimized tracking scanner...
+📡 BLE optimized tracking scanner active
+📡 BlueCharm APPROACH #25:
+   RSSI: -68dBm (raw: -74) | Distance: ~2.4m | Avg: -62dBm
+   Outliers rejected: 3
+🧭 AUTONOMOUS | APPROACHING | US: 200.0cm | BT: 2.4m (-68dBm APPR) | Det: 25 | Runtime: 51s
+🎯 APPROACHING: Moving toward 2.4m signal at 60 speed
+🎯 APPROACHING: Moving toward 2.3m signal at 60 speed
+🧭 AUTONOMOUS | APPROACHING | US: 200.0cm | BT: 2.3m (-67dBm APPR) | Det: 26 | Runtime: 54s
+🎯 APPROACHING: Moving toward 3.2m signal at 60 speed
+🧠 SMART AVOIDING! Obstacle at 29.4cm - turning right until clear
+🧭 AUTONOMOUS | SMART_AVOIDING🧠 | US: 200.0cm | BT: 3.2m (-71dBm APPR) | Det: 27 | Runtime: 57s
+✅ SMART CLEAR: Path clear at 200.0cm after 1.0s turn - resuming approaching
+🎯 APPROACHING: Moving toward 2.8m signal at 60 speed
+🧭 AUTONOMOUS | APPROACHING | US: 200.0cm | BT: 3.0m (-69dBm APPR) | Det: 29 | Runtime: 60s
+📊 === Optimized Navigator V6 Statistics ===
+   Runtime: 60 seconds
+   Distance measurements: 388
+   Obstacle avoidances: 2
+   Emergency stops: 0
+   Stuck recoveries: 0
+🎯 === Optimized Navigation Statistics ===
+   Smart turns: 2
+   Tracking activations: 1
+   Approach activations: 1
+   Hold activations: 0
+   Target reaches: 0
+   Signal improvements: 0
+   Course corrections: 1
+   Turn tests: 2
+   Long tracking phases: 1
+📊 === Optimized RSSI Statistics ===
+   Outliers rejected: 3
+📡 === Bluetooth Ranging Statistics ===
+   Total detections: 29
+   Callback events: 29
+   Detection rate: 0.48/sec
+   Callback rate: 0.48/sec
+   Strongest RSSI: -56.40070263187789 dBm
+   Signal timeouts: 0
+   Average RSSI: -66.5 dBm
+   Average smoothed distance: 2.6m
+   Current modes: TRACKING, APPROACHING
+   Navigation rate: 6.5 measurements/sec
+📡 BlueCharm APPROACH #30:
+   RSSI: -77dBm (raw: -85) | Distance: ~6.0m | Avg: -69dBm
+   Outliers rejected: 3
+🎯 APPROACHING: Moving toward 3.4m signal at 60 speed
+🎯 APPROACHING: Moving toward 3.4m signal at 60 speed
+🧭 AUTONOMOUS | APPROACHING | US: 200.0cm | BT: 4.1m (-71dBm APPR) | Det: 32 | Runtime: 63s
+🎯 APPROACHING: Moving toward 3.3m signal at 60 speed
+🎯 APPROACHING: Moving toward 3.3m signal at 60 speed
+🧭 AUTONOMOUS | APPROACHING | US: 200.0cm | BT: 3.3m (-68dBm APPR) | Det: 34 | Runtime: 66s
+🧠 SMART AVOIDING! Obstacle at 28.3cm - turning left until clear
+📡 BlueCharm APPROACH #35:
+   RSSI: -68dBm (raw: -66) | Distance: ~3.2m | Avg: -70dBm
+   Outliers rejected: 3
+✅ SMART CLEAR: Path clear at 200.0cm after 1.0s turn - resuming approaching
+🎯 APPROACHING: Moving toward 3.2m signal at 60 speed
+🧭 AUTONOMOUS | APPROACHING | US: 200.0cm | BT: 3.2m (-68dBm APPR) | Det: 35 | Runtime: 69s
+🎯 APPROACHING: Moving toward 3.2m signal at 60 speed
+🎯 APPROACHING: Moving toward 3.2m signal at 60 speed
+🧭 AUTONOMOUS | APPROACHING | US: 200.0cm | BT: 3.2m (-68dBm APPR) | Det: 35 | Runtime: 72s
+🧠 SMART AVOIDING! Obstacle at 29.5cm - turning right until clear
+🧭 AUTONOMOUS | SMART_AVOIDING🧠 | US: 29.5cm | BT: 2.7m (-67dBm APPR) | Det: 38 | Runtime: 75s
+✅ SMART CLEAR: Path clear at 200.0cm after 1.0s turn - resuming approaching
+🎯 APPROACHING: Moving toward 2.7m signal at 60 speed
+🧭 AUTONOMOUS | APPROACHING | US: 200.0cm | BT: 2.7m (-67dBm APPR) | Det: 39 | Runtime: 78s
+🎯 APPROACHING: Moving toward 2.7m signal at 60 speed
+🎯 APPROACHING: Moving toward 2.7m signal at 60 speed
+📡 BlueCharm APPROACH #40:
+   RSSI: -66dBm (raw: -65) | Distance: ~2.5m | Avg: -68dBm
+   Outliers rejected: 3
+🧭 AUTONOMOUS | APPROACHING | US: 200.0cm | BT: 2.5m (-66dBm APPR) | Det: 40 | Runtime: 81s
+🎯 APPROACHING: Moving toward 2.3m signal at 60 speed
+🧭 AUTONOMOUS | APPROACHING | US: 200.0cm | BT: 2.3m (-65dBm APPR) | Det: 41 | Runtime: 84s
+🎯 APPROACHING: Moving toward 2.3m signal at 60 speed
+🧭 AUTONOMOUS | APPROACHING | US: 200.0cm | BT: 3.5m (-72dBm APPR) | Det: 43 | Runtime: 87s
+🎯 APPROACHING: Moving toward 3.1m signal at 60 speed
+🎯 APPROACHING: Moving toward 3.1m signal at 60 speed
+📡 BlueCharm APPROACH #45:
+   RSSI: -69dBm (raw: -69) | Distance: ~3.2m | Avg: -68dBm
+   Outliers rejected: 3
+🧭 AUTONOMOUS | APPROACHING | US: 200.0cm | BT: 3.7m (-71dBm APPR) | Det: 46 | Runtime: 90s
+📊 === Optimized Navigator V6 Statistics ===
+   Runtime: 90 seconds
+   Distance measurements: 589
+   Obstacle avoidances: 4
+   Emergency stops: 0
+   Stuck recoveries: 0
+🎯 === Optimized Navigation Statistics ===
+   Smart turns: 4
+   Tracking activations: 1
+   Approach activations: 1
+   Hold activations: 0
+   Target reaches: 0
+   Signal improvements: 1
+   Course corrections: 1
+   Turn tests: 2
+   Long tracking phases: 1
+📊 === Optimized RSSI Statistics ===
+   Outliers rejected: 3
+📡 === Bluetooth Ranging Statistics ===
+   Total detections: 46
+   Callback events: 46
+   Detection rate: 0.51/sec
+   Callback rate: 0.51/sec
+   Strongest RSSI: -56.40070263187789 dBm
+   Signal timeouts: 0
+   Average RSSI: -68.4 dBm
+   Average smoothed distance: 3.0m
+   Current modes: TRACKING, APPROACHING
+   Navigation rate: 6.5 measurements/sec
+📡 Stopping BLE optimized tracking scanner...
+📡 Starting BLE optimized tracking scanner...
+📡 BLE optimized tracking scanner active
+🎯 APPROACHING: Moving toward 4.6m signal at 60 speed
+🧭 AUTONOMOUS | APPROACHING | US: 200.0cm | BT: 4.6m (-74dBm APPR) | Det: 48 | Runtime: 96s
+🎯 APPROACHING: Moving toward 3.0m signal at 60 speed
+📡 BlueCharm APPROACH #50:
+   RSSI: -71dBm (raw: -71) | Distance: ~3.7m | Avg: -70dBm
+   Outliers rejected: 3
+🧭 AUTONOMOUS | APPROACHING | US: 200.0cm | BT: 3.7m (-71dBm APPR) | Det: 50 | Runtime: 99s
+🎯 APPROACHING: Moving toward 3.7m signal at 60 speed
+🎯 APPROACHING: Moving toward 3.7m signal at 60 speed
+🧭 AUTONOMOUS | APPROACHING | US: 200.0cm | BT: 3.3m (-69dBm APPR) | Det: 51 | Runtime: 102s
+🎯 APPROACHING: Moving toward 3.0m signal at 60 speed
+🎯 APPROACHING: Moving toward 2.4m signal at 60 speed
+🧭 AUTONOMOUS | APPROACHING | US: 200.0cm | BT: 2.4m (-65dBm APPR) | Det: 54 | Runtime: 105s
+📡 BlueCharm APPROACH #55:
+   RSSI: -61dBm (raw: -55) | Distance: ~1.8m | Avg: -67dBm
+   Outliers rejected: 3
+🎯 APPROACHING: Moving toward 1.7m signal at 60 speed
+🧭 AUTONOMOUS | APPROACHING | US: 200.0cm | BT: 1.7m (-63dBm APPR) | Det: 57 | Runtime: 108s
+🎯 APPROACHING: Moving toward 1.7m signal at 60 speed
+🧠 SMART AVOIDING! Obstacle at 27.0cm - turning left until clear
+✅ SMART CLEAR: Path clear at 200.0cm after 1.5s turn - resuming approaching
+🧭 AUTONOMOUS | APPROACHING | US: 200.0cm | BT: 1.3m (-59dBm APPR) | Det: 59 | Runtime: 111s
+🎯 APPROACHING: Moving toward 1.3m signal at 60 speed
+📡 BlueCharm APPROACH #60:
+   RSSI: -64dBm (raw: -66) | Distance: ~1.7m | Avg: -63dBm
+   Outliers rejected: 3
+🧭 AUTONOMOUS | APPROACHING | US: 200.0cm | BT: 1.7m (-64dBm APPR) | Det: 60 | Runtime: 114s
+🎯 APPROACHING: Moving toward 1.5m signal at 60 speed
+🎯 APPROACHING: Moving toward 1.5m signal at 60 speed
+🧭 AUTONOMOUS | APPROACHING | US: 200.0cm | BT: 1.2m (-59dBm APPR) | Det: 63 | Runtime: 117s
+📡 Stopping BLE optimized tracking scanner...
+📡 Starting BLE optimized tracking scanner...
+📡 BLE optimized tracking scanner active
+📡 BlueCharm APPROACH #65:
+   RSSI: -58dBm (raw: -57) | Distance: ~1.0m | Avg: -61dBm
+   Outliers rejected: 3
+🎯 APPROACHING: Moving toward 1.0m signal at 60 speed
+🧭 AUTONOMOUS | APPROACHING | US: 200.0cm | BT: 1.0m (-58dBm APPR) | Det: 65 | Runtime: 123s
+🎯 APPROACHING: Moving toward 1.0m signal at 60 speed
+🧭 AUTONOMOUS | APPROACHING | US: 200.0cm | BT: 1.1m (-49dBm APPR) | Det: 68 | Runtime: 126s
+🎯 APPROACHING: Moving toward 0.8m signal at 60 speed
+🎯 APPROACHING: Moving toward 0.8m signal at 60 speed
+🏁 TARGET HOLD: BlueCharm at 0.6m - holding position
+📡 BlueCharm HOLDING #70:
+   RSSI: -50dBm (raw: -46) | Distance: ~0.6m | Avg: -56dBm
+   Outliers rejected: 4
+🎯 SWITCHING TO HOLD: 0.6m - target reached
+🏁 TARGET PERFECT: Holding 0.6m distance
+🧭 AUTONOMOUS | HOLDING | US: 200.0cm | BT: 0.5m (-46dBm HOLD) | Det: 71 | Runtime: 129s
+🧭 AUTONOMOUS | HOLDING | US: 200.0cm | BT: 0.4m (-45dBm HOLD) | Det: 73 | Runtime: 132s
+🏁 TARGET PERFECT: Holding 0.4m distance
+📡 BlueCharm HOLDING #75:
+   RSSI: -44dBm (raw: -42) | Distance: ~0.3m | Avg: -48dBm
+   Outliers rejected: 4
+📏 ADJUST FARTHER: 0.3m → 0.5m
+📏 ADJUST FARTHER: 0.3m → 0.5m
+🧭 AUTONOMOUS | HOLDING | US: 200.0cm | BT: 0.3m (-46dBm HOLD) | Det: 76 | Runtime: 135s
+📏 ADJUST FARTHER: 0.3m → 0.5m
+📏 ADJUST FARTHER: 0.3m → 0.5m
+🧠 SMART AVOIDING! Obstacle at 14.3cm - turning right until clear
+🧭 AUTONOMOUS | SMART_AVOIDING🧠 | US: 14.3cm | BT: 0.3m (-44dBm HOLD) | Det: 78 | Runtime: 138s
+✅ SMART CLEAR: Path clear at 200.0cm after 1.0s turn - resuming holding
+📡 BlueCharm HOLDING #80:
+   RSSI: -45dBm (raw: -46) | Distance: ~0.3m | Avg: -45dBm
+   Outliers rejected: 4
+🧠 SMART AVOIDING! Obstacle at 17.6cm - turning left until clear
+🧭 AUTONOMOUS | SMART_AVOIDING🧠 | US: 7.9cm | BT: 0.3m (-45dBm HOLD) | Det: 80 | Runtime: 141s
+🧠 SMART TURNING: left for 2.0s, obstacle at 11.2cm
+✅ SMART CLEAR: Path clear at 200.0cm after 2.5s turn - resuming holding
+📏 ADJUST FARTHER: 0.3m → 0.5m
+🧭 AUTONOMOUS | HOLDING | US: 200.0cm | BT: 0.3m (-40dBm HOLD) | Det: 83 | Runtime: 144s
+📡 BlueCharm HOLDING #85:
+   RSSI: -54dBm (raw: -63) | Distance: ~0.5m | Avg: -45dBm
+   Outliers rejected: 4
+🏁 TARGET PERFECT: Holding 0.5m distance
+🧭 AUTONOMOUS | HOLDING | US: 200.0cm | BT: 0.5m (-54dBm HOLD) | Det: 85 | Runtime: 147s
+🏁 TARGET PERFECT: Holding 0.5m distance
+🧭 AUTONOMOUS | HOLDING | US: 200.0cm | BT: 0.5m (-67dBm HOLD) | Outliers: 7 | Det: 88 | Runtime: 15 0s
+📊 === Optimized Navigator V6 Statistics ===
+   Runtime: 150 seconds
+   Distance measurements: 975
+   Obstacle avoidances: 7
+   Emergency stops: 7
+   Stuck recoveries: 0
+🎯 === Optimized Navigation Statistics ===
+   Smart turns: 7
+   Tracking activations: 1
+   Approach activations: 1
+   Hold activations: 1
+   Target reaches: 1
+   Signal improvements: 1
+   Course corrections: 1
+   Turn tests: 2
+   Long tracking phases: 1
+📊 === Optimized RSSI Statistics ===
+   Outliers rejected: 7
+📡 === Bluetooth Ranging Statistics ===
+   Total detections: 88
+   Callback events: 88
+   Detection rate: 0.59/sec
+   Callback rate: 0.59/sec
+   Strongest RSSI: -39.91749736131132 dBm
+   Signal timeouts: 0
+   Average RSSI: -52.2 dBm
+   Average smoothed distance: 0.4m
+   Current modes: TRACKING, APPROACHING, HOLDING
+   Navigation rate: 6.5 measurements/sec
+🏁 TARGET PERFECT: Holding 0.5m distance
+🏁 TARGET PERFECT: Holding 0.5m distance
+📡 BlueCharm HOLDING #90:
+   RSSI: -68dBm (raw: -72) | Distance: ~0.5m | Avg: -59dBm
+   Outliers rejected: 9
+🧭 AUTONOMOUS | HOLDING | US: 200.0cm | BT: 0.5m (-68dBm HOLD) | Outliers: 9 | Det: 90 | Runtime: 15 3s
+🧭 AUTONOMOUS | HOLDING | US: 200.0cm | BT: 0.5m (-72dBm HOLD) | Outliers: 12 | Det: 93 | Runtime: 1 56s
+🏁 TARGET PERFECT: Holding 0.5m distance
+🏁 TARGET PERFECT: Holding 0.5m distance
+📡 BlueCharm HOLDING #95:
+   RSSI: -70dBm (raw: -69) | Distance: ~0.5m | Avg: -69dBm
+   Outliers rejected: 14
+🧭 AUTONOMOUS | HOLDING | US: 200.0cm | BT: 0.5m (-72dBm HOLD) | Outliers: 15 | Det: 96 | Runtime: 1 59s
+🏁 TARGET PERFECT: Holding 0.5m distance
+🧭 AUTONOMOUS | HOLDING | US: 200.0cm | BT: 0.5m (-71dBm HOLD) | Outliers: 16 | Det: 97 | Runtime: 1 62s
+🏁 TARGET PERFECT: Holding 0.5m distance
+📡 BlueCharm HOLDING #100:
+   RSSI: -70dBm (raw: -68) | Distance: ~0.5m | Avg: -71dBm
+   Outliers rejected: 19
+🧭 AUTONOMOUS | HOLDING | US: 200.0cm | BT: 0.5m (-70dBm HOLD) | Outliers: 19 | Det: 100 | Runtime:  165s
+🏁 TARGET PERFECT: Holding 0.5m distance
+🏁 TARGET PERFECT: Holding 0.5m distance
+🧭 AUTONOMOUS | HOLDING | US: 200.0cm | BT: 0.5m (-71dBm HOLD) | Outliers: 20 | Det: 101 | Runtime:  168s
+🧭 AUTONOMOUS | HOLDING | US: 200.0cm | BT: 0.5m (-71dBm HOLD) | Outliers: 22 | Det: 103 | Runtime:  171s
+🏁 TARGET PERFECT: Holding 0.5m distance
+🏁 TARGET PERFECT: Holding 0.5m distance
+🧭 AUTONOMOUS | HOLDING | US: 200.0cm | BT: 0.5m (-73dBm HOLD) | Outliers: 23 | Det: 104 | Runtime:  174s
+📡 BlueCharm HOLDING #105:
+   RSSI: -71dBm (raw: -71) | Distance: ~0.5m | Avg: -71dBm
+   Outliers rejected: 24
+🏁 TARGET PERFECT: Holding 0.5m distance
+🧭 AUTONOMOUS | HOLDING | US: 200.0cm | BT: 0.5m (-72dBm HOLD) | Outliers: 25 | Det: 106 | Runtime:  177s
+🏁 TARGET PERFECT: Holding 0.5m distance
+🧭 AUTONOMOUS | HOLDING | US: 200.0cm | BT: 0.5m (-71dBm HOLD) | Outliers: 28 | Det: 109 | Runtime:  180s
+📊 === Optimized Navigator V6 Statistics ===
+   Runtime: 180 seconds
+   Distance measurements: 1176
+   Obstacle avoidances: 7
+   Emergency stops: 7
+   Stuck recoveries: 0
+🎯 === Optimized Navigation Statistics ===
+   Smart turns: 7
+   Tracking activations: 1
+   Approach activations: 1
+   Hold activations: 1
+   Target reaches: 1
+   Signal improvements: 1
+   Course corrections: 1
+   Turn tests: 2
+   Long tracking phases: 1
+📊 === Optimized RSSI Statistics ===
+   Outliers rejected: 28
+📡 === Bluetooth Ranging Statistics ===
+   Total detections: 109
+   Callback events: 109
+   Detection rate: 0.60/sec
+   Callback rate: 0.60/sec
+   Strongest RSSI: -39.91749736131132 dBm
+   Signal timeouts: 0
+   Average RSSI: -71.9 dBm
+   Average smoothed distance: 0.5m
+   Current modes: TRACKING, APPROACHING, HOLDING
+   Navigation rate: 6.5 measurements/sec
+🏁 TARGET PERFECT: Holding 0.5m distance
+🏁 TARGET PERFECT: Holding 0.5m distance
+🧭 AUTONOMOUS | HOLDING | US: 200.0cm | BT: 0.5m (-71dBm HOLD) | Outliers: 28 | Det: 109 | Runtime:  183s
+📡 BlueCharm HOLDING #110:
+   RSSI: -72dBm (raw: -71) | Distance: ~0.5m | Avg: -72dBm
+   Outliers rejected: 29
+🧭 AUTONOMOUS | HOLDING | US: 200.0cm | BT: 0.5m (-74dBm HOLD) | Outliers: 30 | Det: 111 | Runtime:  186s
+🏁 TARGET PERFECT: Holding 0.5m distance
+🏁 TARGET PERFECT: Holding 0.5m distance
+🧭 AUTONOMOUS | HOLDING | US: 200.0cm | BT: 0.5m (-72dBm HOLD) | Outliers: 31 | Det: 112 | Runtime:  189s
+🏁 TARGET PERFECT: Holding 0.5m distance
+🧭 AUTONOMOUS | HOLDING | US: 200.0cm | BT: 0.5m (-71dBm HOLD) | Outliers: 32 | Det: 113 | Runtime:  192s
+🏁 TARGET PERFECT: Holding 0.5m distance
+📡 BlueCharm HOLDING #115:
+   RSSI: -70dBm (raw: -69) | Distance: ~0.5m | Avg: -72dBm
+   Outliers rejected: 34
+🧭 AUTONOMOUS | HOLDING | US: 200.0cm | BT: 0.5m (-73dBm HOLD) | Outliers: 35 | Det: 116 | Runtime:  195s
+🏁 TARGET PERFECT: Holding 0.5m distance
+🏁 TARGET PERFECT: Holding 0.5m distance
+🧭 AUTONOMOUS | HOLDING | US: 200.0cm | BT: 0.5m (-71dBm HOLD) | Outliers: 38 | Det: 119 | Runtime:  198s
+📡 BlueCharm HOLDING #120:
+   RSSI: -72dBm (raw: -72) | Distance: ~0.5m | Avg: -72dBm
+   Outliers rejected: 39
+🧭 AUTONOMOUS | HOLDING | US: 200.0cm | BT: 0.5m (-72dBm HOLD) | Outliers: 39 | Det: 120 | Runtime:  201s
+🏁 TARGET PERFECT: Holding 0.5m distance
+🏁 TARGET PERFECT: Holding 0.5m distance
+🧭 AUTONOMOUS | HOLDING | US: 200.0cm | BT: 0.5m (-69dBm HOLD) | Outliers: 42 | Det: 123 | Runtime:  204s
+📡 BlueCharm HOLDING #125:
+   RSSI: -67dBm (raw: -66) | Distance: ~0.5m | Avg: -70dBm
+   Outliers rejected: 44
+🏁 TARGET PERFECT: Holding 0.5m distance
+🧭 AUTONOMOUS | HOLDING | US: 200.0cm | BT: 0.5m (-68dBm HOLD) | Outliers: 45 | Det: 126 | Runtime:  207s
+🏁 TARGET PERFECT: Holding 0.5m distance
+🧭 AUTONOMOUS | HOLDING | US: 200.0cm | BT: 0.5m (-67dBm HOLD) | Outliers: 47 | Det: 128 | Runtime:  210s
+📊 === Optimized Navigator V6 Statistics ===
+   Runtime: 210 seconds
+   Distance measurements: 1377
+   Obstacle avoidances: 7
+   Emergency stops: 7
+   Stuck recoveries: 0
+🎯 === Optimized Navigation Statistics ===
+   Smart turns: 7
+   Tracking activations: 1
+   Approach activations: 1
+   Hold activations: 1
+   Target reaches: 1
+   Signal improvements: 2
+   Course corrections: 1
+   Turn tests: 2
+   Long tracking phases: 1
+📊 === Optimized RSSI Statistics ===
+   Outliers rejected: 47
+📡 === Bluetooth Ranging Statistics ===
+   Total detections: 128
+   Callback events: 128
+   Detection rate: 0.61/sec
+   Callback rate: 0.61/sec
+   Strongest RSSI: -39.91749736131132 dBm
+   Signal timeouts: 0
+   Average RSSI: -68.0 dBm
+   Average smoothed distance: 0.5m
+   Current modes: TRACKING, APPROACHING, HOLDING
+   Navigation rate: 6.5 measurements/sec
+📡 BlueCharm HOLDING #130:
+   RSSI: -67dBm (raw: -67) | Distance: ~0.5m | Avg: -67dBm
+   Outliers rejected: 49
+🏁 TARGET PERFECT: Holding 0.5m distance
+🏁 TARGET PERFECT: Holding 0.5m distance
+🧭 AUTONOMOUS | HOLDING | US: 200.0cm | BT: 0.5m (-66dBm HOLD) | Outliers: 50 | Det: 131 | Runtime:  213s
+🧭 AUTONOMOUS | HOLDING | US: 200.0cm | BT: 0.5m (-67dBm HOLD) | Outliers: 53 | Det: 134 | Runtime:  216s
+🏁 TARGET PERFECT: Holding 0.5m distance
+📡 BlueCharm HOLDING #135:
+   RSSI: -69dBm (raw: -71) | Distance: ~0.5m | Avg: -67dBm
+   Outliers rejected: 54
+🏁 TARGET PERFECT: Holding 0.5m distance
+🧭 AUTONOMOUS | HOLDING | US: 200.0cm | BT: 0.5m (-67dBm HOLD) | Outliers: 55 | Det: 136 | Runtime:  219s
+🏁 TARGET PERFECT: Holding 0.5m distance
+🧭 AUTONOMOUS | HOLDING | US: 200.0cm | BT: 0.5m (-70dBm HOLD) | Outliers: 58 | Det: 139 | Runtime:  222s
+🏁 TARGET PERFECT: Holding 0.5m distance
+🧭 AUTONOMOUS | HOLDING | US: 200.0cm | BT: 0.5m (-70dBm HOLD) | Outliers: 58 | Det: 139 | Runtime:  225s
+🏁 TARGET PERFECT: Holding 0.5m distance
+🏁 TARGET PERFECT: Holding 0.5m distance
+🧭 AUTONOMOUS | HOLDING | US: 200.0cm | BT: 0.5m (-70dBm HOLD) | Outliers: 58 | Det: 139 | Runtime:  228s
+🧭 AUTONOMOUS | HOLDING | US: 200.0cm | BT: 0.5m (-70dBm HOLD) | Outliers: 58 | Det: 139 | Runtime:  231s
+📡 BlueCharm HOLDING #140:
+   RSSI: -74dBm (raw: -81) | Distance: ~0.5m | Avg: -68dBm
+   Outliers rejected: 59
+🏁 TARGET PERFECT: Holding 0.5m distance
+🏁 TARGET PERFECT: Holding 0.5m distance
+🧭 AUTONOMOUS | HOLDING | US: 200.0cm | BT: 0.5m (-74dBm HOLD) | Outliers: 59 | Det: 140 | Runtime:  234s
+🏁 TARGET PERFECT: Holding 0.5m distance
+🧭 AUTONOMOUS | HOLDING | US: 200.0cm | BT: 0.5m (-74dBm HOLD) | Outliers: 59 | Det: 140 | Runtime:  237s
+🏁 TARGET PERFECT: Holding 0.5m distance
+🧭 AUTONOMOUS | HOLDING | US: 200.0cm | BT: 0.5m (-76dBm HOLD) | Outliers: 60 | Det: 141 | Runtime:  240s
+📊 === Optimized Navigator V6 Statistics ===
+   Runtime: 240 seconds
+   Distance measurements: 1578
+   Obstacle avoidances: 7
+   Emergency stops: 7
+   Stuck recoveries: 0
+🎯 === Optimized Navigation Statistics ===
+   Smart turns: 7
+   Tracking activations: 1
+   Approach activations: 1
+   Hold activations: 1
+   Target reaches: 1
+   Signal improvements: 2
+   Course corrections: 1
+   Turn tests: 2
+   Long tracking phases: 1
+📊 === Optimized RSSI Statistics ===
+   Outliers rejected: 60
+📡 === Bluetooth Ranging Statistics ===
+   Total detections: 141
+   Callback events: 141
+   Detection rate: 0.59/sec
+   Callback rate: 0.59/sec
+   Strongest RSSI: -39.91749736131132 dBm
+   Signal timeouts: 0
+   Average RSSI: -69.4 dBm
+   Average smoothed distance: 0.5m
+   Current modes: TRACKING, APPROACHING, HOLDING
+   Navigation rate: 6.6 measurements/sec
+🏁 TARGET PERFECT: Holding 0.5m distance
+🏁 TARGET PERFECT: Holding 0.5m distance
+🧭 AUTONOMOUS | HOLDING | US: 200.0cm | BT: 0.5m (-77dBm HOLD) | Outliers: 61 | Det: 142 | Runtime:  243s
+🧭 AUTONOMOUS | HOLDING | US: 200.0cm | BT: 0.5m (-80dBm HOLD) | Outliers: 62 | Det: 143 | Runtime:  246s
+🏁 TARGET PERFECT: Holding 0.5m distance
+🏁 TARGET PERFECT: Holding 0.5m distance
+📡 BlueCharm HOLDING #145:
+   RSSI: -84dBm (raw: -88) | Distance: ~0.5m | Avg: -76dBm
+   Outliers rejected: 64
+🧭 AUTONOMOUS | HOLDING | US: 200.0cm | BT: 0.5m (-84dBm HOLD) | Outliers: 64 | Det: 145 | Runtime:  249s
+🏁 TARGET PERFECT: Holding 0.5m distance
+🧭 AUTONOMOUS | HOLDING | US: 200.0cm | BT: 0.5m (-83dBm HOLD) | Outliers: 66 | Det: 147 | Runtime:  252s
+🏁 TARGET PERFECT: Holding 0.5m distance
+🧭 AUTONOMOUS | HOLDING | US: 200.0cm | BT: 0.5m (-84dBm HOLD) | Outliers: 68 | Det: 149 | Runtime:  255s
+📡 BlueCharm HOLDING #150:
+   RSSI: -85dBm (raw: -86) | Distance: ~0.5m | Avg: -83dBm
+   Outliers rejected: 69
+^C
+🛑 Shutdown requested by user...
+🛑 Stopping Optimized Navigator V6...
+📡 Cleaning up BLE optimized tracking scanner...
+📊 Final runtime: 257.1 seconds
+📊 === Optimized Navigator V6 Statistics ===
+   Runtime: 257 seconds
+   Distance measurements: 1686
+   Obstacle avoidances: 7
+   Emergency stops: 7
+   Stuck recoveries: 0
+🎯 === Optimized Navigation Statistics ===
+   Smart turns: 7
+   Tracking activations: 1
+   Approach activations: 1
+   Hold activations: 1
+   Target reaches: 1
+   Signal improvements: 2
+   Course corrections: 1
+   Turn tests: 2
+   Long tracking phases: 1
+📊 === Optimized RSSI Statistics ===
+   Outliers rejected: 70
+📡 === Bluetooth Ranging Statistics ===
+   Total detections: 151
+   Callback events: 151
+   Detection rate: 0.59/sec
+   Callback rate: 0.59/sec
+   Strongest RSSI: -39.91749736131132 dBm
+   Signal timeouts: 0
+   Average RSSI: -82.9 dBm
+   Average smoothed distance: 0.5m
+   Current modes: TRACKING, APPROACHING, HOLDING
+   Navigation rate: 6.6 measurements/sec
+👋 Optimized Navigator V6 shutdown complete
+(venv) jay@RoboPi:~/rover_project $ python3 bluetooth_optimized_navigator_v6
+✅ Bluetooth (bleak) library available
+================================================================================
+🤖 BLUETOOTH OPTIMIZED NAVIGATOR V6
+================================================================================
+
+OPTIMIZED TRACKING FEATURES:
+  ✅ Ultrasonic obstacle detection and avoidance
+  ✅ Enhanced stuck recovery system
+  ✅ Arduino gatekeeper integration
+  ✅ Real-time Bluetooth beacon ranging (0.8m - 30m)
+  ✅ Working RSSI values with balanced noise reduction
+  ✅ Thread-safe callback-based BLE scanning
+  🚶 PROVEN: Forward movement signal strength tracking
+  🔄 PROVEN: Turn-and-test behavior for course corrections
+  🧠 BALANCED: Smart obstacle avoidance without over-turning
+  📊 OPTIMIZED: RSSI smoothing for stability without over-filtering
+  ⏱️ ENHANCED: Longer movement phases for effective gradient detection
+  🎯 PROVEN: Precise target hold at 0.5m ±0.15m
+  ✅ Safety-first design with ultrasonic priority
+  ✅ Clean shutdown with no task warnings
+
+OPTIMIZED NAVIGATION BEHAVIOR:
+  🔍 SEARCHING: Look for BlueCharm signal
+  🚶 FORWARD_TRACKING: Extended movement (8s) while monitoring signal
+  🔄 TURN_TESTING: Test left/right turns when signal degrades
+  🧠 SMART_AVOIDING: Balanced turning until path is clear
+  🎯 APPROACHING: Gentle approach to target
+  🏁 HOLDING: Maintain precise 0.5m distance
+  🛡️ SAFETY: Ultrasonic overrides all Bluetooth behavior
+
+KEY OPTIMIZATIONS:
+  📏 Tracking range: <15m (vs 3m) for real-world signal detection
+  ⏱️ Movement phases: 8s tracking (vs 3s) for gradient analysis
+  📊 RSSI smoothing: 50% new data (vs 30%) for responsiveness
+  🎯 Signal thresholds: 1.5dBm improvement | 4dBm degradation
+  🧠 Smart turning: 1-3.5s duration | Clear at >90cm
+  ⏱️ Exploration: 10s intervals for fewer interruptions
+
+🚀 Bluetooth Optimized Navigator V6 Initialized
+📊 Navigation: Danger=30.0cm | Caution=60.0cm | Safe=100.0cm
+📡 Bluetooth: Enabled | Target: DD:34:02:09:CA:1E
+🚶 Tracking: Target distance 0.5m ±0.15m | Influence 35%
+📈 Signal: 1.5dBm improvement | 4dBm degradation triggers
+📏 Ranges: Tracking <15.0m | Approach <1.2m | Target 0.5m
+⏱️ Timing: 8.0s tracking phases | 10.0s exploration
+🧠 Smart Turn: Clear >90.0cm | 1.0-3.5s
+📊 Smoothing: 50% new RSSI | 60% new distance | >3.0x outlier threshold
+🛡️ Safety: Ultrasonic navigation takes absolute priority
+✅ Arduino connected on /dev/ttyUSB0
+📡 Starting BlueCharm optimized tracking thread...
+📡 BlueCharm optimized tracking scanner started
+🚀 Optimized Navigator V6 started
+🎯 Ready for effective signal gradient tracking with longer movement phases
+📡 BlueCharm optimized tracking scanner ready
+✅ Optimized Navigator V6 ready - switch to autonomous mode
+📡 BlueCharm optimized tracking will activate automatically
+🎯 Rover will use longer movement phases for effective signal tracking
+📊 Balanced smoothing will provide stability without over-filtering
+Press Ctrl+C to stop...
+📡 Starting BLE optimized tracking scanner...
+📡 BLE optimized tracking scanner active
+🚶 TRACKING MODE: BlueCharm at 11.2m - forward tracking activated
+📡 SIGNAL DETECTED: Switching to forward_tracking mode (11.2m)
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 11.2m (-80dBm TRACK) | Det: 1 | Runtime: 2s
+🚶 EXTENDED TRACKING: 11.2m signal stable (t=0.5s)
+📡 Stopping BLE optimized tracking scanner...
+📡 Starting BLE optimized tracking scanner...
+📡 BLE optimized tracking scanner active
+📡 Stopping BLE optimized tracking scanner...
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 11.2m (-80dBm TRACK) | Det: 1 | Runtime: 5s
+📡 Starting BLE optimized tracking scanner...
+📡 BLE optimized tracking scanner active
+🚶 EXTENDED TRACKING: 17.9m signal stable (t=6.0s)
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 17.9m (-86dBm TRACK) | Det: 2 | Runtime: 8s
+🚶 EXTENDED TRACKING: 17.9m signal stable (t=6.5s)
+📡 Stopping BLE optimized tracking scanner...
+📡 Starting BLE optimized tracking scanner...
+📡 BLE optimized tracking scanner active
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 17.9m (-86dBm TRACK) | Det: 2 | Runtime: 11s
+📡 Stopping BLE optimized tracking scanner...
+📡 Starting BLE optimized tracking scanner...
+📡 BLE optimized tracking scanner active
+🚶 EXTENDED TRACKING: 17.9m signal stable (t=12.0s)
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 17.9m (-86dBm TRACK) | Det: 2 | Runtime: 14s
+🚶 EXTENDED TRACKING: 13.0m signal stable (t=12.5s)
+📡 BlueCharm TRACKING↗ #5:
+   RSSI: -84dBm (raw: -84) | Distance: ~17.1m | Avg: -83dBm
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 17.1m (-84dBm TRACK↗) | Det: 5 | Runtime: 17s
+📡 Stopping BLE optimized tracking scanner...
+🚶 EXTENDED TRACKING: 17.1m signal ↗improving (t=18.0s)
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 17.1m (-84dBm TRACK↗) | Det: 5 | Runtime: 20s
+🚶 EXTENDED TRACKING: 17.1m signal ↗improving (t=18.5s)
+📡 Starting BLE optimized tracking scanner...
+📡 BLE optimized tracking scanner active
+🧠 SMART AVOIDING! Obstacle at 28.0cm - turning left until clear
+✅ SMART CLEAR: Path clear at 200.0cm after 1.0s turn - resuming forward_tracking
+🚶 EXTENDED TRACKING: 17.1m signal ↗improving (t=0.5s)
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 17.1m (-84dBm TRACK↗) | Det: 5 | Runtime: 23s
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 17.1m (-84dBm TRACK↗) | Det: 5 | Runtime: 26s
+🚶 EXTENDED TRACKING: 20.7m signal ↗improving (t=6.0s)
+🚶 EXTENDED TRACKING: 20.7m signal ↗improving (t=6.5s)
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 20.7m (-87dBm TRACK↗) | Det: 6 | Runtime: 29s
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 20.7m (-87dBm TRACK↗) | Det: 6 | Runtime: 32s
+🚶 EXTENDED TRACKING: 21.6m signal ↗improving (t=12.0s)
+🚶 EXTENDED TRACKING: 21.6m signal ↗improving (t=12.5s)
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 21.3m (-85dBm TRACK↗) | Det: 9 | Runtime: 35s
+📡 BlueCharm TRACKING↗ #10:
+   RSSI: -88dBm (raw: -90) | Distance: ~26.1m | Avg: -85dBm
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 26.1m (-88dBm TRACK↗) | Det: 10 | Runtime: 38s
+🚶 EXTENDED TRACKING: 23.0m signal ↗improving (t=18.0s)
+🚶 EXTENDED TRACKING: 23.0m signal ↗improving (t=18.5s)
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 23.0m (-86dBm TRACK↗) | Det: 11 | Runtime: 41s
+🧠 SMART AVOIDING! Obstacle at 25.3cm - turning right until clear
+🧭 AUTONOMOUS | SMART_AVOIDING🧠 | US: 25.3cm | BT: 23.0m (-86dBm TRACK↗) | Det: 11 | Runtime: 44s
+✅ SMART CLEAR: Path clear at 200.0cm after 1.0s turn - resuming forward_tracking
+🚶 EXTENDED TRACKING: 23.0m signal ↗improving (t=0.5s)
+🧠 SMART AVOIDING! Obstacle at 29.6cm - turning left until clear
+🧭 AUTONOMOUS | SMART_AVOIDING🧠 | US: 24.1cm | BT: 23.0m (-86dBm TRACK↗) | Det: 11 | Runtime: 47s
+✅ SMART CLEAR: Path clear at 200.0cm after 1.0s turn - resuming forward_tracking
+🧠 SMART AVOIDING! Obstacle at 20.8cm - turning right until clear
+✅ SMART CLEAR: Path clear at 200.0cm after 2.0s turn - resuming forward_tracking
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 23.0m (-86dBm TRACK↗) | Det: 11 | Runtime: 50s
+🚶 EXTENDED TRACKING: 23.0m signal ↗improving (t=0.5s)
+📡 Signal timeout (12.1s) - ending all tracking modes
+⚠️ Unknown navigation state - defaulting to search
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: No signal | Det: 11 | Runtime: 53s
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: No signal | Det: 11 | Runtime: 56s
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: No signal | Det: 11 | Runtime: 59s
+📡 Stopping BLE optimized tracking scanner...
+🔄 SEARCH PATTERN: Looking for signal...
+📡 Starting BLE optimized tracking scanner...
+📡 BLE optimized tracking scanner active
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: No signal | Det: 11 | Runtime: 71s
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 25.0m (-87dBm PASS) | Det: 12 | Runtime: 74s
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 25.0m (-87dBm PASS) | Det: 12 | Runtime: 77s
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 25.0m (-87dBm PASS) | Det: 12 | Runtime: 80s
+🧠 SMART AVOIDING! Obstacle at 21.0cm - turning left until clear
+✅ SMART CLEAR: Path clear at 200.0cm after 1.0s turn - resuming searching
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 25.0m (-87dBm PASS) | Det: 12 | Runtime: 83s
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 28.1m (-89dBm PASS) | Det: 14 | Runtime: 86s
+📡 BlueCharm PASSIVE #15:
+   RSSI: -90dBm (raw: -92) | Distance: ~28.8m | Avg: -88dBm
+📡 Stopping BLE optimized tracking scanner...
+📡 Starting BLE optimized tracking scanner...
+📡 BLE optimized tracking scanner active
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 29.3m (-92dBm PASS) | Det: 16 | Runtime: 95s
+🔄 SEARCH PATTERN: Looking for signal...
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 29.3m (-92dBm PASS) | Det: 16 | Runtime: 98s
+🧠 SMART AVOIDING! Obstacle at 24.0cm - turning right until clear
+✅ SMART CLEAR: Path clear at 200.0cm after 1.0s turn - resuming searching
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 29.3m (-92dBm PASS) | Det: 16 | Runtime: 101s
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 29.3m (-92dBm PASS) | Det: 16 | Runtime: 104s
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: No signal | Det: 16 | Runtime: 107s
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 29.5m (-93dBm PASS) | Det: 17 | Runtime: 110s
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 29.5m (-93dBm PASS) | Det: 17 | Runtime: 113s
+🔄 SEARCH PATTERN: Looking for signal...
+🧠 SMART AVOIDING! Obstacle at 28.5cm - turning left until clear
+🧭 AUTONOMOUS | SMART_AVOIDING🧠 | US: 28.5cm | BT: 29.5m (-93dBm PASS) | Det: 17 | Runtime: 116s
+✅ SMART CLEAR: Path clear at 200.0cm after 1.0s turn - resuming searching
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 29.8m (-93dBm PASS) | Det: 19 | Runtime: 119s
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 29.8m (-93dBm PASS) | Det: 19 | Runtime: 122s
+📡 BlueCharm PASSIVE #20:
+   RSSI: -89dBm (raw: -86) | Distance: ~29.9m | Avg: -91dBm
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 29.9m (-89dBm PASS) | Det: 20 | Runtime: 125s
+📡 Stopping BLE optimized tracking scanner...
+🔄 SEARCH PATTERN: Looking for signal...
+📡 Starting BLE optimized tracking scanner...
+📡 BLE optimized tracking scanner active
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 29.9m (-90dBm PASS) | Det: 21 | Runtime: 194s
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 29.9m (-90dBm PASS) | Det: 21 | Runtime: 197s
+📡 Stopping BLE optimized tracking scanner...
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 29.9m (-90dBm PASS) | Det: 21 | Runtime: 200s
+📡 Starting BLE optimized tracking scanner...
+📡 BLE optimized tracking scanner active
+📡 Stopping BLE optimized tracking scanner...
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 29.9m (-90dBm PASS) | Det: 21 | Runtime: 203s
+🧠 SMART AVOIDING! Obstacle at 5.6cm - turning right until clear
+📡 Starting BLE optimized tracking scanner...
+📡 BLE optimized tracking scanner active
+🧠 SMART TURNING: right for 2.0s, obstacle at 5.5cm
+🧠 SMART TURNING: right for 2.5s, obstacle at 4.8cm
+🧭 AUTONOMOUS | SMART_AVOIDING🧠 | US: 4.8cm | BT: 29.9m (-90dBm PASS) | Det: 21 | Runtime: 206s
+📡 Stopping BLE optimized tracking scanner...
+🔄 SMART STUCK: Max turn time reached - backing up (count: 1)
+🧭 AUTONOMOUS | BACKING | US: 5.5cm | BT: 29.9m (-90dBm PASS) | Det: 21 | Runtime: 209s
+📡 Starting BLE optimized tracking scanner...
+📡 BLE optimized tracking scanner active
+🧠 SMART RETRY: Switching to left turn (stuck: 0)
+📡 Stopping BLE optimized tracking scanner...
+🧠 SMART TURNING: left for 2.0s, obstacle at 5.5cm
+🧠 SMART TURNING: left for 2.5s, obstacle at 5.5cm
+🧭 AUTONOMOUS | SMART_AVOIDING🧠 | US: 5.5cm | BT: 27.5m (-87dBm PASS) | Det: 22 | Runtime: 212s
+🔄 SMART STUCK: Max turn time reached - backing up (count: 1)
+📡 Starting BLE optimized tracking scanner...
+📡 BLE optimized tracking scanner active
+📡 Stopping BLE optimized tracking scanner...
+🧠 SMART RETRY: Switching to right turn (stuck: 0)
+🧭 AUTONOMOUS | SMART_AVOIDING🧠 | US: 200.0cm | BT: 29.6m (-89dBm PASS) | Det: 23 | Runtime: 224s
+📡 Starting BLE optimized tracking scanner...
+📡 BLE optimized tracking scanner active
+✅ SMART CLEAR: Path clear at 200.0cm after 1.0s turn - resuming searching
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: No signal | Det: 23 | Runtime: 227s
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: No signal | Det: 23 | Runtime: 230s
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 27.3m (-87dBm PASS) | Det: 24 | Runtime: 233s
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 27.3m (-87dBm PASS) | Det: 24 | Runtime: 236s
+📡 BlueCharm PASSIVE #25:
+   RSSI: -88dBm (raw: -88) | Distance: ~28.2m | Avg: -89dBm
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 28.2m (-88dBm PASS) | Det: 25 | Runtime: 239s
+🔄 SEARCH PATTERN: Looking for signal...
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 25.1m (-86dBm PASS) | Det: 27 | Runtime: 242s
+📡 Stopping BLE optimized tracking scanner...
+📡 Starting BLE optimized tracking scanner...
+📡 BLE optimized tracking scanner active
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 23.1m (-85dBm PASS) | Det: 28 | Runtime: 245s
+🧠 SMART AVOIDING! Obstacle at 27.3cm - turning left until clear
+🧭 AUTONOMOUS | SMART_AVOIDING🧠 | US: 23.6cm | BT: 20.5m (-84dBm PASS) | Det: 29 | Runtime: 248s
+✅ SMART CLEAR: Path clear at 200.0cm after 1.0s turn - resuming searching
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 20.5m (-84dBm PASS) | Det: 29 | Runtime: 251s
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 20.5m (-84dBm PASS) | Det: 29 | Runtime: 254s
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 20.5m (-84dBm PASS) | Det: 29 | Runtime: 257s
+📡 BlueCharm PASSIVE #30:
+   RSSI: -82dBm (raw: -80) | Distance: ~18.1m | Avg: -87dBm
+🧠 SMART AVOIDING! Obstacle at 21.6cm - turning right until clear
+✅ SMART CLEAR: Path clear at 200.0cm after 1.0s turn - resuming searching
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 18.1m (-82dBm PASS) | Det: 30 | Runtime: 260s
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 18.1m (-82dBm PASS) | Det: 30 | Runtime: 263s
+🧠 SMART AVOIDING! Obstacle at 27.6cm - turning left until clear
+✅ SMART CLEAR: Path clear at 200.0cm after 1.0s turn - resuming searching
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 23.0m (-87dBm PASS) | Det: 31 | Runtime: 266s
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 23.0m (-87dBm PASS) | Det: 31 | Runtime: 269s
+🧠 SMART AVOIDING! Obstacle at 22.6cm - turning right until clear
+🧭 AUTONOMOUS | SMART_AVOIDING🧠 | US: 22.6cm | BT: 19.1m (-84dBm PASS) | Det: 32 | Runtime: 272s
+🧠 SMART TURNING: right for 2.0s, obstacle at 7.6cm
+🧠 SMART TURNING: right for 2.5s, obstacle at 7.7cm
+🧭 AUTONOMOUS | SMART_AVOIDING🧠 | US: 7.7cm | BT: 16.2m (-82dBm PASS) | Det: 34 | Runtime: 275s
+🔄 SMART STUCK: Max turn time reached - backing up (count: 1)
+📡 Stopping BLE optimized tracking scanner...
+🧠 SMART RETRY: Switching to left turn (stuck: 0)
+📡 Starting BLE optimized tracking scanner...
+📡 BLE optimized tracking scanner active
+✅ SMART CLEAR: Path clear at 200.0cm after 1.0s turn - resuming searching
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: No signal | Det: 34 | Runtime: 290s
+🧠 SMART AVOIDING! Obstacle at 9.6cm - turning left until clear
+🧭 AUTONOMOUS | SMART_AVOIDING🧠 | US: 9.6cm | BT: No signal | Det: 34 | Runtime: 293s
+🧠 SMART TURNING: left for 2.0s, obstacle at 9.5cm
+🚶 TRACKING MODE: BlueCharm at 13.7m - forward tracking activated
+📡 BlueCharm TRACKING↗ #35:
+   RSSI: -80dBm (raw: -78) | Distance: ~13.7m | Avg: -83dBm
+🧠 SMART TURNING: left for 2.5s, obstacle at 9.5cm
+🧭 AUTONOMOUS | SMART_AVOIDING🧠 | US: 8.9cm | BT: 13.7m (-80dBm TRACK↗) | Det: 35 | Runtime: 296s
+🔄 SMART STUCK: Max turn time reached - backing up (count: 1)
+📡 Stopping BLE optimized tracking scanner...
+🧠 SMART RETRY: Switching to right turn (stuck: 0)
+📡 Starting BLE optimized tracking scanner...
+📡 BLE optimized tracking scanner active
+🧭 AUTONOMOUS | SMART_AVOIDING🧠 | US: 200.0cm | BT: 13.3m (-81dBm TRACK↗) | Det: 36 | Runtime: 304s
+✅ SMART CLEAR: Path clear at 200.0cm after 1.0s turn - resuming forward_tracking
+🚶 EXTENDED TRACKING: 13.3m signal ↗improving (t=0.5s)
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 13.3m (-81dBm TRACK↗) | Det: 36 | Runtime: 307s
+🧠 SMART AVOIDING! Obstacle at 24.9cm - turning right until clear
+🧭 AUTONOMOUS | SMART_AVOIDING🧠 | US: 18.6cm | BT: 10.7m (-79dBm TRACK↗) | Det: 38 | Runtime: 310s
+✅ SMART CLEAR: Path clear at 200.0cm after 2.0s turn - resuming forward_tracking
+🚶 EXTENDED TRACKING: 10.7m signal ↗improving (t=0.5s)
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 8.5m (-75dBm TRACK↗) | Det: 39 | Runtime: 313s
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 8.5m (-75dBm TRACK↗) | Det: 39 | Runtime: 316s
+🧠 SMART AVOIDING! Obstacle at 23.8cm - turning left until clear
+✅ SMART CLEAR: Path clear at 200.0cm after 1.0s turn - resuming forward_tracking
+📡 BlueCharm TRACKING↗ #40:
+   RSSI: -78dBm (raw: -80) | Distance: ~9.5m | Avg: -79dBm
+🚶 EXTENDED TRACKING: 9.5m signal ↗improving (t=0.5s)
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 9.5m (-78dBm TRACK↗) | Det: 40 | Runtime: 319s
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 7.7m (-76dBm TRACK↗) | Det: 42 | Runtime: 322s
+🧠 SMART AVOIDING! Obstacle at 25.3cm - turning right until clear
+✅ SMART CLEAR: Path clear at 200.0cm after 1.0s turn - resuming forward_tracking
+🚶 EXTENDED TRACKING: 8.8m signal ↗improving (t=0.5s)
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 8.8m (-78dBm TRACK↗) | Det: 43 | Runtime: 325s
+📡 BlueCharm TRACKING↗ #45:
+   RSSI: -81dBm (raw: -84) | Distance: ~11.1m | Avg: -78dBm
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 11.1m (-81dBm TRACK↗) | Det: 45 | Runtime: 328s
+🧠 SMART AVOIDING! Obstacle at 25.5cm - turning left until clear
+✅ SMART CLEAR: Path clear at 200.0cm after 1.0s turn - resuming forward_tracking
+🚶 EXTENDED TRACKING: 11.1m signal ↗improving (t=0.5s)
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 11.1m (-81dBm TRACK↗) | Det: 45 | Runtime: 331s
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 30.2cm | BT: 16.5m (-85dBm TRACK↘) | Det: 47 | Runtime: 334s
+🧠 SMART AVOIDING! Obstacle at 27.3cm - turning right until clear
+✅ SMART CLEAR: Path clear at 200.0cm after 1.0s turn - resuming forward_tracking
+🚶 EXTENDED TRACKING: 16.5m signal ↘degrading (t=0.5s)
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 12.7m (-81dBm TRACK↘) | Det: 48 | Runtime: 337s
+📡 Stopping BLE optimized tracking scanner...
+📡 Starting BLE optimized tracking scanner...
+📡 BLE optimized tracking scanner active
+📡 Signal timeout (17.1s) - ending all tracking modes
+⚠️ Unknown navigation state - defaulting to search
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: No signal | Det: 48 | Runtime: 355s
+🚶 TRACKING MODE: BlueCharm at 8.3m - forward tracking activated
+📡 SIGNAL DETECTED: Switching to forward_tracking mode (8.3m)
+🚶 EXTENDED TRACKING: 8.3m signal stable (t=0.5s)
+📡 BlueCharm TRACKING↗ #50:
+   RSSI: -74dBm (raw: -68) | Distance: ~8.3m | Avg: -79dBm
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 8.3m (-74dBm TRACK↗) | Det: 50 | Runtime: 358s
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 8.3m (-74dBm TRACK↗) | Det: 50 | Runtime: 361s
+🚶 EXTENDED TRACKING: 8.3m signal ↗improving (t=6.0s)
+🚶 EXTENDED TRACKING: 8.3m signal ↗improving (t=6.5s)
+🧠 SMART AVOIDING! Obstacle at 21.8cm - turning left until clear
+🧭 AUTONOMOUS | SMART_AVOIDING🧠 | US: 200.0cm | BT: 8.3m (-68dBm TRACK↗) | Det: 52 | Runtime: 364s
+✅ SMART CLEAR: Path clear at 200.0cm after 1.0s turn - resuming forward_tracking
+🚶 EXTENDED TRACKING: 8.3m signal ↗improving (t=0.5s)
+🧠 SMART AVOIDING! Obstacle at 29.0cm - turning right until clear
+✅ SMART CLEAR: Path clear at 200.0cm after 1.0s turn - resuming forward_tracking
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 8.3m (-62dBm TRACK↗) | Det: 53 | Runtime: 367s
+🚶 EXTENDED TRACKING: 8.3m signal ↗improving (t=0.5s)
+📡 Stopping BLE optimized tracking scanner...
+^C
+🛑 Shutdown requested by user...
+🛑 Stopping Optimized Navigator V6...
+📊 Final runtime: 409.7 seconds
+📊 === Optimized Navigator V6 Statistics ===
+   Runtime: 410 seconds
+   Distance measurements: 2416
+   Obstacle avoidances: 20
+   Emergency stops: 112
+   Stuck recoveries: 0
+🎯 === Optimized Navigation Statistics ===
+   Smart turns: 20
+   Tracking activations: 3
+   Approach activations: 0
+   Hold activations: 0
+   Target reaches: 0
+   Signal improvements: 3
+   Course corrections: 0
+   Turn tests: 0
+   Long tracking phases: 0
+📊 === Optimized RSSI Statistics ===
+   Outliers rejected: 3
+📡 === Bluetooth Ranging Statistics ===
+   Total detections: 53
+   Callback events: 53
+   Detection rate: 0.13/sec
+   Callback rate: 0.13/sec
+   Strongest RSSI: -61.945304970751145 dBm
+   Signal timeouts: 8
+   Average RSSI: -73.8 dBm
+   Average smoothed distance: 9.0m
+   Current modes: TRACKING
+   Navigation rate: 5.9 measurements/sec
+👋 Optimized Navigator V6 shutdown complete
+(venv) jay@RoboPi:~/rover_project $

@@ -1,0 +1,66 @@
+(venv) jay@RoboPi:~/rover_project $ python3 autonomous_bluetooth_tracker.py
+✅ Using system Bluetooth commands
+============================================================
+📡 AUTONOMOUS BLUETOOTH TRACKER
+============================================================
+
+Features:
+  - Dual TP-Link UB500 antenna direction finding
+  - BlueCharm transmitter tracking
+  - Park-on-target mission completion
+  - Ultrasonic obstacle avoidance
+  - RSSI-based ranging and bearing
+
+🎯 Bluetooth Tracker Initialized
+🚗 Mission: Park on BlueCharm (within 0.2m)
+📡 Antenna separation: 0.3m
+🔍 Tracking MAC: DD:34:02:09:CA:1E
+✅ Arduino connected on /dev/ttyUSB0
+📡 Found Bluetooth adapters: ['hci2', 'hci1', 'hci0']
+✅ Dual antenna setup: hci0 (left), hci1 (right)
+✅ Enabled hci0
+✅ Enabled hci1
+🔄 Starting BLE scan #1 for BlueCharm_190853
+🚀 Bluetooth Tracker started
+🎯 Ready for autonomous tracking
+✅ Tracker ready - switch to autonomous mode
+📡 Place BlueCharm_190853 on floor for rover to find
+🎯 Mission: Rover will navigate to and park on BlueCharm
+Press Ctrl+C to stop...
+📡 Scanning with LEFT antenna (hci0)...
+🔍 BLE scanning with hci0...
+⏱️ Scanning for 10 seconds on hci0...
+📊 Scan completed on hci0 - Output length: 0 chars
+⚠️ No output received from hci0 scan
+🔄 Trying fallback method on hci0...
+❌ Fallback method failed on hci0
+📡 Scanning with RIGHT antenna (hci1)...
+🔍 BLE scanning with hci1...
+⏱️ Scanning for 10 seconds on hci1...
+📊 Scan completed on hci1 - Output length: 0 chars
+⚠️ No output received from hci1 scan
+🔄 Trying fallback method on hci1...
+❌ Fallback method failed on hci1
+📊 Scan results: Left=-100dBm, Right=-100dBm
+📡 No target signal detected
+🔄 Starting BLE scan #2 for BlueCharm_190853
+📡 Scanning with LEFT antenna (hci0)...
+🔍 BLE scanning with hci0...
+⏱️ Scanning for 10 seconds on hci0...
+📊 Scan completed on hci0 - Output length: 0 chars
+⚠️ No output received from hci0 scan
+🔄 Trying fallback method on hci0...
+^C
+🛑 Shutdown requested by user...
+🛑 Stopping Bluetooth Tracker...
+📊 Final runtime: 52.8 seconds
+📊 === Bluetooth Tracking Statistics ===
+   Runtime: 53 seconds
+   Bluetooth scans: 2
+   Target detections: 0
+   Detection rate: 0.0%
+   Obstacle avoidances: 0
+   Target approaches: 0
+   Signal losses: 0
+👋 Tracker shutdown complete
+(venv) jay@RoboPi:~/rover_project $

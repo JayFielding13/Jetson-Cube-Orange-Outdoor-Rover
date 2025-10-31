@@ -1,0 +1,14 @@
+# Rover Control Dashboard Requirements
+# Install with: pip install -r requirements.txt
+
+# SSH remote control
+paramiko>=2.8.0
+
+# Serial communication  
+pyserial>=3.5
+
+# GUI framework (usually included with Python)
+# tkinter (built-in)
+
+# Optional: For better error handling
+psutil>=5.8.0

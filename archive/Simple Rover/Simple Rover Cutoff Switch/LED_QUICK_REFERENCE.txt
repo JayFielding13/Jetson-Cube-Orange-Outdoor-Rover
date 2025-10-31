@@ -1,0 +1,139 @@
+================================================================================
+                    LED BUTTON - QUICK REFERENCE
+================================================================================
+
+ILLUMINATED BUTTON WIRING:
+
+  Your 4-pin illuminated button has:
+    - 2 pins for the switch (button press detection)
+    - 2 pins for the LED (light control)
+
+  Connect to Heltec board:
+    Switch Pin 1 → GPIO 47
+    Switch Pin 2 → GND
+    LED + (positive) → GPIO 48
+    LED - (negative) → GND
+
+  Note: GPIO 47 & 48 are safe - they don't conflict with OLED or LoRa!
+
+================================================================================
+
+LED BEHAVIOR:
+
+  ┌────────────────────┬──────────────────┐
+  │   ROVER MODE       │   LED STATUS     │
+  ├────────────────────┼──────────────────┤
+  │   STOP             │   BLINKING       │
+  │   (Rover disabled) │   (on/off/on/off)│
+  │                    │   500ms interval │
+  ├────────────────────┼──────────────────┤
+  │   AUTONOMOUS       │   SOLID ON       │
+  │   (Rover active)   │   (continuous)   │
+  └────────────────────┴──────────────────┘
+
+  Visual meaning:
+    Blinking = "Ready and waiting" (safe mode)
+    Solid = "Rover is active!" (autonomous mode)
+
+================================================================================
+
+BUTTON OPERATION:
+
+  1. Power on transmitter → LED starts BLINKING (STOP mode)
+  2. Press button → LED becomes SOLID (AUTONOMOUS mode)
+  3. Press button again → LED starts BLINKING (STOP mode)
+  4. Repeat...
+
+================================================================================
+
+CONFIGURATION:
+
+  Button Pin: GPIO 47 (default)
+  LED Pin: GPIO 48 (default)
+
+  To change pins:
+    - Open: Transmitter/LoRa_KillSwitch_Transmitter_Channel.ino
+    - Find line: #define BUTTON_PIN  47
+    - Find line: #define LED_PIN     48
+    - Change to any available GPIO pins
+
+  Blink Speed: 500ms (default)
+
+  To change blink speed:
+    - Open: Transmitter/LoRa_KillSwitch_Transmitter_Channel.ino
+    - Find line: #define BLINK_INTERVAL 500
+    - Change value (in milliseconds):
+        250 = fast blink
+        500 = medium blink (default)
+        1000 = slow blink
+
+================================================================================
+
+TROUBLESHOOTING:
+
+  Problem: LED doesn't light up at all
+  Solution:
+    ✓ Check LED + wire connected to GPIO 48
+    ✓ Check LED - wire connected to GND
+    ✓ Verify LED polarity (+ and - correct)
+    ✓ Test with multimeter: GPIO 48 should output 3.3V
+    ✓ Try swapping LED + and - if button has no markings
+
+  Problem: LED always on, doesn't blink
+  Solution:
+    ✓ Check Serial Monitor for errors
+    ✓ Verify code uploaded successfully
+    ✓ Try pressing button to change modes
+    ✓ Re-upload code to board
+
+  Problem: LED very dim
+  Solution:
+    ✓ Check if button needs external resistor
+    ✓ Some buttons have 12V LEDs but will work dim at 3.3V
+    ✓ Consider using external 5V supply if needed
+
+  Problem: LED blinks but button press doesn't change mode
+  Solution:
+    ✓ Check switch pins connected to GPIO 47 and GND
+    ✓ Watch Serial Monitor when pressing button
+    ✓ Try different button or test switch continuity
+
+================================================================================
+
+BUTTON PIN IDENTIFICATION:
+
+Most illuminated buttons have 4 pins arranged like this:
+
+    View from BACK of button:
+
+    ┌─────────────┐
+    │  ○       ○  │  ← LED pins
+    │             │
+    │  ○       ○  │  ← Switch pins
+    └─────────────┘
+
+  Use multimeter to identify:
+    - Switch pins: Continuity test (beep when pressed)
+    - LED pins: Diode test mode (LED glows faintly)
+
+  Common color codes (if wires attached):
+    - Switch: Usually thicker wires or different color
+    - LED: Usually thinner wires, may be red/black
+
+================================================================================
+
+ALTERNATIVE: Using Just the Switch (No LED)
+
+  If you only want to use the button without LED functionality:
+
+  1. Connect only the switch pins:
+     Switch Pin 1 → GPIO 47
+     Switch Pin 2 → GND
+
+  2. Leave LED pins disconnected
+
+  3. Code will still work! LED control will be ignored
+
+  4. Use OLED display or Serial Monitor to see mode
+
+================================================================================

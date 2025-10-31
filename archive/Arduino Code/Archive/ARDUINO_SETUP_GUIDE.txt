@@ -1,0 +1,111 @@
+===============================================================================
+ARDUINO SETUP GUIDE FOR ROVER PROJECT
+===============================================================================
+
+HARDWARE REQUIREMENTS:
+- Arduino Nano (or compatible microcontroller)
+- FlySky FS-iA10B RC Receiver
+- USB cable for programming and communication
+- Jumper wires for connections
+
+REQUIRED LIBRARIES:
+1. PinChangeInterrupt Library
+   - Install via Arduino IDE Library Manager
+   - Search for "PinChangeInterrupt" by NicoHood
+   - Version 1.2.9 or newer recommended
+
+INSTALLATION STEPS:
+
+1. INSTALL ARDUINO IDE:
+   - Download from: https://www.arduino.cc/en/software
+   - Install Arduino IDE 2.0 or newer
+
+2. INSTALL REQUIRED LIBRARIES:
+   - Open Arduino IDE
+   - Go to Tools > Manage Libraries
+   - Search for "PinChangeInterrupt"
+   - Install "PinChangeInterrupt" by NicoHood
+
+3. BOARD CONFIGURATION:
+   - Select Board: Arduino Nano
+   - Select Processor: ATmega328P (Old Bootloader) if using clone boards
+   - Select Port: COM port where Arduino is connected
+
+4. WIRING CONNECTIONS:
+   Pin Connections (Arduino Nano):
+   - D2 → RC Receiver CH1 (Forward/Reverse)
+   - D3 → RC Receiver CH2 (Steering)  
+   - D4 → RC Receiver CH3 (Mode Switch)
+   - 5V → RC Receiver VCC
+   - GND → RC Receiver GND
+   - Built-in LED (Pin 13) used for status indication
+
+5. UPLOAD PROCEDURE:
+   - Connect Arduino to computer via USB
+   - Open rover_arduino_controller.ino in Arduino IDE
+   - Verify code compiles without errors
+   - Upload to Arduino Nano
+
+TESTING AND VALIDATION:
+
+1. SERIAL MONITOR TEST:
+   - Open Serial Monitor (Tools > Serial Monitor)
+   - Set baud rate to 115200
+   - Power on RC transmitter and receiver
+   - Move RC sticks - should see JSON data output:
+     {"ch1":xxx,"ch2":xxx,"ch3":xxx,"valid":true,"timestamp":xxxxx}
+
+2. SIGNAL VALIDATION:
+   - Status LED should be solid when RC signal is valid
+   - Status LED should blink when RC signal is lost
+   - Check that all three channels respond to transmitter input
+
+3. VALUE RANGES:
+   - CH1/CH2/CH3 values should range from -1000 to +1000
+   - Center stick position should read close to 0
+   - Deadband eliminates small movements around center
+
+TROUBLESHOOTING:
+
+Problem: Arduino not detected
+Solution: Try different USB cable, install CH340/CP2102 drivers for clone boards
+
+Problem: Library not found error
+Solution: Install PinChangeInterrupt library via Library Manager
+
+Problem: No RC signal detected
+Solution: Check wiring, ensure RC transmitter is bound to receiver
+
+Problem: Inconsistent readings
+Solution: Verify power supply is stable, check for loose connections
+
+Problem: Values out of range
+Solution: Adjust RC_MIN_PULSE/RC_MAX_PULSE values in code if needed
+
+COMMUNICATION PROTOCOL:
+- Baud Rate: 115200
+- Data Format: JSON
+- Update Rate: ~100Hz (10ms intervals)
+- USB Serial automatically connects when plugged into Raspberry Pi
+
+PERFORMANCE SPECIFICATIONS:
+- Response Time: <1ms (interrupt-driven)
+- Update Rate: 100Hz
+- Signal Timeout: 100ms
+- Deadband: ±50 units (adjustable)
+- Valid PWM Range: 1000-2000 microseconds
+
+POWER REQUIREMENTS:
+- Arduino Nano: ~20mA at 5V
+- RC Receiver: ~50mA at 5V
+- Total: ~70mA (can be powered from Raspberry Pi USB or external 5V supply)
+
+NEXT STEPS:
+1. Test Arduino code with RC transmitter
+2. Verify JSON data output via Serial Monitor
+3. Connect to Raspberry Pi via USB
+4. Proceed with Raspberry Pi software development
+
+===============================================================================
+For questions or issues, refer to project documentation or contact developer.
+===============================================================================

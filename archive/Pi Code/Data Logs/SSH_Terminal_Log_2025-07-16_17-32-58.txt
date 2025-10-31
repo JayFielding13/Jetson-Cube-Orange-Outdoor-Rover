@@ -1,0 +1,440 @@
+SSH Dashboard Terminal Log
+Session Date: 2025-07-16 17:33:07
+Connected to: 192.168.254.65:22
+Username: jay
+==================================================
+
+$ cd ~/rover_project && source venv/bin/activate && echo 'Rover environment activated' && pwd && which python
+Rover environment activated
+/home/jay/rover_project
+/home/jay/rover_project/venv/bin/python
+Uploading bluetooth_lidar_navigator_v7.py...
+Successfully uploaded bluetooth_lidar_navigator_v7.py to /home/jay/rover_project/bluetooth_lidar_navigator_v7.py
+$ cd ~/rover_project && source venv/bin/activate && echo 'Starting program...' && python3 -u /home/jay/rover_project/bluetooth_lidar_navigator_v7.py
+Starting program...
+✅ Bluetooth (bleak) library available
+✅ LiDAR (rplidar) library available
+================================================================================
+🤖 BLUETOOTH LIDAR NAVIGATOR V7
+================================================================================
+
+ENHANCED FEATURES:
+  ✅ All proven V6 Bluetooth navigation capabilities
+  ✅ Integrated RPLidar A1 for 360° obstacle detection
+  ✅ Multi-sensor fusion (ultrasonic + LiDAR)
+  ✅ Enhanced obstacle avoidance with sector analysis
+  ✅ Improved turn direction selection using LiDAR data
+  ✅ Real-time path clearance assessment
+  ✅ Fallback to ultrasonic if LiDAR fails
+  ✅ Thread-safe LiDAR data processing
+  ✅ Enhanced navigation decision making
+
+LIDAR ENHANCEMENTS:
+  🔄 360° obstacle detection vs single-direction ultrasonic
+  🎯 Sector-based path analysis (8 directions)
+  🧠 Intelligent turn direction selection
+  📏 Enhanced distance fusion for better accuracy
+  🚧 Real-time obstacle mapping
+  ✅ Graceful degradation if LiDAR unavailable
+
+NAVIGATION MODES:
+  🔍 SEARCHING: Enhanced search with LiDAR-guided turns
+  🚶 FORWARD_TRACKING: Movement with multi-sensor obstacle awareness
+  🔄 TURN_TESTING: Enhanced turn selection using LiDAR data
+  🧠 SMART_AVOIDING: Sector-based obstacle avoidance
+  🎯 APPROACHING: Sensor-fusion approach control
+  🏁 HOLDING: Enhanced position maintenance
+  🛡️ SAFETY: Multi-sensor emergency override
+
+SENSOR STATUS:
+  ✅ LiDAR Ready
+  ✅ Bluetooth Ready
+
+🔄 LiDAR Processor initialized
+📏 Range: 100-8000mm
+🚧 Obstacle threshold: 800mm
+✅ Clear path threshold: 1200mm
+🚀 Bluetooth LiDAR Navigator V7 - Enhanced Object Detection
+📊 Navigation: Danger=30.0cm | Caution=60.0cm | Safe=100.0cm
+🔄 LiDAR: Enabled | Danger=80.0cm | Caution=120.0cm
+📡 Bluetooth: Enabled | Target: DD:34:02:09:CA:1E
+🚶 Tracking: Target distance 0.5m ±0.15m
+📈 Signal: 1.0dBm improvement | 2.0dBm degradation
+🛡️ Safety: Ultrasonic + LiDAR fusion for enhanced obstacle detection
+✅ Arduino connected on /dev/ttyUSB0
+🔗 Connecting to RPLidar A1 on /dev/ttyUSB0
+❌ LiDAR connection error: Incorrect descriptor starting bytes
+⚠️ LiDAR connection failed - using ultrasonic only
+📡 Starting BlueCharm tracking thread...📡 BlueCharm tracking scanner started
+
+📡 BlueCharm tracking scanner ready🚀 Enhanced Navigator V7 started with Ultrasonic + Bluetooth
+🎯 Ready for enhanced object detection and navigation
+
+✅ Enhanced Navigator V7 ready with Ultrasonic + Bluetooth
+📡 Switch to autonomous mode for enhanced navigation
+🔄 LiDAR will provide 360° obstacle detection
+🎯 Multi-sensor fusion ensures robust navigation
+Press Ctrl+C to stop...
+📡 Starting BLE scanner...
+📡 BLE scanner active
+🚶 TRACKING MODE: BlueCharm at 4.5m - forward tracking activated
+📡 SIGNAL DETECTED: Switching to forward_tracking mode (4.5m)
+🏁 TRACKING INITIALIZED: Starting at 4.5m
+🚶 ENHANCED TRACKING: 4.5m signal stable (t=0.5s)
+📡 Stopping BLE scanner...
+📡 Starting BLE scanner...
+📡 BLE scanner active
+🧭 AUTONOMOUS | FORWARD_TRACKING | ULTRASONIC: 200.0cm | BT: 4.2m (-71dBm TRACK) | Det: 2 | Runtime: 6s
+📡 Stopping BLE scanner...
+📡 Starting BLE scanner...
+📡 BLE scanner active
+🧭 AUTONOMOUS | FORWARD_TRACKING | ULTRASONIC: 200.0cm | BT: 4.2m (-71dBm TRACK) | Det: 2 | Runtime: 9s
+🚶 ENHANCED TRACKING: 4.2m signal stable (t=6.0s)
+🚶 ENHANCED TRACKING: 4.2m signal stable (t=6.5s)
+📡 Stopping BLE scanner...
+📡 Starting BLE scanner...
+📡 BLE scanner active
+🧭 AUTONOMOUS | FORWARD_TRACKING | ULTRASONIC: 200.0cm | BT: 4.2m (-71dBm TRACK) | Det: 2 | Runtime: 12s
+🧭 AUTONOMOUS | FORWARD_TRACKING | ULTRASONIC: 200.0cm | BT: 4.2m (-71dBm TRACK) | Det: 2 | Runtime: 15s
+🚶 ENHANCED TRACKING: 3.6m signal stable (t=12.0s)
+🚶 ENHANCED TRACKING: 3.6m signal stable (t=12.5s)
+🧭 AUTONOMOUS | FORWARD_TRACKING | ULTRASONIC: 200.0cm | BT: 3.6m (-69dBm TRACK) | Det: 3 | Runtime: 18s
+📡 BlueCharm TRACKING #5:
+   RSSI: -71dBm (raw: -72) | Distance: ~3.9m | Avg: -70dBm
+🧭 AUTONOMOUS | FORWARD_TRACKING | ULTRASONIC: 200.0cm | BT: 3.9m (-71dBm TRACK) | Det: 5 | Runtime: 21s
+🚶 ENHANCED TRACKING: 3.6m signal stable (t=18.0s)
+🚶 ENHANCED TRACKING: 3.6m signal stable (t=18.5s)
+🧭 AUTONOMOUS | FORWARD_TRACKING | ULTRASONIC: 200.0cm | BT: 3.6m (-70dBm TRACK) | Det: 6 | Runtime: 24s
+🧠 ENHANCED AVOIDING! ULTRASONIC obstacle at 27.8cm - turning left
+🧭 AUTONOMOUS | SMART_AVOIDING🧠 | ULTRASONIC: 6.5cm | BT: 4.4m (-72dBm TRACK) | Det: 8 | Runtime: 27s
+🧠 ENHANCED TURNING: left for 2.0s, ultrasonic obstacle at 6.4cm
+🧠 ENHANCED TURNING: left for 2.5s, ultrasonic obstacle at 6.4cm
+📡 BlueCharm TRACKING↘ #10:
+   RSSI: -73dBm (raw: -74) | Distance: ~4.9m | Avg: -71dBm
+🔄 ENHANCED STUCK: Max turn time reached - backing up (count: 1)
+🧭 AUTONOMOUS | BACKING | ULTRASONIC: 6.5cm | BT: 4.9m (-73dBm TRACK↘) | Det: 10 | Runtime: 30s
+   Stuck counter: 1/4
+📡 Stopping BLE scanner...
+🧠 ENHANCED RETRY: Switching to right turn (stuck: 0)
+📡 Starting BLE scanner...
+📡 BLE scanner active
+🧭 AUTONOMOUS | SMART_AVOIDING🧠 | ULTRASONIC: 6.6cm | BT: 5.1m (-74dBm TRACK↘) | Det: 11 | Runtime: 33s
+🧠 ENHANCED TURNING: right for 2.0s, ultrasonic obstacle at 6.4cm
+🧠 ENHANCED TURNING: right for 2.5s, ultrasonic obstacle at 6.5cm
+🔄 ENHANCED STUCK: Max turn time reached - backing up (count: 1)
+🧭 AUTONOMOUS | BACKING | ULTRASONIC: 6.1cm | BT: 4.1m (-70dBm TRACK↗) | Det: 13 | Runtime: 36s
+   Stuck counter: 1/4
+🧠 ENHANCED RETRY: Switching to left turn (stuck: 1)
+🧭 AUTONOMOUS | SMART_AVOIDING🧠 | ULTRASONIC: 6.5cm | BT: 3.9m (-70dBm TRACK↗) | Det: 14 | Runtime: 39s
+   Stuck counter: 1/4
+📡 BlueCharm TRACKING↗ #15:
+   RSSI: -72dBm (raw: -74) | Distance: ~4.4m | Avg: -72dBm
+🧠 ENHANCED TURNING: left for 2.0s, ultrasonic obstacle at 6.4cm
+🧠 ENHANCED TURNING: left for 2.5s, ultrasonic obstacle at 6.5cm
+🔄 ENHANCED STUCK: Max turn time reached - backing up (count: 2)
+🧭 AUTONOMOUS | BACKING | ULTRASONIC: 6.5cm | BT: 4.6m (-73dBm TRACK↘) | Det: 17 | Runtime: 42s
+   Stuck counter: 2/4
+🧠 ENHANCED RETRY: Switching to right turn (stuck: 2)
+📡 Stopping BLE scanner...
+📡 Starting BLE scanner...
+📡 BLE scanner active
+✅ ENHANCED CLEAR: Path clear via ultrasonic at 200.0cm - resuming forward_tracking
+🧭 AUTONOMOUS | FORWARD_TRACKING | ULTRASONIC: 200.0cm | BT: 5.2m (-74dBm TRACK↘) | Det: 18 | Runtime: 51s
+   Stuck counter: 1/4
+🚶 ENHANCED TRACKING: 4.2m signal ↘degrading (t=0.5s)
+🔄 SIGNAL DEGRADING: Testing enhanced turn after 3.0s tracking
+🧭 AUTONOMOUS | TURN_TESTING | ULTRASONIC: 200.0cm | BT: 4.2m (-71dBm TRACK↘) | Det: 19 | Runtime: 54s
+   Stuck counter: 1/4
+🔄 ENHANCED TESTING: left turn for signal improvement
+🔄 TRYING RIGHT: Left turn didn't help, testing right
+📡 BlueCharm TRACKING↘ #20:
+   RSSI: -74dBm (raw: -76) | Distance: ~5.3m | Avg: -72dBm
+🔄 ENHANCED TESTING: right turn for signal improvement
+🔄 SIGNAL DEGRADING: right turn making signal worse (-3.7dBm) - resuming forward
+🏁 TRACKING INITIALIZED: Starting at 3.0m
+🚶 ENHANCED TRACKING: 3.8m signal ↗improving (t=0.5s)
+🧭 AUTONOMOUS | FORWARD_TRACKING | ULTRASONIC: 200.0cm | BT: 3.8m (-68dBm TRACK↗) | Det: 21 | Runtime: 57s
+   Stuck counter: 1/4
+🧠 ENHANCED AVOIDING! ULTRASONIC obstacle at 23.2cm - turning right
+🧭 AUTONOMOUS | SMART_AVOIDING🧠 | ULTRASONIC: 200.0cm | BT: 4.0m (-71dBm TRACK↗) | Det: 23 | Runtime: 60s
+   Stuck counter: 1/4
+✅ ENHANCED CLEAR: Path clear via ultrasonic at 200.0cm - resuming forward_tracking
+🚶 ENHANCED TRACKING: 4.0m signal ↗improving (t=0.5s)
+🧠 ENHANCED AVOIDING! ULTRASONIC obstacle at 28.4cm - turning left
+🧭 AUTONOMOUS | SMART_AVOIDING🧠 | ULTRASONIC: 28.4cm | BT: 4.2m (-72dBm TRACK↗) | Det: 24 | Runtime: 63s
+   Stuck counter: 1/4
+✅ ENHANCED CLEAR: Path clear via ultrasonic at 200.0cm - resuming forward_tracking
+🚶 ENHANCED TRACKING: 4.2m signal ↗improving (t=0.5s)
+🧭 AUTONOMOUS | FORWARD_TRACKING | ULTRASONIC: 200.0cm | BT: 4.2m (-72dBm TRACK↗) | Det: 24 | Runtime: 66s
+📡 BlueCharm TRACKING↗ #25:
+   RSSI: -75dBm (raw: -78) | Distance: ~5.2m | Avg: -72dBm
+🚨 WRONG DIRECTION: Distance increased 3.0m (3.0m → 6.0m)
+🔄 IMMEDIATE COURSE CORRECTION: Turning around to find BlueCharm
+🔄 ENHANCED TESTING: right turn for signal improvement
+⚠️ NO IMPROVEMENT: Continuing forward tracking
+🏁 TRACKING INITIALIZED: Starting at 6.4m
+🚶 ENHANCED TRACKING: 5.7m signal ↘degrading (t=0.5s)
+🧭 AUTONOMOUS | FORWARD_TRACKING | ULTRASONIC: 200.0cm | BT: 5.7m (-75dBm TRACK↘) | Det: 26 | Runtime: 69s
+🔄 SIGNAL DEGRADING: Testing enhanced turn after 3.0s tracking
+🔄 ENHANCED TESTING: left turn for signal improvement
+🔄 TRYING RIGHT: Left turn didn't help, testing right
+🔄 ENHANCED TESTING: right turn for signal improvement
+🧭 AUTONOMOUS | TURN_TESTING | ULTRASONIC: 200.0cm | BT: 5.7m (-75dBm TRACK↘) | Det: 26 | Runtime: 72s
+⚠️ NO IMPROVEMENT: Continuing forward tracking
+🏁 TRACKING INITIALIZED: Starting at 6.4m
+🚶 ENHANCED TRACKING: 5.7m signal ↘degrading (t=0.5s)
+🧭 AUTONOMOUS | FORWARD_TRACKING | ULTRASONIC: 200.0cm | BT: 3.9m (-69dBm TRACK↘) | Det: 27 | Runtime: 75s
+🔄 SIGNAL DEGRADING: Testing enhanced turn after 3.0s tracking
+🔄 ENHANCED TESTING: right turn for signal improvement
+⚠️ NO IMPROVEMENT: Continuing forward tracking
+🏁 TRACKING INITIALIZED: Starting at 3.1m
+🚶 ENHANCED TRACKING: 3.9m signal ↘degrading (t=0.5s)
+🧭 AUTONOMOUS | FORWARD_TRACKING | ULTRASONIC: 200.0cm | BT: 3.9m (-69dBm TRACK↘) | Det: 27 | Runtime: 78s
+🔄 SIGNAL DEGRADING: Testing enhanced turn after 3.0s tracking
+🔄 ENHANCED TESTING: left turn for signal improvement
+🔄 TRYING RIGHT: Left turn didn't help, testing right
+🧭 AUTONOMOUS | TURN_TESTING | ULTRASONIC: 200.0cm | BT: 3.9m (-69dBm TRACK↘) | Det: 27 | Runtime: 80s
+🔄 ENHANCED TESTING: right turn for signal improvement
+⚠️ NO IMPROVEMENT: Continuing forward tracking
+🏁 TRACKING INITIALIZED: Starting at 3.1m
+🚶 ENHANCED TRACKING: 3.9m signal ↘degrading (t=0.5s)
+🧭 AUTONOMOUS | FORWARD_TRACKING | ULTRASONIC: 200.0cm | BT: 3.9m (-69dBm TRACK↘) | Det: 27 | Runtime: 83s
+🔄 SIGNAL DEGRADING: Testing enhanced turn after 3.0s tracking
+🔄 ENHANCED TESTING: right turn for signal improvement
+⚠️ NO IMPROVEMENT: Continuing forward tracking
+🏁 TRACKING INITIALIZED: Starting at 3.3m
+🚶 ENHANCED TRACKING: 4.0m signal ↗improving (t=0.5s)
+🧭 AUTONOMOUS | FORWARD_TRACKING | ULTRASONIC: 200.0cm | BT: 4.0m (-69dBm TRACK↗) | Det: 28 | Runtime: 86s
+🚨 WRONG DIRECTION: Distance increased 3.4m (3.3m → 6.8m)
+🔄 IMMEDIATE COURSE CORRECTION: Turning around to find BlueCharm
+🔄 ENHANCED TESTING: left turn for signal improvement
+🔄 TRYING RIGHT: Left turn didn't help, testing right
+🔄 ENHANCED TESTING: right turn for signal improvement
+⚠️ NO IMPROVEMENT: Continuing forward tracking
+🏁 TRACKING INITIALIZED: Starting at 6.8m
+🚶 ENHANCED TRACKING: 5.9m signal ↗improving (t=0.5s)
+🧭 AUTONOMOUS | FORWARD_TRACKING | ULTRASONIC: 200.0cm | BT: 5.9m (-76dBm TRACK↗) | Det: 29 | Runtime: 89s
+🧭 AUTONOMOUS | FORWARD_TRACKING | ULTRASONIC: 200.0cm | BT: 5.9m (-76dBm TRACK↗) | Det: 29 | Runtime: 92s
+📡 BlueCharm TRACKING↗ #30:
+   RSSI: -75dBm (raw: -78) | Distance: ~5.5m | Avg: -73dBm
+🔄 SIGNAL DEGRADING: Testing enhanced turn after 5.5s tracking
+🔄 ENHANCED TESTING: right turn for signal improvement
+⚠️ NO IMPROVEMENT: Continuing forward tracking
+🧭 AUTONOMOUS | FORWARD_TRACKING | ULTRASONIC: 200.0cm | BT: 6.9m (-77dBm TRACK↘) | Det: 32 | Runtime: 95s
+🏁 TRACKING INITIALIZED: Starting at 7.6m
+🚶 ENHANCED TRACKING: 6.9m signal ↘degrading (t=0.5s)
+📡 BlueCharm TRACKING↘ #35:
+   RSSI: -77dBm (raw: -78) | Distance: ~7.5m | Avg: -75dBm
+🧠 ENHANCED AVOIDING! ULTRASONIC obstacle at 29.7cm - turning left
+🧭 AUTONOMOUS | SMART_AVOIDING🧠 | ULTRASONIC: 29.7cm | BT: 7.5m (-77dBm TRACK↘) | Det: 35 | Runtime: 98s
+✅ ENHANCED CLEAR: Path clear via ultrasonic at 200.0cm - resuming forward_tracking
+🚶 ENHANCED TRACKING: 7.5m signal ↘degrading (t=0.5s)
+🧭 AUTONOMOUS | FORWARD_TRACKING | ULTRASONIC: 200.0cm | BT: 7.5m (-77dBm TRACK↘) | Det: 35 | Runtime: 101s
+🔄 SIGNAL DEGRADING: Testing enhanced turn after 3.0s tracking
+🔄 ENHANCED TESTING: right turn for signal improvement
+⚠️ NO IMPROVEMENT: Continuing forward tracking
+🏁 TRACKING INITIALIZED: Starting at 8.0m
+🚶 ENHANCED TRACKING: 7.5m signal ↘degrading (t=0.5s)
+🧭 AUTONOMOUS | FORWARD_TRACKING | ULTRASONIC: 200.0cm | BT: 8.2m (-78dBm TRACK↘) | Det: 36 | Runtime: 104s
+🔄 SIGNAL DEGRADING: Testing enhanced turn after 3.0s tracking
+🔄 ENHANCED TESTING: left turn for signal improvement
+🔄 TRYING RIGHT: Left turn didn't help, testing right
+🧭 AUTONOMOUS | TURN_TESTING | ULTRASONIC: 200.0cm | BT: 8.2m (-78dBm TRACK↘) | Det: 36 | Runtime: 107s
+🔄 ENHANCED TESTING: right turn for signal improvement
+⚠️ NO IMPROVEMENT: Continuing forward tracking
+🏁 TRACKING INITIALIZED: Starting at 9.0m
+🚶 ENHANCED TRACKING: 8.2m signal ↘degrading (t=0.5s)
+🧠 ENHANCED AVOIDING! ULTRASONIC obstacle at 24.3cm - turning right
+🧭 AUTONOMOUS | SMART_AVOIDING🧠 | ULTRASONIC: 24.1cm | BT: 8.2m (-78dBm TRACK↘) | Det: 36 | Runtime: 110s
+🧠 ENHANCED TURNING: right for 2.0s, ultrasonic obstacle at 23.2cm
+🧠 ENHANCED TURNING: right for 2.5s, ultrasonic obstacle at 24.1cm
+📡 Stopping BLE scanner...
+📡 Starting BLE scanner...
+📡 BLE scanner active
+✅ ENHANCED CLEAR: Path clear via ultrasonic at 200.0cm - resuming forward_tracking
+🚶 ENHANCED TRACKING: 7.0m signal ↘degrading (t=0.5s)
+🧭 AUTONOMOUS | FORWARD_TRACKING | ULTRASONIC: 200.0cm | BT: 7.0m (-75dBm TRACK↘) | Det: 38 | Runtime: 119s
+🔄 SIGNAL DEGRADING: Testing enhanced turn after 3.0s tracking
+🔄 ENHANCED TESTING: left turn for signal improvement
+🔄 TRYING RIGHT: Left turn didn't help, testing right
+🔄 ENHANCED TESTING: right turn for signal improvement
+🧭 AUTONOMOUS | TURN_TESTING | ULTRASONIC: 200.0cm | BT: 6.9m (-75dBm TRACK↗) | Det: 39 | Runtime: 122s
+📡 BlueCharm TRACKING↗ #40:
+   RSSI: -75dBm (raw: -74) | Distance: ~6.5m | Avg: -76dBm
+⚠️ NO IMPROVEMENT: Continuing forward tracking
+🏁 TRACKING INITIALIZED: Starting at 6.1m
+🚶 ENHANCED TRACKING: 6.5m signal ↗improving (t=0.5s)
+🧭 AUTONOMOUS | FORWARD_TRACKING | ULTRASONIC: 200.0cm | BT: 6.5m (-75dBm TRACK↗) | Det: 40 | Runtime: 125s
+🧭 AUTONOMOUS | FORWARD_TRACKING | ULTRASONIC: 200.0cm | BT: 6.5m (-75dBm TRACK↗) | Det: 40 | Runtime: 128s
+🚶 ENHANCED TRACKING: 5.9m signal ↗improving (t=6.0s)
+🚶 ENHANCED TRACKING: 5.9m signal ↗improving (t=6.5s)
+🧭 AUTONOMOUS | FORWARD_TRACKING | ULTRASONIC: 200.0cm | BT: 5.7m (-73dBm TRACK↗) | Det: 42 | Runtime: 131s
+🧭 AUTONOMOUS | FORWARD_TRACKING | ULTRASONIC: 200.0cm | BT: 4.8m (-71dBm TRACK↗) | Det: 43 | Runtime: 134s
+🚶 ENHANCED TRACKING: 4.8m signal ↗improving (t=12.0s)
+🚶 ENHANCED TRACKING: 4.1m signal ↗improving (t=12.5s)
+🧭 AUTONOMOUS | FORWARD_TRACKING | ULTRASONIC: 200.0cm | BT: 4.1m (-69dBm TRACK↗) | Det: 44 | Runtime: 137s
+🧭 AUTONOMOUS | FORWARD_TRACKING | ULTRASONIC: 200.0cm | BT: 4.1m (-69dBm TRACK↗) | Det: 44 | Runtime: 140s
+🚶 ENHANCED TRACKING: 4.1m signal ↗improving (t=18.0s)
+🚶 ENHANCED TRACKING: 4.1m signal ↗improving (t=18.5s)
+📡 BlueCharm TRACKING↗ #45:
+   RSSI: -70dBm (raw: -68) | Distance: ~4.0m | Avg: -73dBm
+🧭 AUTONOMOUS | FORWARD_TRACKING | ULTRASONIC: 200.0cm | BT: 3.1m (-66dBm TRACK↗) | Det: 46 | Runtime: 143s
+🧭 AUTONOMOUS | FORWARD_TRACKING | ULTRASONIC: 200.0cm | BT: 3.1m (-66dBm TRACK↗) | Det: 46 | Runtime: 146s
+🚶 ENHANCED TRACKING: 3.1m signal ↗improving (t=24.0s)
+🚶 ENHANCED TRACKING: 3.0m signal ↗improving (t=24.5s)
+🧭 AUTONOMOUS | FORWARD_TRACKING | ULTRASONIC: 200.0cm | BT: 3.7m (-71dBm TRACK↗) | Det: 48 | Runtime: 149s
+📡 Stopping BLE scanner...
+📡 Starting BLE scanner...
+📡 BLE scanner active
+🧭 AUTONOMOUS | FORWARD_TRACKING | ULTRASONIC: 200.0cm | BT: 3.7m (-71dBm TRACK↗) | Det: 48 | Runtime: 155s
+📡 BlueCharm TRACKING↗ #50:
+   RSSI: -66dBm (raw: -64) | Distance: ~2.6m | Avg: -68dBm
+🧭 AUTONOMOUS | FORWARD_TRACKING | ULTRASONIC: 200.0cm | BT: 3.6m (-71dBm TRACK↗) | Det: 51 | Runtime: 158s
+🚶 ENHANCED TRACKING: 2.9m signal ↗improving (t=36.0s)
+🚶 ENHANCED TRACKING: 2.9m signal ↗improving (t=36.5s)
+🧠 ENHANCED AVOIDING! ULTRASONIC obstacle at 22.0cm - turning right
+✅ ENHANCED CLEAR: Path clear via ultrasonic at 200.0cm - resuming forward_tracking
+🧭 AUTONOMOUS | FORWARD_TRACKING | ULTRASONIC: 200.0cm | BT: 2.6m (-66dBm TRACK↗) | Det: 53 | Runtime: 161s
+🚶 ENHANCED TRACKING: 2.6m signal ↗improving (t=0.5s)
+🧭 AUTONOMOUS | FORWARD_TRACKING | ULTRASONIC: 200.0cm | BT: 2.2m (-63dBm TRACK↗) | Det: 54 | Runtime: 164s
+📡 BlueCharm TRACKING↗ #55:
+   RSSI: -76dBm (raw: -86) | Distance: ~5.2m | Avg: -69dBm
+🚶 ENHANCED TRACKING: 5.2m signal ↗improving (t=6.0s)
+🧭 AUTONOMOUS | FORWARD_TRACKING | ULTRASONIC: 200.0cm | BT: 5.2m (-76dBm TRACK↗) | Det: 55 | Runtime: 167s
+🚶 ENHANCED TRACKING: 5.2m signal ↗improving (t=6.5s)
+🧠 ENHANCED AVOIDING! ULTRASONIC obstacle at 25.6cm - turning left
+✅ ENHANCED CLEAR: Path clear via ultrasonic at 200.0cm - resuming forward_tracking
+🧠 ENHANCED AVOIDING! ULTRASONIC obstacle at 22.6cm - turning right
+🧭 AUTONOMOUS | SMART_AVOIDING🧠 | ULTRASONIC: 200.0cm | BT: 2.9m (-67dBm TRACK↗) | Det: 56 | Runtime: 170s
+✅ ENHANCED CLEAR: Path clear via ultrasonic at 200.0cm - resuming forward_tracking
+🚨 WRONG DIRECTION: Distance increased 2.2m (6.1m → 8.3m)
+🔄 IMMEDIATE COURSE CORRECTION: Turning around to find BlueCharm
+🔄 ENHANCED TESTING: left turn for signal improvement
+✅ ENHANCED TEST SUCCESS: left improved by 2.6dBm - continuing left
+🧭 AUTONOMOUS | TURN_TESTING | ULTRASONIC: 200.0cm | BT: 5.6m (-75dBm TRACK↗) | Det: 58 | Runtime: 173s
+🔄 ENHANCED TESTING: left turn for signal improvement
+🧠 ENHANCED AVOIDING! ULTRASONIC obstacle at 26.2cm - turning right
+✅ ENHANCED CLEAR: Path clear via ultrasonic at 200.0cm - resuming forward_tracking
+🏁 TRACKING INITIALIZED: Starting at 6.1m
+🚶 ENHANCED TRACKING: 5.6m signal ↗improving (t=0.5s)
+🧭 AUTONOMOUS | FORWARD_TRACKING | ULTRASONIC: 200.0cm | BT: 5.6m (-75dBm TRACK↗) | Det: 58 | Runtime: 176s
+🔄 SIGNAL DEGRADING: Testing enhanced turn after 4.0s tracking
+🧭 AUTONOMOUS | TURN_TESTING | ULTRASONIC: 200.0cm | BT: 4.8m (-73dBm TRACK↘) | Det: 59 | Runtime: 179s
+🔄 ENHANCED TESTING: left turn for signal improvement
+📡 BlueCharm TRACKING↘ #60:
+   RSSI: -78dBm (raw: -82) | Distance: ~7.9m | Avg: -72dBm
+🔄 SIGNAL DEGRADING: left turn making signal worse (-5.9dBm) - resuming forward
+🏁 TRACKING INITIALIZED: Starting at 9.4m
+🚶 ENHANCED TRACKING: 7.9m signal ↘degrading (t=0.5s)
+🧭 AUTONOMOUS | FORWARD_TRACKING | ULTRASONIC: 200.0cm | BT: 7.9m (-78dBm TRACK↘) | Det: 60 | Runtime: 182s
+🔄 SIGNAL DEGRADING: Testing enhanced turn after 3.0s tracking
+🔄 ENHANCED TESTING: right turn for signal improvement
+🧠 ENHANCED AVOIDING! ULTRASONIC obstacle at 9.4cm - turning left
+🧭 AUTONOMOUS | SMART_AVOIDING🧠 | ULTRASONIC: 9.3cm | BT: 6.1m (-75dBm TRACK↘) | Det: 61 | Runtime: 185s
+🧠 ENHANCED TURNING: left for 2.0s, ultrasonic obstacle at 9.3cm
+🧠 ENHANCED TURNING: left for 2.5s, ultrasonic obstacle at 9.4cm
+🔄 ENHANCED STUCK: Max turn time reached - backing up (count: 1)
+🧭 AUTONOMOUS | BACKING | ULTRASONIC: 9.3cm | BT: 6.6m (-75dBm TRACK↘) | Det: 63 | Runtime: 188s
+   Stuck counter: 1/4
+🧠 ENHANCED RETRY: Switching to right turn (stuck: 1)
+🧭 AUTONOMOUS | SMART_AVOIDING🧠 | ULTRASONIC: 9.3cm | BT: 6.2m (-75dBm TRACK↘) | Det: 64 | Runtime: 191s
+   Stuck counter: 1/4
+🧠 ENHANCED TURNING: right for 2.0s, ultrasonic obstacle at 9.3cm
+🧠 ENHANCED TURNING: right for 2.5s, ultrasonic obstacle at 9.4cm
+📡 BlueCharm TRACKING↘ #65:
+   RSSI: -82dBm (raw: -88) | Distance: ~10.6m | Avg: -76dBm
+🔄 ENHANCED STUCK: Max turn time reached - backing up (count: 2)
+🧭 AUTONOMOUS | BACKING | ULTRASONIC: 9.0cm | BT: 10.6m (-82dBm TRACK↘) | Det: 65 | Runtime: 194s
+   Stuck counter: 2/4
+🧠 ENHANCED RETRY: Switching to left turn (stuck: 2)
+🧭 AUTONOMOUS | SMART_AVOIDING🧠 | ULTRASONIC: 9.3cm | BT: 10.6m (-82dBm TRACK↘) | Det: 65 | Runtime: 197s
+   Stuck counter: 2/4
+🧠 ENHANCED TURNING: left for 2.0s, ultrasonic obstacle at 9.3cm
+🧠 ENHANCED TURNING: left for 2.5s, ultrasonic obstacle at 9.3cm
+📡 Stopping BLE scanner...
+✅ ENHANCED CLEAR: Path clear via ultrasonic at 200.0cm - resuming forward_tracking
+📡 Starting BLE scanner...
+📡 BLE scanner active
+🏁 TRACKING INITIALIZED: Starting at 10.3m
+🚶 ENHANCED TRACKING: 9.7m signal ↘degrading (t=0.5s)
+🧭 AUTONOMOUS | FORWARD_TRACKING | ULTRASONIC: 200.0cm | BT: 9.7m (-79dBm TRACK↘) | Det: 67 | Runtime: 203s
+   Stuck counter: 1/4
+🧠 ENHANCED AVOIDING! ULTRASONIC obstacle at 10.8cm - turning right
+🧠 ENHANCED TURNING: right for 2.0s, ultrasonic obstacle at 8.7cm
+🧠 ENHANCED TURNING: right for 2.5s, ultrasonic obstacle at 8.7cm
+🧭 AUTONOMOUS | SMART_AVOIDING🧠 | ULTRASONIC: 8.7cm | BT: 8.8m (-77dBm TRACK↘) | Det: 69 | Runtime: 206s
+   Stuck counter: 1/4
+🔄 ENHANCED STUCK: Max turn time reached - backing up (count: 2)
+🧭 AUTONOMOUS | BACKING | ULTRASONIC: 8.7cm | BT: 8.8m (-77dBm TRACK↘) | Det: 69 | Runtime: 209s
+   Stuck counter: 2/4
+🧠 ENHANCED RETRY: Switching to left turn (stuck: 2)
+📡 BlueCharm TRACKING↗ #70:
+   RSSI: -78dBm (raw: -78) | Distance: ~9.2m | Avg: -78dBm
+📡 Stopping BLE scanner...
+✅ ENHANCED CLEAR: Path clear via ultrasonic at 200.0cm - resuming forward_tracking
+🧭 AUTONOMOUS | FORWARD_TRACKING | ULTRASONIC: 200.0cm | BT: 9.2m (-78dBm TRACK↗) | Det: 70 | Runtime: 215s
+   Stuck counter: 2/4
+🚶 ENHANCED TRACKING: 9.2m signal ↗improving (t=0.5s)
+📡 Starting BLE scanner...
+📡 BLE scanner active
+📡 Stopping BLE scanner...
+🧭 AUTONOMOUS | FORWARD_TRACKING | ULTRASONIC: 200.0cm | BT: 6.3m (-72dBm TRACK↗) | Det: 71 | Runtime: 218s
+   Stuck counter: 1/4
+🧠 ENHANCED AVOIDING! ULTRASONIC obstacle at 23.1cm - turning right
+🧭 AUTONOMOUS | SMART_AVOIDING🧠 | ULTRASONIC: 17.7cm | BT: 6.3m (-72dBm TRACK↗) | Det: 71 | Runtime: 221s
+   Stuck counter: 1/4
+✅ ENHANCED CLEAR: Path clear via ultrasonic at 200.0cm - resuming forward_tracking
+🚶 ENHANCED TRACKING: 6.3m signal ↗improving (t=0.5s)
+🧠 ENHANCED AVOIDING! ULTRASONIC obstacle at 26.9cm - turning left
+✅ ENHANCED CLEAR: Path clear via ultrasonic at 200.0cm - resuming forward_tracking
+🧭 AUTONOMOUS | FORWARD_TRACKING | ULTRASONIC: 200.0cm | BT: 6.3m (-72dBm TRACK↗) | Det: 71 | Runtime: 224s
+   Stuck counter: 1/4
+🚶 ENHANCED TRACKING: 6.3m signal ↗improving (t=0.5s)
+🧭 AUTONOMOUS | FORWARD_TRACKING | ULTRASONIC: 200.0cm | BT: 6.3m (-72dBm TRACK↗) | Det: 71 | Runtime: 227s
+   Stuck counter: 1/4
+📡 Starting BLE scanner...
+📡 BLE scanner active
+📡 Signal timeout (13.8s) - ending all tracking modes
+🧭 AUTONOMOUS | FORWARD_TRACKING | ULTRASONIC: 200.0cm | BT: No signal | Det: 71 | Runtime: 230s
+   Stuck counter: 1/4
+📡 Stopping BLE scanner...
+📡 Starting BLE scanner...
+📡 BLE scanner active
+🧭 AUTONOMOUS | FORWARD_TRACKING | ULTRASONIC: 200.0cm | BT: No signal | Det: 71 | Runtime: 233s
+🚶 TRACKING MODE: BlueCharm at 7.0m - forward tracking activated
+📡 Stopping BLE scanner...
+🚶 ENHANCED TRACKING: 7.0m signal stable (t=12.0s)
+🧭 AUTONOMOUS | FORWARD_TRACKING | ULTRASONIC: 200.0cm | BT: 7.0m (-75dBm TRACK) | Det: 72 | Runtime: 236s
+🚶 ENHANCED TRACKING: 7.0m signal stable (t=12.5s)
+📡 Starting BLE scanner...
+📡 BLE scanner active
+📡 Stopping BLE scanner...
+🧭 AUTONOMOUS | FORWARD_TRACKING | ULTRASONIC: 200.0cm | BT: 7.0m (-75dBm TRACK) | Det: 72 | Runtime: 239s
+📡 Starting BLE scanner...
+📡 BLE scanner active
+🚶 ENHANCED TRACKING: 5.5m signal ↗improving (t=18.0s)
+🧭 AUTONOMOUS | FORWARD_TRACKING | ULTRASONIC: 200.0cm | BT: 5.5m (-73dBm TRACK↗) | Det: 74 | Runtime: 242s
+🚶 ENHANCED TRACKING: 5.5m signal ↗improving (t=18.5s)
+📡 Stopping BLE scanner...
+📡 Starting BLE scanner...
+📡 BLE scanner active
+🚶 ENHANCED TRACKING: 5.5m signal ↗improving (t=24.0s)
+🧭 AUTONOMOUS | FORWARD_TRACKING | ULTRASONIC: 200.0cm | BT: 5.5m (-73dBm TRACK↗) | Det: 74 | Runtime: 248s
+🚶 ENHANCED TRACKING: 5.5m signal ↗improving (t=24.5s)
+🧭 AUTONOMOUS | FORWARD_TRACKING | ULTRASONIC: 200.0cm | BT: 5.5m (-73dBm TRACK↗) | Det: 74 | Runtime: 251s
+📡 BlueCharm TRACKING↗ #75:
+   RSSI: -70dBm (raw: -66) | Distance: ~4.6m | Avg: -75dBm
+🚶 ENHANCED TRACKING: 4.6m signal ↗improving (t=30.0s)
+🧭 AUTONOMOUS | FORWARD_TRACKING | ULTRASONIC: 200.0cm | BT: 4.6m (-70dBm TRACK↗) | Det: 75 | Runtime: 254s
+🚶 ENHANCED TRACKING: 4.6m signal ↗improving (t=30.5s)
+📡 Stopping BLE scanner...
+
+Attempting to stop program...
+
+^C (Interrupt signal sent)
+^C
+🛑 Shutdown requested by user...
+🛑 Stopping Enhanced Navigator V7...
+SIGTERM sent to Python processes
+No Python processes running
+

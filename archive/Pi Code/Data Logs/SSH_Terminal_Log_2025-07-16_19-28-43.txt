@@ -1,0 +1,695 @@
+SSH Dashboard Terminal Log
+Session Date: 2025-07-16 19:28:49
+Connected to: 192.168.254.65:22
+Username: jay
+==================================================
+
+Uploading bluetooth_lidar_navigator_v7.py...
+Successfully uploaded bluetooth_lidar_navigator_v7.py to /home/jay/rover_project/bluetooth_lidar_navigator_v7.py
+$ cd ~/rover_project && source venv/bin/activate && echo 'Starting program...' && python3 -u /home/jay/rover_project/bluetooth_lidar_navigator_v7.py
+Starting program...
+✅ Visualization (matplotlib) library available
+✅ Bluetooth (bleak) library available
+✅ LiDAR (rplidar) library available
+================================================================================
+🤖 BLUETOOTH LIDAR NAVIGATOR V7
+================================================================================
+
+ENHANCED FEATURES:
+  ✅ All proven V6 Bluetooth navigation capabilities
+  ✅ Integrated RPLidar A1 for 360° obstacle detection
+  ✅ Multi-sensor fusion (ultrasonic + LiDAR)
+  ✅ Enhanced obstacle avoidance with sector analysis
+  ✅ Improved turn direction selection using LiDAR data
+  ✅ Real-time path clearance assessment
+  ✅ Fallback to ultrasonic if LiDAR fails
+  ✅ Thread-safe LiDAR data processing
+  ✅ Enhanced navigation decision making
+  🔍 Automatic USB device detection and assignment
+  🛡️ Intelligent port conflict resolution
+  🔄 Robust fallback system for device connections
+  📊 Real-time LiDAR visualization display
+
+LIDAR ENHANCEMENTS:
+  🔄 360° obstacle detection vs single-direction ultrasonic
+  🎯 Sector-based path analysis (8 directions)
+  🧠 Intelligent turn direction selection
+  📏 Enhanced distance fusion for better accuracy
+  🚧 Real-time obstacle mapping
+  ✅ Graceful degradation if LiDAR unavailable
+
+DEVICE DETECTION:
+  🔍 Automatic USB port scanning and identification
+  🤖 Arduino detection via JSON protocol recognition
+  📡 LiDAR detection via RPLidar protocol handshake
+  🔄 Smart fallback to common port configurations
+  🛡️ Port conflict prevention and resolution
+  📋 Detailed device information reporting
+
+NAVIGATION MODES:
+  🔍 SEARCHING: Enhanced search with LiDAR-guided turns
+  🚶 FORWARD_TRACKING: Movement with multi-sensor obstacle awareness
+  🔄 TURN_TESTING: Enhanced turn selection using LiDAR data
+  🧠 SMART_AVOIDING: Sector-based obstacle avoidance
+  🎯 APPROACHING: Sensor-fusion approach control
+  🏁 HOLDING: Enhanced position maintenance
+  🛡️ SAFETY: Multi-sensor emergency override
+
+SENSOR STATUS:
+  ��� LiDAR Ready
+  ✅ Bluetooth Ready
+  ✅ Visualization Ready
+
+🔍 USB Device Detector initialized
+🔄 LiDAR Processor initialized
+📏 Range: 100-8000mm
+🚧 Obstacle threshold: 800mm
+✅ Clear path threshold: 1200mm
+📊 Real-time visualization enabled
+🚀 Bluetooth LiDAR Navigator V7 - Enhanced Object Detection
+📊 Navigation: Danger=30.0cm | Caution=60.0cm | Safe=100.0cm
+🔄 LiDAR: Enabled | Danger=80.0cm | Caution=120.0cm
+📡 Bluetooth: Enabled | Target: DD:34:02:09:CA:1E
+🚶 Tracking: Target distance 0.5m ±0.15m
+📈 Signal: 1.0dBm improvement | 2.0dBm degradation
+🛡️ Safety: Ultrasonic + LiDAR fusion for enhanced obstacle detection
+🔍 Starting device detection...
+🔍 === USB Device Detection Started ===
+🔍 Scanning for USB devices...
+📋 Found 2 USB serial devices:
+   1. /dev/ttyUSB1 - CP2102 USB to UART Bridge Controller - CP2102 USB to UART Bridge Controller
+      VID:PID = 10C4:EA60
+      Manufacturer: Silicon Labs
+   2. /dev/ttyUSB0 - USB Serial
+      VID:PID = 1A86:7523
+      Manufacturer: None
+
+🧪 Testing ports for device identification...
+
+📍 Testing /dev/ttyUSB1...
+🤖 Testing for Arduino on /dev/ttyUSB1...
+❌ No Arduino detected on /dev/ttyUSB1
+📡 Testing for LiDAR on /dev/ttyUSB1...
+✅ LiDAR detected on /dev/ttyUSB1
+   Model: 24
+   Firmware: (1, 29)
+   Hardware: 7
+
+📍 Testing /dev/ttyUSB0...
+🤖 Testing for Arduino on /dev/ttyUSB0...
+✅ Arduino detected on /dev/ttyUSB0 at 115200 baud
+   Sample data: {'ch1': 0, 'ch2': 0, 'ch9': -992, 'valid': True, 'mode': 0, 'emergency': False, 'distance': None, 'pi_command_valid': False, 'gatekeeper_mode': 'FAILSAFE'}
+
+📊 Detection Results:
+   Arduino candidates: 1
+   LiDAR candidates: 1
+✅ Arduino assigned to: /dev/ttyUSB0 @ 115200 baud
+✅ LiDAR assigned to: /dev/ttyUSB1
+
+📋 Final Device Assignment:
+   Arduino: /dev/ttyUSB0
+   LiDAR: /dev/ttyUSB1
+📍 Using detected Arduino: /dev/ttyUSB0 @ 115200 baud
+✅ Arduino connected on /dev/ttyUSB0
+📍 Using detected LiDAR: /dev/ttyUSB1
+🔗 Connecting to RPLidar A1 on /dev/ttyUSB1
+📋 LiDAR Device info: {'model': 24, 'firmware': (1, 29), 'hardware': 7, 'serialnumber': 'EF83EDF9C7E29BCEA7E39EF27F504304'}
+💚 LiDAR Health: ('Good', 0)
+🔄 Starting LiDAR motor...
+✅ LiDAR connected and ready
+📊 Setting up real-time LiDAR visualization...
+📊 Visualization setup complete
+📊 Starting real-time LiDAR visualization...
+📡 LiDAR scanning started
+✅ LiDAR navigation enhancement enabled
+📡 Starting BlueCharm tracking thread...📡 BlueCharm tracking scanner started
+
+/home/jay/rover_project/bluetooth_lidar_navigator_v7.py:520: UserWarning: Starting a Matplotlib GUI outside of the main thread will likely fail.
+  plt.show()
+🚀 Enhanced Navigator V7 started with LiDAR + Ultrasonic + Bluetooth
+🎯 Ready for enhanced object detection and navigation
+📡 BlueCharm tracking scanner ready✅ Enhanced Navigator V7 ready with LiDAR + Ultrasonic + Bluetooth
+
+📡 Switch to autonomous mode for enhanced navigation
+🔄 LiDAR will provide 360° obstacle detection
+🎯 Multi-sensor fusion ensures robust navigation
+Press Ctrl+C to stop...
+⚠️ Arduino communication timeout
+⚠️ Arduino communication timeout
+⚠️ Arduino communication timeout
+⚠️ Arduino communication timeout
+⚠️ Arduino communication timeout
+⚠️ Arduino communication timeout
+⚠️ Arduino communication timeout
+❌ Visualization worker error: main thread is not in main loop
+📡 LiDAR scan #10: 111 points
+📡 LiDAR scan #20: 113 points
+📡 LiDAR scan #30: 120 points
+📡 LiDAR scan #40: 122 points
+📡 LiDAR scan #50: 117 points
+📡 LiDAR scan #60: 112 points
+🔄 ENHANCED SEARCH: Looking for signal...
+🧭 AUTONOMOUS | SEARCHING | ULTRASONIC: 200.0cm | LiDAR: 82cm@139° | Clear: 6/8 | BT: No signal | Det: 0 | Runtime: 10s
+📡 Starting BLE scanner...
+📡 BLE scanner active
+📡 LiDAR scan #70: 110 points
+📡 LiDAR scan #80: 117 points
+🧭 AUTONOMOUS | SEARCHING | FUSION: 113.4cm | LiDAR: 101cm@131° | Clear: 4/8 | BT: No signal | Det: 0 | Runtime: 13s
+📡 Stopping BLE scanner...
+📡 LiDAR scan #90: 100 points
+📡 Starting BLE scanner...
+📡 BLE scanner active
+📡 LiDAR scan #100: 129 points
+🚶 TRACKING MODE: BlueCharm at 3.5m - forward tracking activated
+📡 SIGNAL DETECTED: Switching to forward_tracking mode (3.5m)
+🏁 TRACKING INITIALIZED: Starting at 3.5m
+🚶 ENHANCED TRACKING: 3.5m signal stable (t=0.5s)
+🧭 AUTONOMOUS | FORWARD_TRACKING | FUSION: 85.9cm | LiDAR: 86cm@355° | Clear: 3/8 | BT: 3.5m (-70dBm TRACK) | Det: 1 | Runtime: 16s
+📡 LiDAR scan #110: 111 points
+📡 Stopping BLE scanner...
+📡 LiDAR scan #120: 100 points
+📡 Starting BLE scanner...
+📡 BLE scanner active
+🧠 ENHANCED AVOIDING! FUSION obstacle at 24.5cm - turning left
+🧭 AUTONOMOUS | SMART_AVOIDING🧠 | FUSION: 24.5cm | LiDAR: 42cm@350° | Clear: 3/8 | BT: 3.5m (-70dBm TRACK) | Det: 1 | Runtime: 19s
+📡 LiDAR scan #130: 110 points
+📡 LiDAR scan #140: 90 points
+🧠 ENHANCED TURNING: left for 2.0s, fusion obstacle at 79.2cm
+🧠 ENHANCED TURNING: left for 2.5s, fusion obstacle at 78.2cm
+📡 LiDAR scan #150: 111 points
+✅ ENHANCED CLEAR: Path clear via fusion + LiDAR at 118.8cm - resuming forward_tracking
+🧭 AUTONOMOUS | FORWARD_TRACKING | FUSION: 118.8cm | LiDAR: 26cm@173° | Clear: 3/8 | BT: 3.5m (-70dBm TRACK) | Det: 1 | Runtime: 22s
+🚶 ENHANCED TRACKING: 3.5m signal stable (t=0.5s)
+📡 LiDAR scan #160: 120 points
+📡 LiDAR scan #170: 101 points
+🧭 AUTONOMOUS | FORWARD_TRACKING | FUSION: 171.2cm | LiDAR: 58cm@155° | Clear: 3/8 | BT: 4.4m (-72dBm TRACK) | Det: 3 | Runtime: 25s
+📡 LiDAR scan #180: 122 points
+📡 Stopping BLE scanner...
+📡 LiDAR scan #190: 109 points
+🚶 ENHANCED TRACKING: 3.9m signal stable (t=6.0s)
+🧭 AUTONOMOUS | FORWARD_TRACKING | FUSION: 155.8cm | LiDAR: 96cm@133° | Clear: 4/8 | BT: 3.9m (-71dBm TRACK) | Det: 4 | Runtime: 28s
+📡 Starting BLE scanner...
+📡 BLE scanner active
+📡 BlueCharm TRACKING #5:
+   RSSI: -73dBm (raw: -74) | Distance: ~4.6m | Avg: -72dBm
+🚶 ENHANCED TRACKING: 4.6m signal stable (t=6.5s)
+📡 LiDAR scan #200: 104 points
+🚨 WRONG DIRECTION: Distance increased 2.1m (3.5m → 5.6m)
+🔄 IMMEDIATE COURSE CORRECTION: Turning around to find BlueCharm
+🔄 ENHANCED TESTING: right turn for signal improvement
+📡 LiDAR scan #210: 114 points
+⚠️ NO IMPROVEMENT: Continuing forward tracking
+🏁 TRACKING INITIALIZED: Starting at 5.8m
+🚶 ENHANCED TRACKING: 5.3m signal stable (t=0.5s)
+🧭 AUTONOMOUS | FORWARD_TRACKING | FUSION: 116.7cm | LiDAR: 84cm@351° | Clear: 5/8 | BT: 5.3m (-74dBm TRACK) | Det: 7 | Runtime: 31s
+📡 LiDAR scan #220: 106 points
+📡 LiDAR scan #230: 98 points
+🧭 AUTONOMOUS | SMART_AVOIDING🧠 | FUSION: 48.7cm | LiDAR: 42cm@336° | Clear: 6/8 | BT: 5.3m (-74dBm TRACK) | Det: 7 | Runtime: 34s
+📡 LiDAR scan #240: 103 points
+🧠 ENHANCED TURNING: right for 2.0s, fusion obstacle at 44.9cm
+📡 LiDAR scan #250: 118 points
+🧠 ENHANCED TURNING: right for 2.5s, fusion obstacle at 45.9cm
+✅ ENHANCED CLEAR: Path clear via fusion + LiDAR at 150.4cm - resuming forward_tracking
+🚶 ENHANCED TRACKING: 5.3m signal stable (t=0.5s)
+🧭 AUTONOMOUS | FORWARD_TRACKING | FUSION: 159.0cm | LiDAR: 44cm@98° | Clear: 5/8 | BT: 5.3m (-74dBm TRACK) | Det: 7 | Runtime: 37s
+📡 LiDAR scan #260: 117 points
+📡 LiDAR scan #270: 116 points
+📡 LiDAR scan #280: 110 points
+🧭 AUTONOMOUS | FORWARD_TRACKING | FUSION: 179.7cm | LiDAR: 103cm@145° | Clear: 7/8 | BT: 5.3m (-74dBm TRACK) | Det: 7 | Runtime: 40s
+📡 LiDAR scan #290: 109 points
+🚶 ENHANCED TRACKING: 5.0m signal stable (t=6.0s)
+📡 LiDAR scan #300: 112 points
+🚶 ENHANCED TRACKING: 5.0m signal stable (t=6.5s)
+🧭 AUTONOMOUS | FORWARD_TRACKING | FUSION: 127.3cm | LiDAR: 74cm@83° | Clear: 5/8 | BT: 5.0m (-73dBm TRACK) | Det: 8 | Runtime: 43s
+📡 LiDAR scan #310: 111 points
+📡 LiDAR scan #320: 108 points
+🧠 ENHANCED AVOIDING! FUSION obstacle at 26.1cm - turning left
+🧭 AUTONOMOUS | SMART_AVOIDING🧠 | FUSION: 26.1cm | LiDAR: 55cm@8° | Clear: 2/8 | BT: 5.0m (-73dBm TRACK) | Det: 8 | Runtime: 46s
+📡 LiDAR scan #330: 95 points
+📡 BlueCharm TRACKING #10:
+   RSSI: -73dBm (raw: -72) | Distance: ~5.1m | Avg: -73dBm
+🧠 ENHANCED TURNING: left for 2.0s, fusion obstacle at 98.1cm
+📡 LiDAR scan #340: 99 points
+🧠 ENHANCED TURNING: left for 2.5s, fusion obstacle at 96.4cm
+🧭 AUTONOMOUS | SMART_AVOIDING🧠 | FUSION: 75.1cm | LiDAR: 36cm@226° | Clear: 2/8 | BT: 5.1m (-73dBm TRACK) | Det: 11 | Runtime: 49s
+✅ ENHANCED CLEAR: Path clear via fusion + LiDAR at 92.7cm - resuming forward_tracking
+📡 LiDAR scan #350: 82 points
+🚶 ENHANCED TRACKING: 5.1m signal stable (t=0.5s)
+📡 LiDAR scan #360: 94 points
+🧭 AUTONOMOUS | FORWARD_TRACKING | ULTRASONIC: 200.0cm | LiDAR: 54cm@193° | Clear: 4/8 | BT: 5.4m (-74dBm TRACK) | Det: 12 | Runtime: 52s
+📡 LiDAR scan #370: 116 points
+📡 LiDAR scan #380: 112 points
+🧭 AUTONOMOUS | FORWARD_TRACKING | ULTRASONIC: 200.0cm | LiDAR: 78cm@246° | Clear: 6/8 | BT: 4.6m (-72dBm TRACK) | Det: 13 | Runtime: 55s
+📡 LiDAR scan #390: 107 points
+🚶 ENHANCED TRACKING: 4.6m signal stable (t=6.0s)
+🚶 ENHANCED TRACKING: 4.6m signal stable (t=6.5s)
+📡 LiDAR scan #400: 113 points
+📡 LiDAR scan #410: 120 points
+🧭 AUTONOMOUS | FORWARD_TRACKING | ULTRASONIC: 200.0cm | LiDAR: 74cm@287° | Clear: 5/8 | BT: 4.6m (-72dBm TRACK) | Det: 13 | Runtime: 58s
+📡 LiDAR scan #420: 111 points
+📡 LiDAR scan #430: 120 points
+🧭 AUTONOMOUS | FORWARD_TRACKING | FUSION: 162.9cm | LiDAR: 78cm@244° | Clear: 3/8 | BT: 4.6m (-72dBm TRACK) | Det: 13 | Runtime: 61s
+🚶 ENHANCED TRACKING: 4.6m signal stable (t=12.0s)
+🚶 ENHANCED TRACKING: 4.6m signal stable (t=12.5s)
+📡 LiDAR scan #440: 122 points
+📡 LiDAR scan #450: 117 points
+🧭 AUTONOMOUS | FORWARD_TRACKING | ULTRASONIC: 200.0cm | LiDAR: 101cm@259° | Clear: 5/8 | BT: 6.0m (-75dBm TRACK) | Det: 14 | Runtime: 64s
+📡 LiDAR scan #460: 119 points
+📡 LiDAR scan #470: 112 points
+🧭 AUTONOMOUS | FORWARD_TRACKING | ULTRASONIC: 200.0cm | LiDAR: 106cm@76° | Clear: 3/8 | BT: 6.0m (-75dBm TRACK) | Det: 14 | Runtime: 67s
+🚶 ENHANCED TRACKING: 6.0m signal stable (t=18.0s)
+📡 LiDAR scan #480: 109 points
+🚶 ENHANCED TRACKING: 6.0m signal stable (t=18.5s)
+📡 LiDAR scan #490: 89 points
+🧭 AUTONOMOUS | FORWARD_TRACKING | FUSION: 191.5cm | LiDAR: 93cm@81° | Clear: 7/8 | BT: 6.0m (-75dBm TRACK) | Det: 14 | Runtime: 70s
+📡 LiDAR scan #500: 99 points
+📡 LiDAR scan #510: 63 points
+🧭 AUTONOMOUS | FORWARD_TRACKING | FUSION: 137.5cm | LiDAR: 100cm@108° | Clear: 6/8 | BT: 6.0m (-75dBm TRACK) | Det: 14 | Runtime: 73s
+📡 LiDAR scan #520: 41 points
+🚶 ENHANCED TRACKING: 6.0m signal stable (t=24.0s)
+📡 BlueCharm TRACKING↗ #15:
+   RSSI: -69dBm (raw: -64) | Distance: ~4.0m | Avg: -73dBm
+🚶 ENHANCED TRACKING: 4.0m signal ↗improving (t=24.5s)
+📡 LiDAR scan #530: 76 points
+🚨 WRONG DIRECTION: Distance increased 3.0m (5.8m → 8.8m)
+🔄 IMMEDIATE COURSE CORRECTION: Turning around to find BlueCharm
+🧭 AUTONOMOUS | TURN_TESTING | FUSION: 79.3cm | LiDAR: 71cm@9° | Clear: 5/8 | BT: 7.2m (-78dBm TRACK↗) | Det: 17 | Runtime: 76s
+📡 LiDAR scan #540: 79 points
+🔄 ENHANCED TESTING: right turn for signal improvement
+⚠️ NO IMPROVEMENT: Continuing forward tracking
+📡 LiDAR scan #550: 93 points
+🏁 TRACKING INITIALIZED: Starting at 8.8m
+🚶 ENHANCED TRACKING: 7.2m signal ↗improving (t=0.5s)
+📡 LiDAR scan #560: 90 points
+🧭 AUTONOMOUS | SMART_AVOIDING🧠 | FUSION: 71.2cm | LiDAR: 60cm@16° | Clear: 5/8 | BT: 7.2m (-78dBm TRACK↗) | Det: 17 | Runtime: 79s
+🧠 ENHANCED TURNING: left for 2.0s, fusion obstacle at 59.6cm
+🧠 ENHANCED TURNING: left for 2.5s, fusion obstacle at 57.7cm
+📡 LiDAR scan #570: 97 points
+✅ ENHANCED CLEAR: Path clear via ultrasonic + LiDAR at 200.0cm - resuming forward_tracking
+🚶 ENHANCED TRACKING: 7.2m signal ↗improving (t=0.5s)
+📡 LiDAR scan #580: 90 points
+🧭 AUTONOMOUS | FORWARD_TRACKING | FUSION: 135.2cm | LiDAR: 59cm@217° | Clear: 6/8 | BT: 3.6m (-67dBm TRACK↗) | Det: 18 | Runtime: 82s
+📡 LiDAR scan #590: 75 points
+📡 LiDAR scan #600: 66 points
+🧭 AUTONOMOUS | FORWARD_TRACKING | ULTRASONIC: 200.0cm | LiDAR: 76cm@316° | Clear: 5/8 | BT: 3.6m (-67dBm TRACK↗) | Det: 18 | Runtime: 85s
+🧠 ENHANCED AVOIDING! ULTRASONIC obstacle at 27.0cm - turning right
+📡 LiDAR scan #610: 60 points
+📡 LiDAR scan #620: 76 points
+🧠 ENHANCED TURNING: right for 2.0s, fusion obstacle at 68.8cm
+✅ ENHANCED CLEAR: Path clear via fusion + LiDAR at 166.8cm - resuming forward_tracking
+🧭 AUTONOMOUS | FORWARD_TRACKING | FUSION: 166.8cm | LiDAR: 67cm@103° | Clear: 6/8 | BT: 3.7m (-68dBm TRACK↗) | Det: 19 | Runtime: 88s
+🚶 ENHANCED TRACKING: 3.7m signal ↗improving (t=0.5s)
+📡 LiDAR scan #630: 72 points
+📡 LiDAR scan #640: 62 points
+🧭 AUTONOMOUS | FORWARD_TRACKING | FUSION: 134.6cm | LiDAR: 96cm@152° | Clear: 6/8 | BT: 3.7m (-68dBm TRACK↗) | Det: 19 | Runtime: 91s
+📡 LiDAR scan #650: 61 points
+📡 LiDAR scan #660: 69 points
+🚶 ENHANCED TRACKING: 3.7m signal ↗improving (t=6.0s)
+🧭 AUTONOMOUS | FORWARD_TRACKING | FUSION: 77.4cm | LiDAR: 67cm@15° | Clear: 5/8 | BT: 3.7m (-68dBm TRACK↗) | Det: 19 | Runtime: 94s
+📡 BlueCharm TRACKING↗ #20:
+   RSSI: -73dBm (raw: -74) | Distance: ~4.8m | Avg: -72dBm
+📡 LiDAR scan #670: 61 points
+🚶 ENHANCED TRACKING: 4.8m signal ↗improving (t=6.5s)
+📡 LiDAR scan #680: 54 points
+📡 LiDAR scan #690: 44 points
+🧠 ENHANCED TURNING: left for 2.0s, fusion obstacle at 35.7cm
+🧭 AUTONOMOUS | SMART_AVOIDING🧠 | FUSION: 35.7cm | LiDAR: 79cm@19° | Clear: 6/8 | BT: 4.2m (-72dBm TRACK↗) | Det: 21 | Runtime: 97s
+🧠 ENHANCED TURNING: left for 2.5s, fusion obstacle at 78.6cm
+✅ ENHANCED CLEAR: Path clear via ultrasonic + LiDAR at 200.0cm - resuming forward_tracking
+📡 LiDAR scan #700: 54 points
+🚶 ENHANCED TRACKING: 4.2m signal ↗improving (t=0.5s)
+📡 LiDAR scan #710: 55 points
+🧭 AUTONOMOUS | FORWARD_TRACKING | ULTRASONIC: 200.0cm | LiDAR: 50cm@175° | Clear: 6/8 | BT: 4.2m (-71dBm TRACK↗) | Det: 22 | Runtime: 100s
+🔄 SIGNAL DEGRADING: Testing enhanced turn after 3.0s tracking
+📡 LiDAR scan #720: 59 points
+🔄 ENHANCED TESTING: right turn for signal improvement
+⚠️ NO IMPROVEMENT: Continuing forward tracking
+📡 LiDAR scan #730: 62 points
+🏁 TRACKING INITIALIZED: Starting at 4.4m
+🚶 ENHANCED TRACKING: 4.3m signal ↘degrading (t=0.5s)
+🧭 AUTONOMOUS | FORWARD_TRACKING | FUSION: 147.1cm | LiDAR: 79cm@213° | Clear: 6/8 | BT: 4.3m (-72dBm TRACK↘) | Det: 24 | Runtime: 103s
+📡 LiDAR scan #740: 64 points
+🔄 SIGNAL DEGRADING: Testing enhanced turn after 3.0s tracking
+📡 LiDAR scan #750: 53 points
+📡 BlueCharm TRACKING↗ #25:
+   RSSI: -66dBm (raw: -60) | Distance: ~3.0m | Avg: -70dBm
+🔄 ENHANCED TESTING: right turn for signal improvement
+✅ ENHANCED TEST SUCCESS: right improved by 6.0dBm - continuing right
+🧭 AUTONOMOUS | TURN_TESTING | FUSION: 100.3cm | LiDAR: 101cm@341° | Clear: 5/8 | BT: 3.0m (-66dBm TRACK↗) | Det: 25 | Runtime: 106s
+🔄 ENHANCED TESTING: right turn for signal improvement
+📡 LiDAR scan #760: 57 points
+⚠️ NO IMPROVEMENT: Continuing forward tracking
+🏁 TRACKING INITIALIZED: Starting at 2.2m
+🚶 ENHANCED TRACKING: 3.0m signal ↗improving (t=0.5s)
+📡 LiDAR scan #770: 53 points
+🧭 AUTONOMOUS | FORWARD_TRACKING | ULTRASONIC: 200.0cm | LiDAR: 94cm@59° | Clear: 5/8 | BT: 3.0m (-66dBm TRACK↗) | Det: 25 | Runtime: 109s
+📡 LiDAR scan #780: 74 points
+🧠 ENHANCED AVOIDING! ULTRASONIC obstacle at 25.5cm - turning left
+📡 LiDAR scan #790: 80 points
+🧠 ENHANCED TURNING: left for 2.0s, fusion obstacle at 80.9cm
+🧭 AUTONOMOUS | SMART_AVOIDING🧠 | FUSION: 80.9cm | LiDAR: 77cm@325° | Clear: 4/8 | BT: 2.7m (-65dBm TRACK↗) | Det: 27 | Runtime: 112s
+📡 LiDAR scan #800: 79 points
+✅ ENHANCED CLEAR: Path clear via ultrasonic + LiDAR at 200.0cm - resuming forward_tracking
+🚶 ENHANCED TRACKING: 2.7m signal ↗improving (t=0.5s)
+📡 LiDAR scan #810: 72 points
+📡 LiDAR scan #820: 70 points
+🧭 AUTONOMOUS | FORWARD_TRACKING | ULTRASONIC: 200.0cm | LiDAR: 87cm@227° | Clear: 6/8 | BT: 2.7m (-65dBm TRACK↗) | Det: 27 | Runtime: 115s
+📡 LiDAR scan #830: 58 points
+📡 LiDAR scan #840: 63 points
+🧭 AUTONOMOUS | FORWARD_TRACKING | ULTRASONIC: 200.0cm | LiDAR: 134cm@123° | Clear: 8/8 | BT: 3.0m (-69dBm TRACK↗) | Det: 29 | Runtime: 118s
+🚶 ENHANCED TRACKING: 3.0m signal ↗improving (t=6.0s)
+🚶 ENHANCED TRACKING: 3.0m signal ↗improving (t=6.5s)
+📡 LiDAR scan #850: 72 points
+📡 LiDAR scan #860: 83 points
+📡 BlueCharm TRACKING↗ #30:
+   RSSI: -68dBm (raw: -70) | Distance: ~2.8m | Avg: -68dBm
+🧭 AUTONOMOUS | FORWARD_TRACKING | FUSION: 178.9cm | LiDAR: 127cm@332° | Clear: 8/8 | BT: 2.8m (-68dBm TRACK↗) | Det: 30 | Runtime: 121s
+📡 LiDAR scan #870: 80 points
+📡 LiDAR scan #880: 76 points
+🧭 AUTONOMOUS | FORWARD_TRACKING | FUSION: 158.4cm | LiDAR: 79cm@332° | Clear: 5/8 | BT: 2.8m (-68dBm TRACK↗) | Det: 31 | Runtime: 124s
+🚶 ENHANCED TRACKING: 2.8m signal ↗improving (t=12.0s)
+📡 LiDAR scan #890: 90 points
+🚶 ENHANCED TRACKING: 2.8m signal ↗improving (t=12.5s)
+📡 LiDAR scan #900: 106 points
+🚨 WRONG DIRECTION: Distance increased 2.9m (2.2m → 5.1m)
+🔄 IMMEDIATE COURSE CORRECTION: Turning around to find BlueCharm
+🧭 AUTONOMOUS | TURN_TESTING | FUSION: 100.5cm | LiDAR: 38cm@289° | Clear: 4/8 | BT: 4.2m (-73dBm TRACK↘) | Det: 32 | Runtime: 127s
+📡 LiDAR scan #910: 99 points
+🔄 ENHANCED TESTING: right turn for signal improvement
+✅ ENHANCED TEST SUCCESS: right improved by 1.2dBm - continuing right
+🔄 ENHANCED TESTING: right turn for signal improvement
+📡 LiDAR scan #920: 93 points
+⚠️ NO IMPROVEMENT: Continuing forward tracking
+🧠 ENHANCED AVOIDING! FUSION obstacle at 18.1cm - turning left
+🧭 AUTONOMOUS | SMART_AVOIDING🧠 | FUSION: 41.2cm | LiDAR: 41cm@346° | Clear: 3/8 | BT: 3.9m (-72dBm TRACK↗) | Det: 33 | Runtime: 130s
+📡 LiDAR scan #930: 96 points
+✅ ENHANCED CLEAR: Path clear via fusion + LiDAR at 98.6cm - resuming forward_tracking
+📡 LiDAR scan #940: 100 points
+🏁 TRACKING INITIALIZED: Starting at 4.4m
+🚶 ENHANCED TRACKING: 3.9m signal ↗improving (t=0.5s)
+🧭 AUTONOMOUS | FORWARD_TRACKING | FUSION: 81.4cm | LiDAR: 44cm@193° | Clear: 2/8 | BT: 3.9m (-72dBm TRACK↗) | Det: 33 | Runtime: 133s
+📡 LiDAR scan #950: 96 points
+📡 BlueCharm TRACKING↘ #35:
+   RSSI: -77dBm (raw: -80) | Distance: ~6.3m | Avg: -71dBm
+📡 LiDAR scan #960: 98 points
+🚨 WRONG DIRECTION: Distance increased 3.2m (4.4m → 7.5m)
+🔄 IMMEDIATE COURSE CORRECTION: Turning around to find BlueCharm
+🔄 ENHANCED TESTING: right turn for signal improvement
+📡 LiDAR scan #970: 92 points
+🧭 AUTONOMOUS | SMART_AVOIDING🧠 | FUSION: 34.3cm | LiDAR: 34cm@14° | Clear: 3/8 | BT: 6.3m (-77dBm TRACK↘) | Det: 35 | Runtime: 136s
+🧠 ENHANCED TURNING: right for 2.0s, fusion obstacle at 181.8cm
+📡 LiDAR scan #980: 91 points
+🧠 ENHANCED TURNING: right for 2.5s, fusion obstacle at 98.7cm
+✅ ENHANCED CLEAR: Path clear via fusion + LiDAR at 99.0cm - resuming forward_tracking
+📡 LiDAR scan #990: 76 points
+🏁 TRACKING INITIALIZED: Starting at 7.5m
+🚶 ENHANCED TRACKING: 6.3m signal ↘degrading (t=0.5s)
+🧭 AUTONOMOUS | FORWARD_TRACKING | ULTRASONIC: 200.0cm | LiDAR: 28cm@268° | Clear: 4/8 | BT: 6.3m (-77dBm TRACK↘) | Det: 35 | Runtime: 139s
+📡 LiDAR scan #1000: 111 points
+📡 LiDAR scan #1010: 127 points
+🔄 SIGNAL DEGRADING: Testing enhanced turn after 3.0s tracking
+🔄 ENHANCED TESTING: right turn for signal improvement
+🧭 AUTONOMOUS | TURN_TESTING | ULTRASONIC: 200.0cm | LiDAR: 55cm@229° | Clear: 4/8 | BT: 4.7m (-72dBm TRACK↘) | Det: 36 | Runtime: 142s
+⚠️ NO IMPROVEMENT: Continuing forward tracking
+📡 LiDAR scan #1020: 124 points
+🏁 TRACKING INITIALIZED: Starting at 4.6m
+🚶 ENHANCED TRACKING: 4.9m signal ↘degrading (t=0.5s)
+🚨 WRONG DIRECTION: Distance increased 4.2m (4.6m → 8.7m)
+🔄 IMMEDIATE COURSE CORRECTION: Turning around to find BlueCharm
+🔄 ENHANCED TESTING: right turn for signal improvement
+📡 LiDAR scan #1030: 122 points
+⚠️ NO IMPROVEMENT: Continuing forward tracking
+🏁 TRACKING INITIALIZED: Starting at 8.7m
+🚶 ENHANCED TRACKING: 7.4m signal ↘degrading (t=0.5s)
+🧭 AUTONOMOUS | FORWARD_TRACKING | FUSION: 145.2cm | LiDAR: 59cm@300° | Clear: 5/8 | BT: 7.4m (-78dBm TRACK↘) | Det: 38 | Runtime: 145s
+📡 LiDAR scan #1040: 127 points
+📡 BlueCharm TRACKING↘ #40:
+   RSSI: -75dBm (raw: -76) | Distance: ~6.1m | Avg: -74dBm
+📡 LiDAR scan #1050: 131 points
+🔄 SIGNAL DEGRADING: Testing enhanced turn after 3.0s tracking
+🔄 ENHANCED TESTING: right turn for signal improvement
+🧭 AUTONOMOUS | TURN_TESTING | FUSION: 110.0cm | LiDAR: 35cm@292° | Clear: 3/8 | BT: 6.1m (-75dBm TRACK↘) | Det: 40 | Runtime: 148s
+📡 LiDAR scan #1060: 114 points
+⚠️ NO IMPROVEMENT: Continuing forward tracking
+🏁 TRACKING INITIALIZED: Starting at 6.7m
+🚶 ENHANCED TRACKING: 6.4m signal ↘degrading (t=0.5s)
+📡 LiDAR scan #1070: 107 points
+🧭 AUTONOMOUS | FORWARD_TRACKING | FUSION: 122.3cm | LiDAR: 20cm@292° | Clear: 3/8 | BT: 6.4m (-75dBm TRACK↘) | Det: 41 | Runtime: 151s
+📡 LiDAR scan #1080: 87 points
+🔄 SIGNAL DEGRADING: Testing enhanced turn after 3.0s tracking
+🔄 ENHANCED TESTING: right turn for signal improvement
+📡 LiDAR scan #1090: 139 points
+⚠️ NO IMPROVEMENT: Continuing forward tracking
+🏁 TRACKING INITIALIZED: Starting at 6.7m
+🚶 ENHANCED TRACKING: 6.4m signal ↘degrading (t=0.5s)
+📡 LiDAR scan #1100: 137 points
+🧭 AUTONOMOUS | SMART_AVOIDING🧠 | FUSION: 45.5cm | LiDAR: 22cm@273° | Clear: 3/8 | BT: 6.4m (-75dBm TRACK↘) | Det: 41 | Runtime: 154s
+✅ ENHANCED CLEAR: Path clear via ultrasonic + LiDAR at 200.0cm - resuming forward_tracking
+🚶 ENHANCED TRACKING: 6.4m signal ↘degrading (t=0.5s)
+📡 LiDAR scan #1110: 150 points
+🧠 ENHANCED AVOIDING! FUSION obstacle at 25.8cm - turning left
+📡 LiDAR scan #1120: 129 points
+✅ ENHANCED CLEAR: Path clear via ultrasonic + LiDAR at 200.0cm - resuming forward_tracking
+🧭 AUTONOMOUS | FORWARD_TRACKING | ULTRASONIC: 200.0cm | LiDAR: 13cm@235° | Clear: 2/8 | BT: 6.4m (-75dBm TRACK↘) | Det: 41 | Runtime: 157s
+🚶 ENHANCED TRACKING: 6.4m signal ↘degrading (t=0.5s)
+📡 LiDAR scan #1130: 139 points
+📡 LiDAR scan #1140: 157 points
+🔄 SIGNAL DEGRADING: Testing enhanced turn after 3.0s tracking
+🧭 AUTONOMOUS | SMART_AVOIDING🧠 | FUSION: 30.1cm | LiDAR: 49cm@195° | Clear: 2/8 | BT: 6.6m (-76dBm TRACK↘) | Det: 42 | Runtime: 160s
+📡 LiDAR scan #1150: 162 points
+🧠 ENHANCED TURNING: right for 2.0s, fusion obstacle at 48.0cm
+📡 LiDAR scan #1160: 151 points
+🧠 ENHANCED TURNING: right for 2.5s, fusion obstacle at 108.1cm
+🧭 AUTONOMOUS | SMART_AVOIDING🧠 | FUSION: 64.8cm | LiDAR: 32cm@191° | Clear: 2/8 | BT: 9.1m (-80dBm TRACK↘) | Det: 43 | Runtime: 163s
+🔄 ENHANCED STUCK: Max turn time reached - backing up (count: 1)
+📡 LiDAR scan #1170: 166 points
+📡 LiDAR scan #1180: 156 points
+🧠 ENHANCED RETRY: Switching to right turn (stuck: 0)
+🧭 AUTONOMOUS | SMART_AVOIDING🧠 | ULTRASONIC: 200.0cm | LiDAR: 35cm@281° | Clear: 2/8 | BT: 9.1m (-80dBm TRACK↘) | Det: 43 | Runtime: 166s
+📡 LiDAR scan #1190: 169 points
+📡 LiDAR scan #1200: 169 points
+📡 BlueCharm TRACKING↘ #45:
+   RSSI: -83dBm (raw: -88) | Distance: ~12.8m | Avg: -77dBm
+🧠 ENHANCED TURNING: right for 2.0s, fusion obstacle at 43.5cm
+🧠 ENHANCED TURNING: right for 2.5s, fusion obstacle at 45.5cm
+🧭 AUTONOMOUS | SMART_AVOIDING🧠 | FUSION: 48.6cm | LiDAR: 45cm@92° | Clear: 2/8 | BT: 9.6m (-78dBm TRACK↘) | Det: 46 | Runtime: 169s
+📡 LiDAR scan #1210: 173 points
+🔄 ENHANCED STUCK: Max turn time reached - backing up (count: 1)
+📡 LiDAR scan #1220: 176 points
+📡 LiDAR scan #1230: 114 points
+🧠 ENHANCED RETRY: Switching to left turn (stuck: 1)
+🧭 AUTONOMOUS | SMART_AVOIDING🧠 | FUSION: 77.9cm | LiDAR: 12cm@182° | Clear: 3/8 | BT: 9.6m (-78dBm TRACK↘) | Det: 46 | Runtime: 172s
+   Stuck counter: 1/4
+📡 LiDAR scan #1240: 140 points
+🧠 ENHANCED TURNING: left for 2.0s, fusion obstacle at 84.3cm
+✅ ENHANCED CLEAR: Path clear via fusion + LiDAR at 167.6cm - resuming forward_tracking
+📡 LiDAR scan #1250: 164 points
+🏁 TRACKING INITIALIZED: Starting at 9.2m
+🚶 ENHANCED TRACKING: 9.6m signal ↘degrading (t=0.5s)
+🧭 AUTONOMOUS | FORWARD_TRACKING | FUSION: 162.4cm | LiDAR: 23cm@47° | Clear: 2/8 | BT: 9.6m (-78dBm TRACK↘) | Det: 46 | Runtime: 175s
+   Stuck counter: 1/4
+🧠 ENHANCED AVOIDING! FUSION obstacle at 26.0cm - turning left
+📡 LiDAR scan #1260: 159 points
+📡 LiDAR scan #1270: 126 points
+🧠 ENHANCED TURNING: left for 2.0s, fusion obstacle at 21.5cm
+✅ ENHANCED CLEAR: Path clear via ultrasonic + LiDAR at 200.0cm - resuming forward_tracking
+🧭 AUTONOMOUS | FORWARD_TRACKING | ULTRASONIC: 200.0cm | LiDAR: 15cm@241° | Clear: 3/8 | BT: 8.9m (-77dBm TRACK↘) | Det: 47 | Runtime: 178s
+   Stuck counter: 1/4
+🚨 WRONG DIRECTION: Distance increased 3.0m (9.2m → 12.2m)
+🔄 IMMEDIATE COURSE CORRECTION: Turning around to find BlueCharm
+📡 LiDAR scan #1280: 131 points
+🔄 ENHANCED TESTING: left turn for signal improvement
+🔄 TRYING RIGHT: Left turn didn't help, testing right
+🔄 ENHANCED TESTING: right turn for signal improvement
+📡 LiDAR scan #1290: 133 points
+⚠️ NO IMPROVEMENT: Continuing forward tracking
+🏁 TRACKING INITIALIZED: Starting at 12.2m
+🚶 ENHANCED TRACKING: 11.5m signal ↗improving (t=0.5s)
+🧭 AUTONOMOUS | FORWARD_TRACKING | FUSION: 81.6cm | LiDAR: 15cm@212° | Clear: 3/8 | BT: 11.5m (-81dBm TRACK↗) | Det: 48 | Runtime: 181s
+📡 LiDAR scan #1300: 157 points
+📡 LiDAR scan #1310: 175 points
+🧭 AUTONOMOUS | SMART_AVOIDING🧠 | FUSION: 53.7cm | LiDAR: 44cm@31° | Clear: 1/8 | BT: 11.5m (-81dBm TRACK↗) | Det: 48 | Runtime: 184s
+📡 LiDAR scan #1320: 171 points
+📡 BlueCharm TRACKING↗ #50:
+   RSSI: -79dBm (raw: -80) | Distance: ~9.8m | Avg: -79dBm
+📡 LiDAR scan #1330: 159 points
+🧠 ENHANCED TURNING: left for 2.0s, fusion obstacle at 32.6cm
+🧠 ENHANCED TURNING: left for 2.5s, fusion obstacle at 33.6cm
+🧭 AUTONOMOUS | SMART_AVOIDING🧠 | FUSION: 169.8cm | LiDAR: 27cm@218° | Clear: 2/8 | BT: 9.5m (-78dBm TRACK↗) | Det: 51 | Runtime: 187s
+📡 LiDAR scan #1340: 168 points
+🔄 ENHANCED STUCK: Max turn time reached - backing up (count: 1)
+📡 LiDAR scan #1350: 177 points
+📡 LiDAR scan #1360: 126 points
+🧠 ENHANCED RETRY: Switching to left turn (stuck: 1)
+🧭 AUTONOMOUS | SMART_AVOIDING🧠 | FUSION: 86.5cm | LiDAR: 11cm@136° | Clear: 3/8 | BT: 9.5m (-78dBm TRACK↗) | Det: 51 | Runtime: 190s
+   Stuck counter: 1/4
+📡 LiDAR scan #1370: 138 points
+✅ ENHANCED CLEAR: Path clear via fusion + LiDAR at 96.0cm - resuming forward_tracking
+🚶 ENHANCED TRACKING: 10.4m signal ↗improving (t=0.5s)
+📡 LiDAR scan #1380: 158 points
+🧠 ENHANCED AVOIDING! FUSION obstacle at 24.9cm - turning left
+🧭 AUTONOMOUS | SMART_AVOIDING🧠 | FUSION: 24.9cm | LiDAR: 19cm@53° | Clear: 2/8 | BT: 10.4m (-80dBm TRACK↗) | Det: 53 | Runtime: 193s
+   Stuck counter: 1/4
+📡 LiDAR scan #1390: 155 points
+🧠 ENHANCED TURNING: left for 2.0s, fusion obstacle at 21.0cm
+📡 LiDAR scan #1400: 145 points
+🧠 ENHANCED TURNING: left for 2.5s, fusion obstacle at 19.2cm
+✅ ENHANCED CLEAR: Path clear via ultrasonic + LiDAR at 200.0cm - resuming forward_tracking
+🧭 AUTONOMOUS | FORWARD_TRACKING | ULTRASONIC: 200.0cm | LiDAR: 14cm@252° | Clear: 1/8 | BT: 9.8m (-79dBm TRACK↗) | Det: 54 | Runtime: 196s
+🚶 ENHANCED TRACKING: 9.8m signal ↗improving (t=0.5s)
+📡 LiDAR scan #1410: 159 points
+📡 BlueCharm TRACKING↗ #55:
+   RSSI: -85dBm (raw: -90) | Distance: ~15.6m | Avg: -80dBm
+🚨 WRONG DIRECTION: Distance increased 7.1m (12.2m → 19.2m)
+🔄 IMMEDIATE COURSE CORRECTION: Turning around to find BlueCharm
+📡 LiDAR scan #1420: 169 points
+🔄 ENHANCED TESTING: left turn for signal improvement
+✅ ENHANCED TEST SUCCESS: left improved by 2.2dBm - continuing left
+🧭 AUTONOMOUS | TURN_TESTING | FUSION: 62.1cm | LiDAR: 38cm@203° | Clear: 0/8 | BT: 13.7m (-82dBm TRACK↗) | Det: 56 | Runtime: 199s
+🔄 ENHANCED TESTING: left turn for signal improvement
+📡 LiDAR scan #1430: 171 points
+🔄 TRYING RIGHT: Left turn didn't help, testing right
+📡 LiDAR scan #1440: 172 points
+📡 Stopping BLE scanner...
+🧠 ENHANCED TURNING: right for 2.0s, fusion obstacle at 57.3cm
+🧭 AUTONOMOUS | SMART_AVOIDING🧠 | FUSION: 57.3cm | LiDAR: 39cm@229° | Clear: 2/8 | BT: 13.7m (-82dBm TRACK↗) | Det: 56 | Runtime: 202s
+📡 Starting BLE scanner...
+📡 BLE scanner active
+📡 LiDAR scan #1450: 178 points
+🧠 ENHANCED TURNING: right for 2.5s, fusion obstacle at 62.2cm
+🔄 ENHANCED STUCK: Max turn time reached - backing up (count: 1)
+📡 LiDAR scan #1460: 172 points
+🧭 AUTONOMOUS | BACKING | FUSION: 50.4cm | LiDAR: 41cm@215° | Clear: 2/8 | BT: 13.7m (-82dBm TRACK↗) | Det: 56 | Runtime: 205s
+   Stuck counter: 1/4
+📡 LiDAR scan #1470: 179 points
+🧠 ENHANCED RETRY: Switching to right turn (stuck: 1)
+📡 LiDAR scan #1480: 136 points
+✅ ENHANCED CLEAR: Path clear via fusion + LiDAR at 92.5cm - resuming forward_tracking
+🧭 AUTONOMOUS | FORWARD_TRACKING | FUSION: 92.5cm | LiDAR: 12cm@266° | Clear: 2/8 | BT: 12.7m (-81dBm TRACK↘) | Det: 57 | Runtime: 208s
+   Stuck counter: 1/4
+📡 LiDAR scan #1490: 142 points
+🧠 ENHANCED AVOIDING! ULTRASONIC obstacle at 23.6cm - turning right
+📡 LiDAR scan #1500: 158 points
+🧠 ENHANCED TURNING: right for 2.0s, fusion obstacle at 20.6cm
+🧠 ENHANCED TURNING: right for 2.5s, fusion obstacle at 27.4cm
+🧭 AUTONOMOUS | SMART_AVOIDING🧠 | FUSION: 27.4cm | LiDAR: 21cm@123° | Clear: 2/8 | BT: 12.7m (-81dBm TRACK↘) | Det: 57 | Runtime: 211s
+📊 === Enhanced Navigator V7 Statistics ===
+   Runtime: 211 seconds
+   Distance measurements: 1413
+   Obstacle avoidances: 9
+   Emergency stops: 8
+   Stuck recoveries: 0
+🎯 === Enhanced Navigation Statistics ===
+   Smart turns: 9
+   Tracking activations: 1
+   Approach activations: 0
+   Hold activations: 0
+   Target reaches: 0
+   Signal improvements: 3
+   Course corrections: 13
+   Turn tests: 15
+   Long tracking phases: 6
+🔄 === LiDAR Enhancement Statistics ===
+   LiDAR scans processed: 402
+   LiDAR obstacle detections: 9
+   LiDAR enhanced turns: 35
+   Sensor fallbacks: 0
+   LiDAR scan rate: 1.91/sec
+📡 === Bluetooth Ranging Statistics ===
+   Total detections: 57
+   Callback events: 57
+   Detection rate: 0.27/sec
+   Callback rate: 0.27/sec
+   Strongest RSSI: -64.76670132911772 dBm
+   Signal timeouts: 0
+   Average RSSI: -80.5 dBm
+   Average smoothed distance: 12.1m
+   Navigation rate: 6.7 measurements/sec
+📡 LiDAR scan #1510: 146 points
+🔄 ENHANCED STUCK: Max turn time reached - backing up (count: 1)
+📡 LiDAR scan #1520: 133 points
+🧭 AUTONOMOUS | BACKING | FUSION: 104.6cm | LiDAR: 11cm@193° | Clear: 5/8 | BT: 13.5m (-81dBm TRACK↘) | Det: 58 | Runtime: 214s
+   Stuck counter: 1/4
+📡 LiDAR scan #1530: 79 points
+🧠 ENHANCED RETRY: Switching to left turn (stuck: 1)
+📡 LiDAR scan #1540: 96 points
+📡 BlueCharm TRACKING↘ #60:
+   RSSI: -84dBm (raw: -84) | Distance: ~17.1m | Avg: -83dBm
+✅ ENHANCED CLEAR: Path clear via fusion + LiDAR at 90.5cm - resuming forward_tracking
+📡 LiDAR scan #1550: 123 points
+🏁 TRACKING INITIALIZED: Starting at 17.5m
+🚶 ENHANCED TRACKING: 17.1m signal ↘degrading (t=0.5s)
+🧭 AUTONOMOUS | FORWARD_TRACKING | ULTRASONIC: 200.0cm | LiDAR: 14cm@112° | Clear: 2/8 | BT: 17.1m (-84dBm TRACK↘) | Det: 60 | Runtime: 217s
+   Stuck counter: 1/4
+📡 LiDAR scan #1560: 133 points
+🔄 SIGNAL DEGRADING: Testing enhanced turn after 3.0s tracking
+📡 LiDAR scan #1570: 141 points
+🔄 ENHANCED TESTING: left turn for signal improvement
+🧭 AUTONOMOUS | TURN_TESTING | FUSION: 76.2cm | LiDAR: 37cm@110° | Clear: 1/8 | BT: 17.1m (-83dBm TRACK↘) | Det: 61 | Runtime: 220s
+   Stuck counter: 1/4
+🔄 TRYING RIGHT: Left turn didn't help, testing right
+🔄 ENHANCED TESTING: right turn for signal improvement
+📡 LiDAR scan #1580: 141 points
+⚠️ NO IMPROVEMENT: Continuing forward tracking
+🏁 TRACKING INITIALIZED: Starting at 16.5m
+🚶 ENHANCED TRACKING: 17.1m signal ↘degrading (t=0.5s)
+📡 LiDAR scan #1590: 134 points
+🧭 AUTONOMOUS | FORWARD_TRACKING | FUSION: 66.3cm | LiDAR: 41cm@110° | Clear: 1/8 | BT: 17.1m (-83dBm TRACK↘) | Det: 61 | Runtime: 223s
+   Stuck counter: 1/4
+📡 LiDAR scan #1600: 135 points
+📡 LiDAR scan #1610: 142 points
+🧠 ENHANCED TURNING: left for 2.0s, fusion obstacle at 39.4cm
+🧠 ENHANCED TURNING: left for 2.5s, fusion obstacle at 49.5cm
+🧭 AUTONOMOUS | SMART_AVOIDING🧠 | FUSION: 49.5cm | LiDAR: 27cm@213° | Clear: 2/8 | BT: 24.8m (-91dBm TRACK↘) | Det: 63 | Runtime: 226s
+📡 LiDAR scan #1620: 163 points
+🔄 ENHANCED STUCK: Max turn time reached - backing up (count: 1)
+📡 LiDAR scan #1630: 155 points
+🧭 AUTONOMOUS | BACKING | FUSION: 101.4cm | LiDAR: 19cm@149° | Clear: 1/8 | BT: 24.8m (-91dBm TRACK↘) | Det: 63 | Runtime: 229s
+   Stuck counter: 1/4
+📡 LiDAR scan #1640: 106 points
+🧠 ENHANCED RETRY: Switching to left turn (stuck: 1)
+✅ ENHANCED CLEAR: Path clear via fusion + LiDAR at 145.0cm - resuming forward_tracking
+📡 LiDAR scan #1650: 116 points
+🚨 WRONG DIRECTION: Distance increased 13.5m (16.5m → 30.0m)
+🔄 IMMEDIATE COURSE CORRECTION: Turning around to find BlueCharm
+🔄 ENHANCED TESTING: left turn for signal improvement
+🔄 TRYING RIGHT: Left turn didn't help, testing right
+🧭 AUTONOMOUS | TURN_TESTING | FUSION: 123.2cm | LiDAR: 12cm@133° | Clear: 3/8 | BT: 24.8m (-91dBm TRACK↘) | Det: 63 | Runtime: 232s
+   Stuck counter: 1/4
+📡 LiDAR scan #1660: 130 points
+🔄 ENHANCED TESTING: right turn for signal improvement
+⚠️ NO IMPROVEMENT: Continuing forward tracking
+📡 LiDAR scan #1670: 130 points
+📡 Stopping BLE scanner...
+📡 LiDAR scan #1680: 173 points
+📡 LiDAR scan #1690: 148 points
+📡 LiDAR scan #1700: 157 points
+📡 LiDAR scan #1710: 169 points
+📡 LiDAR scan #1720: 166 points
+📡 LiDAR scan #1730: 118 points
+📡 LiDAR scan #1740: 72 points
+📡 LiDAR scan #1750: 60 points
+📡 LiDAR scan #1760: 68 points
+📡 LiDAR scan #1770: 97 points
+📡 LiDAR scan #1780: 97 points
+📡 LiDAR scan #1790: 118 points
+📡 LiDAR scan #1800: 126 points
+📡 LiDAR scan #1810: 122 points
+📡 LiDAR scan #1820: 102 points
+📡 LiDAR scan #1830: 105 points
+📡 LiDAR scan #1840: 109 points
+📡 LiDAR scan #1850: 112 points
+📡 LiDAR scan #1860: 110 points
+📡 LiDAR scan #1870: 100 points
+📡 LiDAR scan #1880: 104 points
+📡 LiDAR scan #1890: 111 points
+
+Attempting to stop program...
+
+^C (Interrupt signal sent)
+^C
+🛑 Shutdown requested by user...
+🛑 Stopping Enhanced Navigator V7...
+SIGTERM sent to Python processes
+No Python processes running
+

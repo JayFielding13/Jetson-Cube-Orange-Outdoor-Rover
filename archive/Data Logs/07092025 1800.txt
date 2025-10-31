@@ -1,0 +1,503 @@
+(venv) jay@RoboPi:~/rover_project $ python3 autonomous_bluetooth_tracker.py
+✅ Using system Bluetooth commands
+============================================================
+📡 AUTONOMOUS BLUETOOTH TRACKER
+============================================================
+
+Features:
+  - Dual TP-Link UB500 antenna direction finding
+  - BlueCharm transmitter tracking
+  - Park-on-target mission completion
+  - Ultrasonic obstacle avoidance
+  - RSSI-based ranging and bearing
+
+🎯 Bluetooth Tracker Initialized
+🚗 Mission: Park on BlueCharm (within 0.2m)
+📡 Antenna separation: 0.3m
+🔍 Tracking MAC: DD:34:02:09:CA:1E
+✅ Arduino connected on /dev/ttyUSB1
+📡 Found Bluetooth adapters: ['hci2', 'hci1', 'hci0']
+✅ Dual antenna setup: hci0 (left), hci1 (right)
+✅ Enabled hci0
+✅ Enabled hci1
+🔄 Starting BLE scan #1 for BlueCharm_190853
+📡 Scanning with LEFT antenna (hci0)...
+🚀 Bluetooth Tracker started
+🔍 BLE scanning with hci0...
+🎯 Ready for autonomous tracking
+✅ Tracker ready - switch to autonomous mode
+📡 Place BlueCharm_190853 on floor for rover to find
+🎯 Mission: Rover will navigate to and park on BlueCharm
+Press Ctrl+C to stop...
+⏱️ HCI scanning for 8 seconds on hci0...
+🎛️ MODE CHANGE: MANUAL → ASSISTED
+🎛️ MODE CHANGE: ASSISTED → AUTONOMOUS
+✅ AUTONOMOUS MODE ACTIVATED - Rover ready to track!
+📊 HCI scan got 414 lines
+✅ Found target on hci0: DD:34:02:09:CA:1E (unknown)
+📶 hci0 detected target: -60dBm
+📡 Scanning with RIGHT antenna (hci1)...
+🔍 BLE scanning with hci1...
+🧭 AUTONOMOUS | SEARCHING | Obstacle: 200.0cm | RC: ✅
+📡 Target: NOT DETECTED | Last scan: 9.5s ago | Total scans: 1
+✅ MODE OK - AUTONOMOUS active, but no Bluetooth target detected
+   💡 Make sure BlueCharm_190853 is powered on and nearby
+🎛️ MODE CHANGE: AUTONOMOUS → MANUAL
+🛑 AUTONOMOUS MODE DEACTIVATED - Rover stopping
+🎛️ MODE CHANGE: MANUAL → AUTONOMOUS
+✅ AUTONOMOUS MODE ACTIVATED - Rover ready to track!
+🎛️ MODE CHANGE: AUTONOMOUS → MANUAL
+🛑 AUTONOMOUS MODE DEACTIVATED - Rover stopping
+🎛️ MODE CHANGE: MANUAL → AUTONOMOUS
+✅ AUTONOMOUS MODE ACTIVATED - Rover ready to track!
+⏱️ HCI scanning for 8 seconds on hci1...
+🎛️ MODE CHANGE: AUTONOMOUS → MANUAL
+🛑 AUTONOMOUS MODE DEACTIVATED - Rover stopping
+🎛️ MODE CHANGE: MANUAL → AUTONOMOUS
+✅ AUTONOMOUS MODE ACTIVATED - Rover ready to track!
+🎛️ MODE CHANGE: AUTONOMOUS → MANUAL
+🛑 AUTONOMOUS MODE DEACTIVATED - Rover stopping
+🎛️ MODE CHANGE: MANUAL → AUTONOMOUS
+✅ AUTONOMOUS MODE ACTIVATED - Rover ready to track!
+🎛️ MODE CHANGE: AUTONOMOUS → MANUAL
+🛑 AUTONOMOUS MODE DEACTIVATED - Rover stopping
+🎛️ MODE CHANGE: MANUAL → AUTONOMOUS
+✅ AUTONOMOUS MODE ACTIVATED - Rover ready to track!
+🎛️ MODE CHANGE: AUTONOMOUS → MANUAL
+🛑 AUTONOMOUS MODE DEACTIVATED - Rover stopping
+🎛️ MODE CHANGE: MANUAL → AUTONOMOUS
+✅ AUTONOMOUS MODE ACTIVATED - Rover ready to track!
+🧭 AUTONOMOUS | SEARCHING | Obstacle: 200.0cm | RC: ✅
+📡 Target: NOT DETECTED | Last scan: 12.5s ago | Total scans: 1
+🎛️ MODE CHANGE: AUTONOMOUS → MANUAL
+🛑 AUTONOMOUS MODE DEACTIVATED - Rover stopping
+🎛️ MODE CHANGE: MANUAL → AUTONOMOUS
+✅ AUTONOMOUS MODE ACTIVATED - Rover ready to track!
+🎛️ MODE CHANGE: AUTONOMOUS → MANUAL
+🛑 AUTONOMOUS MODE DEACTIVATED - Rover stopping
+🎛️ MODE CHANGE: MANUAL → AUTONOMOUS
+✅ AUTONOMOUS MODE ACTIVATED - Rover ready to track!
+🎛️ MODE CHANGE: AUTONOMOUS → MANUAL
+🛑 AUTONOMOUS MODE DEACTIVATED - Rover stopping
+🎛️ MODE CHANGE: MANUAL → AUTONOMOUS
+✅ AUTONOMOUS MODE ACTIVATED - Rover ready to track!
+🎛️ MODE CHANGE: AUTONOMOUS → MANUAL
+🛑 AUTONOMOUS MODE DEACTIVATED - Rover stopping
+🎛️ MODE CHANGE: MANUAL → AUTONOMOUS
+✅ AUTONOMOUS MODE ACTIVATED - Rover ready to track!
+✅ MODE OK - AUTONOMOUS active, but no Bluetooth target detected
+   💡 Make sure BlueCharm_190853 is powered on and nearby
+🎛️ MODE CHANGE: AUTONOMOUS → MANUAL
+🛑 AUTONOMOUS MODE DEACTIVATED - Rover stopping
+🎛️ MODE CHANGE: MANUAL → AUTONOMOUS
+✅ AUTONOMOUS MODE ACTIVATED - Rover ready to track!
+🎛️ MODE CHANGE: AUTONOMOUS → MANUAL
+🛑 AUTONOMOUS MODE DEACTIVATED - Rover stopping
+🎛️ MODE CHANGE: MANUAL → AUTONOMOUS
+✅ AUTONOMOUS MODE ACTIVATED - Rover ready to track!
+🧭 AUTONOMOUS | SEARCHING | Obstacle: 200.0cm | RC: ✅
+📡 Target: NOT DETECTED | Last scan: 15.5s ago | Total scans: 1
+🎛️ MODE CHANGE: AUTONOMOUS → MANUAL
+🛑 AUTONOMOUS MODE DEACTIVATED - Rover stopping
+🎛️ MODE CHANGE: MANUAL → AUTONOMOUS
+✅ AUTONOMOUS MODE ACTIVATED - Rover ready to track!
+🎛️ MODE CHANGE: AUTONOMOUS → MANUAL
+🛑 AUTONOMOUS MODE DEACTIVATED - Rover stopping
+🎛️ MODE CHANGE: MANUAL → AUTONOMOUS
+✅ AUTONOMOUS MODE ACTIVATED - Rover ready to track!
+🎛️ MODE CHANGE: AUTONOMOUS → MANUAL
+🛑 AUTONOMOUS MODE DEACTIVATED - Rover stopping
+🎛️ MODE CHANGE: MANUAL → AUTONOMOUS
+✅ AUTONOMOUS MODE ACTIVATED - Rover ready to track!
+🎛️ MODE CHANGE: AUTONOMOUS → MANUAL
+🛑 AUTONOMOUS MODE DEACTIVATED - Rover stopping
+🎛️ MODE CHANGE: MANUAL → AUTONOMOUS
+✅ AUTONOMOUS MODE ACTIVATED - Rover ready to track!
+🎛️ MODE CHANGE: AUTONOMOUS → MANUAL
+🛑 AUTONOMOUS MODE DEACTIVATED - Rover stopping
+🎛️ MODE CHANGE: MANUAL → AUTONOMOUS
+✅ AUTONOMOUS MODE ACTIVATED - Rover ready to track!
+🎛️ MODE CHANGE: AUTONOMOUS → MANUAL
+🛑 AUTONOMOUS MODE DEACTIVATED - Rover stopping
+🎛️ MODE CHANGE: MANUAL → AUTONOMOUS
+✅ AUTONOMOUS MODE ACTIVATED - Rover ready to track!
+📊 HCI scan got 418 lines
+✅ Found target on hci1: DD:34:02:09:CA:1E (unknown)
+📶 hci1 detected target: -60dBm
+📊 Scan results: Left=-60dBm, Right=-60dBm
+✅ Signal detected! Processing...
+📡 Target detected: 10.0m @ 0° (Q:80%)
+   RSSI: L=-60dBm R=-60dBm
+🏃 APPROACHING to park: 10.0m → 0.2m
+🧭 AUTONOMOUS | APPROACHING | Obstacle: 200.0cm | RC: ❌
+📡 Target: 10.0m @ 0° | Quality: 80% | Age: 0.1s
+🔧 Arduino Raw: mode=2, valid=False, emergency=False
+🎛️ MODE CHANGE: AUTONOMOUS → MANUAL
+🛑 AUTONOMOUS MODE DEACTIVATED - Rover stopping
+🎛️ MODE CHANGE: MANUAL → AUTONOMOUS
+✅ AUTONOMOUS MODE ACTIVATED - Rover ready to track!
+🔄 Starting BLE scan #2 for BlueCharm_190853
+📡 Scanning with LEFT antenna (hci0)...
+🔍 BLE scanning with hci0...
+🎛️ MODE CHANGE: AUTONOMOUS → MANUAL
+🛑 AUTONOMOUS MODE DEACTIVATED - Rover stopping
+🎛️ MODE CHANGE: MANUAL → AUTONOMOUS
+✅ AUTONOMOUS MODE ACTIVATED - Rover ready to track!
+✅ TRACKING - Mode: AUTONOMOUS, Target: DETECTED
+🎛️ MODE CHANGE: AUTONOMOUS → MANUAL
+🛑 AUTONOMOUS MODE DEACTIVATED - Rover stopping
+🎛️ MODE CHANGE: MANUAL → AUTONOMOUS
+✅ AUTONOMOUS MODE ACTIVATED - Rover ready to track!
+🎛️ MODE CHANGE: AUTONOMOUS → MANUAL
+🛑 AUTONOMOUS MODE DEACTIVATED - Rover stopping
+🎛️ MODE CHANGE: MANUAL → AUTONOMOUS
+✅ AUTONOMOUS MODE ACTIVATED - Rover ready to track!
+⏱️ HCI scanning for 8 seconds on hci0...
+🎛️ MODE CHANGE: AUTONOMOUS → MANUAL
+🛑 AUTONOMOUS MODE DEACTIVATED - Rover stopping
+🎛️ MODE CHANGE: MANUAL → AUTONOMOUS
+✅ AUTONOMOUS MODE ACTIVATED - Rover ready to track!
+🎛️ MODE CHANGE: AUTONOMOUS → MANUAL
+🛑 AUTONOMOUS MODE DEACTIVATED - Rover stopping
+🎛️ MODE CHANGE: MANUAL → AUTONOMOUS
+✅ AUTONOMOUS MODE ACTIVATED - Rover ready to track!
+🚨 OBSTACLE! Avoiding 17.5cm - turning left
+🧭 AUTONOMOUS | AVOIDING | Obstacle: 17.5cm | RC: ❌
+📡 Target: 10.0m @ 0° | Quality: 80% | Age: 3.1s
+🎛️ MODE CHANGE: AUTONOMOUS → MANUAL
+🛑 AUTONOMOUS MODE DEACTIVATED - Rover stopping
+🎛️ MODE CHANGE: MANUAL → AUTONOMOUS
+✅ AUTONOMOUS MODE ACTIVATED - Rover ready to track!
+🎛️ MODE CHANGE: AUTONOMOUS → MANUAL
+🛑 AUTONOMOUS MODE DEACTIVATED - Rover stopping
+🎛️ MODE CHANGE: MANUAL → AUTONOMOUS
+✅ AUTONOMOUS MODE ACTIVATED - Rover ready to track!
+🎛️ MODE CHANGE: AUTONOMOUS → MANUAL
+🛑 AUTONOMOUS MODE DEACTIVATED - Rover stopping
+🎛️ MODE CHANGE: MANUAL → AUTONOMOUS
+✅ AUTONOMOUS MODE ACTIVATED - Rover ready to track!
+🎛️ MODE CHANGE: AUTONOMOUS → MANUAL
+🛑 AUTONOMOUS MODE DEACTIVATED - Rover stopping
+🎛️ MODE CHANGE: MANUAL → AUTONOMOUS
+✅ AUTONOMOUS MODE ACTIVATED - Rover ready to track!
+🏃 APPROACHING to park: 10.0m → 0.2m
+🎛️ MODE CHANGE: AUTONOMOUS → MANUAL
+🛑 AUTONOMOUS MODE DEACTIVATED - Rover stopping
+🎛️ MODE CHANGE: MANUAL → AUTONOMOUS
+✅ AUTONOMOUS MODE ACTIVATED - Rover ready to track!
+🎛️ MODE CHANGE: AUTONOMOUS → MANUAL
+🛑 AUTONOMOUS MODE DEACTIVATED - Rover stopping
+🎛️ MODE CHANGE: MANUAL → AUTONOMOUS
+✅ AUTONOMOUS MODE ACTIVATED - Rover ready to track!
+🧭 AUTONOMOUS | APPROACHING | Obstacle: 200.0cm | RC: ❌
+📡 Target: 10.0m @ 0° | Quality: 80% | Age: 6.1s
+✅ TRACKING - Mode: AUTONOMOUS, Target: DETECTED
+🎛️ MODE CHANGE: AUTONOMOUS → MANUAL
+🛑 AUTONOMOUS MODE DEACTIVATED - Rover stopping
+🎛️ MODE CHANGE: MANUAL → AUTONOMOUS
+✅ AUTONOMOUS MODE ACTIVATED - Rover ready to track!
+🚨 OBSTACLE! Avoiding 25.3cm - turning left
+🎛️ MODE CHANGE: AUTONOMOUS → MANUAL
+🛑 AUTONOMOUS MODE DEACTIVATED - Rover stopping
+🎛️ MODE CHANGE: MANUAL → AUTONOMOUS
+✅ AUTONOMOUS MODE ACTIVATED - Rover ready to track!
+🎛️ MODE CHANGE: AUTONOMOUS → MANUAL
+🛑 AUTONOMOUS MODE DEACTIVATED - Rover stopping
+🎛️ MODE CHANGE: MANUAL → AUTONOMOUS
+✅ AUTONOMOUS MODE ACTIVATED - Rover ready to track!
+🏃 APPROACHING to park: 10.0m → 0.2m
+🎛️ MODE CHANGE: AUTONOMOUS → MANUAL
+🛑 AUTONOMOUS MODE DEACTIVATED - Rover stopping
+🎛️ MODE CHANGE: MANUAL → AUTONOMOUS
+✅ AUTONOMOUS MODE ACTIVATED - Rover ready to track!
+🎛️ MODE CHANGE: AUTONOMOUS → MANUAL
+🛑 AUTONOMOUS MODE DEACTIVATED - Rover stopping
+🎛️ MODE CHANGE: MANUAL → AUTONOMOUS
+✅ AUTONOMOUS MODE ACTIVATED - Rover ready to track!
+🎛️ MODE CHANGE: AUTONOMOUS → MANUAL
+🛑 AUTONOMOUS MODE DEACTIVATED - Rover stopping
+🎛️ MODE CHANGE: MANUAL → AUTONOMOUS
+✅ AUTONOMOUS MODE ACTIVATED - Rover ready to track!
+🧭 AUTONOMOUS | APPROACHING | Obstacle: 200.0cm | RC: ❌
+📡 Target: 10.0m @ 0° | Quality: 80% | Age: 9.1s
+🎛️ MODE CHANGE: AUTONOMOUS → MANUAL
+🛑 AUTONOMOUS MODE DEACTIVATED - Rover stopping
+🎛️ MODE CHANGE: MANUAL → AUTONOMOUS
+✅ AUTONOMOUS MODE ACTIVATED - Rover ready to track!
+🎛️ MODE CHANGE: AUTONOMOUS → MANUAL
+🛑 AUTONOMOUS MODE DEACTIVATED - Rover stopping
+📊 HCI scan got 413 lines
+✅ Found target on hci0: DD:34:02:09:CA:1E (unknown)
+📶 hci0 detected target: -55dBm
+📡 Scanning with RIGHT antenna (hci1)...
+🔍 BLE scanning with hci1...
+🎛️ MODE CHANGE: MANUAL → AUTONOMOUS
+✅ AUTONOMOUS MODE ACTIVATED - Rover ready to track!
+🎛️ MODE CHANGE: AUTONOMOUS → MANUAL
+🛑 AUTONOMOUS MODE DEACTIVATED - Rover stopping
+🎛️ MODE CHANGE: MANUAL → AUTONOMOUS
+✅ AUTONOMOUS MODE ACTIVATED - Rover ready to track!
+🎛️ MODE CHANGE: AUTONOMOUS → MANUAL
+🛑 AUTONOMOUS MODE DEACTIVATED - Rover stopping
+🎛️ MODE CHANGE: MANUAL → AUTONOMOUS
+✅ AUTONOMOUS MODE ACTIVATED - Rover ready to track!
+⏱️ HCI scanning for 8 seconds on hci1...
+🚨 OBSTACLE! Avoiding 15.9cm - turning left
+✅ TRACKING - Mode: AUTONOMOUS, Target: DETECTED
+🎛️ MODE CHANGE: AUTONOMOUS → MANUAL
+🛑 AUTONOMOUS MODE DEACTIVATED - Rover stopping
+🎛️ MODE CHANGE: MANUAL → AUTONOMOUS
+✅ AUTONOMOUS MODE ACTIVATED - Rover ready to track!
+🎛️ MODE CHANGE: AUTONOMOUS → MANUAL
+🛑 AUTONOMOUS MODE DEACTIVATED - Rover stopping
+🎛️ MODE CHANGE: MANUAL → AUTONOMOUS
+✅ AUTONOMOUS MODE ACTIVATED - Rover ready to track!
+🧭 AUTONOMOUS | AVOIDING | Obstacle: 7.5cm | RC: ❌
+📡 Target: 10.0m @ 0° | Quality: 80% | Age: 12.1s
+🎛️ MODE CHANGE: AUTONOMOUS → MANUAL
+🛑 AUTONOMOUS MODE DEACTIVATED - Rover stopping
+🎛️ MODE CHANGE: MANUAL → AUTONOMOUS
+✅ AUTONOMOUS MODE ACTIVATED - Rover ready to track!
+🎛️ MODE CHANGE: AUTONOMOUS → MANUAL
+🛑 AUTONOMOUS MODE DEACTIVATED - Rover stopping
+🎛️ MODE CHANGE: MANUAL → AUTONOMOUS
+✅ AUTONOMOUS MODE ACTIVATED - Rover ready to track!
+🎛️ MODE CHANGE: AUTONOMOUS → MANUAL
+🛑 AUTONOMOUS MODE DEACTIVATED - Rover stopping
+🎛️ MODE CHANGE: MANUAL → AUTONOMOUS
+✅ AUTONOMOUS MODE ACTIVATED - Rover ready to track!
+🎛️ MODE CHANGE: AUTONOMOUS → MANUAL
+🛑 AUTONOMOUS MODE DEACTIVATED - Rover stopping
+🎛️ MODE CHANGE: MANUAL → AUTONOMOUS
+✅ AUTONOMOUS MODE ACTIVATED - Rover ready to track!
+🎛️ MODE CHANGE: AUTONOMOUS → MANUAL
+🛑 AUTONOMOUS MODE DEACTIVATED - Rover stopping
+🎛️ MODE CHANGE: MANUAL → AUTONOMOUS
+✅ AUTONOMOUS MODE ACTIVATED - Rover ready to track!
+🎛️ MODE CHANGE: AUTONOMOUS → MANUAL
+🛑 AUTONOMOUS MODE DEACTIVATED - Rover stopping
+🎛️ MODE CHANGE: MANUAL → AUTONOMOUS
+✅ AUTONOMOUS MODE ACTIVATED - Rover ready to track!
+🧭 AUTONOMOUS | AVOIDING | Obstacle: 7.5cm | RC: ❌
+📡 Target: 10.0m @ 0° | Quality: 80% | Age: 15.1s
+🎛️ MODE CHANGE: AUTONOMOUS → MANUAL
+🛑 AUTONOMOUS MODE DEACTIVATED - Rover stopping
+🎛️ MODE CHANGE: MANUAL → ASSISTED
+📊 HCI scan got 415 lines
+✅ Found target on hci1: DD:34:02:09:CA:1E (unknown)
+📶 hci1 detected target: -62dBm
+📊 Scan results: Left=-55dBm, Right=-62dBm
+✅ Signal detected! Processing...
+📡 Target detected: 7.5m @ 0° (Q:85%)
+   RSSI: L=-57.5dBm R=-61.0dBm
+🔄 Starting BLE scan #3 for BlueCharm_190853
+📡 Scanning with LEFT antenna (hci0)...
+🔍 BLE scanning with hci0...
+⏱️ HCI scanning for 8 seconds on hci0...
+📊 HCI scan got 412 lines
+✅ Found target on hci0: DD:34:02:09:CA:1E (unknown)
+📶 hci0 detected target: -56dBm
+📡 Scanning with RIGHT antenna (hci1)...
+🔍 BLE scanning with hci1...
+⏱️ HCI scanning for 8 seconds on hci1...
+🎛️ MODE CHANGE: ASSISTED → AUTONOMOUS
+✅ AUTONOMOUS MODE ACTIVATED - Rover ready to track!
+🏃 APPROACHING to park: 7.5m → 0.2m
+🎛️ MODE CHANGE: AUTONOMOUS → MANUAL
+🛑 AUTONOMOUS MODE DEACTIVATED - Rover stopping
+🎛️ MODE CHANGE: MANUAL → AUTONOMOUS
+✅ AUTONOMOUS MODE ACTIVATED - Rover ready to track!
+🎛️ MODE CHANGE: AUTONOMOUS → MANUAL
+🛑 AUTONOMOUS MODE DEACTIVATED - Rover stopping
+🎛️ MODE CHANGE: MANUAL → AUTONOMOUS
+✅ AUTONOMOUS MODE ACTIVATED - Rover ready to track!
+🧭 AUTONOMOUS | APPROACHING | Obstacle: 200.0cm | RC: ❌
+📡 Target: 7.5m @ 0° | Quality: 85% | Age: 14.1s
+🎛️ MODE CHANGE: AUTONOMOUS → MANUAL
+🛑 AUTONOMOUS MODE DEACTIVATED - Rover stopping
+🎛️ MODE CHANGE: MANUAL → AUTONOMOUS
+✅ AUTONOMOUS MODE ACTIVATED - Rover ready to track!
+🎛️ MODE CHANGE: AUTONOMOUS → MANUAL
+🛑 AUTONOMOUS MODE DEACTIVATED - Rover stopping
+🎛️ MODE CHANGE: MANUAL → AUTONOMOUS
+✅ AUTONOMOUS MODE ACTIVATED - Rover ready to track!
+🎛️ MODE CHANGE: AUTONOMOUS → MANUAL
+🛑 AUTONOMOUS MODE DEACTIVATED - Rover stopping
+🎛️ MODE CHANGE: MANUAL → AUTONOMOUS
+✅ AUTONOMOUS MODE ACTIVATED - Rover ready to track!
+🎛️ MODE CHANGE: AUTONOMOUS → MANUAL
+🛑 AUTONOMOUS MODE DEACTIVATED - Rover stopping
+🎛️ MODE CHANGE: MANUAL → AUTONOMOUS
+✅ AUTONOMOUS MODE ACTIVATED - Rover ready to track!
+🎛️ MODE CHANGE: AUTONOMOUS → MANUAL
+🛑 AUTONOMOUS MODE DEACTIVATED - Rover stopping
+🎛️ MODE CHANGE: MANUAL → AUTONOMOUS
+✅ AUTONOMOUS MODE ACTIVATED - Rover ready to track!
+🎛️ MODE CHANGE: AUTONOMOUS → MANUAL
+🛑 AUTONOMOUS MODE DEACTIVATED - Rover stopping
+🎛️ MODE CHANGE: MANUAL → AUTONOMOUS
+✅ AUTONOMOUS MODE ACTIVATED - Rover ready to track!
+🧭 AUTONOMOUS | APPROACHING | Obstacle: 200.0cm | RC: ❌
+📡 Target: 7.5m @ 0° | Quality: 85% | Age: 17.1s
+✅ TRACKING - Mode: AUTONOMOUS, Target: DETECTED
+🎛️ MODE CHANGE: AUTONOMOUS → MANUAL
+🛑 AUTONOMOUS MODE DEACTIVATED - Rover stopping
+🎛️ MODE CHANGE: MANUAL → AUTONOMOUS
+✅ AUTONOMOUS MODE ACTIVATED - Rover ready to track!
+🎛️ MODE CHANGE: AUTONOMOUS → MANUAL
+🛑 AUTONOMOUS MODE DEACTIVATED - Rover stopping
+🎛️ MODE CHANGE: MANUAL → AUTONOMOUS
+✅ AUTONOMOUS MODE ACTIVATED - Rover ready to track!
+🎛️ MODE CHANGE: AUTONOMOUS → MANUAL
+🛑 AUTONOMOUS MODE DEACTIVATED - Rover stopping
+🎛️ MODE CHANGE: MANUAL → AUTONOMOUS
+✅ AUTONOMOUS MODE ACTIVATED - Rover ready to track!
+🎛️ MODE CHANGE: AUTONOMOUS → MANUAL
+🛑 AUTONOMOUS MODE DEACTIVATED - Rover stopping
+🎛️ MODE CHANGE: MANUAL → AUTONOMOUS
+✅ AUTONOMOUS MODE ACTIVATED - Rover ready to track!
+📊 HCI scan got 416 lines
+✅ Found target on hci1: DD:34:02:09:CA:1E (unknown)
+📶 hci1 detected target: -58dBm
+📊 Scan results: Left=-56dBm, Right=-58dBm
+✅ Signal detected! Processing...
+📡 Target detected: 6.3m @ 0° (Q:88%)
+   RSSI: L=-56dBm R=-60dBm
+🎛️ MODE CHANGE: AUTONOMOUS → MANUAL
+🛑 AUTONOMOUS MODE DEACTIVATED - Rover stopping
+🎛️ MODE CHANGE: MANUAL → AUTONOMOUS
+✅ AUTONOMOUS MODE ACTIVATED - Rover ready to track!
+🔄 Starting BLE scan #4 for BlueCharm_190853
+📡 Scanning with LEFT antenna (hci0)...
+🔍 BLE scanning with hci0...
+🎛️ MODE CHANGE: AUTONOMOUS → MANUAL
+🛑 AUTONOMOUS MODE DEACTIVATED - Rover stopping
+🎛️ MODE CHANGE: MANUAL → AUTONOMOUS
+✅ AUTONOMOUS MODE ACTIVATED - Rover ready to track!
+🧭 AUTONOMOUS | APPROACHING | Obstacle: 200.0cm | RC: ❌
+📡 Target: 6.3m @ 0° | Quality: 88% | Age: 1.2s
+🎛️ MODE CHANGE: AUTONOMOUS → MANUAL
+🛑 AUTONOMOUS MODE DEACTIVATED - Rover stopping
+🎛️ MODE CHANGE: MANUAL → AUTONOMOUS
+✅ AUTONOMOUS MODE ACTIVATED - Rover ready to track!
+🎛️ MODE CHANGE: AUTONOMOUS → MANUAL
+🛑 AUTONOMOUS MODE DEACTIVATED - Rover stopping
+⏱️ HCI scanning for 8 seconds on hci0...
+🎛️ MODE CHANGE: MANUAL → AUTONOMOUS
+✅ AUTONOMOUS MODE ACTIVATED - Rover ready to track!
+🎛️ MODE CHANGE: AUTONOMOUS → MANUAL
+🛑 AUTONOMOUS MODE DEACTIVATED - Rover stopping
+🎛️ MODE CHANGE: MANUAL → AUTONOMOUS
+✅ AUTONOMOUS MODE ACTIVATED - Rover ready to track!
+🎛️ MODE CHANGE: AUTONOMOUS → MANUAL
+🛑 AUTONOMOUS MODE DEACTIVATED - Rover stopping
+🎛️ MODE CHANGE: MANUAL → AUTONOMOUS
+✅ AUTONOMOUS MODE ACTIVATED - Rover ready to track!
+✅ TRACKING - Mode: AUTONOMOUS, Target: DETECTED
+🎛️ MODE CHANGE: AUTONOMOUS → MANUAL
+🛑 AUTONOMOUS MODE DEACTIVATED - Rover stopping
+🎛️ MODE CHANGE: MANUAL → AUTONOMOUS
+✅ AUTONOMOUS MODE ACTIVATED - Rover ready to track!
+🎛️ MODE CHANGE: AUTONOMOUS → MANUAL
+🛑 AUTONOMOUS MODE DEACTIVATED - Rover stopping
+🎛️ MODE CHANGE: MANUAL → AUTONOMOUS
+✅ AUTONOMOUS MODE ACTIVATED - Rover ready to track!
+🧭 AUTONOMOUS | APPROACHING | Obstacle: 200.0cm | RC: ❌
+📡 Target: 6.3m @ 0° | Quality: 88% | Age: 4.2s
+🎛️ MODE CHANGE: AUTONOMOUS → MANUAL
+🛑 AUTONOMOUS MODE DEACTIVATED - Rover stopping
+🎛️ MODE CHANGE: MANUAL → AUTONOMOUS
+✅ AUTONOMOUS MODE ACTIVATED - Rover ready to track!
+🎛️ MODE CHANGE: AUTONOMOUS → MANUAL
+🛑 AUTONOMOUS MODE DEACTIVATED - Rover stopping
+🎛️ MODE CHANGE: MANUAL → AUTONOMOUS
+✅ AUTONOMOUS MODE ACTIVATED - Rover ready to track!
+🎛️ MODE CHANGE: AUTONOMOUS → MANUAL
+🛑 AUTONOMOUS MODE DEACTIVATED - Rover stopping
+🎛️ MODE CHANGE: MANUAL → AUTONOMOUS
+✅ AUTONOMOUS MODE ACTIVATED - Rover ready to track!
+🎛️ MODE CHANGE: AUTONOMOUS → MANUAL
+🛑 AUTONOMOUS MODE DEACTIVATED - Rover stopping
+🎛️ MODE CHANGE: MANUAL → AUTONOMOUS
+✅ AUTONOMOUS MODE ACTIVATED - Rover ready to track!
+🎛️ MODE CHANGE: AUTONOMOUS → MANUAL
+🛑 AUTONOMOUS MODE DEACTIVATED - Rover stopping
+🎛️ MODE CHANGE: MANUAL → AUTONOMOUS
+✅ AUTONOMOUS MODE ACTIVATED - Rover ready to track!
+🎛️ MODE CHANGE: AUTONOMOUS → MANUAL
+🛑 AUTONOMOUS MODE DEACTIVATED - Rover stopping
+🎛️ MODE CHANGE: MANUAL → AUTONOMOUS
+✅ AUTONOMOUS MODE ACTIVATED - Rover ready to track!
+🧭 AUTONOMOUS | APPROACHING | Obstacle: 200.0cm | RC: ❌
+📡 Target: 6.3m @ 0° | Quality: 88% | Age: 7.2s
+🎛️ MODE CHANGE: AUTONOMOUS → MANUAL
+🛑 AUTONOMOUS MODE DEACTIVATED - Rover stopping
+🎛️ MODE CHANGE: MANUAL → AUTONOMOUS
+✅ AUTONOMOUS MODE ACTIVATED - Rover ready to track!
+🎛️ MODE CHANGE: AUTONOMOUS → MANUAL
+🛑 AUTONOMOUS MODE DEACTIVATED - Rover stopping
+🎛️ MODE CHANGE: MANUAL → AUTONOMOUS
+✅ AUTONOMOUS MODE ACTIVATED - Rover ready to track!
+✅ TRACKING - Mode: AUTONOMOUS, Target: DETECTED
+🎛️ MODE CHANGE: AUTONOMOUS → MANUAL
+🛑 AUTONOMOUS MODE DEACTIVATED - Rover stopping
+🎛️ MODE CHANGE: MANUAL → AUTONOMOUS
+✅ AUTONOMOUS MODE ACTIVATED - Rover ready to track!
+🎛️ MODE CHANGE: AUTONOMOUS → MANUAL
+🛑 AUTONOMOUS MODE DEACTIVATED - Rover stopping
+🎛️ MODE CHANGE: MANUAL → AUTONOMOUS
+✅ AUTONOMOUS MODE ACTIVATED - Rover ready to track!
+🎛️ MODE CHANGE: AUTONOMOUS → MANUAL
+🛑 AUTONOMOUS MODE DEACTIVATED - Rover stopping
+🎛️ MODE CHANGE: MANUAL → AUTONOMOUS
+✅ AUTONOMOUS MODE ACTIVATED - Rover ready to track!
+🎛️ MODE CHANGE: AUTONOMOUS → MANUAL
+🛑 AUTONOMOUS MODE DEACTIVATED - Rover stopping
+📊 HCI scan got 553 lines
+✅ Found target on hci0: DD:34:02:09:CA:1E (unknown)
+📶 hci0 detected target: -54dBm
+📡 Scanning with RIGHT antenna (hci1)...
+🔍 BLE scanning with hci1...
+🎛️ MODE CHANGE: MANUAL → AUTONOMOUS
+✅ AUTONOMOUS MODE ACTIVATED - Rover ready to track!
+🧭 AUTONOMOUS | APPROACHING | Obstacle: 200.0cm | RC: ❌
+📡 Target: 6.3m @ 0° | Quality: 88% | Age: 10.2s
+🎛️ MODE CHANGE: AUTONOMOUS → MANUAL
+🛑 AUTONOMOUS MODE DEACTIVATED - Rover stopping
+🎛️ MODE CHANGE: MANUAL → AUTONOMOUS
+✅ AUTONOMOUS MODE ACTIVATED - Rover ready to track!
+🎛️ MODE CHANGE: AUTONOMOUS → MANUAL
+🛑 AUTONOMOUS MODE DEACTIVATED - Rover stopping
+🎛️ MODE CHANGE: MANUAL → ASSISTED
+⏱️ HCI scanning for 8 seconds on hci1...
+📊 HCI scan got 549 lines
+✅ Found target on hci1: DD:34:02:09:CA:1E (unknown)
+📶 hci1 detected target: -59dBm
+📊 Scan results: Left=-54dBm, Right=-59dBm
+✅ Signal detected! Processing...
+📡 Target detected: 6.0m @ 0° (Q:89%)
+   RSSI: L=-55.5dBm R=-59.5dBm
+🔄 Starting BLE scan #5 for BlueCharm_190853
+📡 Scanning with LEFT antenna (hci0)...
+🔍 BLE scanning with hci0...
+⏱️ HCI scanning for 8 seconds on hci0...
+📊 HCI scan got 415 lines
+✅ Found target on hci0: DD:34:02:09:CA:1E (unknown)
+📶 hci0 detected target: -53dBm
+📡 Scanning with RIGHT antenna (hci1)...
+🔍 BLE scanning with hci1...
+⏱️ HCI scanning for 8 seconds on hci1...
+^C
+🛑 Shutdown requested by user...
+🛑 Stopping Bluetooth Tracker...
+📊 Final runtime: 92.8 seconds
+📊 === Bluetooth Tracking Statistics ===
+   Runtime: 93 seconds
+   Bluetooth scans: 5
+   Target detections: 4
+   Detection rate: 80.0%
+   Obstacle avoidances: 3
+   Target approaches: 4
+   Signal losses: 0
+👋 Tracker shutdown complete
+(venv) jay@RoboPi:~/rover_project $

@@ -1,0 +1,215 @@
+(venv) jay@RoboPi:~/rover_project $ nano autonomous_bluetooth_improved_v2.py
+(venv) jay@RoboPi:~/rover_project $ python3 autonomous_bluetooth_improved_v2.py
+✅ Bluetooth (bleak) library available
+======================================================================
+🤖 AUTONOMOUS BLUETOOTH-HYBRID NAVIGATOR v2
+======================================================================
+
+Features:
+  ✅ Proven ultrasonic obstacle detection and avoidance
+  ✅ Arduino gatekeeper integration
+  ✅ Enhanced state-based navigation with improved stuck recovery
+  ✅ Comprehensive error handling and statistics
+  📡 Enhanced Bluetooth beacon detection with debugging
+  🛡️ Safety-first design - ultrasonic overrides Bluetooth
+  📊 Detailed BLE scan statistics and diagnostics
+  🔧 Step 1: Passive detection (0% navigation influence)
+
+🚀 Bluetooth-Hybrid Navigator v2 Initialized
+📊 Danger: 30.0cm | Caution: 60.0cm | Safe: 100.0cm
+📡 Bluetooth: Enabled
+📡 BT Scan: 2.0s every 1.0s
+📡 BT Weight: 0% navigation influence
+✅ Arduino connected on /dev/ttyUSB0
+📡 Enhanced Bluetooth scanner started
+📡 Starting enhanced Bluetooth detection loop...
+🚀 Enhanced Hybrid Navigator started
+🎯 Ready for autonomous navigation with improved Bluetooth tracking
+✅ Enhanced Navigator ready - switch to autonomous mode
+📡 Enhanced Bluetooth tracking will activate automatically
+🔍 Watch for detailed BLE scan logs and statistics
+Press Ctrl+C to stop...
+🔍 EXPLORING: Random turn after 11.5s
+📡 BLE scan starting (timeout: 2.0s)...
+🔍 EXPLORATION COMPLETE: Resuming forward
+🧭 AUTONOMOUS | STRAIGHT | US: 200.0cm | BT: No signal | Runtime: 12s
+📡 BLE scan completed: 20 devices in 2.1s
+📋 Devices found in scan #1:
+      0D:CE:FC:A2:4F:FA | Unknown         | -100 dBm
+      F2:93:4B:AA:5B:8B | Tacx Neo 2T 315 | -100 dBm
+      30:AB:CB:F0:B9:9A | Unknown         | -100 dBm
+      6F:7C:21:EF:0E:D7 | Unknown         | -100 dBm
+      25:D6:80:FA:51:4B | Unknown         | -100 dBm
+      1C:AF:4A:20:0B:89 | Unknown         | -100 dBm
+      30:24:A9:33:82:60 | HP OfficeJet 25 | -100 dBm
+      58:D3:49:EA:C4:AF | Unknown         | -100 dBm
+      02:CE:CA:B4:13:8C | Unknown         | -100 dBm
+      3F:97:B1:A6:A8:5C | Unknown         | -100 dBm
+🎯 BlueCharm FOUND! MAC: DD:34:02:09:CA:1E | RSSI: -100 dBm
+📡 BlueCharm DETECTED #1:
+   RSSI: -100dBm | Distance: ~30.0m
+   Avg RSSI: -100dBm (initial) | Scan: 2.1s
+📡 BLE scan starting (timeout: 2.0s)...
+🧭 AUTONOMOUS | STRAIGHT | US: 200.0cm | BT: 30.0m (-100dBm) | Scan: 100% | Runtime: 15s
+📡 BLE scan completed: 19 devices in 2.0s
+📋 Devices found in scan #2:
+      6F:7C:21:EF:0E:D7 | Unknown         | -100 dBm
+      30:24:A9:33:82:60 | HP OfficeJet 25 | -100 dBm
+      0D:CE:FC:A2:4F:FA | Unknown         | -100 dBm
+      F2:93:4B:AA:5B:8B | Tacx Neo 2T 315 | -100 dBm
+      3F:97:B1:A6:A8:5C | Unknown         | -100 dBm
+      02:CE:CA:B4:13:8C | Unknown         | -100 dBm
+      24:FC:E5:21:06:AC | [TV] Samsung 7  | -100 dBm
+      50:DE:06:6C:A4:A8 | Unknown         | -100 dBm
+      EF:98:16:3F:DD:20 | KICKR CORE CD98 | -100 dBm
+      58:6D:64:60:FA:22 | Unknown         | -100 dBm
+🎯 BlueCharm FOUND! MAC: DD:34:02:09:CA:1E | RSSI: -100 dBm
+📡 BlueCharm DETECTED #2:
+   RSSI: -100dBm | Distance: ~30.0m
+   Avg RSSI: -100dBm (initial) | Scan: 2.0s
+📡 BLE scan starting (timeout: 2.0s)...
+🚨 EMERGENCY! Obstacle at 28.9cm - turning left
+🧭 AUTONOMOUS | AVOIDING | US: 200.0cm | BT: 30.0m (-100dBm) | Scan: 100% | Runtime: 18s
+📡 BLE scan completed: 21 devices in 2.0s
+📋 Devices found in scan #3:
+      30:24:A9:33:82:60 | HP OfficeJet 25 | -100 dBm
+      F2:93:4B:AA:5B:8B | Tacx Neo 2T 315 | -100 dBm
+      44:1F:86:47:07:51 | Unknown         | -100 dBm
+      50:DE:06:6C:A4:A8 | Unknown         | -100 dBm
+      26:6A:0E:8B:49:BF | Unknown         | -100 dBm
+      58:D3:49:EA:C4:AF | Unknown         | -100 dBm
+      0D:CE:FC:A2:4F:FA | Unknown         | -100 dBm
+      4D:52:9D:79:33:97 | Unknown         | -100 dBm
+      EF:98:16:3F:DD:20 | KICKR CORE CD98 | -100 dBm
+      1C:AF:4A:20:0B:89 | Unknown         | -100 dBm
+🎯 BlueCharm FOUND! MAC: DD:34:02:09:CA:1E | RSSI: -100 dBm
+📡 BlueCharm DETECTED #3:
+   RSSI: -100dBm | Distance: ~30.0m
+   Avg RSSI: -100dBm (stable) | Scan: 2.0s
+✅ CLEAR: Path ahead at 200.0cm - resuming forward
+📡 BLE scan starting (timeout: 2.0s)...
+🧭 AUTONOMOUS | STRAIGHT | US: 200.0cm | BT: 30.0m (-100dBm) | Scan: 100% | Runtime: 21s
+📡 BLE scan completed: 21 devices in 2.0s
+📋 Devices found in scan #4:
+      F2:93:4B:AA:5B:8B | Tacx Neo 2T 315 | -100 dBm
+      26:6A:0E:8B:49:BF | Unknown         | -100 dBm
+   🎯 DD:34:02:09:CA:1E | BlueCharm_19085 | -100 dBm
+      25:D6:80:FA:51:4B | Unknown         | -100 dBm
+      02:CE:CA:B4:13:8C | Unknown         | -100 dBm
+      3F:97:B1:A6:A8:5C | Unknown         | -100 dBm
+      30:AB:CB:F0:B9:9A | Unknown         | -100 dBm
+      4D:52:9D:79:33:97 | Unknown         | -100 dBm
+      24:FC:E5:21:06:AC | [TV] Samsung 7  | -100 dBm
+      1C:AF:4A:20:0B:89 | Unknown         | -100 dBm
+🎯 BlueCharm FOUND! MAC: DD:34:02:09:CA:1E | RSSI: -100 dBm
+📡 BlueCharm DETECTED #4:
+   RSSI: -100dBm | Distance: ~30.0m
+   Avg RSSI: -100dBm (stable) | Scan: 2.0s
+🚨 EMERGENCY! Obstacle at 25.2cm - turning right
+📡 BLE scan starting (timeout: 2.0s)...
+📡 BLE scan completed: 23 devices in 2.0s
+🎯 BlueCharm FOUND! MAC: DD:34:02:09:CA:1E | RSSI: -100 dBm
+📡 BlueCharm DETECTED #5:
+   RSSI: -100dBm | Distance: ~30.0m
+   Avg RSSI: -100dBm (stable) | Scan: 2.0s
+✅ CLEAR: Path ahead at 200.0cm - resuming forward
+📡 BLE scan starting (timeout: 2.0s)...
+📡 BLE scan completed: 20 devices in 2.0s
+🎯 BlueCharm FOUND! MAC: DD:34:02:09:CA:1E | RSSI: -100 dBm
+📡 BlueCharm DETECTED #6:
+   RSSI: -100dBm | Distance: ~30.0m
+   Avg RSSI: -100dBm (stable) | Scan: 2.0s
+🧭 AUTONOMOUS | STRAIGHT | US: 200.0cm | BT: 30.0m (-100dBm) | Scan: 100% | Runtime: 30s
+📡 BLE scan starting (timeout: 2.0s)...
+📡 BLE scan completed: 23 devices in 2.0s
+🎯 BlueCharm FOUND! MAC: DD:34:02:09:CA:1E | RSSI: -100 dBm
+📡 BlueCharm DETECTED #7:
+   RSSI: -100dBm | Distance: ~30.0m
+   Avg RSSI: -100dBm (stable) | Scan: 2.0s
+🧭 AUTONOMOUS | STRAIGHT | US: 200.0cm | BT: 30.0m (-100dBm) | Scan: 100% | Runtime: 33s
+📡 BLE scan starting (timeout: 2.0s)...
+🔍 EXPLORING: Random turn after 8.0s
+📡 BLE scan completed: 21 devices in 2.0s
+🎯 BlueCharm FOUND! MAC: DD:34:02:09:CA:1E | RSSI: -100 dBm
+📡 BlueCharm DETECTED #8:
+   RSSI: -100dBm | Distance: ~30.0m
+   Avg RSSI: -100dBm (stable) | Scan: 2.0s
+🧭 AUTONOMOUS | EXPLORING | US: 200.0cm | BT: 30.0m (-100dBm) | Scan: 100% | Runtime: 36s
+📡 BLE scan starting (timeout: 2.0s)...
+🔍 EXPLORATION COMPLETE: Resuming forward
+📡 BLE scan completed: 21 devices in 2.0s
+🎯 BlueCharm FOUND! MAC: DD:34:02:09:CA:1E | RSSI: -100 dBm
+📡 BlueCharm DETECTED #9:
+   RSSI: -100dBm | Distance: ~30.0m
+   Avg RSSI: -100dBm (stable) | Scan: 2.0s
+🧭 AUTONOMOUS | STRAIGHT | US: 200.0cm | BT: 30.0m (-100dBm) | Scan: 100% | Runtime: 39s
+📡 BLE scan starting (timeout: 2.0s)...
+📡 BLE scan completed: 17 devices in 2.0s
+🎯 BlueCharm FOUND! MAC: DD:34:02:09:CA:1E | RSSI: -100 dBm
+📡 BlueCharm DETECTED #10:
+   RSSI: -100dBm | Distance: ~30.0m
+   Avg RSSI: -100dBm (stable) | Scan: 2.0s
+🧭 AUTONOMOUS | STRAIGHT | US: 200.0cm | BT: 30.0m (-100dBm) | Scan: 100% | Runtime: 42s
+📡 BLE scan starting (timeout: 2.0s)...
+📡 BLE scan completed: 20 devices in 2.0s
+🎯 BlueCharm FOUND! MAC: DD:34:02:09:CA:1E | RSSI: -100 dBm
+📡 BlueCharm DETECTED #11:
+   RSSI: -100dBm | Distance: ~30.0m
+   Avg RSSI: -100dBm (stable) | Scan: 2.0s
+🔍 EXPLORING: Random turn after 8.0s
+🧭 AUTONOMOUS | EXPLORING | US: 200.0cm | BT: 30.0m (-100dBm) | Scan: 100% | Runtime: 45s
+📡 BLE scan starting (timeout: 2.0s)...
+🔍 EXPLORATION COMPLETE: Resuming forward
+📡 BLE scan completed: 20 devices in 2.0s
+🎯 BlueCharm FOUND! MAC: DD:34:02:09:CA:1E | RSSI: -100 dBm
+📡 BlueCharm DETECTED #12:
+   RSSI: -100dBm | Distance: ~30.0m
+   Avg RSSI: -100dBm (stable) | Scan: 2.0s
+🧭 AUTONOMOUS | STRAIGHT | US: 200.0cm | BT: 30.0m (-100dBm) | Scan: 100% | Runtime: 48s
+📡 BLE scan starting (timeout: 2.0s)...
+📡 BLE scan completed: 22 devices in 2.0s
+🎯 BlueCharm FOUND! MAC: DD:34:02:09:CA:1E | RSSI: -100 dBm
+📡 BlueCharm DETECTED #13:
+   RSSI: -100dBm | Distance: ~30.0m
+   Avg RSSI: -100dBm (stable) | Scan: 2.0s
+🧭 AUTONOMOUS | STRAIGHT | US: 200.0cm | BT: 30.0m (-100dBm) | Scan: 100% | Runtime: 51s
+📡 BLE scan starting (timeout: 2.0s)...
+🚨 EMERGENCY! Obstacle at 24.7cm - turning left
+📡 BLE scan completed: 21 devices in 2.0s
+🎯 BlueCharm FOUND! MAC: DD:34:02:09:CA:1E | RSSI: -100 dBm
+📡 BlueCharm DETECTED #14:
+   RSSI: -100dBm | Distance: ~30.0m
+   Avg RSSI: -100dBm (stable) | Scan: 2.0s
+✅ CLEAR: Path ahead at 200.0cm - resuming forward
+🧭 AUTONOMOUS | STRAIGHT | US: 200.0cm | BT: 30.0m (-100dBm) | Scan: 100% | Runtime: 54s
+📡 BLE scan starting (timeout: 2.0s)...
+📡 BLE scan completed: 21 devices in 2.0s
+🎯 BlueCharm FOUND! MAC: DD:34:02:09:CA:1E | RSSI: -100 dBm
+📡 BlueCharm DETECTED #15:
+   RSSI: -100dBm | Distance: ~30.0m
+   Avg RSSI: -100dBm (stable) | Scan: 2.0s
+🧭 AUTONOMOUS | STRAIGHT | US: 200.0cm | BT: 30.0m (-100dBm) | Scan: 100% | Runtime: 57s
+^C
+🛑 Shutdown requested by user...
+🛑 Stopping Enhanced Hybrid Navigator...
+📊 Final runtime: 65.8 seconds
+📊 === Enhanced Navigation Statistics ===
+   Runtime: 66 seconds
+   Distance measurements: 392
+   Obstacle avoidances: 3
+   Exploration turns: 3
+   Emergency stops: 0
+   Stuck recoveries: 0
+📡 === Bluetooth Statistics ===
+   Total scan attempts: 15
+   Successful scans: 15
+   Failed scans: 0
+   BlueCharm detections: 15
+   Scan success rate: 100.0%
+   Detection rate: 0.23/sec
+   Strongest RSSI seen: -100 dBm
+   Detection timeouts: 0
+   Last scan duration: 2.0s
+   Avg measurements/sec: 6.0
+👋 Enhanced Navigator shutdown complete
+(venv) jay@RoboPi:~/rover_project $

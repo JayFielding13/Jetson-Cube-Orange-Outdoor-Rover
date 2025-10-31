@@ -1,0 +1,120 @@
+===============================================================================
+AUTONOMOUS ROAMING CONFIDENCE IMPROVEMENTS
+===============================================================================
+
+PROBLEM ADDRESSED:
+=================
+- Jerky, twitchy movement in autonomous mode
+- Rover constantly changing direction from minor sensor variations
+- Lack of smooth, confident movement patterns
+
+SOLUTION IMPLEMENTED:
+====================
+
+1. MOVEMENT CONFIDENCE SYSTEM:
+   - Minimum forward duration: 2 seconds before reacting to obstacles
+   - Minimum turn duration: 1 second for confident direction changes
+   - Increased action durations for all states
+
+2. SENSOR CONFIDENCE FILTERING:
+   - Median filter on last 3 ultrasonic readings
+   - Requires 2 out of 3 readings to confirm obstacle
+   - Eliminates false positives from sensor noise
+
+3. SMOOTH SPEED RAMPING:
+   - Gradual acceleration/deceleration instead of instant speed changes
+   - 50ms update intervals with 8-unit speed increments
+   - Target speed system with smooth interpolation
+
+4. ENHANCED MOVEMENT PARAMETERS:
+   - Increased base roaming speed: 120 → 160 (out of 255)
+   - Increased turn speed: 100 → 120
+   - Longer random turn intervals: 3-8s → 5-12s
+   - Longer action durations for all states
+
+TECHNICAL IMPLEMENTATION:
+========================
+
+NEW VARIABLES:
+- current_left_speed, current_right_speed: Actual motor speeds
+- target_left_speed, target_right_speed: Target speeds for ramping
+- distance_readings[3]: Confidence filter for sensor readings
+- confident_obstacle: Filtered obstacle detection
+- min_forward_duration, min_turn_duration: Minimum action times
+
+NEW FUNCTIONS:
+- setTargetSpeeds(): Set target speeds for smooth ramping
+- updateSmoothMotorControl(): Gradual speed interpolation
+- rampSpeed(): Speed ramping algorithm
+
+CONFIDENCE LOGIC:
+- Median filter eliminates sensor outliers
+- Minimum durations prevent rapid state changes
+- Smooth ramping eliminates jerky movements
+- Increased speeds provide more decisive movement
+
+UPDATED TIMINGS:
+===============
+
+State Durations (increased for confidence):
+- ROAM_TURNING: 1.5-3.0 seconds (was 0.5-1.5s)
+- ROAM_REVERSE: 1.2-2.0 seconds (was 0.8-1.2s)  
+- ROAM_RANDOM_TURN: 0.8-2.0 seconds (was 0.3-1.0s)
+- Random turn interval: 5-12 seconds (was 3-8s)
+
+Minimum Confidence Periods:
+- Forward movement: 2 seconds minimum
+- Turn movement: 1 second minimum
+- Speed ramping: 50ms updates with 8-unit increments
+
+EXPECTED BEHAVIOR IMPROVEMENTS:
+==============================
+
+BEFORE (Jerky):
+- Instant speed changes
+- Rapid direction changes from sensor noise
+- Twitchy, uncertain movement
+- Frequent state transitions
+
+AFTER (Confident):
+- Smooth acceleration/deceleration
+- Confident obstacle detection
+- Sustained movement in chosen directions
+- Purposeful, deliberate navigation
+
+MOVEMENT CHARACTERISTICS:
+- Rover will move forward for at least 2 seconds
+- Turns will be sustained for at least 1 second
+- Speed changes will be gradual and smooth
+- Sensor readings will be filtered for confidence
+- Overall movement will appear more intelligent and purposeful
+
+TESTING RECOMMENDATIONS:
+=======================
+
+1. Upload enhanced Arduino code
+2. Switch to autonomous mode
+3. Observe smoother, more confident movement
+4. Test with obstacles to verify confident avoidance
+5. Monitor dashboard for smooth speed transitions
+
+TUNING PARAMETERS:
+=================
+
+If rover is still too jerky, increase:
+- min_forward_duration (currently 2000ms)
+- min_turn_duration (currently 1000ms)
+- Action durations in changeRoamState()
+
+If rover is too slow to respond, decrease:
+- speed_ramp_rate (currently 8)
+- Update interval in updateSmoothMotorControl() (currently 50ms)
+
+If sensor is too sensitive, increase confidence requirements:
+- Require 3 out of 3 readings instead of 2 out of 3
+- Increase distance_readings array size
+
+===============================================================================
+These improvements transform the rover from twitchy/reactive to smooth/confident
+autonomous navigation behavior!
+===============================================================================

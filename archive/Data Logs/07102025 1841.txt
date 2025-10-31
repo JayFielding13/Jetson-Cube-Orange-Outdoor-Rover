@@ -1,0 +1,103 @@
+(venv) jay@RoboPi:~/rover_project $ nano autonomous_bluetooth_fixed_v3.py
+(venv) jay@RoboPi:~/rover_project $ python3 autonomous_bluetooth_fixed_v3.py
+✅ Bluetooth (bleak) library available
+======================================================================
+🤖 AUTONOMOUS BLUETOOTH-HYBRID NAVIGATOR v3 (FIXED RSSI)
+======================================================================
+
+Features:
+  ✅ Proven ultrasonic obstacle detection and avoidance
+  ✅ Arduino gatekeeper integration
+  ✅ Enhanced state-based navigation with improved stuck recovery
+  ✅ Comprehensive error handling and statistics
+  📡 FIXED: Real RSSI values using callback-based BLE scanning
+  🛡️ Safety-first design - ultrasonic overrides Bluetooth
+  📊 Accurate distance tracking with real signal strength
+  🔧 Step 1: Passive detection (0% navigation influence)
+
+🚀 Bluetooth-Hybrid Navigator v3 (FIXED RSSI) Initialized
+📊 Danger: 30.0cm | Caution: 60.0cm | Safe: 100.0cm
+📡 Bluetooth: Enabled
+📡 BT Method: Callback-based scanning for real RSSI values
+📡 BT Weight: 0% navigation influence
+✅ Arduino connected on /dev/ttyUSB0
+📡 Fixed callback-based Bluetooth scanner started
+📡 Starting fixed callback-based Bluetooth detection...
+🚀 Fixed Navigator started
+🎯 Ready for autonomous navigation with REAL Bluetooth RSSI tracking
+✅ FIXED Navigator ready - switch to autonomous mode
+📡 Real RSSI Bluetooth tracking will activate automatically
+🔍 Watch for REAL signal strength values!
+Press Ctrl+C to stop...
+🔍 EXPLORING: Random turn after 8.0s
+🧭 AUTONOMOUS | EXPLORING | US: 200.0cm | BT: No signal | CB: 0 | Runtime: 6s
+🔍 EXPLORATION COMPLETE: Resuming forward
+🧭 AUTONOMOUS | STRAIGHT | US: 200.0cm | BT: No signal | CB: 0 | Runtime: 9s
+🧭 AUTONOMOUS | STRAIGHT | US: 200.0cm | BT: No signal | CB: 0 | Runtime: 12s
+🧭 AUTONOMOUS | STRAIGHT | US: 200.0cm | BT: No signal | CB: 0 | Runtime: 15s
+🔍 EXPLORING: Random turn after 8.0s
+🔍 EXPLORATION COMPLETE: Resuming forward
+🔍 EXPLORING: Random turn after 15.0s
+🧭 AUTONOMOUS | EXPLORING | US: 200.0cm | BT: No signal | CB: 0 | Runtime: 33s
+🔍 EXPLORATION COMPLETE: Resuming forward
+🧭 AUTONOMOUS | STRAIGHT | US: 200.0cm | BT: No signal | CB: 0 | Runtime: 39s
+🔍 EXPLORING: Random turn after 8.0s
+🧭 AUTONOMOUS | EXPLORING | US: 200.0cm | BT: No signal | CB: 0 | Runtime: 42s
+🔍 EXPLORATION COMPLETE: Resuming forward
+🧭 AUTONOMOUS | STRAIGHT | US: 200.0cm | BT: No signal | CB: 0 | Runtime: 45s
+🧭 AUTONOMOUS | STRAIGHT | US: 200.0cm | BT: No signal | CB: 0 | Runtime: 48s
+🔍 EXPLORING: Random turn after 8.0s
+🧭 AUTONOMOUS | EXPLORING | US: 200.0cm | BT: No signal | CB: 0 | Runtime: 51s
+🔍 EXPLORATION COMPLETE: Resuming forward
+🧭 AUTONOMOUS | STRAIGHT | US: 200.0cm | BT: No signal | CB: 0 | Runtime: 54s
+🚨 EMERGENCY! Obstacle at 15.3cm - turning left
+✅ CLEAR: Path ahead at 200.0cm - resuming forward
+🧭 AUTONOMOUS | STRAIGHT | US: 200.0cm | BT: No signal | CB: 0 | Runtime: 57s
+🧭 AUTONOMOUS | STRAIGHT | US: 200.0cm | BT: No signal | CB: 0 | Runtime: 63s
+🔍 EXPLORING: Random turn after 8.0s
+🔍 EXPLORATION COMPLETE: Resuming forward
+🧭 AUTONOMOUS | STRAIGHT | US: 200.0cm | BT: No signal | CB: 0 | Runtime: 66s
+🚨 EMERGENCY! Obstacle at 7.3cm - turning right
+🧭 AUTONOMOUS | AVOIDING | US: 7.1cm | BT: No signal | CB: 0 | Runtime: 69s
+🔄 STUCK: Backing up (count: 1)
+🧭 AUTONOMOUS | BACKING | US: 7.1cm | BT: No signal | CB: 0 | Runtime: 72s
+   Stuck counter: 1/5
+🔄 RETRY: Switching to left turn (stuck: 0)
+🧭 AUTONOMOUS | AVOIDING | US: 7.1cm | BT: No signal | CB: 0 | Runtime: 75s
+🔄 STUCK: Backing up (count: 1)
+🔄 RETRY: Switching to right turn (stuck: 1)
+🧭 AUTONOMOUS | AVOIDING | US: 7.0cm | BT: No signal | CB: 0 | Runtime: 78s
+   Stuck counter: 1/5
+^C
+🛑 Shutdown requested by user...
+🛑 Stopping Fixed Navigator...
+📊 Final runtime: 91.1 seconds
+📊 === Enhanced Navigation Statistics ===
+   Runtime: 91 seconds
+   Distance measurements: 537
+   Obstacle avoidances: 2
+   Exploration turns: 6
+   Emergency stops: 63
+   Stuck recoveries: 0
+📡 === REAL RSSI Bluetooth Statistics ===
+   Callback detections: 0
+   BlueCharm detections: 0
+   Callback events: 0
+   Detection rate: 0.00/sec
+   Callback rate: 0.00/sec
+   Strongest RSSI seen: -200 dBm
+   Detection timeouts: 0
+   Avg measurements/sec: 5.9
+👋 Fixed Navigator shutdown complete
+Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<BluetoothHybridNavigatorV3.start_callback_scanner() running at /home/jay/rover_project/autonomous_bluetooth_fixed_v3.py:279>>
+/usr/lib/python3.11/asyncio/base_events.py:678: RuntimeWarning: coroutine 'BluetoothHybridNavigatorV3.start_callback_scanner' was never awaited
+  self._ready.clear()
+RuntimeWarning: Enable tracemalloc to get the object allocation traceback
+Task was destroyed but it is pending!
+task: <Task pending name='Task-2' coro=<BluetoothHybridNavigatorV3.start_callback_scanner() running at /home/jay/rover_project/autonomous_bluetooth_fixed_v3.py:279>>
+Task was destroyed but it is pending!
+task: <Task pending name='Task-3' coro=<BluetoothHybridNavigatorV3.start_callback_scanner() running at /home/jay/rover_project/autonomous_bluetooth_fixed_v3.py:279>>
+Task was destroyed but it is pending!
+task: <Task pending name='Task-4' coro=<BluetoothHybridNavigatorV3.start_callback_scanner() running at /home/jay/rover_project/autonomous_bluetooth_fixed_v3.py:279>>
+(venv) jay@RoboPi:~/rover_project $

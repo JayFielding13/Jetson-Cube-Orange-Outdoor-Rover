@@ -1,0 +1,185 @@
+(venv) jay@RoboPi:~/rover_project $ nano autonomous_bluetooth_working_v4.py
+(venv) jay@RoboPi:~/rover_project $ python3 autonomous_bluetooth_working_v4.py
+✅ Bluetooth (bleak) library available
+===========================================================================
+🤖 AUTONOMOUS BLUETOOTH-HYBRID NAVIGATOR v4 (WORKING RSSI)
+===========================================================================
+
+Features:
+  ✅ Proven ultrasonic obstacle detection and avoidance
+  ✅ Arduino gatekeeper integration
+  ✅ Enhanced state-based navigation with improved stuck recovery
+  ✅ Comprehensive error handling and statistics
+  📡 WORKING: Properly integrated callback-based RSSI scanning
+  🛡️ Safety-first design - ultrasonic overrides Bluetooth
+  📊 Accurate distance tracking with real signal strength
+  🔧 Step 1: Passive detection (0% navigation influence)
+  🧵 Fixed threading integration - no more task warnings
+
+🚀 Bluetooth-Hybrid Navigator v4 (WORKING RSSI) Initialized
+📊 Danger: 30.0cm | Caution: 60.0cm | Safe: 100.0cm
+📡 Bluetooth: Enabled
+📡 BT Method: Proper thread integration with callback scanning
+📡 BT Weight: 0% navigation influence
+✅ Arduino connected on /dev/ttyUSB0
+📡 Starting WORKING Bluetooth thread worker...
+📡 WORKING callback-based Bluetooth scanner started
+📡 WORKING Bluetooth scanner main started
+🚀 WORKING Navigator started
+🎯 Ready for autonomous navigation with WORKING Bluetooth RSSI tracking
+✅ WORKING Navigator ready - switch to autonomous mode
+📡 WORKING RSSI Bluetooth tracking will activate automatically
+🔍 Watch for WORKING signal strength values!
+Press Ctrl+C to stop...
+📡 Starting WORKING BLE callback scanner...
+📡 WORKING BLE scanner started successfully
+📡 Stopping WORKING BLE scanner...
+🚨 EMERGENCY! Obstacle at 15.7cm - turning left
+🧭 AUTONOMOUS | AVOIDING | US: 15.7cm | BT: 8.9m (-78dBm WORK) | CB: 1 | Runtime: 5s
+📡 Starting WORKING BLE callback scanner...
+📡 WORKING BLE scanner started successfully
+✅ CLEAR: Path ahead at 200.0cm - resuming forward
+🚨 EMERGENCY! Obstacle at 17.5cm - turning right
+🧭 AUTONOMOUS | AVOIDING | US: 17.5cm | BT: 4.5m (-72dBm WORK) | CB: 2 | Runtime: 8s
+📡 Stopping WORKING BLE scanner...
+📡 Starting WORKING BLE callback scanner...
+📡 WORKING BLE scanner started successfully
+✅ CLEAR: Path ahead at 200.0cm - resuming forward
+📡 Stopping WORKING BLE scanner...
+🔍 EXPLORING: Random turn after 14.5s
+📡 Starting WORKING BLE callback scanner...
+📡 WORKING BLE scanner started successfully
+🔍 EXPLORATION COMPLETE: Resuming forward
+🧭 AUTONOMOUS | STRAIGHT | US: 200.0cm | BT: No signal | CB: 4 | Runtime: 26s
+📡 BlueCharm WORKING #5:
+   RSSI: -62dBm | Distance: ~1.4m | Avg: -71dBm
+📡 Stopping WORKING BLE scanner...
+🔍 EXPLORING: Random turn after 10.5s
+📡 Starting WORKING BLE callback scanner...
+📡 WORKING BLE scanner started successfully
+🔍 EXPLORATION COMPLETE: Resuming forward
+🧭 AUTONOMOUS | STRAIGHT | US: 200.0cm | BT: 1.8m (-64dBm WORK) | CB: 9 | Runtime: 38s
+📡 BlueCharm WORKING #10:
+   RSSI: -60dBm | Distance: ~1.1m | Avg: -68dBm
+🚨 EMERGENCY! Obstacle at 27.3cm - turning left
+🧭 AUTONOMOUS | AVOIDING | US: 200.0cm | BT: 7.9m (-77dBm WORK) | CB: 11 | Runtime: 41s
+✅ CLEAR: Path ahead at 200.0cm - resuming forward
+🚨 EMERGENCY! Obstacle at 23.4cm - turning right
+🧭 AUTONOMOUS | AVOIDING | US: 23.1cm | BT: 1.8m (-64dBm WORK) | CB: 14 | Runtime: 44s
+📡 BlueCharm WORKING #15:
+   RSSI: -62dBm | Distance: ~1.4m | Avg: -67dBm
+🔄 STUCK: Backing up (count: 1)
+🧭 AUTONOMOUS | BACKING | US: 200.0cm | BT: 1.3m (-61dBm WORK) | CB: 16 | Runtime: 47s
+   Stuck counter: 1/5
+🔄 RETRY: Switching to left turn (stuck: 1)
+✅ CLEAR: Path ahead at 200.0cm - resuming forward
+🚨 EMERGENCY! Obstacle at 20.0cm - turning left
+🧭 AUTONOMOUS | AVOIDING | US: 20.0cm | BT: 2.2m (-66dBm WORK) | CB: 18 | Runtime: 50s
+   Stuck counter: 1/5
+✅ CLEAR: Path ahead at 200.0cm - resuming forward
+🚨 EMERGENCY! Obstacle at 17.8cm - turning right
+🧭 AUTONOMOUS | AVOIDING | US: 18.2cm | BT: 1.6m (-63dBm WORK) | CB: 19 | Runtime: 53s
+   Stuck counter: 1/5
+📡 BlueCharm WORKING #20:
+   RSSI: -70dBm | Distance: ~3.5m | Avg: -66dBm
+🔄 STUCK: Backing up (count: 2)
+🧭 AUTONOMOUS | BACKING | US: 200.0cm | BT: 0.8m (-57dBm WORK) | CB: 22 | Runtime: 56s
+   Stuck counter: 1/5
+🔄 RETRY: Switching to left turn (stuck: 1)
+🧭 AUTONOMOUS | AVOIDING | US: 14.8cm | BT: 1.8m (-64dBm WORK) | CB: 24 | Runtime: 59s
+   Stuck counter: 1/5
+🔄 STUCK: Backing up (count: 2)
+📡 BlueCharm WORKING #25:
+   RSSI: -67dBm | Distance: ~2.5m | Avg: -65dBm
+📡 Stopping WORKING BLE scanner...
+🔄 RETRY: Switching to right turn (stuck: 2)
+🧭 AUTONOMOUS | AVOIDING | US: 200.0cm | BT: 2.5m (-67dBm WORK) | CB: 25 | Runtime: 62s
+   Stuck counter: 2/5
+📡 Starting WORKING BLE callback scanner...
+📡 WORKING BLE scanner started successfully
+✅ CLEAR: Path ahead at 200.0cm - resuming forward
+🚨 EMERGENCY! Obstacle at 18.1cm - turning left
+🧭 AUTONOMOUS | AVOIDING | US: 20.6cm | BT: 11.2m (-80dBm WORK) | CB: 26 | Runtime: 65s
+   Stuck counter: 2/5
+✅ CLEAR: Path ahead at 200.0cm - resuming forward
+🧭 AUTONOMOUS | STRAIGHT | US: 200.0cm | BT: 1.8m (-64dBm WORK) | CB: 28 | Runtime: 68s
+   Stuck counter: 1/5
+🚨 EMERGENCY! Obstacle at 24.7cm - turning right
+🧭 AUTONOMOUS | AVOIDING | US: 18.9cm | BT: 1.3m (-61dBm WORK) | CB: 29 | Runtime: 71s
+   Stuck counter: 1/5
+📡 BlueCharm WORKING #30:
+   RSSI: -73dBm | Distance: ~5.0m | Avg: -67dBm
+✅ CLEAR: Path ahead at 200.0cm - resuming forward
+🚨 EMERGENCY! Obstacle at 21.5cm - turning left
+🧭 AUTONOMOUS | AVOIDING | US: 20.3cm | BT: 1.6m (-63dBm WORK) | CB: 31 | Runtime: 74s
+   Stuck counter: 1/5
+✅ CLEAR: Path ahead at 200.0cm - resuming forward
+🧭 AUTONOMOUS | STRAIGHT | US: 200.0cm | BT: 2.5m (-67dBm WORK) | CB: 32 | Runtime: 77s
+📡 BlueCharm WORKING #35:
+   RSSI: -70dBm | Distance: ~3.5m | Avg: -68dBm
+🧭 AUTONOMOUS | STRAIGHT | US: 200.0cm | BT: 3.5m (-70dBm WORK) | CB: 35 | Runtime: 80s
+🔍 EXPLORING: Random turn after 8.0s
+🧭 AUTONOMOUS | EXPLORING | US: 200.0cm | BT: 6.3m (-75dBm WORK) | CB: 37 | Runtime: 83s
+🔍 EXPLORATION COMPLETE: Resuming forward
+📡 BlueCharm WORKING #40:
+   RSSI: -66dBm | Distance: ~2.2m | Avg: -69dBm
+🧭 AUTONOMOUS | STRAIGHT | US: 200.0cm | BT: 2.2m (-66dBm WORK) | CB: 40 | Runtime: 86s
+🧭 AUTONOMOUS | STRAIGHT | US: 200.0cm | BT: 1.8m (-64dBm WORK) | CB: 43 | Runtime: 89s
+🚨 EMERGENCY! Obstacle at 5.9cm - turning right
+📡 BlueCharm WORKING #45:
+   RSSI: -74dBm | Distance: ~5.6m | Avg: -70dBm
+🧭 AUTONOMOUS | AVOIDING | US: 6.9cm | BT: 5.6m (-74dBm WORK) | CB: 45 | Runtime: 92s
+🔄 STUCK: Backing up (count: 1)
+🔄 RETRY: Switching to left turn (stuck: 1)
+🧭 AUTONOMOUS | AVOIDING | US: 6.4cm | BT: 5.0m (-73dBm WORK) | CB: 47 | Runtime: 95s
+   Stuck counter: 1/5
+🔄 STUCK: Backing up (count: 1)
+🧭 AUTONOMOUS | BACKING | US: 6.9cm | BT: 6.3m (-75dBm WORK) | CB: 48 | Runtime: 98s
+   Stuck counter: 1/5
+📡 Stopping WORKING BLE scanner...
+🔄 RETRY: Switching to right turn (stuck: 1)
+🧭 AUTONOMOUS | AVOIDING | US: 200.0cm | BT: 6.3m (-75dBm WORK) | CB: 49 | Runtime: 104s
+   Stuck counter: 1/5
+📡 Starting WORKING BLE callback scanner...
+📡 WORKING BLE scanner started successfully
+📡 BlueCharm WORKING #50:
+   RSSI: -66dBm | Distance: ~2.2m | Avg: -71dBm
+✅ CLEAR: Path ahead at 200.0cm - resuming forward
+🧭 AUTONOMOUS | STRAIGHT | US: 200.0cm | BT: 2.8m (-68dBm WORK) | CB: 51 | Runtime: 107s
+🚨 EMERGENCY! Obstacle at 26.2cm - turning left
+✅ CLEAR: Path ahead at 200.0cm - resuming forward
+🧭 AUTONOMOUS | STRAIGHT | US: 200.0cm | BT: 3.5m (-70dBm WORK) | CB: 52 | Runtime: 110s
+📡 BlueCharm WORKING #55:
+   RSSI: -60dBm | Distance: ~1.1m | Avg: -69dBm
+🧭 AUTONOMOUS | STRAIGHT | US: 200.0cm | BT: 1.1m (-60dBm WORK) | CB: 55 | Runtime: 113s
+🧭 AUTONOMOUS | STRAIGHT | US: 200.0cm | BT: 7.9m (-77dBm WORK) | CB: 58 | Runtime: 116s
+📡 BlueCharm WORKING #60:
+   RSSI: -67dBm | Distance: ~2.5m | Avg: -68dBm
+🔍 EXPLORING: Random turn after 8.0s
+🔍 EXPLORATION COMPLETE: Resuming forward
+🧭 AUTONOMOUS | STRAIGHT | US: 200.0cm | BT: 1.3m (-61dBm WORK) | CB: 61 | Runtime: 119s
+🧭 AUTONOMOUS | STRAIGHT | US: 200.0cm | BT: 1.0m (-59dBm WORK) | CB: 62 | Runtime: 122s
+📡 Stopping WORKING BLE scanner...
+^C
+🛑 Shutdown requested by user...
+🛑 Stopping WORKING Navigator...
+📊 Final runtime: 130.9 seconds
+📊 === Enhanced Navigation Statistics ===
+   Runtime: 131 seconds
+   Distance measurements: 798
+   Obstacle avoidances: 11
+   Exploration turns: 4
+   Emergency stops: 44
+   Stuck recoveries: 0
+📡 === WORKING RSSI Bluetooth Statistics ===
+   Callback detections: 64
+   BlueCharm detections: 64
+   Callback events: 64
+   Detection rate: 0.49/sec
+   Callback rate: 0.49/sec
+   Strongest RSSI seen: -57 dBm
+   Detection timeouts: 3
+   Recent avg RSSI: -64.6 dBm
+   Avg measurements/sec: 6.1
+👋 WORKING Navigator shutdown complete
+(venv) jay@RoboPi:~/rover_project $

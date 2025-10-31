@@ -1,0 +1,21 @@
+SSH Dashboard Terminal Log - Enhanced Linux Edition
+Session Date: 2025-08-05 19:38:47
+Connected to: 192.168.254.65:22
+Username: jay
+Local IP: 192.168.254.81
+==================================================
+
+Connected to Raspberry Pi (Enhanced Linux Edition)
+$ cd ~/rover_project && source venv/bin/activate && echo 'Rover environment activated' && pwd && which python
+Rover environment activated
+/home/jay/rover_project
+/home/jay/rover_project/venv/bin/python
+Uploading verify_rover_cleanup.py...
+✅ Successfully uploaded verify_rover_cleanup.py to /home/jay/rover_project/verify_rover_cleanup.py
+$ cd ~/rover_project && source venv/bin/activate && echo 'Starting program...' && python3 -u /home/jay/rover_project/verify_rover_cleanup.py
+Starting program...
+  File "/home/jay/rover_project/verify_rover_cleanup.py", line 198
+    print(f"  rm {' '.join([f\"'{f}'\" for f in unwanted_files])}")
+                                                                  ^
+SyntaxError: f-string expression part cannot include a backslash
+

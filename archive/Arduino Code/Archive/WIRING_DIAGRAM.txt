@@ -1,0 +1,88 @@
+===============================================================================
+ARDUINO NANO WIRING DIAGRAM - ROVER PROJECT
+===============================================================================
+
+ARDUINO NANO PINOUT:
+                    +-----+
+               +----| USB |----+
+               |    +-----+    |
+          RST -|1            30|- VIN
+          GND -|2            29|- GND
+           D2 -|3            28|- RST
+           D3 -|4            27|- 5V
+           D4 -|5            26|- A7
+           D5 -|6            25|- A6
+           D6 -|7            24|- A5
+           D7 -|8            23|- A4
+           D8 -|9            22|- A3
+           D9 -|10           21|- A2
+          D10 -|11           20|- A1
+          D11 -|12           19|- A0
+          D12 -|13           18|- AREF
+          D13 -|14           17|- 3V3
+          GND -|15           16|- D13
+               +---------------+
+
+RC RECEIVER CONNECTIONS:
+========================
+
+FlySky FS-iA10B Receiver:
+- Channel 1 (CH1) → Arduino Pin D2
+- Channel 2 (CH2) → Arduino Pin D3  
+- Channel 3 (CH3) → Arduino Pin D4
+- VCC (+5V)       → Arduino Pin 5V
+- GND (Ground)    → Arduino Pin GND
+
+DETAILED WIRING:
+===============
+
+RC Receiver Side          Arduino Nano Side
+----------------          -----------------
+CH1 Signal (White/Yellow) → D2 (Digital Pin 2)
+CH2 Signal (White/Yellow) → D3 (Digital Pin 3)
+CH3 Signal (White/Yellow) → D4 (Digital Pin 4)
+VCC (+5V Red)            → 5V Pin
+GND (Black/Brown)        → GND Pin
+
+USB CONNECTION:
+==============
+Arduino Nano USB → Raspberry Pi USB Port
+(Provides both power and serial communication)
+
+STATUS LED:
+==========
+Built-in LED on Pin 13 indicates signal status:
+- Solid ON  = Valid RC signal received
+- Blinking  = RC signal lost or invalid
+
+POWER DISTRIBUTION:
+==================
+- Arduino powered via USB from Raspberry Pi
+- RC Receiver powered from Arduino 5V pin
+- Shared ground between Arduino and RC Receiver
+
+SIGNAL FLOW:
+===========
+RC Transmitter → RC Receiver → Arduino Nano → USB → Raspberry Pi
+
+WIRE COLORS (Typical):
+=====================
+Most RC receivers use this color scheme:
+- Signal: White, Yellow, or Orange wire
+- Power:  Red wire (+5V)
+- Ground: Black or Brown wire
+
+TESTING POINTS:
+==============
+1. Power LED on Arduino should be ON when USB connected
+2. Status LED (Pin 13) behavior indicates RC signal health
+3. Serial Monitor at 115200 baud shows JSON data stream
+
+SAFETY NOTES:
+============
+- Always disconnect power before making wiring changes
+- Double-check polarity on power connections
+- Ensure all connections are secure before testing
+- Use proper gauge wire for current requirements
+
+===============================================================================

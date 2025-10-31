@@ -1,0 +1,41 @@
+(venv) jay@RoboPi:~/rover_project $ python3 autonomous_lidar_navigator.py
+✅ RPLidar library found
+============================================================
+🚀 LIDAR AUTONOMOUS NAVIGATOR
+============================================================
+
+Mission: Navigate autonomously using LiDAR obstacle avoidance
+Controls: Switch to AUTONOMOUS mode (RC CH9) to start navigation
+
+🚀 LiDAR Navigator Initialized
+🎯 Mission: Autonomous obstacle avoidance
+✅ Arduino connected on /dev/ttyUSB0
+✅ LiDAR connected on /dev/ttyUSB1
+🚀 LiDAR Navigator started
+🧭 Autonomous navigation active
+✅ Navigator ready - switch to AUTONOMOUS mode to begin
+Press Ctrl+C to stop...
+🚨 DANGER! Obstacle at 19.1cm - turning left
+❌ Navigation error: '<' not supported between instances of 'NoneType' and 'float'
+❌ Navigation error: '<' not supported between instances of 'NoneType' and 'float'
+❌ Navigation error: '<' not supported between instances of 'NoneType' and 'float'
+❌ Navigation error: '<' not supported between instances of 'NoneType' and 'float'
+❌ Navigation error: '<' not supported between instances of 'NoneType' and 'float'
+❌ Navigation error: '<' not supported between instances of 'NoneType' and 'float'
+❌ Navigation error: '<' not supported between instances of 'NoneType' and 'float'
+❌ Navigation error: '<' not supported between instances of 'NoneType' and 'float'
+❌ Navigation error: '<' not supported between instances of 'NoneType' and 'float'
+❌ Navigation error: '<' not supported between instances of 'NoneType' and 'float'
+❌ Navigation error: '<' not supported between instances of 'NoneType' and 'float'
+❌ Navigation error: '<' not supported between instances of 'NoneType' and 'float'
+❌ Navigation error: '<' not supported between instances of 'NoneType' and 'float'
+❌ Navigation error: '<' not supported between instances of 'NoneType' and 'float'
+❌ Navigation error: '<' not supported between instances of 'NoneType' and 'float'
+❌ Navigation error: '<' not supported between instances of 'NoneType' and 'float'
+❌ Navigation error: '<' not supported between instances of 'NoneType' and 'float'
+❌ Navigation error: '<' not supported between instances of 'NoneType' and 'float'
+^C
+🛑 Shutdown requested...
+🛑 LiDAR Navigator stopped
+👋 Navigator shutdown complete
+(venv) jay@RoboPi:~/rover_project $

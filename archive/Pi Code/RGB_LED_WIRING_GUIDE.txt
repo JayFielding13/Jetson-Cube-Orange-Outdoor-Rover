@@ -1,0 +1,267 @@
+===============================================================================
+RGB LED WIRING GUIDE - ROVER PROJECT
+===============================================================================
+
+OVERVIEW:
+This guide covers wiring RGB LEDs to the Raspberry Pi for visual status indication
+of rover operational modes and navigation states.
+
+COMPONENTS REQUIRED:
+- Common Cathode RGB LED (recommended) OR Common Anode RGB LED
+- 3x Current limiting resistors (220Ω - 330Ω recommended)
+- Jumper wires or hookup wire
+- Breadboard or perfboard (optional)
+
+RGB LED PINOUT:
+==============
+Common Cathode RGB LED (Recommended):
+- Pin 1: Red Anode (+)
+- Pin 2: Common Cathode (-) → GND
+- Pin 3: Green Anode (+)
+- Pin 4: Blue Anode (+)
+
+Common Anode RGB LED (Alternative):
+- Pin 1: Red Cathode (-)
+- Pin 2: Common Anode (+) → 3.3V
+- Pin 3: Green Cathode (-)
+- Pin 4: Blue Cathode (-)
+
+RASPBERRY PI GPIO CONNECTIONS:
+==============================
+
+Current Configuration (Common Cathode):
+- GPIO 22 (Pin 15) → 220Ω Resistor → Red LED Anode
+- GPIO 23 (Pin 16) → 220Ω Resistor → Green LED Anode  
+- GPIO 24 (Pin 18) → 220Ω Resistor → Blue LED Anode
+- GND (Pin 6, 9, 14, 20, 25, 30, 34, 39) → LED Common Cathode
+
+DETAILED WIRING DIAGRAM:
+=======================
+
+Raspberry Pi GPIO Layout:
+                    3V3  (1) (2)  5V
+                GPIO2  (3) (4)  5V
+                GPIO3  (5) (6)  GND ← LED Common Cathode
+                GPIO4  (7) (8)  GPIO14
+                  GND  (9) (10) GPIO15
+               GPIO17 (11) (12) GPIO18
+               GPIO27 (13) (14) GND
+               GPIO22 (15) (16) GPIO23 ← Green LED
+                  3V3 (17) (18) GPIO24 ← Blue LED
+               GPIO10 (19) (20) GND
+                GPIO9 (21) (22) GPIO25
+               GPIO11 (23) (24) GPIO8
+                  GND (25) (26) GPIO7
+
+Pin Assignments:
+- Pin 15 (GPIO 22) → Red LED
+- Pin 16 (GPIO 23) → Green LED
+- Pin 18 (GPIO 24) → Blue LED
+- Pin 6 (GND) → LED Common
+
+WIRING CONNECTIONS:
+==================
+
+For Common Cathode RGB LED:
+1. Pi GPIO 22 → 220Ω Resistor → Red LED Anode
+2. Pi GPIO 23 → 220Ω Resistor → Green LED Anode
+3. Pi GPIO 24 → 220Ω Resistor → Blue LED Anode
+4. Pi GND → LED Common Cathode
+
+For Common Anode RGB LED (if using):
+1. Pi 3.3V → LED Common Anode
+2. Pi GPIO 22 → 220Ω Resistor → Red LED Cathode
+3. Pi GPIO 23 → 220Ω Resistor → Green LED Cathode
+4. Pi GPIO 24 → 220Ω Resistor → Blue LED Cathode
+
+Note: If using Common Anode, you'll need to invert the PWM logic in software.
+
+RESISTOR SELECTION:
+==================
+LED Current Calculation: I = (Vsupply - Vled) / R
+
+For 3.3V GPIO, Red LED (Vf ≈ 2.0V):
+I = (3.3V - 2.0V) / 220Ω = 5.9mA ✓
+
+For 3.3V GPIO, Green/Blue LED (Vf ≈ 3.0V):
+I = (3.3V - 3.0V) / 220Ω = 1.4mA ✓
+
+Recommended Resistor Values:
+- 220Ω: Bright LEDs, safe current
+- 330Ω: Dimmer LEDs, very safe current
+- 470Ω: Dim LEDs, minimal current
+
+BREADBOARD LAYOUT:
+=================
+If using breadboard for prototyping:
+
+1. Place RGB LED in breadboard
+2. Connect LED common pin to GND rail
+3. Connect resistors between GPIO pins and LED anodes
+4. Use jumper wires to connect to Pi GPIO pins
+
+PERMANENT INSTALLATION:
+======================
+For rover mounting:
+
+1. Solder RGB LED to perfboard or PCB
+2. Add resistors on same board
+3. Use 4-wire cable to connect to Pi
+4. Mount LED in visible location on rover
+5. Use heat shrink tubing for wire protection
+
+LED STATUS MEANINGS:
+===================
+The software controls the LED with these color codes:
+
+🔴 RED (Solid): Failsafe Mode
+- RC signal lost
+- Arduino communication failed
+- System error
+
+🟢 GREEN (Solid): Manual Mode
+- RC transmitter controlling rover
+- Normal manual operation
+
+🔵 BLUE (Solid): Autonomous Mode - Strong Signal
+- Bluetooth navigation active
+- Strong beacon signal (-70 dBm or better)
+
+🔵 BLUE (Medium): Autonomous Mode - Medium Signal
+- Bluetooth navigation active
+- Medium beacon signal (-70 to -80 dBm)
+
+🟣 PURPLE (Dim): Autonomous Mode - Weak Signal
+- Bluetooth navigation active
+- Weak beacon signal (worse than -80 dBm)
+
+🟡 YELLOW (Blinking): Autonomous Mode - Searching
+- Bluetooth navigation active
+- Searching for beacon signal
+
+🔴 RED (Blinking): Autonomous Mode - Signal Lost
+- Was in autonomous mode
+- Beacon signal lost, gentle stop in progress
+
+⚪ WHITE: LED Test Sequence
+- System startup test
+- Cycles through all colors
+
+TESTING PROCEDURES:
+==================
+
+1. POWER TEST:
+   Test individual LED colors with multimeter:
+   - Measure voltage across resistors
+   - Should be ~1.3V for green/blue, ~1.3V for red
+   - Check current: I = V / R
+
+2. SOFTWARE TEST:
+   Run LED test sequence:
+   ```python
+   from rover_controller_with_bluetooth import RGBLEDController
+   import RPi.GPIO as GPIO
+   
+   GPIO.setmode(GPIO.BCM)
+   led = RGBLEDController(22, 23, 24)
+   led.test_sequence()
+   led.cleanup()
+   GPIO.cleanup()
+   ```
+
+3. OPERATIONAL TEST:
+   - Start rover system
+   - Verify LED shows current mode
+   - Test mode switching with RC transmitter
+   - Verify color changes match system state
+
+TROUBLESHOOTING:
+===============
+
+Problem: LED doesn't light up
+Solution:
+- Check wiring connections
+- Verify resistor values
+- Test with multimeter
+- Check GPIO pin assignments in code
+
+Problem: Wrong colors displayed
+Solution:
+- Verify LED pinout (common cathode vs anode)
+- Check red/green/blue pin assignments
+- Test individual colors
+
+Problem: LED too dim/bright
+Solution:
+- Adjust resistor values
+- Modify PWM duty cycle in software
+- Check power supply voltage
+
+Problem: LED flickers
+Solution:
+- Check for loose connections
+- Verify stable power supply
+- Check for software timing issues
+
+CURRENT CONSUMPTION:
+===================
+Each LED channel: ~2-6mA (depending on resistor)
+Total RGB LED: ~6-18mA maximum
+Pi GPIO total budget: 16mA per pin (safe)
+
+SAFETY CONSIDERATIONS:
+=====================
+- Never exceed 16mA per GPIO pin
+- Always use current limiting resistors
+- Double-check polarity before applying power
+- Use proper gauge wire for connections
+- Protect connections from shorts
+
+OPTIONAL ENHANCEMENTS:
+=====================
+
+1. MULTIPLE LEDS:
+   Add more RGB LEDs for better visibility:
+   - Use same GPIO pins with parallel connection
+   - Adjust resistors for multiple LEDs
+   - Consider using LED driver IC for many LEDs
+
+2. DIFFUSED LIGHTING:
+   - Use LED strip or diffuser for better visibility
+   - Mount inside translucent housing
+   - Consider side-lighting for 360° visibility
+
+3. BRIGHTNESS CONTROL:
+   Software PWM allows brightness adjustment:
+   - Modify duty cycle percentages in code
+   - Add ambient light sensor for auto-brightness
+   - Create custom color schemes
+
+WIRING CHECKLIST:
+================
+□ RGB LED identified (common cathode/anode)
+□ GPIO 22 → 220Ω resistor → Red LED
+□ GPIO 23 → 220Ω resistor → Green LED
+□ GPIO 24 → 220Ω resistor → Blue LED
+□ Pi GND → LED Common (cathode) or Pi 3.3V → LED Common (anode)
+□ All connections secure and insulated
+□ LED test sequence passes
+□ Colors match expected rover states
+
+PHYSICAL MOUNTING:
+=================
+Recommended LED placement on rover:
+- Top center for maximum visibility
+- Clear line of sight from operator position
+- Protected from damage during operation
+- Easy access for maintenance
+
+Mounting options:
+- Hot glue or epoxy for permanent mounting
+- Zip ties through mounting holes
+- Double-sided tape for temporary mounting
+- Custom 3D printed housing
+
+===============================================================================
+IMPORTANT: Always test connections before applying power!
+===============================================================================

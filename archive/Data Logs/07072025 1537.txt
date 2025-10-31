@@ -1,0 +1,75 @@
+(venv) jay@RoboPi:~/rover_project $ python3 lidar_scan_debugger.py
+🔬 Starting LiDAR scan debugging...
+Purpose: Diagnose why scan distances appear stuck
+
+============================================================
+🔬 LIDAR SCAN FRESHNESS DEBUGGER
+============================================================
+🔌 Connecting to LiDAR...
+✅ LiDAR connected and motor started
+
+📊 Testing scan data freshness...
+Collecting 10 consecutive scans to check for variations...
+
+🔄 Scan #1:
+   Points: 161
+   Front min: 152.0cm
+   Overall: min=23.7cm, max=443.5cm, avg=111.8cm
+   Angle range: 56° to 347°
+
+🔄 Scan #2:
+Too many bytes in the input buffer: 4000/3000. Cleaning buffer...
+   ❌ Scan 2 failed: Incorrect descriptor starting bytes
+
+🔄 Scan #3:
+   ❌ Scan 3 failed: too many values to unpack (expected 2)
+
+🔄 Scan #4:
+   ❌ Scan 4 failed: too many values to unpack (expected 2)
+
+🔄 Scan #5:
+   ❌ Scan 5 failed: too many values to unpack (expected 2)
+
+🔄 Scan #6:
+   ❌ Scan 6 failed: too many values to unpack (expected 2)
+
+🔄 Scan #7:
+   ❌ Scan 7 failed: too many values to unpack (expected 2)
+
+🔄 Scan #8:
+   ❌ Scan 8 failed: too many values to unpack (expected 2)
+
+🔄 Scan #9:
+   ❌ Scan 9 failed: too many values to unpack (expected 2)
+
+🔄 Scan #10:
+   ❌ Scan 10 failed: too many values to unpack (expected 2)
+
+📈 ANALYSIS RESULTS:
+❌ Insufficient scan data collected
+
+🧹 LiDAR disconnected
+
+============================================================
+⏱️  SCAN TIMING DEBUGGER
+============================================================
+🔄 Testing scan acquisition timing...
+   Scan 1: 1.301s, 165 points
+^CTraceback (most recent call last):
+  File "/home/jay/rover_project/lidar_scan_debugger.py", line 205, in <module>
+    main()
+  File "/home/jay/rover_project/lidar_scan_debugger.py", line 197, in main
+    debug_scan_timing()
+  File "/home/jay/rover_project/lidar_scan_debugger.py", line 151, in debug_scan_timing
+    scan = next(scan_generator)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/jay/rover_project/venv/lib/python3.11/site-packages/rplidar.py", line 446, in iter_scans
+    for new_scan, quality, angle, distance in iterator:
+  File "/home/jay/rover_project/venv/lib/python3.11/site-packages/rplidar.py", line 397, in iter_measures
+    raw = self._read_response(dsize)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jay/rover_project/venv/lib/python3.11/site-packages/rplidar.py", line 224, in _read_response
+    time.sleep(0.001)
+KeyboardInterrupt
+
+(venv) jay@RoboPi:~/rover_project $

@@ -1,0 +1,95 @@
+===============================================================================
+ARDUINO CODE VERSION HISTORY
+===============================================================================
+
+VERSION 1.0 - STABLE BASELINE (rover_arduino_motor_controller_stable_v1)
+=======================================================================
+Created: December 2024
+Status: ✅ STABLE - Tested and working
+
+Features:
+- ✅ RC signal processing (CH1, CH2, CH9)
+- ✅ Mode switching (Failsafe/Manual/Autonomous)
+- ✅ Motor control via pins D5,6,7,9,10,11
+- ✅ Bidirectional serial communication with Pi
+- ✅ JSON protocol for data exchange
+- ✅ Differential steering for RC control
+- ✅ Emergency stop on signal loss
+- ✅ Status LED indication
+
+Pin Usage:
+- D2: CH1 (RC Forward/Reverse)
+- D3: CH2 (RC Steering)
+- D4: CH9 (RC Mode Switch)
+- D5: LEFT_IN1 (Left Motor Direction)
+- D6: LEFT_IN2 (Left Motor Direction)
+- D7: RIGHT_IN3 (Right Motor Direction)
+- D9: LEFT_ENA (Left Motor Speed PWM)
+- D10: RIGHT_IN4 (Right Motor Direction)
+- D11: RIGHT_ENA (Right Motor Speed PWM)
+- D13: Status LED
+
+Available for Future Use:
+- D8, D12 (Digital)
+- A0-A7 (Analog/Digital)
+
+Test Results:
+- ✅ RC signal processing working
+- ✅ Motor control working (with direction fix)
+- ✅ Mode switching working
+- ✅ Serial communication working
+- ✅ Differential steering working (with minor clipping at extremes)
+
+Known Issues:
+- Minor clipping at extreme RC inputs (workaround: reduce RC range)
+- None blocking - system fully functional
+
+===============================================================================
+
+VERSION 2.0 - ENHANCED DEVELOPMENT (rover_arduino_enhanced)
+=========================================================
+Created: December 2024
+Status: 🚧 IN DEVELOPMENT
+
+Planned Enhancements:
+- 🔄 Front ultrasonic sensor (safety/emergency stop)
+- 🔄 Rear ultrasonic sensor (safety/emergency stop)
+- 🔄 Battery voltage monitoring
+- 🔄 Enhanced sensor data reporting
+- 🔄 Emergency stop logic based on sensors
+- 🔄 Improved status reporting
+
+Planned Pin Additions:
+- D8: Front ultrasonic trigger
+- D12: Front ultrasonic echo
+- A0: Rear ultrasonic trigger
+- A1: Rear ultrasonic echo
+- A6: Battery voltage (with voltage divider)
+
+Development Notes:
+- Base functionality preserved from v1.0
+- Adding safety-critical sensors for emergency stop
+- Enhanced dashboard integration
+- Maintain compatibility with existing Pi code
+
+===============================================================================
+
+USAGE GUIDELINES:
+================
+
+STABLE VERSION (v1.0):
+- Use for reliable operation
+- Proven stable for RC control and basic motor operation
+- Recommended for demonstrations and testing
+
+DEVELOPMENT VERSION (v2.0):
+- Use for adding new features
+- Test thoroughly before deploying
+- Can always revert to stable v1.0 if issues arise
+
+BACKUP STRATEGY:
+- Always test new features in enhanced version first
+- Keep stable version unchanged until new version proven
+- Create new stable version only after thorough testing
+
+===============================================================================

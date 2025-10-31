@@ -1,0 +1,62 @@
+(venv) jay@RoboPi:~/rover_project $ python3 autonomous_lidar_navigator.py
+✅ RPLidar library found
+============================================================
+🚀 LIDAR AUTONOMOUS NAVIGATOR
+============================================================
+
+Mission: Navigate autonomously using LiDAR obstacle avoidance
+Controls: Switch to AUTONOMOUS mode (RC CH9) to start navigation
+
+🚀 LiDAR Navigator Initialized
+🎯 Mission: Autonomous obstacle avoidance
+✅ Arduino connected on /dev/ttyUSB0
+✅ LiDAR connected on /dev/ttyUSB1
+🚀 LiDAR Navigator started
+🧭 Autonomous navigation active
+✅ Navigator ready - switch to AUTONOMOUS mode to begin
+Press Ctrl+C to stop...
+⚠️ Slowing down - obstacle at 54.7cm
+⚠️ Slowing down - obstacle at 54.7cm
+⚠️ Slowing down - obstacle at 54.7cm
+⚠️ Slowing down - obstacle at 54.7cm
+⚠️ Slowing down - obstacle at 54.7cm
+⚠️ Slowing down - obstacle at 54.7cm
+⚠️ Slowing down - obstacle at 54.7cm
+🧭 Mode: AUTONOMOUS | State: STRAIGHT | Closest: 54.7cm | Front: 54.7cm | LiDAR: 174pts
+⚠️ Slowing down - obstacle at 54.7cm
+⚠️ Slowing down - obstacle at 54.7cm
+⚠️ Slowing down - obstacle at 54.7cm
+⚠️ Slowing down - obstacle at 54.7cm
+⚠️ Slowing down - obstacle at 54.7cm
+⚠️ Slowing down - obstacle at 54.7cm
+⚠️ Slowing down - obstacle at 54.7cm
+⚠️ Slowing down - obstacle at 54.7cm
+⚠️ Slowing down - obstacle at 54.7cm
+⚠️ Slowing down - obstacle at 54.7cm
+🧭 Mode: AUTONOMOUS | State: STRAIGHT | Closest: 54.7cm | Front: 54.7cm | LiDAR: 174pts
+⚠️ Slowing down - obstacle at 54.7cm
+⚠️ Slowing down - obstacle at 54.7cm
+⚠️ Slowing down - obstacle at 54.7cm
+⚠️ Slowing down - obstacle at 54.7cm
+⚠️ Slowing down - obstacle at 54.7cm
+⚠️ Slowing down - obstacle at 54.7cm
+⚠️ Slowing down - obstacle at 54.7cm
+⚠️ Slowing down - obstacle at 54.7cm
+⚠️ Slowing down - obstacle at 54.7cm
+⚠️ Slowing down - obstacle at 54.7cm
+🧭 Mode: AUTONOMOUS | State: STRAIGHT | Closest: 54.7cm | Front: 54.7cm | LiDAR: 174pts
+🚨 DANGER! Obstacle at 22.8cm - turning left
+🧭 Mode: AUTONOMOUS | State: AVOIDING | Closest: 54.7cm | Front: 54.7cm | LiDAR: 174pts
+🧭 Mode: AUTONOMOUS | State: AVOIDING | Closest: 54.7cm | Front: 54.7cm | LiDAR: 174pts
+🧭 Mode: AUTONOMOUS | State: AVOIDING | Closest: 54.7cm | Front: 54.7cm | LiDAR: 174pts
+🧭 Mode: AUTONOMOUS | State: AVOIDING | Closest: 54.7cm | Front: 54.7cm | LiDAR: 174pts
+🧭 Mode: AUTONOMOUS | State: AVOIDING | Closest: 54.7cm | Front: 54.7cm | LiDAR: 174pts
+🧭 Mode: AUTONOMOUS | State: AVOIDING | Closest: 54.7cm | Front: 54.7cm | LiDAR: 174pts
+🧭 Mode: AUTONOMOUS | State: AVOIDING | Closest: 54.7cm | Front: 54.7cm | LiDAR: 174pts
+🧭 Mode: AUTONOMOUS | State: AVOIDING | Closest: 54.7cm | Front: 54.7cm | LiDAR: 174pts
+^C
+🛑 Shutdown requested...
+⚠️ LiDAR processing error: [Errno 9] Bad file descriptor
+🛑 LiDAR Navigator stopped
+👋 Navigator shutdown complete
+(venv) jay@RoboPi:~/rover_project $

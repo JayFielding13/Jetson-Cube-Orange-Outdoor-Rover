@@ -1,0 +1,175 @@
+===============================================================================
+RASPBERRY PI GPIO WIRING GUIDE - ROVER PROJECT
+===============================================================================
+
+RASPBERRY PI 4 GPIO PINOUT:
+                    3V3  (1) (2)  5V
+                GPIO2  (3) (4)  5V
+                GPIO3  (5) (6)  GND
+                GPIO4  (7) (8)  GPIO14
+                  GND  (9) (10) GPIO15
+               GPIO17 (11) (12) GPIO18 ← LEFT MOTOR FORWARD
+               GPIO27 (13) (14) GND
+               GPIO22 (15) (16) GPIO23
+                  3V3 (17) (18) GPIO24
+               GPIO10 (19) (20) GND
+                GPIO9 (21) (22) GPIO25
+               GPIO11 (23) (24) GPIO8
+                  GND (25) (26) GPIO7
+                GPIO0 (27) (28) GPIO1
+                GPIO5 (29) (30) GND
+                GPIO6 (31) (32) GPIO12
+               GPIO13 (33) (34) GND
+               GPIO19 (35) (36) GPIO16 ← LEFT MOTOR REVERSE
+               GPIO26 (37) (38) GPIO20 ← RIGHT MOTOR FORWARD
+                  GND (39) (40) GPIO21 ← RIGHT MOTOR REVERSE
+
+MOTOR DRIVER CONNECTIONS (UPDATED FOR HARDWARE PWM):
+=================================================
+
+DROK Motor Driver to Raspberry Pi:
+- IN1 (Left Motor Forward)   → GPIO 18 (Pin 12)
+- IN2 (Left Motor Reverse)   → GPIO 23 (Pin 16)  
+- ENA1 (Left Motor Speed)    → GPIO 19 (Pin 35) ← HARDWARE PWM
+- IN3 (Right Motor Forward)  → GPIO 20 (Pin 38)
+- IN4 (Right Motor Reverse)  → GPIO 21 (Pin 40)
+- ENA2 (Right Motor Speed)   → GPIO 12 (Pin 32) ← HARDWARE PWM
+- 5V (Logic Power)           → 5V (Pin 2 or 4)
+- GND (Signal Ground)        → GND (Pin 6, 9, 14, 20, 25, 30, 34, or 39)
+
+DROK Motor Driver to Motors:
+- OUT1 → Left Motor (+)
+- OUT2 → Left Motor (-)
+- OUT3 → Right Motor (+)
+- OUT4 → Right Motor (-)
+
+DROK Motor Driver Power:
+- VCC → 11.1-12.6V from Battery (via PDB)
+- GND → Battery Ground (via PDB)
+
+DETAILED WIRING CONNECTIONS (HARDWARE PWM VERSION):
+=================================================
+
+1. RASPBERRY PI TO DROK DRIVER:
+   Pi GPIO 18 → DROK IN1 (Left Forward)
+   Pi GPIO 23 → DROK IN2 (Left Reverse)
+   Pi GPIO 19 → DROK ENA1 (Left Speed - Hardware PWM)
+   Pi GPIO 20 → DROK IN3 (Right Forward)
+   Pi GPIO 21 → DROK IN4 (Right Reverse)
+   Pi GPIO 12 → DROK ENA2 (Right Speed - Hardware PWM)
+   Pi 5V      → DROK 5V (Logic Power)
+   Pi GND     → DROK GND (Signal Ground)
+
+2. DROK DRIVER TO MOTORS:
+   DROK OUT1 → Left Motor Terminal 1
+   DROK OUT2 → Left Motor Terminal 2
+   DROK OUT3 → Right Motor Terminal 1
+   DROK OUT4 → Right Motor Terminal 2
+
+3. POWER CONNECTIONS:
+   Battery (+) → Main Fuse → Kill Switch → PDB → DROK VCC
+   Battery (-) → PDB → DROK GND
+   Buck 5V → Pi Power
+   Buck GND → Pi GND
+
+4. ARDUINO USB CONNECTION:
+   Arduino USB → Pi USB Port (Data + Power)
+   Creates /dev/ttyUSB0 or /dev/ttyACM0
+
+5. BLUETOOTH DONGLES:
+   Two TP-Link UB500 → Pi USB Ports
+
+SIGNAL LEVELS:
+=============
+- Pi GPIO Output: 3.3V logic
+- DROK Driver Input: 3.3V/5V compatible
+- Motor Driver Output: PWM 0-12V (battery voltage)
+
+CURRENT REQUIREMENTS:
+====================
+- Pi GPIO pins: <16mA each (signal only)
+- DROK driver logic: <10mA
+- Motor current: Handled by DROK driver from battery
+
+WIRE SPECIFICATIONS:
+===================
+- GPIO signals: 22-26 AWG wire adequate
+- Motor power: 14-18 AWG wire (depending on motor current)
+- Power distribution: 12-14 AWG wire
+
+SAFETY CONSIDERATIONS:
+=====================
+- Never connect motor power directly to Pi GPIO
+- Use common ground between Pi and DROK driver
+- Ensure proper fusing on battery connections
+- Test connections before applying power
+
+MOTOR CONTROL LOGIC:
+===================
+Left Motor:
+- Forward: GPIO 18 = HIGH, GPIO 19 = LOW
+- Reverse: GPIO 18 = LOW, GPIO 19 = HIGH  
+- Stop: GPIO 18 = LOW, GPIO 19 = LOW
+
+Right Motor:
+- Forward: GPIO 20 = HIGH, GPIO 21 = LOW
+- Reverse: GPIO 20 = LOW, GPIO 21 = HIGH
+- Stop: GPIO 20 = LOW, GPIO 21 = LOW
+
+PWM CONTROL:
+============
+- PWM frequency: 1000Hz
+- Duty cycle: 0-100% for speed control
+- Software PWM via RPi.GPIO library
+
+TESTING PROCEDURES:
+==================
+
+1. CONTINUITY TEST:
+   - Verify all connections with multimeter
+   - Check for shorts between power and ground
+
+2. VOLTAGE TEST:
+   - Pi GPIO outputs: 3.3V when HIGH
+   - DROK driver inputs: Should match Pi outputs
+   - Motor voltage: Should match battery voltage
+
+3. FUNCTIONAL TEST:
+   - Run GPIO test script
+   - Verify motor direction and speed
+   - Test emergency stop functionality
+
+TROUBLESHOOTING:
+===============
+
+Problem: Motors don't respond
+- Check GPIO pin assignments in code
+- Verify DROK driver power supply
+- Test GPIO output with multimeter
+
+Problem: Motors run in wrong direction
+- Swap motor wire connections
+- Or invert PWM logic in software
+
+Problem: Erratic motor behavior
+- Check for loose connections
+- Verify ground connections
+- Check power supply stability
+
+WIRING CHECKLIST:
+================
+□ Pi GPIO 18 → DROK IN1
+□ Pi GPIO 19 → DROK IN2
+□ Pi GPIO 20 → DROK IN3
+□ Pi GPIO 21 → DROK IN4
+□ Pi GND → DROK GND
+□ DROK OUT1/OUT2 → Left Motor
+□ DROK OUT3/OUT4 → Right Motor
+□ Battery → DROK VCC (via fusing)
+□ Arduino USB → Pi USB
+□ Bluetooth dongles → Pi USB
+□ All grounds connected
+
+===============================================================================
+IMPORTANT: Always disconnect power before making wiring changes!
+===============================================================================

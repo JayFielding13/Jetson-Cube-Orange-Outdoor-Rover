@@ -1,0 +1,241 @@
+(venv) jay@RoboPi:~/rover_project $ nano bluetooth_gradient_navigator_v3.py
+(venv) jay@RoboPi:~/rover_project $ (venv) jay@RoboPi:~/rover_project $ python3 bluetooth_gradient_navigator_v3.py
+✅ Bluetooth (bleak) library available
+================================================================================
+🤖 BLUETOOTH GRADIENT NAVIGATOR V3
+================================================================================
+
+SIGNAL STRENGTH GRADIENT FEATURES:
+  ✅ Ultrasonic obstacle detection and avoidance
+  ✅ Enhanced stuck recovery system
+  ✅ Arduino gatekeeper integration
+  ✅ Real-time Bluetooth beacon ranging (0.8m - 11.2m)
+  ✅ Working RSSI values (-57dBm to -80dBm)
+  ✅ Thread-safe callback-based BLE scanning
+  🧭 NEW: Signal strength gradient following
+  🔄 NEW: Circular scanning for directional detection
+  🎯 NEW: Intelligent homing toward strongest signal
+  🏁 NEW: Precise target hold at 0.5m ±0.1m
+  📊 NEW: RSSI hill climbing algorithm
+  ✅ Safety-first design with ultrasonic priority
+  ✅ Clean shutdown with no task warnings
+
+GRADIENT FOLLOWING BEHAVIOR:
+  🔍 SEARCHING: Look for BlueCharm signal
+  🔄 SCANNING: Circular scan to find strongest direction
+  🏠 HOMING: Move toward strongest signal direction
+  🏁 HOLDING: Maintain precise 0.5m distance
+  🛡️ SAFETY: Ultrasonic overrides all Bluetooth behavior
+
+SCANNING ALGORITHM:
+  🧭 360° scan in 8 direction samples
+  📊 3dBm improvement threshold for direction change
+  🎯 Target: 0.5m ±0.1m with adaptive approach speeds
+
+🚀 Bluetooth Gradient Navigator V3 Initialized
+📊 Navigation: Danger=30.0cm | Caution=60.0cm | Safe=100.0cm
+📡 Bluetooth: Enabled | Target: DD:34:02:09:CA:1E
+🧭 Gradient: Target distance 0.5m ±0.1m | Influence 40%
+🔄 Scanning: 8 directions | 3dBm improvement threshold
+🛡️ Safety: Ultrasonic navigation takes absolute priority
+✅ Arduino connected on /dev/ttyUSB0
+📡 Starting BlueCharm gradient thread...
+📡 BlueCharm gradient scanner started
+📡 BlueCharm gradient scanner ready
+🚀 Gradient Navigator V3 started
+🧭 Ready for autonomous signal strength gradient following
+✅ Gradient Navigator V3 ready - switch to autonomous mode
+📡 BlueCharm gradient following will activate automatically
+🧭 Rover will scan, home, and hold at 0.5m distance
+Press Ctrl+C to stop...
+📡 Starting BLE gradient scanner...
+📡 BLE gradient scanner active
+📡 Stopping BLE gradient scanner...
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: No signal | Det: 0 | Runtime: 3s
+📡 Starting BLE gradient scanner...
+📡 BLE gradient scanner active
+🔄 SEARCH PATTERN: Looking for signal...
+📡 Stopping BLE gradient scanner...
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: No signal | Det: 0 | Runtime: 6s
+📡 Starting BLE gradient scanner...
+📡 BLE gradient scanner active
+📡 Stopping BLE gradient scanner...
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 3.5m (-70dBm PASS) | Det: 2 | Runtime: 9s
+📡 Starting BLE gradient scanner...
+📡 BLE gradient scanner active
+🔄 SCANNING MODE: BlueCharm at 2.5m - finding direction
+📡 SIGNAL DETECTED: Switching to scanning mode (2.5m)
+🔄 SCANNING: 30° (0 samples)
+📡 Stopping BLE gradient scanner...
+🧭 AUTONOMOUS | SCANNING | US: 200.0cm | BT: 5.6m (-74dBm SCAN@90°) | Det: 4 | Runtime: 12s
+🔄 SCANNING: 120° (1 samples)
+🔄 SCANNING: 150° (1 samples)
+📡 Starting BLE gradient scanner...
+📡 BLE gradient scanner active
+🔄 SCANNING: 240° (1 samples)
+📡 BlueCharm SCAN@240° #5:
+   RSSI: -66dBm | Distance: ~2.2m | Avg: -70dBm
+🔄 SCANNING: 270° (2 samples)
+🧭 AUTONOMOUS | SCANNING | US: 200.0cm | BT: 2.2m (-66dBm SCAN@270°) | Det: 5 | Runtime: 15s
+📡 Stopping BLE gradient scanner...
+🧭 SCAN ANALYSIS: 3 samples
+   Best direction: 300° with -65dBm (2.0m)
+🧭 SCAN COMPLETE: Homing toward 300° direction
+📡 Starting BLE gradient scanner...
+📡 BLE gradient scanner active
+⚠️ Unknown navigation state - defaulting to search
+📡 SIGNAL DETECTED: Switching to scanning mode (2.0m)
+🔄 SCANNING: 30° (1 samples)
+🧭 AUTONOMOUS | SCANNING | US: 200.0cm | BT: 2.0m (-65dBm SCAN@30°) | Dir: 300° | Det: 7 | Runtime:  18s
+🔄 SCANNING: 120° (2 samples)
+🔄 SCANNING: 150° (2 samples)
+🧭 AUTONOMOUS | SCANNING | US: 200.0cm | BT: 2.2m (-66dBm SCAN@210°) | Dir: 300° | Det: 8 | Runtime:  21s
+🔄 SCANNING: 240° (2 samples)
+📡 Stopping BLE gradient scanner...
+🔄 SCANNING: 270° (2 samples)
+🔄 SCAN INCONCLUSIVE: Continuing search
+📡 Starting BLE gradient scanner...
+📡 BLE gradient scanner active
+📡 SIGNAL DETECTED: Switching to scanning mode (2.0m)
+🧭 AUTONOMOUS | SCANNING | US: 200.0cm | BT: 2.0m (-65dBm SCAN@330°) | Dir: 300° | Det: 9 | Runtime:  24s
+🔄 SCANNING: 30° (3 samples)
+📡 BlueCharm SCAN@30° #10:
+   RSSI: -64dBm | Distance: ~1.8m | Avg: -68dBm
+📡 Stopping BLE gradient scanner...
+🔄 SCANNING: 120° (4 samples)
+🔄 SCANNING: 150° (4 samples)
+📡 Starting BLE gradient scanner...
+📡 BLE gradient scanner active
+🧭 AUTONOMOUS | SCANNING | US: 200.0cm | BT: 2.0m (-65dBm SCAN@180°) | Dir: 300° | Det: 11 | Runtime : 27s
+🔄 SCANNING: 240° (6 samples)
+🔄 SCANNING: 270° (6 samples)
+🧭 SCAN ANALYSIS: 7 samples
+   Best direction: 30° with -64dBm (1.8m)
+🧭 SCAN COMPLETE: Homing toward 30° direction
+🧭 AUTONOMOUS | HOMING | US: 200.0cm | BT: 2.0m (-65dBm SCAN@330°) | Dir: 30° | Det: 13 | Runtime: 3 0s
+⚠️ Unknown navigation state - defaulting to search
+📡 SIGNAL DETECTED: Switching to scanning mode (2.0m)
+🔄 SCANNING: 30° (1 samples)
+📡 BlueCharm SCAN@60° #15:
+   RSSI: -65dBm | Distance: ~2.0m | Avg: -67dBm
+🔄 SCANNING: 120° (2 samples)
+🧭 AUTONOMOUS | SCANNING | US: 200.0cm | BT: 2.0m (-65dBm SCAN@120°) | Dir: 30° | Det: 15 | Runtime:  33s
+🔄 SCANNING: 150° (3 samples)
+🔄 SCANNING: 240° (4 samples)
+🔄 SCANNING: 270° (4 samples)
+📡 Stopping BLE gradient scanner...
+🧭 AUTONOMOUS | SCANNING | US: 200.0cm | BT: 2.0m (-65dBm SCAN@300°) | Dir: 30° | Det: 17 | Runtime:  36s
+📡 Starting BLE gradient scanner...
+📡 BLE gradient scanner active
+🧭 SCAN ANALYSIS: 4 samples
+   Best direction: 330° with -64dBm (1.8m)
+🧭 SCAN COMPLETE: Homing toward 330° direction
+⚠️ Unknown navigation state - defaulting to search
+📡 SIGNAL DETECTED: Switching to scanning mode (2.0m)
+🔄 SCANNING: 30° (1 samples)
+🧭 AUTONOMOUS | SCANNING | US: 200.0cm | BT: 2.0m (-65dBm SCAN@60°) | Dir: 330° | Det: 18 | Runtime:  39s
+📡 BlueCharm SCAN@90° #20:
+   RSSI: -65dBm | Distance: ~2.0m | Avg: -66dBm
+📡 Stopping BLE gradient scanner...
+🧭 SCAN ANALYSIS: 3 samples
+   Best direction: 330° with -65dBm (2.0m)
+🧭 SCAN COMPLETE: Homing toward 330° direction
+📡 Starting BLE gradient scanner...
+📡 BLE gradient scanner active
+⚠️ Unknown navigation state - defaulting to search
+📡 SIGNAL DETECTED: Switching to scanning mode (2.5m)
+🔄 SCANNING: 30° (1 samples)
+🧭 AUTONOMOUS | SCANNING | US: 200.0cm | BT: 2.5m (-67dBm SCAN@30°) | Dir: 330° | Det: 21 | Runtime:  48s
+🔄 SCANNING: 120° (2 samples)
+🔄 SCANNING: 150° (2 samples)
+🧭 AUTONOMOUS | SCANNING | US: 200.0cm | BT: 5.0m (-73dBm SCAN@210°) | Dir: 330° | Det: 23 | Runtime : 51s
+🔄 SCANNING: 240° (3 samples)
+🔄 SCANNING: 270° (4 samples)
+📡 BlueCharm SCAN@300° #25:
+   RSSI: -71dBm | Distance: ~4.0m | Avg: -66dBm
+🧭 SCAN ANALYSIS: 5 samples
+   Best direction: 90° with -67dBm (2.5m)
+🧭 SCAN COMPLETE: Homing toward 90° direction
+⚠️ Unknown navigation state - defaulting to search
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 1.4m (-62dBm SCAN@330°) | Dir: 90° | Det: 26 | Runtime : 54s
+📡 SIGNAL DETECTED: Switching to scanning mode (1.4m)
+🔄 SCANNING: 30° (2 samples)
+🔄 SCANNING: 120° (3 samples)
+🔄 SCANNING: 150° (4 samples)
+🧭 AUTONOMOUS | SCANNING | US: 200.0cm | BT: 4.0m (-71dBm SCAN@150°) | Dir: 90° | Det: 29 | Runtime:  57s
+📡 BlueCharm SCAN@180° #30:
+   RSSI: -68dBm | Distance: ~2.8m | Avg: -67dBm
+🔄 SCANNING: 240° (5 samples)
+🔄 SCANNING: 270° (6 samples)
+🧭 AUTONOMOUS | SCANNING | US: 200.0cm | BT: 1.4m (-62dBm SCAN@330°) | Dir: 90° | Det: 32 | Runtime:  60s
+🧭 SCAN ANALYSIS: 7 samples
+   Best direction: 330° with -62dBm (1.4m)
+🧭 SCAN COMPLETE: Homing toward 330° direction
+⚠️ Unknown navigation state - defaulting to search
+📡 SIGNAL DETECTED: Switching to scanning mode (4.5m)
+🔄 SCANNING: 30° (2 samples)
+📡 BlueCharm SCAN@60° #35:
+   RSSI: -71dBm | Distance: ~4.0m | Avg: -67dBm
+🧭 AUTONOMOUS | SCANNING | US: 200.0cm | BT: 4.0m (-71dBm SCAN@90°) | Dir: 330° | Det: 35 | Runtime:  63s
+🔄 SCANNING: 120° (3 samples)
+🔄 SCANNING: 150° (4 samples)
+🔄 SCANNING: 240° (5 samples)
+🔄 SCANNING: 270° (6 samples)
+🧭 AUTONOMOUS | SCANNING | US: 200.0cm | BT: 1.4m (-62dBm SCAN@270°) | Dir: 330° | Det: 38 | Runtime : 66s
+🧭 SCAN ANALYSIS: 7 samples
+   Best direction: 330° with -62dBm (1.4m)
+🧭 SCAN COMPLETE: Homing toward 330° direction
+📡 BlueCharm SCAN@330° #40:
+   RSSI: -63dBm | Distance: ~1.6m | Avg: -68dBm
+⚠️ Unknown navigation state - defaulting to search
+📡 SIGNAL DETECTED: Switching to scanning mode (1.6m)
+🔄 SCANNING: 30° (2 samples)
+🧭 AUTONOMOUS | SCANNING | US: 200.0cm | BT: 3.2m (-69dBm SCAN@30°) | Dir: 330° | Det: 41 | Runtime:  69s
+🔄 SCANNING: 120° (3 samples)
+🔄 SCANNING: 150° (3 samples)
+🧭 AUTONOMOUS | SCANNING | US: 200.0cm | BT: 4.5m (-72dBm SCAN@210°) | Dir: 330° | Det: 43 | Runtime : 72s
+🔄 SCANNING: 240° (5 samples)
+🔄 SCANNING: 270° (5 samples)
+📡 BlueCharm SCAN@270° #45:
+   RSSI: -69dBm | Distance: ~3.2m | Avg: -68dBm
+🧭 SCAN ANALYSIS: 7 samples
+   Best direction: 330° with -63dBm (1.6m)
+🧭 SCAN COMPLETE: Homing toward 330° direction
+⚠️ Unknown navigation state - defaulting to search
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 4.0m (-71dBm SCAN@330°) | Dir: 330° | Det: 46 | Runtim e: 75s
+📡 SIGNAL DETECTED: Switching to scanning mode (1.4m)
+🔄 SCANNING: 30° (1 samples)
+🔄 SCANNING: 120° (3 samples)
+🔄 SCANNING: 150° (3 samples)
+🧭 AUTONOMOUS | SCANNING | US: 200.0cm | BT: 1.4m (-62dBm SCAN@150°) | Dir: 330° | Det: 49 | Runtime : 78s
+📡 Stopping BLE gradient scanner...
+^C
+🛑 Shutdown requested by user...
+🛑 Stopping Gradient Navigator V3...
+📊 Final runtime: 81.7 seconds
+📊 === Gradient Navigator V3 Statistics ===
+   Runtime: 82 seconds
+   Distance measurements: 520
+   Obstacle avoidances: 0
+   Emergency stops: 0
+   Stuck recoveries: 0
+🧭 === Signal Strength Gradient Statistics ===
+   Scan activations: 1
+   Homing activations: 0
+   Hold activations: 0
+   Target reaches: 0
+   Gradient improvements: 3
+   Direction changes: 8
+📡 === Bluetooth Ranging Statistics ===
+   Total detections: 49
+   Callback events: 49
+   Detection rate: 0.60/sec
+   Callback rate: 0.60/sec
+   Strongest RSSI: -62 dBm
+   Signal timeouts: 0
+   Average RSSI: -67.5 dBm
+   Current modes: SCANNING
+   Best direction: 330°
+   Navigation rate: 6.4 measurements/sec
+👋 Gradient Navigator V3 shutdown complete
+(venv) jay@RoboPi:~/rover_project $

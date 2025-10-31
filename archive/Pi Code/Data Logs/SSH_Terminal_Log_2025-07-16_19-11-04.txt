@@ -1,0 +1,352 @@
+SSH Dashboard Terminal Log
+Session Date: 2025-07-16 19:11:10
+Connected to: 192.168.254.65:22
+Username: jay
+==================================================
+
+Connected to Raspberry Pi
+$ cd ~/rover_project && source venv/bin/activate && echo 'Rover environment activated' && pwd && which python
+Rover environment activated
+/home/jay/rover_project
+/home/jay/rover_project/venv/bin/python
+Uploading bluetooth_lidar_navigator_v7.py...
+Successfully uploaded bluetooth_lidar_navigator_v7.py to /home/jay/rover_project/bluetooth_lidar_navigator_v7.py
+$ cd ~/rover_project && source venv/bin/activate && echo 'Starting program...' && python3 -u /home/jay/rover_project/bluetooth_lidar_navigator_v7.py
+Starting program...
+✅ Bluetooth (bleak) library available
+✅ LiDAR (rplidar) library available
+================================================================================
+🤖 BLUETOOTH LIDAR NAVIGATOR V7
+================================================================================
+
+ENHANCED FEATURES:
+  ✅ All proven V6 Bluetooth navigation capabilities
+  ✅ Integrated RPLidar A1 for 360° obstacle detection
+  ✅ Multi-sensor fusion (ultrasonic + LiDAR)
+  ✅ Enhanced obstacle avoidance with sector analysis
+  ✅ Improved turn direction selection using LiDAR data
+  ✅ Real-time path clearance assessment
+  ✅ Fallback to ultrasonic if LiDAR fails
+  ✅ Thread-safe LiDAR data processing
+  ✅ Enhanced navigation decision making
+  🔍 Automatic USB device detection and assignment
+  🛡️ Intelligent port conflict resolution
+  🔄 Robust fallback system for device connections
+
+LIDAR ENHANCEMENTS:
+  🔄 360° obstacle detection vs single-direction ultrasonic
+  🎯 Sector-based path analysis (8 directions)
+  🧠 Intelligent turn direction selection
+  📏 Enhanced distance fusion for better accuracy
+  🚧 Real-time obstacle mapping
+  ✅ Graceful degradation if LiDAR unavailable
+
+DEVICE DETECTION:
+  🔍 Automatic USB port scanning and identification
+  🤖 Arduino detection via JSON protocol recognition
+  📡 LiDAR detection via RPLidar protocol handshake
+  🔄 Smart fallback to common port configurations
+  🛡️ Port conflict prevention and resolution
+  📋 Detailed device information reporting
+
+NAVIGATION MODES:
+  🔍 SEARCHING: Enhanced search with LiDAR-guided turns
+  🚶 FORWARD_TRACKING: Movement with multi-sensor obstacle awareness
+  🔄 TURN_TESTING: Enhanced turn selection using LiDAR data
+  🧠 SMART_AVOIDING: Sector-based obstacle avoidance
+  🎯 APPROACHING: Sensor-fusion approach control
+  🏁 HOLDING: Enhanced position maintenance
+  🛡️ SAFETY: Multi-sensor emergency override
+
+SENSOR STATUS:
+  ✅ LiDAR Ready
+  ✅ Bluetooth Ready
+
+🔍 USB Device Detector initialized
+🔄 LiDAR Processor initialized
+📏 Range: 100-8000mm
+🚧 Obstacle threshold: 800mm
+✅ Clear path threshold: 1200mm
+🚀 Bluetooth LiDAR Navigator V7 - Enhanced Object Detection
+📊 Navigation: Danger=30.0cm | Caution=60.0cm | Safe=100.0cm
+🔄 LiDAR: Enabled | Danger=80.0cm | Caution=120.0cm
+📡 Bluetooth: Enabled | Target: DD:34:02:09:CA:1E
+🚶 Tracking: Target distance 0.5m ±0.15m
+📈 Signal: 1.0dBm improvement | 2.0dBm degradation
+🛡️ Safety: Ultrasonic + LiDAR fusion for enhanced obstacle detection
+🔍 Starting device detection...
+🔍 === USB Device Detection Started ===
+🔍 Scanning for USB devices...
+📋 Found 2 USB serial devices:
+   1. /dev/ttyUSB1 - CP2102 USB to UART Bridge Controller - CP2102 USB to UART Bridge Controller
+      VID:PID = 10C4:EA60
+      Manufacturer: Silicon Labs
+   2. /dev/ttyUSB0 - USB Serial
+      VID:PID = 1A86:7523
+      Manufacturer: None
+
+🧪 Testing ports for device identification...
+
+📍 Testing /dev/ttyUSB1...
+🤖 Testing for Arduino on /dev/ttyUSB1...
+❌ No Arduino detected on /dev/ttyUSB1
+📡 Testing for LiDAR on /dev/ttyUSB1...
+✅ LiDAR detected on /dev/ttyUSB1
+   Model: 24
+   Firmware: (1, 29)
+   Hardware: 7
+
+📍 Testing /dev/ttyUSB0...
+🤖 Testing for Arduino on /dev/ttyUSB0...
+✅ Arduino detected on /dev/ttyUSB0 at 115200 baud
+   Sample data: {'ch1': 0, 'ch2': 0, 'ch9': -992, 'valid': True, 'mode': 0, 'emergency': False, 'distance': None, 'pi_command_valid': False, 'gatekeeper_mode': 'FAILSAFE'}
+
+📊 Detection Results:
+   Arduino candidates: 1
+   LiDAR candidates: 1
+✅ Arduino assigned to: /dev/ttyUSB0 @ 115200 baud
+✅ LiDAR assigned to: /dev/ttyUSB1
+
+📋 Final Device Assignment:
+   Arduino: /dev/ttyUSB0
+   LiDAR: /dev/ttyUSB1
+📍 Using detected Arduino: /dev/ttyUSB0 @ 115200 baud
+✅ Arduino connected on /dev/ttyUSB0
+📍 Using detected LiDAR: /dev/ttyUSB1
+🔗 Connecting to RPLidar A1 on /dev/ttyUSB1
+📋 LiDAR Device info: {'model': 24, 'firmware': (1, 29), 'hardware': 7, 'serialnumber': 'EF83EDF9C7E29BCEA7E39EF27F504304'}
+💚 LiDAR Health: ('Good', 0)
+🔄 Starting LiDAR motor...
+✅ LiDAR connected and ready
+📡 LiDAR scanning started
+✅ LiDAR navigation enhancement enabled
+📡 Starting BlueCharm tracking thread...📡 BlueCharm tracking scanner started
+
+📡 BlueCharm tracking scanner ready🚀 Enhanced Navigator V7 started with LiDAR + Ultrasonic + Bluetooth
+
+🎯 Ready for enhanced object detection and navigation
+✅ Enhanced Navigator V7 ready with LiDAR + Ultrasonic + Bluetooth
+📡 Switch to autonomous mode for enhanced navigation
+🔄 LiDAR will provide 360° obstacle detection
+🎯 Multi-sensor fusion ensures robust navigation
+Press Ctrl+C to stop...
+⚠️ Arduino communication timeout
+⚠️ Arduino communication timeout
+⚠️ Arduino communication timeout
+⚠️ Arduino communication timeout
+⚠️ Arduino communication timeout
+⚠️ Arduino communication timeout
+⚠️ Arduino communication timeout
+📡 LiDAR scan #10: 128 points
+📡 LiDAR scan #20: 129 points
+📡 LiDAR scan #30: 131 points
+📡 LiDAR scan #40: 131 points
+📡 LiDAR scan #50: 124 points
+📡 LiDAR scan #60: 132 points
+📡 LiDAR scan #70: 125 points
+📡 LiDAR scan #80: 141 points
+📡 LiDAR scan #90: 126 points
+📡 LiDAR scan #100: 131 points
+📡 LiDAR scan #110: 127 points
+📡 LiDAR scan #120: 133 points
+📡 LiDAR scan #130: 130 points
+📡 LiDAR scan #140: 129 points
+📡 LiDAR scan #150: 130 points
+📡 LiDAR scan #160: 133 points
+📡 LiDAR scan #170: 131 points
+📡 LiDAR scan #180: 127 points
+📡 LiDAR scan #190: 132 points
+📡 LiDAR scan #200: 132 points
+📡 LiDAR scan #210: 122 points
+📡 LiDAR scan #220: 122 points
+🔄 ENHANCED SEARCH: Looking for signal...
+🧭 AUTONOMOUS | SEARCHING | ULTRASONIC: 200.0cm | LiDAR: 55cm@253° | Clear: 5/8 | BT: No signal | Det: 0 | Runtime: 34s
+📡 LiDAR scan #230: 111 points
+📡 LiDAR scan #240: 108 points
+🧭 AUTONOMOUS | SEARCHING | ULTRASONIC: 200.0cm | LiDAR: 63cm@318° | Clear: 6/8 | BT: No signal | Det: 0 | Runtime: 37s
+📡 LiDAR scan #250: 101 points
+📡 LiDAR scan #260: 111 points
+📡 LiDAR scan #270: 115 points
+🧭 AUTONOMOUS | SEARCHING | ULTRASONIC: 200.0cm | LiDAR: 42cm@273° | Clear: 6/8 | BT: No signal | Det: 0 | Runtime: 40s
+📡 LiDAR scan #280: 122 points
+📡 Starting BLE scanner...
+📡 BLE scanner active
+📡 LiDAR scan #290: 128 points
+🚶 TRACKING MODE: BlueCharm at 5.0m - forward tracking activated
+📡 SIGNAL DETECTED: Switching to forward_tracking mode (5.0m)
+🧭 AUTONOMOUS | FORWARD_TRACKING | ULTRASONIC: 200.0cm | LiDAR: 61cm@220° | Clear: 5/8 | BT: 5.0m (-73dBm TRACK) | Det: 1 | Runtime: 43s
+🏁 TRACKING INITIALIZED: Starting at 5.0m
+🚶 ENHANCED TRACKING: 5.0m signal stable (t=0.5s)
+📡 LiDAR scan #300: 134 points
+📡 LiDAR scan #310: 124 points
+🧭 AUTONOMOUS | FORWARD_TRACKING | ULTRASONIC: 200.0cm | LiDAR: 67cm@261° | Clear: 5/8 | BT: 3.7m (-69dBm TRACK↗) | Det: 4 | Runtime: 46s
+📡 BlueCharm TRACKING↗ #5:
+   RSSI: -67dBm (raw: -63) | Distance: ~3.0m | Avg: -70dBm
+📡 LiDAR scan #320: 127 points
+📡 LiDAR scan #330: 111 points
+🚶 ENHANCED TRACKING: 3.2m signal ↗improving (t=6.0s)
+🧭 AUTONOMOUS | FORWARD_TRACKING | ULTRASONIC: 200.0cm | LiDAR: 78cm@253° | Clear: 6/8 | BT: 3.2m (-68dBm TRACK↗) | Det: 6 | Runtime: 49s
+🚶 ENHANCED TRACKING: 2.5m signal ↗improving (t=6.5s)
+📡 LiDAR scan #340: 86 points
+📡 LiDAR scan #350: 86 points
+🎯 SWITCHING TO APPROACH: 2.5m
+🧭 AUTONOMOUS | APPROACHING | ULTRASONIC: 200.0cm | LiDAR: 106cm@223° | Clear: 7/8 | BT: 2.5m (-51dBm TRACK↗) | Det: 8 | Runtime: 52s
+📡 LiDAR scan #360: 92 points
+📡 BlueCharm TRACKING↗ #10:
+   RSSI: -43dBm (raw: -32) | Distance: ~2.5m | Avg: -61dBm
+📡 LiDAR scan #370: 93 points
+🧭 AUTONOMOUS | APPROACHING | ULTRASONIC: 200.0cm | LiDAR: 105cm@224° | Clear: 7/8 | BT: 2.5m (-43dBm TRACK↗) | Det: 10 | Runtime: 55s
+📡 LiDAR scan #380: 87 points
+📡 LiDAR scan #390: 93 points
+🧭 AUTONOMOUS | APPROACHING | ULTRASONIC: 200.0cm | LiDAR: 105cm@224° | Clear: 7/8 | BT: 2.5m (-39dBm TRACK↗) | Det: 13 | Runtime: 58s
+📡 LiDAR scan #400: 87 points
+📡 BlueCharm TRACKING↗ #15:
+   RSSI: -35dBm (raw: -31) | Distance: ~2.5m | Avg: -42dBm
+📡 LiDAR scan #410: 96 points
+🧭 AUTONOMOUS | APPROACHING | ULTRASONIC: 200.0cm | LiDAR: 105cm@224° | Clear: 7/8 | BT: 2.5m (-36dBm TRACK↗) | Det: 16 | Runtime: 61s
+📊 === Enhanced Navigator V7 Statistics ===
+   Runtime: 61 seconds
+   Distance measurements: 352
+   Obstacle avoidances: 0
+   Emergency stops: 0
+   Stuck recoveries: 0
+🎯 === Enhanced Navigation Statistics ===
+   Smart turns: 0
+   Tracking activations: 1
+   Approach activations: 0
+   Hold activations: 0
+   Target reaches: 0
+   Signal improvements: 1
+   Course corrections: 0
+   Turn tests: 0
+   Long tracking phases: 0
+🔄 === LiDAR Enhancement Statistics ===
+   LiDAR scans processed: 57
+   LiDAR obstacle detections: 0
+   LiDAR enhanced turns: 1
+   Sensor fallbacks: 0
+   LiDAR scan rate: 0.94/sec
+📡 === Bluetooth Ranging Statistics ===
+   Total detections: 16
+   Callback events: 16
+   Detection rate: 0.26/sec
+   Callback rate: 0.26/sec
+   Strongest RSSI: -34.804213023070034 dBm
+   Signal timeouts: 0
+   Average RSSI: -40.2 dBm
+   Average smoothed distance: 2.5m
+   Navigation rate: 5.8 measurements/sec
+📡 LiDAR scan #420: 90 points
+📡 LiDAR scan #430: 86 points
+🧭 AUTONOMOUS | APPROACHING | ULTRASONIC: 200.0cm | LiDAR: 105cm@223° | Clear: 7/8 | BT: 2.5m (-33dBm TRACK↗) | Det: 18 | Runtime: 64s
+📡 LiDAR scan #440: 90 points
+📡 BlueCharm TRACKING↗ #20:
+   RSSI: -34dBm (raw: -32) | Distance: ~2.5m | Avg: -36dBm
+📡 LiDAR scan #450: 88 points
+📡 LiDAR scan #460: 93 points
+🧭 AUTONOMOUS | APPROACHING | ULTRASONIC: 200.0cm | LiDAR: 105cm@224° | Clear: 7/8 | BT: 2.5m (-34dBm TRACK↗) | Det: 20 | Runtime: 67s
+📡 LiDAR scan #470: 96 points
+📡 LiDAR scan #480: 95 points
+🧭 AUTONOMOUS | APPROACHING | ULTRASONIC: 200.0cm | LiDAR: 105cm@224° | Clear: 7/8 | BT: 2.5m (-36dBm TRACK↗) | Det: 22 | Runtime: 70s
+📡 LiDAR scan #490: 87 points
+📡 LiDAR scan #500: 85 points
+📡 BlueCharm TRACKING↗ #25:
+   RSSI: -33dBm (raw: -31) | Distance: ~2.5m | Avg: -34dBm
+🧭 AUTONOMOUS | APPROACHING | ULTRASONIC: 200.0cm | LiDAR: 105cm@224° | Clear: 7/8 | BT: 2.5m (-33dBm TRACK↗) | Det: 25 | Runtime: 73s
+📡 LiDAR scan #510: 90 points
+📡 LiDAR scan #520: 88 points
+🧭 AUTONOMOUS | APPROACHING | ULTRASONIC: 200.0cm | LiDAR: 105cm@223° | Clear: 7/8 | BT: 2.5m (-33dBm TRACK↗) | Det: 28 | Runtime: 76s
+📡 LiDAR scan #530: 91 points
+📡 BlueCharm TRACKING↗ #30:
+   RSSI: -32dBm (raw: -31) | Distance: ~2.5m | Avg: -34dBm
+📡 LiDAR scan #540: 90 points
+🧭 AUTONOMOUS | APPROACHING | ULTRASONIC: 200.0cm | LiDAR: 105cm@224° | Clear: 7/8 | BT: 2.5m (-35dBm TRACK↗) | Det: 31 | Runtime: 79s
+📡 LiDAR scan #550: 92 points
+📡 LiDAR scan #560: 92 points
+🧭 AUTONOMOUS | APPROACHING | ULTRASONIC: 200.0cm | LiDAR: 105cm@223° | Clear: 7/8 | BT: 2.5m (-33dBm TRACK↗) | Det: 34 | Runtime: 82s
+📡 LiDAR scan #570: 89 points
+📡 BlueCharm TRACKING↗ #35:
+   RSSI: -32dBm (raw: -31) | Distance: ~2.5m | Avg: -33dBm
+📡 LiDAR scan #580: 94 points
+🧭 AUTONOMOUS | APPROACHING | ULTRASONIC: 200.0cm | LiDAR: 105cm@224° | Clear: 7/8 | BT: 2.5m (-32dBm TRACK↗) | Det: 37 | Runtime: 85s
+📡 LiDAR scan #590: 89 points
+📡 LiDAR scan #600: 91 points
+🧭 AUTONOMOUS | APPROACHING | ULTRASONIC: 200.0cm | LiDAR: 105cm@224° | Clear: 6/8 | BT: 2.5m (-35dBm TRACK↗) | Det: 38 | Runtime: 88s
+📡 LiDAR scan #610: 89 points
+📡 BlueCharm TRACKING↘ #40:
+   RSSI: -35dBm (raw: -35) | Distance: ~2.5m | Avg: -34dBm
+📡 LiDAR scan #620: 86 points
+📡 LiDAR scan #630: 105 points
+🧭 AUTONOMOUS | APPROACHING | ULTRASONIC: 200.0cm | LiDAR: 28cm@172° | Clear: 5/8 | BT: 2.5m (-33dBm TRACK↘) | Det: 41 | Runtime: 91s
+📊 === Enhanced Navigator V7 Statistics ===
+   Runtime: 91 seconds
+   Distance measurements: 553
+   Obstacle avoidances: 0
+   Emergency stops: 0
+   Stuck recoveries: 0
+🎯 === Enhanced Navigation Statistics ===
+   Smart turns: 0
+   Tracking activations: 1
+   Approach activations: 0
+   Hold activations: 0
+   Target reaches: 0
+   Signal improvements: 1
+   Course corrections: 0
+   Turn tests: 0
+   Long tracking phases: 0
+🔄 === LiDAR Enhancement Statistics ===
+   LiDAR scans processed: 117
+   LiDAR obstacle detections: 0
+   LiDAR enhanced turns: 1
+   Sensor fallbacks: 0
+   LiDAR scan rate: 1.29/sec
+📡 === Bluetooth Ranging Statistics ===
+   Total detections: 41
+   Callback events: 41
+   Detection rate: 0.45/sec
+   Callback rate: 0.45/sec
+   Strongest RSSI: -32.02960902736464 dBm
+   Signal timeouts: 0
+   Average RSSI: -33.7 dBm
+   Average smoothed distance: 2.5m
+   Navigation rate: 6.1 measurements/sec
+📡 LiDAR scan #640: 87 points
+📡 LiDAR scan #650: 94 points
+🧭 AUTONOMOUS | APPROACHING | ULTRASONIC: 200.0cm | LiDAR: 105cm@224° | Clear: 7/8 | BT: 2.5m (-45dBm TRACK↘) | Det: 42 | Runtime: 94s
+📡 LiDAR scan #660: 89 points
+📡 LiDAR scan #670: 80 points
+🧭 AUTONOMOUS | APPROACHING | ULTRASONIC: 200.0cm | LiDAR: 105cm@223° | Clear: 7/8 | BT: 2.5m (-56dBm TRACK↘) | Det: 43 | Runtime: 97s
+📡 LiDAR scan #680: 94 points
+📡 BlueCharm TRACKING↘ #45:
+   RSSI: -68dBm (raw: -81) | Distance: ~2.7m | Avg: -47dBm
+📡 LiDAR scan #690: 94 points
+🧭 AUTONOMOUS | APPROACHING | ULTRASONIC: 200.0cm | LiDAR: 105cm@224° | Clear: 7/8 | BT: 3.8m (-73dBm TRACK↘) | Det: 46 | Runtime: 100s
+📡 LiDAR scan #700: 88 points
+📡 LiDAR scan #710: 91 points
+🧭 AUTONOMOUS | APPROACHING | ULTRASONIC: 200.0cm | LiDAR: 105cm@224° | Clear: 7/8 | BT: 4.3m (-73dBm TRACK↘) | Det: 48 | Runtime: 103s
+📡 LiDAR scan #720: 90 points
+📡 LiDAR scan #730: 90 points
+📡 BlueCharm TRACKING↘ #50:
+   RSSI: -72dBm (raw: -71) | Distance: ~4.5m | Avg: -69dBm
+🧭 AUTONOMOUS | APPROACHING | ULTRASONIC: 200.0cm | LiDAR: 105cm@223° | Clear: 7/8 | BT: 4.5m (-72dBm TRACK↘) | Det: 50 | Runtime: 106s
+📡 LiDAR scan #740: 88 points
+📡 LiDAR scan #750: 87 points
+🧭 AUTONOMOUS | APPROACHING | ULTRASONIC: 200.0cm | LiDAR: 105cm@224° | Clear: 7/8 | BT: 4.5m (-70dBm TRACK↘) | Det: 53 | Runtime: 109s
+📡 LiDAR scan #760: 87 points
+📡 BlueCharm TRACKING↗ #55:
+   RSSI: -62dBm (raw: -52) | Distance: ~4.5m | Avg: -72dBm
+📡 LiDAR scan #770: 89 points
+🧭 AUTONOMOUS | APPROACHING | ULTRASONIC: 200.0cm | LiDAR: 105cm@224° | Clear: 7/8 | BT: 4.5m (-62dBm TRACK↗) | Det: 55 | Runtime: 112s
+📡 LiDAR scan #780: 90 points
+📡 LiDAR scan #790: 91 points
+
+Attempting to stop program...
+
+^C (Interrupt signal sent)
+^C
+🛑 Shutdown requested by user...
+🛑 Stopping Enhanced Navigator V7...
+🔌 LiDAR disconnected
+SIGTERM sent to Python processes
+No Python processes running
+

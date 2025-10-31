@@ -1,0 +1,96 @@
+(venv) jay@RoboPi:~/rover_project $ nano autonomous_lidar_zone_navigator.py
+(venv) jay@RoboPi:~/rover_project $ python3 autonomous_lidar_zone_navigator.py
+✅ RPLidar library found
+============================================================
+🎯 ZONE-BASED LIDAR NAVIGATOR
+============================================================
+
+Strategy: 8-zone processing to prevent buffer overruns
+Features: Individual measurements, minimal buffer usage
+Zones: 45° sectors with closest distance tracking
+
+🚀 Zone Navigator Initialized
+📊 Using 8 zones with 45° sectors each
+✅ Arduino connected on /dev/ttyUSB0
+📊 LiDAR Info: {'model': 24, 'firmware': (1, 29), 'hardware': 7, 'serialnumber': 'EF83EDF9C7E29BCEA7E39EF27F504304'}
+✅ LiDAR connected on /dev/ttyUSB1
+⚠️ Measurement processing failed: 'RPLidar' object has no attribute 'iter_measurements'
+🚀 Zone Navigator started
+✅ Zone Navigator ready
+Press Ctrl+C to stop...
+⚠️ Measurement processing failed: 'RPLidar' object has no attribute 'iter_measurements'
+⚠️ Measurement processing failed: 'RPLidar' object has no attribute 'iter_measurements'
+⚠️ Measurement processing failed: 'RPLidar' object has no attribute 'iter_measurements'
+⚠️ Measurement processing failed: 'RPLidar' object has no attribute 'iter_measurements'
+⚠️ Measurement processing failed: 'RPLidar' object has no attribute 'iter_measurements'
+⚠️ Measurement processing failed: 'RPLidar' object has no attribute 'iter_measurements'
+⚠️ Measurement processing failed: 'RPLidar' object has no attribute 'iter_measurements'
+⚠️ Measurement processing failed: 'RPLidar' object has no attribute 'iter_measurements'
+⚠️ Measurement processing failed: 'RPLidar' object has no attribute 'iter_measurements'
+⚠️ Measurement processing failed: 'RPLidar' object has no attribute 'iter_measurements'
+⚠️ Measurement processing failed: 'RPLidar' object has no attribute 'iter_measurements'
+⚠️ Measurement processing failed: 'RPLidar' object has no attribute 'iter_measurements'
+⚠️ Measurement processing failed: 'RPLidar' object has no attribute 'iter_measurements'
+⚠️ Measurement processing failed: 'RPLidar' object has no attribute 'iter_measurements'
+⚠️ Measurement processing failed: 'RPLidar' object has no attribute 'iter_measurements'
+⚠️ Measurement processing failed: 'RPLidar' object has no attribute 'iter_measurements'
+⚠️ Measurement processing failed: 'RPLidar' object has no attribute 'iter_measurements'
+⚠️ Measurement processing failed: 'RPLidar' object has no attribute 'iter_measurements'
+⚠️ Measurement processing failed: 'RPLidar' object has no attribute 'iter_measurements'
+⚠️ Measurement processing failed: 'RPLidar' object has no attribute 'iter_measurements'
+⚠️ Measurement processing failed: 'RPLidar' object has no attribute 'iter_measurements'
+⚠️ Measurement processing failed: 'RPLidar' object has no attribute 'iter_measurements'
+⚠️ Measurement processing failed: 'RPLidar' object has no attribute 'iter_measurements'
+⚠️ Measurement processing failed: 'RPLidar' object has no attribute 'iter_measurements'
+⚠️ Measurement processing failed: 'RPLidar' object has no attribute 'iter_measurements'
+⚠️ Measurement processing failed: 'RPLidar' object has no attribute 'iter_measurements'
+⚠️ Measurement processing failed: 'RPLidar' object has no attribute 'iter_measurements'
+⚠️ Measurement processing failed: 'RPLidar' object has no attribute 'iter_measurements'
+⚠️ Measurement processing failed: 'RPLidar' object has no attribute 'iter_measurements'
+⚠️ Measurement processing failed: 'RPLidar' object has no attribute 'iter_measurements'
+⚠️ Measurement processing failed: 'RPLidar' object has no attribute 'iter_measurements'
+⚠️ Measurement processing failed: 'RPLidar' object has no attribute 'iter_measurements'
+⚠️ Measurement processing failed: 'RPLidar' object has no attribute 'iter_measurements'
+⚠️ Measurement processing failed: 'RPLidar' object has no attribute 'iter_measurements'
+⚠️ Measurement processing failed: 'RPLidar' object has no attribute 'iter_measurements'
+⚠️ Measurement processing failed: 'RPLidar' object has no attribute 'iter_measurements'
+⚠️ Measurement processing failed: 'RPLidar' object has no attribute 'iter_measurements'
+⚠️ Measurement processing failed: 'RPLidar' object has no attribute 'iter_measurements'
+⚠️ Measurement processing failed: 'RPLidar' object has no attribute 'iter_measurements'
+⚠️ Measurement processing failed: 'RPLidar' object has no attribute 'iter_measurements'
+⚠️ Measurement processing failed: 'RPLidar' object has no attribute 'iter_measurements'
+⚠️ Measurement processing failed: 'RPLidar' object has no attribute 'iter_measurements'
+⚠️ Measurement processing failed: 'RPLidar' object has no attribute 'iter_measurements'
+⚠️ Measurement processing failed: 'RPLidar' object has no attribute 'iter_measurements'
+⚠️ Measurement processing failed: 'RPLidar' object has no attribute 'iter_measurements'
+⚠️ Measurement processing failed: 'RPLidar' object has no attribute 'iter_measurements'
+⚠️ Measurement processing failed: 'RPLidar' object has no attribute 'iter_measurements'
+⚠️ Measurement processing failed: 'RPLidar' object has no attribute 'iter_measurements'
+⚠️ Measurement processing failed: 'RPLidar' object has no attribute 'iter_measurements'
+⚠️ Measurement processing failed: 'RPLidar' object has no attribute 'iter_measurements'
+⚠️ Measurement processing failed: 'RPLidar' object has no attribute 'iter_measurements'
+⚠️ Measurement processing failed: 'RPLidar' object has no attribute 'iter_measurements'
+⚠️ Measurement processing failed: 'RPLidar' object has no attribute 'iter_measurements'
+⚠️ Measurement processing failed: 'RPLidar' object has no attribute 'iter_measurements'
+⚠️ Measurement processing failed: 'RPLidar' object has no attribute 'iter_measurements'
+⚠️ Measurement processing failed: 'RPLidar' object has no attribute 'iter_measurements'
+⚠️ Measurement processing failed: 'RPLidar' object has no attribute 'iter_measurements'
+⚠️ Measurement processing failed: 'RPLidar' object has no attribute 'iter_measurements'
+⚠️ Measurement processing failed: 'RPLidar' object has no attribute 'iter_measurements'
+⚠️ Measurement processing failed: 'RPLidar' object has no attribute 'iter_measurements'
+⚠️ Measurement processing failed: 'RPLidar' object has no attribute 'iter_measurements'
+⚠️ Measurement processing failed: 'RPLidar' object has no attribute 'iter_measurements'
+⚠️ Measurement processing failed: 'RPLidar' object has no attribute 'iter_measurements'
+⚠️ Measurement processing failed: 'RPLidar' object has no attribute 'iter_measurements'
+⚠️ Measurement processing failed: 'RPLidar' object has no attribute 'iter_measurements'
+⚠️ Measurement processing failed: 'RPLidar' object has no attribute 'iter_measurements'
+⚠️ Measurement processing failed: 'RPLidar' object has no attribute 'iter_measurements'
+⚠️ Measurement processing failed: 'RPLidar' object has no attribute 'iter_measurements'
+⚠️ Measurement processing failed: 'RPLidar' object has no attribute 'iter_measurements'
+⚠️ Measurement processing failed: 'RPLidar' object has no attribute 'iter_measurements'
+⚠️ Measurement processing failed: 'RPLidar' object has no attribute 'iter_measurements'
+^C
+🛑 Shutdown requested...
+🛑 Zone Navigator stopped
+👋 Navigator shutdown complete
+(venv) jay@RoboPi:~/rover_project $

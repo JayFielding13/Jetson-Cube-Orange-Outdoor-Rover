@@ -1,0 +1,488 @@
+Autonomous Rover - Second Raspberry Pi Setup Instructions
+
+===============================================================================
+
+Overview
+Complete setup instructions for deploying a second Raspberry Pi 4B for autonomous rover operations with BlueCharm tracking, Arduino communication, and motor control capabilities.
+
+Hardware Requirements
+
+Raspberry Pi Configuration
+- Raspberry Pi 4B (recommended - minimum 2GB RAM)
+- 32GB+ MicroSD Card (Class 10/U3 recommended)
+- Reliable Power Supply (5V/3A minimum)
+- Bluetooth 5.0 (built-in Pi 4B BLE capability)
+
+Motor Control Hardware
+- Cytron MDDS30 Dual Motor Driver
+  - Operating voltage: 6V-30V DC
+  - Max current: 30A per channel
+  - PWM + Direction control interface
+- 2x DC Motors compatible with MDDS30 specifications
+
+Communication Hardware
+- Arduino (Uno/Nano/Pro Mini) with RC receiver interface
+- Serial communication between Arduino and Pi (USB/UART)
+- BlueCharm Bluetooth beacon (target device for autonomous following)
+
+GPIO Pin Assignment (Pi 4B to Cytron MDDS30)
+Pin 18: LEFT_PWM     - Left motor PWM speed control
+Pin 19: LEFT_DIR     - Left motor direction
+Pin 20: RIGHT_PWM    - Right motor PWM speed control  
+Pin 21: RIGHT_DIR    - Right motor direction
+Pin 12: LEFT_ENABLE  - Left motor enable (optional)
+Pin 13: RIGHT_ENABLE - Right motor enable (optional)
+
+Operating System Setup
+
+1. Flash Raspberry Pi OS
+# Use Raspberry Pi Imager or manual flash
+# Recommended: Raspberry Pi OS Lite (64-bit) for headless operation
+# OR Raspberry Pi OS Desktop for GUI development
+
+# Enable SSH and configure WiFi during imaging process
+
+2. Initial Pi Configuration
+# SSH into the Pi
+ssh pi@<your-pi-ip>
+
+# Update system
+sudo apt update && sudo apt upgrade -y
+
+# Enable necessary interfaces
+sudo raspi-config
+# Navigate to Interface Options:
+# - Enable SSH (if not already enabled)
+# - Enable SPI
+# - Enable I2C  
+# - Enable Serial (disable login shell, enable hardware)
+# - Enable GPIO remote access
+
+3. Install Required System Packages
+# Essential packages
+sudo apt install -y python3 python3-pip python3-venv git
+
+# Bluetooth and wireless packages
+sudo apt install -y bluetooth bluez bluez-tools libbluetooth-dev
+
+# GPIO and hardware control
+sudo apt install -y python3-rpi.gpio python3-gpiozero
+
+# Development tools
+sudo apt install -y build-essential cmake pkg-config
+
+# Optional: GUI packages (if using desktop version)
+sudo apt install -y python3-tk
+
+Python Environment Setup
+
+1. Create Virtual Environment
+# Create project directory
+mkdir -p ~/rover_project
+cd ~/rover_project
+
+# Create virtual environment
+python3 -m venv rover_env
+
+# Activate environment
+source rover_env/bin/activate
+
+# Upgrade pip
+pip install --upgrade pip
+
+2. Install Python Dependencies
+# Core rover control packages
+pip install bleak==0.21.1          # Bluetooth Low Energy
+pip install asyncio-mqtt==0.13.0   # MQTT support (optional)
+pip install pyserial==3.5          # Arduino communication
+
+# GPIO control (install in virtual env for consistency)
+pip install RPi.GPIO==0.7.1
+pip install gpiozero==1.6.2
+
+# GUI packages (if using desktop)
+# tkinter is included with Python on Pi OS
+
+# Data handling
+pip install numpy==1.24.3
+pip install dataclasses-json==0.6.1
+
+# Logging and utilities
+pip install colorlog==6.7.0
+
+3. Create Requirements File
+# Generate requirements for future deployments
+pip freeze > requirements.txt
+
+Project Code Deployment
+
+1. Transfer Main Control Script
+# Create the main rover control script
+nano ~/rover_project/rover_control.py
+
+Copy the BlueCharm control code from your existing project
+
+2. Create Configuration File
+# Create rover configuration
+nano ~/rover_project/rover_config.json
+
+{
+    "target_device": "BlueCharm",
+    "target_distance": 2.5,
+    "distance_tolerance": 1.0,
+    "scan_timeout": 1.5,
+    "update_interval": 0.8,
+    "gpio_pins": {
+        "LEFT_PWM": 18,
+        "LEFT_DIR": 19, 
+        "RIGHT_PWM": 20,
+        "RIGHT_DIR": 21,
+        "LEFT_ENABLE": 12,
+        "RIGHT_ENABLE": 13
+    },
+    "motor_settings": {
+        "max_speed": 80,
+        "turn_speed": 60,
+        "pwm_frequency": 1000
+    },
+    "arduino_serial": {
+        "port": "/dev/ttyUSB0",
+        "baudrate": 115200,
+        "timeout": 1.0
+    }
+}
+
+3. Create Service Scripts
+# Create startup script
+nano ~/rover_project/start_rover.sh
+
+#!/bin/bash
+cd /home/pi/rover_project
+source rover_env/bin/activate
+python rover_control.py
+
+# Make executable
+chmod +x ~/rover_project/start_rover.sh
+
+Hardware Initialization
+
+1. Test GPIO Access
+# Test GPIO permissions
+python3 -c "import RPi.GPIO as GPIO; print('GPIO access OK')"
+
+# If permission denied, add user to gpio group
+sudo usermod -a -G gpio pi
+# Logout and login again
+
+2. Test Bluetooth Functionality
+# Check Bluetooth status
+sudo systemctl status bluetooth
+
+# Test BLE scanning
+sudo bluetoothctl
+# In bluetoothctl:
+scan on
+# Should show BLE devices including BlueCharm
+exit
+
+3. Arduino Communication Setup
+# Check USB/Serial devices
+ls /dev/tty*
+
+# Test Arduino connection (if connected via USB)
+sudo apt install screen
+screen /dev/ttyUSB0 115200
+# Should show Arduino serial output
+# Press Ctrl+A, then K to exit
+
+System Service Configuration
+
+1. Create Systemd Service
+sudo nano /etc/systemd/system/rover-control.service
+
+[Unit]
+Description=Autonomous Rover Control Service
+After=network.target bluetooth.target
+Wants=bluetooth.target
+
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/home/pi/rover_project
+Environment=PATH=/home/pi/rover_project/rover_env/bin
+ExecStart=/home/pi/rover_project/rover_env/bin/python rover_control.py
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
+
+2. Enable and Test Service
+# Reload systemd
+sudo systemctl daemon-reload
+
+# Enable service (start on boot)
+sudo systemctl enable rover-control.service
+
+# Start service
+sudo systemctl start rover-control.service
+
+# Check service status
+sudo systemctl status rover-control.service
+
+# View logs
+sudo journalctl -u rover-control.service -f
+
+Network Configuration
+
+1. WiFi Setup (for Remote Operation)
+# Configure WiFi (if not done during initial setup)
+sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
+
+country=US
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1
+
+network={
+    ssid="YourWiFiNetwork"
+    psk="YourWiFiPassword"
+    priority=1
+}
+
+# Add multiple networks for redundancy
+network={
+    ssid="MobileHotspot"
+    psk="HotspotPassword" 
+    priority=2
+}
+
+2. SSH Key Setup (Security)
+# Generate SSH keys on your development machine
+ssh-keygen -t rsa -b 4096 -C "rover-pi"
+
+# Copy public key to Pi
+ssh-copy-id pi@<rover-pi-ip>
+
+# Disable password authentication (optional, for security)
+sudo nano /etc/ssh/sshd_config
+# Set: PasswordAuthentication no
+sudo systemctl restart ssh
+
+Mission-Ready Deployment
+
+1. Pre-Deployment Checklist
+# Create deployment verification script
+nano ~/rover_project/system_check.py
+
+#!/usr/bin/env python3
+import subprocess
+import sys
+import json
+import serial
+import RPi.GPIO as GPIO
+from bleak import BleakScanner
+import asyncio
+
+def check_system_status():
+    checks = []
+    
+    # Check Bluetooth
+    try:
+        result = subprocess.run(['bluetoothctl', 'show'], capture_output=True, text=True)
+        checks.append(("Bluetooth", "PASS" if result.returncode == 0 else "FAIL"))
+    except:
+        checks.append(("Bluetooth", "FAIL"))
+    
+    # Check GPIO access
+    try:
+        GPIO.setmode(GPIO.BCM)
+        GPIO.setup(18, GPIO.OUT)
+        GPIO.cleanup()
+        checks.append(("GPIO", "PASS"))
+    except:
+        checks.append(("GPIO", "FAIL"))
+    
+    # Check Arduino serial
+    try:
+        ser = serial.Serial('/dev/ttyUSB0', 115200, timeout=1)
+        ser.close()
+        checks.append(("Arduino Serial", "PASS"))
+    except:
+        checks.append(("Arduino Serial", "FAIL"))
+    
+    # Print results
+    print("ROVER SYSTEM STATUS CHECK")
+    print("=" * 30)
+    for check, status in checks:
+        print(f"{check:<20} {status}")
+    
+    return all(status == "PASS" for _, status in checks)
+
+if __name__ == "__main__":
+    if check_system_status():
+        print("\nSYSTEM READY FOR MISSION")
+        sys.exit(0)
+    else:
+        print("\nSYSTEM NOT READY - CHECK FAILED COMPONENTS")
+        sys.exit(1)
+
+2. Mission Deployment Steps
+# Make system check executable
+chmod +x ~/rover_project/system_check.py
+
+# Run pre-mission system check
+cd ~/rover_project
+source rover_env/bin/activate
+python system_check.py
+
+# If all checks pass, start mission-ready services
+sudo systemctl start rover-control.service
+
+# Monitor system status
+watch -n 2 'sudo systemctl status rover-control.service --no-pager -l'
+
+3. Remote Monitoring Setup
+# Install monitoring tools
+sudo apt install -y htop iotop
+
+# Create monitoring script
+nano ~/rover_project/monitor.sh
+
+#!/bin/bash
+echo "ROVER SYSTEM MONITOR"
+echo "===================="
+echo "System Load:"
+uptime
+echo ""
+echo "Memory Usage:"
+free -h
+echo ""
+echo "GPIO Status:"
+sudo gpio readall 2>/dev/null || echo "GPIO readall not available"
+echo ""
+echo "Rover Service Status:"
+sudo systemctl status rover-control.service --no-pager -l | head -10
+echo ""
+echo "Recent Rover Logs:"
+sudo journalctl -u rover-control.service --no-pager -n 5
+
+chmod +x ~/rover_project/monitor.sh
+
+Troubleshooting
+
+Common Issues and Solutions
+
+1. Bluetooth Permission Errors
+   sudo usermod -a -G bluetooth pi
+   sudo systemctl restart bluetooth
+
+2. GPIO Permission Denied
+   sudo usermod -a -G gpio pi
+   # Logout and back in
+
+3. Arduino Not Detected
+   # Check USB devices
+   lsusb
+   # Check serial devices  
+   ls -la /dev/ttyUSB* /dev/ttyACM*
+   # Add user to dialout group
+   sudo usermod -a -G dialout pi
+
+4. BlueCharm Not Found
+   - Verify BlueCharm is powered and advertising
+   - Check Bluetooth range (should be within 10-15 meters)
+   - Restart Bluetooth service: sudo systemctl restart bluetooth
+
+5. Service Won't Start
+   # Check service logs
+   sudo journalctl -u rover-control.service -n 50
+   
+   # Test manual start
+   cd ~/rover_project
+   source rover_env/bin/activate
+   python rover_control.py
+
+Log File Locations
+# System logs
+sudo journalctl -u rover-control.service
+
+# Bluetooth logs
+sudo journalctl -u bluetooth.service
+
+# General system logs
+sudo journalctl --since "1 hour ago"
+
+Security Considerations
+
+1. Change Default Passwords
+   passwd pi  # Change default pi user password
+
+2. Firewall Configuration
+   sudo ufw enable
+   sudo ufw allow ssh
+   sudo ufw allow from 192.168.1.0/24  # Adjust for your network
+
+3. Disable Unnecessary Services
+   sudo systemctl disable avahi-daemon  # If not needed
+   sudo systemctl disable triggerhappy  # If not needed
+
+Performance Optimization
+
+1. Disable GUI (if running headless)
+   sudo systemctl set-default multi-user.target
+
+2. GPU Memory Split
+   # Reduce GPU memory to free up RAM
+   echo "gpu_mem=16" | sudo tee -a /boot/config.txt
+
+3. Disable Swap (for SD card longevity)
+   sudo dphys-swapfile swapoff
+   sudo dphys-swapfile uninstall
+   sudo systemctl disable dphys-swapfile
+
+Backup and Recovery
+
+Create System Image
+# On development machine with SD card reader
+sudo dd if=/dev/sdX of=rover-pi-backup.img bs=4M status=progress
+# Replace /dev/sdX with actual SD card device
+
+Quick Configuration Backup
+# Backup rover project
+tar -czf rover-backup-$(date +%Y%m%d).tar.gz ~/rover_project
+
+# Backup system configs
+sudo tar -czf system-configs-$(date +%Y%m%d).tar.gz \
+    /etc/systemd/system/rover-control.service \
+    /etc/wpa_supplicant/wpa_supplicant.conf \
+    /boot/config.txt
+
+===============================================================================
+
+Quick Start Summary
+
+For experienced users, the minimal setup sequence:
+
+# 1. Flash Pi OS, enable SSH, configure WiFi
+# 2. Initial setup
+sudo apt update && sudo apt upgrade -y
+sudo apt install -y python3 python3-pip python3-venv bluetooth bluez python3-rpi.gpio
+
+# 3. Project setup
+mkdir ~/rover_project && cd ~/rover_project
+python3 -m venv rover_env
+source rover_env/bin/activate
+pip install bleak pyserial RPi.GPIO gpiozero
+
+# 4. Deploy code and configuration
+# (Copy rover_control.py and rover_config.json)
+
+# 5. Create and enable service
+# (Create /etc/systemd/system/rover-control.service)
+sudo systemctl enable rover-control.service
+
+# 6. Test and deploy
+python system_check.py
+sudo systemctl start rover-control.service
+
+Your second Raspberry Pi is now mission-ready for autonomous rover operations!

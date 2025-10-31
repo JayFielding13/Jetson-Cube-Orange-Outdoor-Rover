@@ -1,0 +1,139 @@
+===============================================================================
+RASPBERRY PI ROVER STARTUP INSTRUCTIONS
+===============================================================================
+
+QUICK REFERENCE FOR STARTING THE ROVER PROGRAM
+
+PREREQUISITES:
+- RC transmitter powered ON and bound to receiver
+- Arduino connected via USB and programmed with rover_arduino_controller.ino
+- Raspberry Pi powered up and connected to network
+- Motor driver connected to battery power (optional for initial testing)
+
+STARTUP SEQUENCE:
+================
+
+1. SSH INTO RASPBERRY PI:
+   From Windows Command Prompt:
+   ssh jay@192.168.254.62
+
+2. NAVIGATE TO PROJECT DIRECTORY:
+   cd ~/rover_project
+
+3. ACTIVATE VIRTUAL ENVIRONMENT:
+   source venv/bin/activate
+   
+   NOTE: You should see (venv) appear at the start of your prompt
+
+4. RUN THE ROVER PROGRAM:
+   python3 rover_controller_basic.py
+
+EXPECTED OUTPUT:
+===============
+2024-XX-XX XX:XX:XX - INFO - Motor controller initialized
+2024-XX-XX XX:XX:XX - INFO - Rover controller initialized
+2024-XX-XX XX:XX:XX - INFO - Connected to Arduino on /dev/ttyUSB0
+2024-XX-XX XX:XX:XX - INFO - Rover started
+2024-XX-XX XX:XX:XX - INFO - Rover running. Press Ctrl+C to stop.
+2024-XX-XX XX:XX:XX - INFO - Mode: manual, RC Valid: True, CH1: 150, CH2: -50, CH9: 0
+
+STOPPING THE PROGRAM:
+====================
+Press Ctrl+C to stop the rover program gracefully
+
+MODE SWITCH POSITIONS:
+=====================
+3-Position Switch (CH9):
+- Position 1 (Down):   FAILSAFE  - All motors stopped
+- Position 2 (Center): MANUAL    - RC stick control active
+- Position 3 (Up):     AUTONOMOUS - Auto navigation (motors stopped for now)
+
+TROUBLESHOOTING:
+===============
+
+PROBLEM: "Failed to connect to Arduino"
+SOLUTION: Check Arduino is connected and try:
+          ls /dev/tty*
+          Look for /dev/ttyUSB0 or /dev/ttyACM0
+          If different port, update SerialCommunicator port in code
+
+PROBLEM: "RC Valid: False"
+SOLUTION: - Check RC transmitter is ON and bound
+          - Verify all channel connections (CH1=D2, CH2=D3, CH9=D4)
+          - Check receiver has 5V power
+          - Move all sticks and switches to verify signal
+
+PROBLEM: "ImportError" or "ModuleNotFoundError"
+SOLUTION: - Ensure virtual environment is activated (see step 3)
+          - Run: pip install -r requirements.txt
+
+PROBLEM: Motors not responding
+SOLUTION: - Check switch is in MANUAL mode (center position)
+          - Verify motor driver has power
+          - Check GPIO connections (18,19,20,21)
+          - Test with small stick movements first
+
+PROBLEM: Permission denied on GPIO
+SOLUTION: - Add user to gpio group: sudo usermod -a -G gpio pi
+          - Reboot Pi: sudo reboot
+
+TESTING CHECKLIST:
+=================
+□ RC transmitter ON and bound
+□ Arduino USB connected and programmed
+□ SSH connection established
+□ Virtual environment activated
+□ Program starts without errors
+□ "RC Valid: True" appears
+□ Mode switching works (failsafe/manual/autonomous)
+□ CH1 values change with throttle stick
+□ CH2 values change with steering stick
+□ CH9 values change with 3-position switch
+□ Motors respond in MANUAL mode (if powered)
+
+CHANNEL MAPPING:
+===============
+CH1 (Throttle): Forward/Reverse movement
+CH2 (Steering): Left/Right steering
+CH9 (Mode): 3-position switch for mode selection
+
+GPIO PIN ASSIGNMENTS:
+====================
+Motors:
+- GPIO 18: Left Motor Forward
+- GPIO 19: Left Motor Reverse
+- GPIO 20: Right Motor Forward
+- GPIO 21: Right Motor Reverse
+
+LEDs (future):
+- GPIO 22: Red LED
+- GPIO 23: Green LED
+- GPIO 24: Blue LED
+
+QUICK COMMANDS:
+==============
+Connect:        ssh jay@192.168.254.62
+Setup:          cd ~/rover_project && source venv/bin/activate
+Start:          python3 rover_controller_basic.py
+Stop:           Ctrl+C
+Check Arduino:  ls /dev/tty*
+Test USB port:  python3 -c "import serial; ser=serial.Serial('/dev/ttyUSB0',115200); print(ser.readline())"
+
+DEVELOPMENT WORKFLOW:
+====================
+1. Make changes to code on Windows computer
+2. Copy updated code to Pi (via SSH/nano or SCP)
+3. Test program: python3 rover_controller_basic.py
+4. Verify operation and mode switching
+5. Stop program: Ctrl+C
+6. Repeat as needed
+
+EMERGENCY STOP:
+==============
+- Flip 3-position switch to DOWN position (failsafe)
+- OR press Ctrl+C in SSH terminal
+- OR power off the system
+
+===============================================================================
+Keep this reference handy for quick rover testing and development!
+===============================================================================

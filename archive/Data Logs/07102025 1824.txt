@@ -1,0 +1,84 @@
+(venv) jay@RoboPi:~/rover_project $ nano autonomous_bluetooth_hybrid_navigator.py
+(venv) jay@RoboPi:~/rover_project $ python3 autonomous_bluetooth_hybrid_navigator.py
+✅ Bluetooth (bleak) library available
+======================================================================
+🤖 AUTONOMOUS BLUETOOTH-HYBRID NAVIGATOR
+======================================================================
+
+Features:
+  ✅ Proven ultrasonic obstacle detection and avoidance
+  ✅ Arduino gatekeeper integration
+  ✅ State-based navigation with stuck recovery
+  ✅ Comprehensive error handling and statistics
+  📡 Bluetooth beacon tracking (incremental addition)
+  🛡️ Safety-first design - ultrasonic overrides Bluetooth
+  🔧 Configurable Bluetooth influence weight
+
+🚀 Bluetooth-Hybrid Navigator Initialized
+📊 Danger: 30.0cm | Caution: 60.0cm | Safe: 100.0cm
+📡 Bluetooth: Enabled
+✅ Arduino connected on /dev/ttyUSB0
+📡 Bluetooth scanner started
+🚀 Hybrid Navigator started
+🎯 Ready for autonomous navigation with Bluetooth tracking
+✅ Hybrid Navigator ready - switch to autonomous mode
+📡 Bluetooth tracking will activate automatically
+Press Ctrl+C to stop...
+🧭 AUTONOMOUS | STRAIGHT | US: 200.0cm | Runtime: 4s
+🔍 EXPLORING: Random turn after 8.0s
+🔍 EXPLORATION COMPLETE: Resuming forward
+🚨 EMERGENCY! Obstacle at 18.4cm - turning left
+🧭 AUTONOMOUS | AVOIDING | US: 19.1cm | Runtime: 10s
+✅ CLEAR: Path ahead at 200.0cm - resuming forward
+🧭 AUTONOMOUS | STRAIGHT | US: 200.0cm | Runtime: 13s
+🔍 EXPLORING: Random turn after 11.5s
+🧭 AUTONOMOUS | EXPLORING | US: 200.0cm | Runtime: 22s
+🔍 EXPLORATION COMPLETE: Resuming forward
+🧭 AUTONOMOUS | STRAIGHT | US: 200.0cm | Runtime: 25s
+🔍 EXPLORING: Random turn after 17.5s
+🔍 EXPLORATION COMPLETE: Resuming forward
+🧭 AUTONOMOUS | STRAIGHT | US: 200.0cm | BT: 30.0m (-100dBm) | Runtime: 43s
+🔍 EXPLORING: Random turn after 8.0s
+🔍 EXPLORATION COMPLETE: Resuming forward
+🧭 AUTONOMOUS | STRAIGHT | US: 200.0cm | BT: 30.0m (-100dBm) | Runtime: 52s
+🧭 AUTONOMOUS | STRAIGHT | US: 200.0cm | Runtime: 55s
+🧭 AUTONOMOUS | STRAIGHT | US: 200.0cm | Runtime: 58s
+🔍 EXPLORING: Random turn after 8.0s
+🧭 AUTONOMOUS | EXPLORING | US: 200.0cm | Runtime: 61s
+🔍 EXPLORATION COMPLETE: Resuming forward
+🧭 AUTONOMOUS | STRAIGHT | US: 200.0cm | Runtime: 64s
+🔍 EXPLORING: Random turn after 12.5s
+🔍 EXPLORATION COMPLETE: Resuming forward
+🧭 AUTONOMOUS | STRAIGHT | US: 200.0cm | Runtime: 76s
+🚨 EMERGENCY! Obstacle at 24.3cm - turning right
+🧭 AUTONOMOUS | AVOIDING | US: 18.7cm | Runtime: 79s
+✅ CLEAR: Path ahead at 200.0cm - resuming forward
+🧭 AUTONOMOUS | STRAIGHT | US: 200.0cm | Runtime: 82s
+🔍 EXPLORING: Random turn after 10.5s
+🧭 AUTONOMOUS | EXPLORING | US: 200.0cm | Runtime: 91s
+🔍 EXPLORATION COMPLETE: Resuming forward
+🚨 EMERGENCY! Obstacle at 25.9cm - turning left
+🧭 AUTONOMOUS | AVOIDING | US: 25.9cm | Runtime: 94s
+✅ CLEAR: Path ahead at 200.0cm - resuming forward
+🧭 AUTONOMOUS | STRAIGHT | US: 200.0cm | Runtime: 97s
+🔍 EXPLORING: Random turn after 10.5s
+🔍 EXPLORATION COMPLETE: Resuming forward
+🧭 AUTONOMOUS | STRAIGHT | US: 200.0cm | Runtime: 109s
+🧭 AUTONOMOUS | STRAIGHT | US: 200.0cm | Runtime: 112s
+^C
+🛑 Shutdown requested by user...
+🛑 Stopping Hybrid Navigator...
+📊 Final runtime: 117.1 seconds
+📊 === Hybrid Navigation Statistics ===
+   Runtime: 117 seconds
+   Distance measurements: 671
+   Obstacle avoidances: 3
+   Exploration turns: 8
+   Emergency stops: 0
+   Stuck recoveries: 0
+   Bluetooth detections: 1
+   Bluetooth nav events: 11
+   Bluetooth detection rate: 0.0/sec
+   Avg measurements/sec: 5.7
+👋 Navigator shutdown complete
+(venv) jay@RoboPi:~/rover_project $

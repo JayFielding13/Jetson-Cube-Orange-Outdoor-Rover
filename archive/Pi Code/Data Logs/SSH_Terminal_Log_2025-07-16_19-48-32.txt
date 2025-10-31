@@ -1,0 +1,390 @@
+SSH Dashboard Terminal Log
+Session Date: 2025-07-16 19:48:37
+Connected to: 192.168.254.65:22
+Username: jay
+==================================================
+
+Uploading bluetooth_lidar_navigator_v7.py...
+Successfully uploaded bluetooth_lidar_navigator_v7.py to /home/jay/rover_project/bluetooth_lidar_navigator_v7.py
+$ cd ~/rover_project && source venv/bin/activate && echo 'Starting program...' && python3 -u /home/jay/rover_project/bluetooth_lidar_navigator_v7.py
+Starting program...
+✅ Visualization (matplotlib) library available
+✅ Bluetooth (bleak) library available
+✅ LiDAR (rplidar) library available
+================================================================================
+🤖 BLUETOOTH LIDAR NAVIGATOR V7
+================================================================================
+
+ENHANCED FEATURES:
+  ✅ All proven V6 Bluetooth navigation capabilities
+  ✅ Integrated RPLidar A1 for 360° obstacle detection
+  ✅ Multi-sensor fusion (ultrasonic + LiDAR)
+  ✅ Enhanced obstacle avoidance with sector analysis
+  ✅ Improved turn direction selection using LiDAR data
+  ✅ Real-time path clearance assessment
+  ✅ Fallback to ultrasonic if LiDAR fails
+  ✅ Thread-safe LiDAR data processing
+  ✅ Enhanced navigation decision making
+  🔍 Automatic USB device detection and assignment
+  🛡️ Intelligent port conflict resolution
+  🔄 Robust fallback system for device connections
+  📊 Real-time LiDAR visualization display
+
+LIDAR ENHANCEMENTS:
+  🔄 360° obstacle detection vs single-direction ultrasonic
+  🎯 Sector-based path analysis (8 directions)
+  🧠 Intelligent turn direction selection
+  📏 Enhanced distance fusion for better accuracy
+  🚧 Real-time obstacle mapping
+  ✅ Graceful degradation if LiDAR unavailable
+
+DEVICE DETECTION:
+  🔍 Automatic USB port scanning and identification
+  🤖 Arduino detection via JSON protocol recognition
+  📡 LiDAR detection via RPLidar protocol handshake
+  🔄 Smart fallback to common port configurations
+  🛡️ Port conflict prevention and resolution
+  📋 Detailed device information reporting
+
+NAVIGATION MODES:
+  🔍 SEARCHING: Enhanced search with LiDAR-guided turns
+  🚶 FORWARD_TRACKING: Movement with multi-sensor obstacle awareness
+  🔄 TURN_TESTING: Enhanced turn selection using LiDAR data
+  🧠 SMART_AVOIDING: Sector-based obstacle avoidance
+  🎯 APPROACHING: Sensor-fusion approach control
+  🏁 HOLDING: Enhanced position maintenance
+  🛡️ SAFETY: Multi-sensor emergency override
+
+SENSOR STATUS:
+  ��� LiDAR Ready
+  ✅ Bluetooth Ready
+  ✅ Visualization Ready
+
+🔍 USB Device Detector initialized
+🔄 LiDAR Processor initialized
+📏 Range: 100-8000mm
+🚧 Obstacle threshold: 800mm
+✅ Clear path threshold: 1200mm
+📊 Real-time visualization enabled
+🚀 Bluetooth LiDAR Navigator V7 - Enhanced Object Detection
+📊 Navigation: Danger=30.0cm | Caution=60.0cm | Safe=100.0cm
+🔄 LiDAR: Enabled | Danger=80.0cm | Caution=120.0cm
+📡 Bluetooth: Enabled | Target: DD:34:02:09:CA:1E
+🚶 Tracking: Target distance 0.5m ±0.15m
+📈 Signal: 1.0dBm improvement | 2.0dBm degradation
+🛡️ Safety: Ultrasonic + LiDAR fusion for enhanced obstacle detection
+🔍 Starting device detection...
+🔍 === USB Device Detection Started ===
+🔍 Scanning for USB devices...
+📋 Found 2 USB serial devices:
+   1. /dev/ttyUSB1 - CP2102 USB to UART Bridge Controller - CP2102 USB to UART Bridge Controller
+      VID:PID = 10C4:EA60
+      Manufacturer: Silicon Labs
+   2. /dev/ttyUSB0 - USB Serial
+      VID:PID = 1A86:7523
+      Manufacturer: None
+
+🧪 Testing ports for device identification...
+
+📍 Testing /dev/ttyUSB1...
+🤖 Testing for Arduino on /dev/ttyUSB1...
+❌ No Arduino detected on /dev/ttyUSB1
+📡 Testing for LiDAR on /dev/ttyUSB1...
+✅ LiDAR detected on /dev/ttyUSB1
+   Model: 24
+   Firmware: (1, 29)
+   Hardware: 7
+
+📍 Testing /dev/ttyUSB0...
+🤖 Testing for Arduino on /dev/ttyUSB0...
+✅ Arduino detected on /dev/ttyUSB0 at 115200 baud
+   Sample data: {'ch1': 0, 'ch2': 0, 'ch9': -992, 'valid': True, 'mode': 0, 'emergency': False, 'distance': None, 'pi_command_valid': False, 'gatekeeper_mode': 'FAILSAFE'}
+
+📊 Detection Results:
+   Arduino candidates: 1
+   LiDAR candidates: 1
+✅ Arduino assigned to: /dev/ttyUSB0 @ 115200 baud
+✅ LiDAR assigned to: /dev/ttyUSB1
+
+📋 Final Device Assignment:
+   Arduino: /dev/ttyUSB0
+   LiDAR: /dev/ttyUSB1
+📍 Using detected Arduino: /dev/ttyUSB0 @ 115200 baud
+✅ Arduino connected on /dev/ttyUSB0
+📍 Using detected LiDAR: /dev/ttyUSB1
+🔗 Connecting to RPLidar A1 on /dev/ttyUSB1
+📋 LiDAR Device info: {'model': 24, 'firmware': (1, 29), 'hardware': 7, 'serialnumber': 'EF83EDF9C7E29BCEA7E39EF27F504304'}
+💚 LiDAR Health: ('Good', 0)
+🔄 Starting LiDAR motor...
+✅ LiDAR connected and ready
+📊 Setting up real-time LiDAR visualization...
+📊 Visualization setup complete
+📊 Starting real-time LiDAR visualization...
+⚠️ No display available or SSH session detected - disabling visualization
+📊 LiDAR data collection continues normally without visualization
+📡 LiDAR scanning started
+✅ LiDAR navigation enhancement enabled
+📡 Starting BlueCharm tracking thread...📡 BlueCharm tracking scanner started
+
+🚀 Enhanced Navigator V7 started with LiDAR + Ultrasonic + Bluetooth📡 BlueCharm tracking scanner ready
+
+🎯 Ready for enhanced object detection and navigation
+✅ Enhanced Navigator V7 ready with LiDAR + Ultrasonic + Bluetooth
+📡 Switch to autonomous mode for enhanced navigation
+🔄 LiDAR will provide 360° obstacle detection
+🎯 Multi-sensor fusion ensures robust navigation
+Press Ctrl+C to stop...
+⚠️ Arduino communication timeout
+⚠️ Arduino communication timeout
+⚠️ Arduino communication timeout
+⚠️ Arduino communication timeout
+⚠️ Arduino communication timeout
+⚠️ Arduino communication timeout
+⚠️ Arduino communication timeout
+📡 LiDAR scan #10: 93 points
+📡 LiDAR scan #20: 105 points
+📡 LiDAR scan #30: 97 points
+📡 LiDAR scan #40: 103 points
+📡 LiDAR scan #50: 103 points
+📡 LiDAR scan #60: 100 points
+📡 LiDAR scan #70: 102 points
+🔄 ENHANCED SEARCH: Looking for signal...
+📡 Starting BLE scanner...
+📡 BLE scanner active
+🚶 TRACKING MODE: BlueCharm at 3.5m - forward tracking activated
+📡 SIGNAL DETECTED: Switching to forward_tracking mode (3.5m)
+🧭 AUTONOMOUS | FORWARD_TRACKING | FUSION: 128.3cm | LiDAR: 74cm@153° | Clear: 7/8 | BT: 3.5m (-70dBm TRACK) | Det: 1 | Runtime: 12s
+📡 LiDAR scan #80: 109 points
+🏁 TRACKING INITIALIZED: Starting at 3.5m
+🚶 ENHANCED TRACKING: 3.5m signal stable (t=0.5s)
+📡 Stopping BLE scanner...
+📡 Starting BLE scanner...
+📡 BLE scanner active
+📡 LiDAR scan #90: 105 points
+🏠 CONFINED SPACE DETECTED: sectors=3/8 - activating escape strategies
+   Front: 110cm | Left: 151cm | Right: 110cm
+🏠 CONFINED: No forward path - switching to back & turn strategy
+🏠 CONFINED: Backing up to create maneuvering space (0.0s)
+🏠 CONFINED: Backing up to create maneuvering space (0.5s)
+🏠 CONFINED: Backing up to create maneuvering space (1.0s)
+🧭 AUTONOMOUS | FORWARD_TRACKING | FUSION: 103.6cm | LiDAR: 89cm@141° | Clear: 4/8 | BT: 3.1m (-68dBm TRACK) | Det: 3 | Runtime: 15s
+📡 LiDAR scan #100: 108 points
+🏠 CONFINED: Backing up to create maneuvering space (1.5s)
+📡 Stopping BLE scanner...
+🌟 ESCAPED CONFINED SPACE: 6/8 sectors clear, good clearance restored
+📡 LiDAR scan #110: 120 points
+📡 Starting BLE scanner...
+📡 BLE scanner active
+🏠 CONFINED SPACE DETECTED: sectors=3/8 - activating escape strategies
+   Front: 116cm | Left: 152cm | Right: 111cm
+🏠 CONFINED: No forward path - switching to back & turn strategy
+🏠 CONFINED: Backing up to create maneuvering space (0.0s)
+📡 LiDAR scan #120: 120 points
+🏠 CONFINED: Backing up to create maneuvering space (0.5s)
+🧭 AUTONOMOUS | FORWARD_TRACKING | FUSION: 115.8cm | LiDAR: 91cm@142° | Clear: 4/8 | BT: 3.1m (-68dBm TRACK) | Det: 3 | Runtime: 18s
+🏠 CONFINED: Backing up to create maneuvering space (1.0s)
+🌟 ESCAPED CONFINED SPACE: 6/8 sectors clear, good clearance restored
+📡 LiDAR scan #130: 99 points
+🏠 CONFINED SPACE DETECTED: sectors=4/8 - activating escape strategies
+   Front: 112cm | Left: 151cm | Right: 156cm
+🏠 CONFINED: No forward path - switching to back & turn strategy
+🏠 CONFINED: Backing up to create maneuvering space (0.0s)
+📡 LiDAR scan #140: 116 points
+🏠 CONFINED: Backing up to create maneuvering space (0.5s)
+🧭 AUTONOMOUS | FORWARD_TRACKING | FUSION: 113.0cm | LiDAR: 93cm@143° | Clear: 3/8 | BT: 3.1m (-68dBm TRACK) | Det: 3 | Runtime: 21s
+🏠 CONFINED: Backing up to create maneuvering space (1.0s)
+📡 LiDAR scan #150: 115 points
+🌟 ESCAPED CONFINED SPACE: 6/8 sectors clear, good clearance restored
+📡 Stopping BLE scanner...
+📡 LiDAR scan #160: 116 points
+🏠 CONFINED SPACE DETECTED: sectors=3/8 - activating escape strategies
+   Front: 110cm | Left: 149cm | Right: 110cm
+🏠 CONFINED: No forward path - switching to back & turn strategy
+🏠 CONFINED: Backing up to create maneuvering space (0.0s)
+📡 Starting BLE scanner...
+📡 BLE scanner active
+🏠 CONFINED: Backing up to create maneuvering space (0.5s)
+🧭 AUTONOMOUS | FORWARD_TRACKING | FUSION: 110.4cm | LiDAR: 96cm@144° | Clear: 3/8 | BT: 3.1m (-68dBm TRACK) | Det: 3 | Runtime: 24s
+🏠 CONFINED: Backing up to create maneuvering space (1.0s)
+📡 LiDAR scan #170: 121 points
+🏠 CONFINED: Backing up to create maneuvering space (1.5s)
+🌟 ESCAPED CONFINED SPACE: 6/8 sectors clear, good clearance restored
+📡 LiDAR scan #180: 129 points
+🏠 CONFINED SPACE DETECTED: sectors=3/8 - activating escape strategies
+   Front: 115cm | Left: 151cm | Right: 113cm
+🏠 CONFINED: No forward path - switching to back & turn strategy
+🏠 CONFINED: Backing up to create maneuvering space (0.0s)
+🧭 AUTONOMOUS | FORWARD_TRACKING | FUSION: 124.0cm | LiDAR: 87cm@142° | Clear: 3/8 | BT: 3.1m (-68dBm TRACK) | Det: 3 | Runtime: 27s
+📡 LiDAR scan #190: 123 points
+🏠 CONFINED: Backing up to create maneuvering space (0.5s)
+📡 Signal timeout (13.0s) - ending all tracking modes
+🏠 CONFINED: Backing up to create maneuvering space (1.0s)
+🌟 ESCAPED CONFINED SPACE: 7/8 sectors clear, good clearance restored
+📡 LiDAR scan #200: 110 points
+🧭 AUTONOMOUS | FORWARD_TRACKING | FUSION: 128.3cm | LiDAR: 95cm@127° | Clear: 6/8 | BT: No signal | Det: 3 | Runtime: 30s
+📡 LiDAR scan #210: 111 points
+🚶 TRACKING MODE: BlueCharm at 5.9m - forward tracking activated
+🚨 WRONG DIRECTION: Distance increased 4.1m (3.5m → 7.6m)
+🔄 IMMEDIATE COURSE CORRECTION: Turning around to find BlueCharm
+🔄 ENHANCED TESTING: left turn for signal improvement
+📡 BlueCharm TRACKING↗ #5:
+   RSSI: -73dBm (raw: -74) | Distance: ~4.6m | Avg: -71dBm
+📡 LiDAR scan #220: 116 points
+✅ ENHANCED TEST SUCCESS: left improved by 3.9dBm - continuing left
+🔄 ENHANCED TESTING: left turn for signal improvement
+🔄 TRYING RIGHT: Left turn didn't help, testing right
+📡 Stopping BLE scanner...
+📡 LiDAR scan #230: 107 points
+🏠 CONFINED SPACE DETECTED: narrow corridor - activating escape strategies
+   Front: 119cm | Left: 126cm | Right: 79cm
+🏠 CONFINED: No forward path - switching to back & turn strategy
+🏠 CONFINED: Backing up to create maneuvering space (0.0s)
+🧭 AUTONOMOUS | TURN_TESTING | FUSION: 128.7cm | LiDAR: 79cm@92° | Clear: 6/8 | BT: 4.6m (-73dBm TRACK↗) | Det: 5 | Runtime: 33s
+🌟 ESCAPED CONFINED SPACE: 7/8 sectors clear, good clearance restored
+⚠️ NO IMPROVEMENT: Continuing forward tracking
+📡 Starting BLE scanner...
+📡 BLE scanner active
+🏠 CONFINED SPACE DETECTED: narrow corridor - activating escape strategies
+   Front: 97cm | Left: 147cm | Right: 79cm
+🏠 CONFINED: No forward path - switching to back & turn strategy
+🏠 CONFINED: Backing up to create maneuvering space (0.0s)
+📡 LiDAR scan #240: 95 points
+🏠 CONFINED: Backing up to create maneuvering space (0.5s)
+🏠 CONFINED: Backing up to create maneuvering space (1.0s)
+🏠 CONFINED: Backing up to create maneuvering space (1.5s)
+📡 LiDAR scan #250: 94 points
+🏠 CONFINED: Backing up to create maneuvering space (2.0s)
+🧭 AUTONOMOUS | FORWARD_TRACKING | FUSION: 147.1cm | LiDAR: 77cm@162° | Clear: 5/8 | BT: 5.3m (-74dBm TRACK↘) | Det: 6 | Runtime: 36s
+🏠 CONFINED: Backing up to create maneuvering space (2.5s)
+📡 LiDAR scan #260: 103 points
+🏠 CONFINED: Backing up to create maneuvering space (3.0s)
+🌟 ESCAPED CONFINED SPACE: 6/8 sectors clear, good clearance restored
+🏁 TRACKING INITIALIZED: Starting at 5.8m
+🔄 SIGNAL DEGRADING: Testing enhanced turn after 4.0s tracking
+🔄 ENHANCED TESTING: left turn for signal improvement
+📡 LiDAR scan #270: 102 points
+🔄 TRYING RIGHT: Left turn didn't help, testing right
+🔄 ENHANCED TESTING: right turn for signal improvement
+🧭 AUTONOMOUS | TURN_TESTING | ULTRASONIC: 200.0cm | LiDAR: 51cm@129° | Clear: 7/8 | BT: 5.3m (-74dBm TRACK↘) | Det: 6 | Runtime: 39s
+⚠️ NO IMPROVEMENT: Continuing forward tracking
+📡 LiDAR scan #280: 98 points
+🏁 TRACKING INITIALIZED: Starting at 5.8m
+🚶 ENHANCED TRACKING: 5.3m signal ↘degrading (t=0.5s)
+📡 LiDAR scan #290: 92 points
+🏠 CONFINED SPACE DETECTED: narrow corridor - activating escape strategies
+   Front: 113cm | Left: 149cm | Right: 134cm
+🏠 CONFINED: No forward path - switching to back & turn strategy
+🏠 CONFINED: Backing up to create maneuvering space (0.0s)
+🏠 CONFINED: Backing up to create maneuvering space (0.5s)
+🧭 AUTONOMOUS | FORWARD_TRACKING | FUSION: 171.1cm | LiDAR: 73cm@163° | Clear: 4/8 | BT: 5.3m (-74dBm TRACK↘) | Det: 6 | Runtime: 42s
+📡 LiDAR scan #300: 96 points
+🏠 CONFINED: Backing up to create maneuvering space (1.0s)
+🏠 CONFINED: Backing up to create maneuvering space (1.5s)
+🌟 ESCAPED CONFINED SPACE: 6/8 sectors clear, good clearance restored
+🔄 SIGNAL DEGRADING: Testing enhanced turn after 4.0s tracking
+📡 LiDAR scan #310: 83 points
+🔄 ENHANCED TESTING: left turn for signal improvement
+🔄 TRYING RIGHT: Left turn didn't help, testing right
+🔄 ENHANCED TESTING: right turn for signal improvement
+🧭 AUTONOMOUS | TURN_TESTING | FUSION: 191.8cm | LiDAR: 46cm@130° | Clear: 7/8 | BT: 4.6m (-71dBm TRACK↘) | Det: 7 | Runtime: 45s
+📡 LiDAR scan #320: 93 points
+⚠️ NO IMPROVEMENT: Continuing forward tracking
+🏁 TRACKING INITIALIZED: Starting at 3.3m
+🚶 ENHANCED TRACKING: 3.9m signal ↘degrading (t=0.5s)
+📡 LiDAR scan #330: 84 points
+🚨 WRONG DIRECTION: Distance increased 2.2m (3.3m → 5.5m)
+🔄 IMMEDIATE COURSE CORRECTION: Turning around to find BlueCharm
+🔄 ENHANCED TESTING: left turn for signal improvement
+📡 LiDAR scan #340: 106 points
+🔄 TRYING RIGHT: Left turn didn't help, testing right
+🧭 AUTONOMOUS | TURN_TESTING | FUSION: 164.1cm | LiDAR: 59cm@161° | Clear: 5/8 | BT: 5.1m (-74dBm TRACK↗) | Det: 9 | Runtime: 48s
+🏠 CONFINED SPACE DETECTED: narrow corridor - activating escape strategies
+   Front: 117cm | Left: 146cm | Right: 137cm
+🏠 CONFINED: No forward path - switching to back & turn strategy
+🏠 CONFINED: Backing up to create maneuvering space (0.0s)
+🌟 ESCAPED CONFINED SPACE: 7/8 sectors clear, good clearance restored
+⚠️ NO IMPROVEMENT: Continuing forward tracking
+📡 LiDAR scan #350: 113 points
+🏁 TRACKING INITIALIZED: Starting at 5.5m
+🚶 ENHANCED TRACKING: 5.1m signal ↗improving (t=0.5s)
+🏠 CONFINED SPACE DETECTED: narrow corridor - activating escape strategies
+   Front: 117cm | Left: 146cm | Right: 137cm
+🏠 CONFINED: No forward path - switching to back & turn strategy
+🏠 CONFINED: Backing up to create maneuvering space (0.0s)
+📡 LiDAR scan #360: 101 points
+🏠 CONFINED: Backing up to create maneuvering space (0.5s)
+🧭 AUTONOMOUS | FORWARD_TRACKING | FUSION: 173.3cm | LiDAR: 69cm@147° | Clear: 6/8 | BT: 5.1m (-74dBm TRACK↗) | Det: 9 | Runtime: 51s
+🏠 CONFINED: Backing up to create maneuvering space (1.0s)
+📡 LiDAR scan #370: 111 points
+🌟 ESCAPED CONFINED SPACE: 6/8 sectors clear, good clearance restored
+📡 BlueCharm TRACKING↗ #10:
+   RSSI: -74dBm (raw: -76) | Distance: ~5.1m | Avg: -72dBm
+📡 LiDAR scan #380: 89 points
+🏠 CONFINED SPACE DETECTED: narrow corridor - activating escape strategies
+   Front: 90cm | Left: 144cm | Right: 139cm
+🏠 CONFINED: No forward path - switching to back & turn strategy
+🏠 CONFINED: Backing up to create maneuvering space (0.0s)
+🧭 AUTONOMOUS | FORWARD_TRACKING | FUSION: 161.4cm | LiDAR: 66cm@147° | Clear: 5/8 | BT: 5.1m (-74dBm TRACK↗) | Det: 10 | Runtime: 53s
+🏠 CONFINED: Backing up to create maneuvering space (0.5s)
+🏠 CONFINED: Backing up to create maneuvering space (1.0s)
+📡 LiDAR scan #390: 107 points
+🏠 CONFINED: Backing up to create maneuvering space (1.5s)
+🌟 ESCAPED CONFINED SPACE: 6/8 sectors clear, good clearance restored
+🚨 WRONG DIRECTION: Distance increased 3.2m (5.5m → 8.7m)
+🔄 IMMEDIATE COURSE CORRECTION: Turning around to find BlueCharm
+📡 LiDAR scan #400: 95 points
+🔄 ENHANCED TESTING: left turn for signal improvement
+✅ ENHANCED TEST SUCCESS: left improved by 6.3dBm - continuing left
+🧭 AUTONOMOUS | TURN_TESTING | ULTRASONIC: 200.0cm | LiDAR: 48cm@130° | Clear: 6/8 | BT: 4.8m (-71dBm TRACK↗) | Det: 13 | Runtime: 56s
+🔄 ENHANCED TESTING: left turn for signal improvement
+📡 LiDAR scan #410: 105 points
+🔄 TRYING RIGHT: Left turn didn't help, testing right
+📡 BlueCharm TRACKING↗ #15:
+   RSSI: -75dBm (raw: -76) | Distance: ~6.1m | Avg: -73dBm
+🔄 ENHANCED TESTING: right turn for signal improvement
+🔄 SIGNAL DEGRADING: right turn making signal worse (-3.6dBm) - resuming forward
+📡 LiDAR scan #420: 103 points
+🏁 TRACKING INITIALIZED: Starting at 6.3m
+🚶 ENHANCED TRACKING: 6.1m signal ↗improving (t=0.5s)
+🧭 AUTONOMOUS | FORWARD_TRACKING | FUSION: 133.1cm | LiDAR: 49cm@116° | Clear: 6/8 | BT: 6.1m (-75dBm TRACK↗) | Det: 15 | Runtime: 59s
+📡 LiDAR scan #430: 96 points
+📡 LiDAR scan #440: 96 points
+🏠 CONFINED SPACE DETECTED: narrow corridor - activating escape strategies
+   Front: 69cm | Left: 149cm | Right: 133cm
+🏠 CONFINED: No forward path - switching to back & turn strategy
+🏠 CONFINED: Backing up to create maneuvering space (0.0s)
+🏠 CONFINED: Backing up to create maneuvering space (0.5s)
+🧭 AUTONOMOUS | FORWARD_TRACKING | FUSION: 173.3cm | LiDAR: 62cm@50° | Clear: 6/8 | BT: 6.1m (-75dBm TRACK↗) | Det: 15 | Runtime: 62s
+📡 LiDAR scan #450: 94 points
+🌟 ESCAPED CONFINED SPACE: 7/8 sectors clear, good clearance restored
+🏠 CONFINED SPACE DETECTED: narrow corridor - activating escape strategies
+   Front: 66cm | Left: 150cm | Right: 133cm
+🏠 CONFINED: No forward path - switching to back & turn strategy
+🏠 CONFINED: Backing up to create maneuvering space (0.0s)
+📡 LiDAR scan #460: 110 points
+🏠 CONFINED: Backing up to create maneuvering space (0.5s)
+🏠 CONFINED: Backing up to create maneuvering space (1.0s)
+📡 LiDAR scan #470: 94 points
+🌟 ESCAPED CONFINED SPACE: 6/8 sectors clear, good clearance restored
+🧭 AUTONOMOUS | FORWARD_TRACKING | FUSION: 166.9cm | LiDAR: 70cm@45° | Clear: 6/8 | BT: 4.2m (-70dBm TRACK↗) | Det: 16 | Runtime: 65s
+🏠 CONFINED SPACE DETECTED: narrow corridor - activating escape strategies
+   Front: 102cm | Left: 150cm | Right: 133cm
+🏠 CONFINED: No forward path - switching to back & turn strategy
+🏠 CONFINED: Backing up to create maneuvering space (0.0s)
+🏠 CONFINED: Backing up to create maneuvering space (0.5s)
+📡 LiDAR scan #480: 96 points
+🌟 ESCAPED CONFINED SPACE: 6/8 sectors clear, good clearance restored
+📡 Stopping BLE scanner...
+📡 LiDAR scan #490: 94 points
+
+Attempting to stop program...
+
+^C (Interrupt signal sent)
+📡 LiDAR scan #500: 90 points
+^C
+🛑 Shutdown requested by user...
+🛑 Stopping Enhanced Navigator V7...
+🔌 LiDAR disconnected
+SIGTERM sent to Python processes
+No Python processes running
+

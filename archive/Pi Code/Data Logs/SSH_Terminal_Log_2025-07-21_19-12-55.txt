@@ -1,0 +1,77 @@
+SSH Dashboard Terminal Log
+Session Date: 2025-07-21 19:13:04
+Connected to: 192.168.254.65:22
+Username: jay
+==================================================
+
+Uploading bluetooth_lidar_navigator_v8_lite.py...
+Successfully uploaded bluetooth_lidar_navigator_v8_lite.py to /home/jay/rover_project/bluetooth_lidar_navigator_v8_lite.py
+$ cd ~/rover_project && source venv/bin/activate && echo 'Starting program...' && python3 -u /home/jay/rover_project/bluetooth_lidar_navigator_v8_lite.py
+Starting program...
+✅ Bluetooth (bleak) library available
+✅ LiDAR (rplidar) library available
+================================================================================
+🚀 BLUETOOTH LIDAR NAVIGATOR V8-LITE
+================================================================================
+
+CORE FUNCTIONALITY ONLY:
+  ✅ Fixed LiDAR left/right orientation (CRITICAL)
+  ✅ LiDAR-enhanced navigation without visualization
+  ✅ Optimized Bluetooth target tracking
+  ✅ Multi-sensor fusion (LiDAR + Ultrasonic)
+  ✅ Robot body-aware obstacle avoidance
+  ✅ Automatic USB device detection
+  ✅ Fast autonomous mode response
+
+REMOVED FOR PERFORMANCE:
+  ❌ LiDAR visualization (caused Pi overload)
+  ❌ Matplotlib and GUI components
+  ❌ Excessive debug output
+
+SENSOR STATUS:
+  ✅ LiDAR Ready (Navigation Only)
+  ✅ Bluetooth Ready
+
+🔍 USB Device Detector initialized
+🤖 Robot Physical Profile Loaded:
+   Dimensions: 35.0cm × 28.0cm
+   LiDAR Position: 23.0cm from front, 13.0cm from left
+   Safe Distances: F=28.0cm R=17.0cm L=18.0cm R=20.0cm
+   Corridor Requirements: 38.0cm normal, 34.0cm tight
+🔄 LiDAR Processor initialized (LITE - NO VISUALIZATION)
+📏 Range: 100-8000mm
+🚧 Obstacle threshold: 600mm
+✅ Clear path threshold: 900mm
+🚀 Bluetooth LiDAR Navigator V8-LITE
+📊 Navigation: Danger=12.0cm | Caution=20.0cm | Safe=35.0cm
+🔄 LiDAR: Danger=12.0cm | Caution=20.0cm
+📡 Bluetooth: Target 0.3m ±0.2m
+🎯 LITE: No visualization - core navigation only
+🔍 Starting device detection...
+🔍 === USB Device Detection Started ===
+🔍 Scanning for USB devices...
+📋 Found 2 USB serial devices:
+   1. /dev/ttyUSB1 - USB Serial
+      VID:PID = 1A86:7523
+   2. /dev/ttyUSB0 - CP2102 USB to UART Bridge Controller - CP2102 USB to UART Bridge Controller
+      VID:PID = 10C4:EA60
+      Manufacturer: Silicon Labs
+\n🧪 Testing ports for device identification...
+\n📍 Testing /dev/ttyUSB1...
+🤖 Testing for Arduino on /dev/ttyUSB1...
+   Trying 115200 baud...
+   Raw data: Arduino Gatekeeper v1.2 - Smart Safety Initialized...
+   Raw data: 🛡️ Safety Authority: Arduino holds the keys...
+   Raw data: 🧠 Always listening to Pi, applying commands only in AUTONOMOUS mode...
+   Data received but not valid Arduino JSON
+   Trying 9600 baud...
+
+Attempting to stop program...
+
+^C (Interrupt signal sent)
+^C\n🛑 Shutdown requested by user...
+🛑 Stopping Navigator V8-LITE...
+⏳ Waiting for threads to stop...
+SIGTERM sent to Python processes
+No Python processes running
+

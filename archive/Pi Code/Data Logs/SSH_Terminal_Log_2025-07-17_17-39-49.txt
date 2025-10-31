@@ -1,0 +1,25 @@
+SSH Dashboard Terminal Log
+Session Date: 2025-07-17 17:39:57
+Connected to: 192.168.254.65:22
+Username: jay
+==================================================
+
+$ cd ~/rover_project && source venv/bin/activate && echo 'Starting program...' && python3 -u /home/jay/rover_project/test_lidar_viz_simple.py
+Starting program...
+🧪 Simple LiDAR Visualization Test
+========================================
+📊 Simple LiDAR test initialized
+🔗 Connecting to RPLidar A1 on /dev/ttyUSB1
+❌ Connection error: Incorrect descriptor starting bytes
+Traceback (most recent call last):
+  File "/home/jay/rover_project/test_lidar_viz_simple.py", line 92, in run_test
+    info = self.lidar.get_info()
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jay/rover_project/venv/lib/python3.11/site-packages/rplidar.py", line 211, in get_info
+    dsize, is_single, dtype = self._read_descriptor()
+                              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jay/rover_project/venv/lib/python3.11/site-packages/rplidar.py", line 189, in _read_descriptor
+    raise RPLidarException('Incorrect descriptor starting bytes')
+rplidar.RPLidarException: Incorrect descriptor starting bytes
+✅ Disconnected
+

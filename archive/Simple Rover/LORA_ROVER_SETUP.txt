@@ -1,0 +1,323 @@
+================================================================================
+              SIMPLE ROVER WITH LoRa CUTOFF SWITCH - SETUP GUIDE
+================================================================================
+
+HARDWARE CONNECTIONS:
+────────────────────────────────────────────────────────────────────────────
+
+1. RASPBERRY PI GPIO:
+   Left Ultrasonic Sensor:
+     - TRIG → GPIO 23
+     - ECHO → GPIO 24 (via voltage divider!)
+
+   Right Ultrasonic Sensor:
+     - TRIG → GPIO 17
+     - ECHO → GPIO 27 (via voltage divider!)
+
+2. USB CONNECTIONS TO RASPBERRY PI:
+   - Arduino Nano (motor controller) → USB port 1
+   - Heltec LoRa receiver → USB port 2
+
+   Note: The script will auto-detect and ask you which is which!
+
+================================================================================
+
+SOFTWARE FILES:
+────────────────────────────────────────────────────────────────────────────
+
+ARDUINO CODE:
+  arduino_motor_control.ino
+    ↳ Upload this to Arduino Nano
+    ↳ Handles motor control via R/C servo PWM signals
+
+HELTEC CODE:
+  Simple Rover Cutoff Switch/Receiver/LoRa_KillSwitch_Receiver_Channel.ino
+    ↳ Upload this to Heltec receiver on rover
+    ↳ Receives LoRa commands and forwards to Pi
+
+RASPBERRY PI CODE:
+  rover_controller_with_lora.py
+    ↳ Main rover control script with LoRa integration
+    ↳ Run this on the Raspberry Pi
+
+================================================================================
+
+UPLOAD SEQUENCE:
+────────────────────────────────────────────────────────────────────────────
+
+STEP 1: Upload to Arduino Nano
+  1. Open Arduino IDE
+  2. Open: arduino_motor_control.ino
+  3. Select Board: "Arduino Nano"
+  4. Select Processor: "ATmega328P" (or "Old Bootloader" if needed)
+  5. Select correct COM port
+  6. Upload ✓
+
+STEP 2: Upload to Heltec Receiver (on rover)
+  1. Open: Simple Rover Cutoff Switch/Receiver/LoRa_KillSwitch_Receiver_Channel.ino
+  2. Select Board: "WiFi LoRa 32(V3)"
+  3. Verify SYNC_WORD matches transmitter (default: 0x12)
+  4. Select correct COM port
+  5. Upload ✓
+
+STEP 3: Upload to Heltec Transmitter (remote control)
+  1. Open: Simple Rover Cutoff Switch/Transmitter/LoRa_KillSwitch_Transmitter_Channel.ino
+  2. Select Board: "WiFi LoRa 32(V3)"
+  3. Verify SYNC_WORD matches receiver (default: 0x12)
+  4. Select correct COM port
+  5. Upload ✓
+  6. Connect button: GPIO 47 + GND, LED: GPIO 48 + GND
+
+================================================================================
+
+RUNNING THE ROVER:
+────────────────────────────────────────────────────────────────────────────
+
+ON RASPBERRY PI:
+
+1. Connect both USB devices (Arduino and Heltec)
+
+2. Verify devices detected:
+   ls /dev/ttyUSB* /dev/ttyACM*
+
+   Should show 2 devices, like:
+   /dev/ttyUSB0
+   /dev/ttyUSB1
+
+3. Make script executable:
+   chmod +x rover_controller_with_lora.py
+
+4. Run the rover:
+   python3 rover_controller_with_lora.py
+
+   OR
+
+   ./rover_controller_with_lora.py
+
+5. The script will ask you which device is which:
+   "Which device is the Arduino (motor controller)?"
+   Enter 1 or 2
+
+6. Rover starts in STOP mode (safe!)
+
+7. Press button on transmitter to enable AUTONOMOUS mode
+
+8. Press Ctrl+C to stop
+
+================================================================================
+
+OPERATING MODES:
+────────────────────────────────────────────────────────────────────────────
+
+STOP MODE (Default at startup):
+  - LED on transmitter: BLINKING
+  - Rover: Motors disabled
+  - Display: "Mode: STOP | Waiting for AUTONOMOUS command..."
+  - Safety: Cannot move
+
+AUTONOMOUS MODE:
+  - LED on transmitter: SOLID ON
+  - Rover: Full obstacle avoidance active
+  - Display: "AUTONOMOUS | L: 45.2cm | R: 52.1cm | Min: 45.2cm"
+  - Behavior:
+      • Moves forward when path is clear
+      • Slows down when obstacles detected
+      • Backs up and turns when too close
+      • Continuously scans with ultrasonic sensors
+
+SWITCHING MODES:
+  - Press button on transmitter
+  - Toggles: STOP ↔ AUTONOMOUS ↔ STOP ↔ AUTONOMOUS...
+  - Instant response
+  - Motors stop immediately when switched to STOP
+
+================================================================================
+
+WHAT YOU'LL SEE:
+────────────────────────────────────────────────────────────────────────────
+
+AT STARTUP:
+  ==============================================================
+    OBSTACLE-AVOIDANCE ROVER WITH LoRa CUTOFF SWITCH
+  ==============================================================
+
+  Initializing...
+  ✓ Ultrasonic sensors initialized
+
+  Found 2 serial devices:
+    - /dev/ttyUSB0
+    - /dev/ttyUSB1
+
+  Which device is the Arduino (motor controller)?
+    1. /dev/ttyUSB0
+    2. /dev/ttyUSB1
+  Enter number (1 or 2): 1
+
+  ✓ Arduino (motors): /dev/ttyUSB0
+  ✓ Heltec (LoRa): /dev/ttyUSB1
+  ✓ Connected to Arduino on /dev/ttyUSB0
+  ✓ Connected to Heltec LoRa receiver on /dev/ttyUSB1
+  LoRa listener started...
+
+  ==============================================================
+    Initialization Complete!
+  ==============================================================
+
+  SAFETY: Rover starts in STOP mode
+  Press button on transmitter to enable AUTONOMOUS mode
+
+IN STOP MODE:
+  Mode: STOP        | Waiting for AUTONOMOUS command...
+
+WHEN BUTTON PRESSED:
+  ==================================================
+     LoRa MODE CHANGE: AUTONOMOUS
+     Signal: -52 dBm
+  ==================================================
+
+  >>> AUTONOMOUS MODE ENABLED - Rover can move <<<
+
+IN AUTONOMOUS MODE:
+  AUTONOMOUS | L:  45.2cm | R:  52.1cm | Min:  45.2cm
+
+WHEN OBSTACLE DETECTED:
+  OBSTACLE! Left: 18.5cm, Right: 22.3cm
+  Backing up...
+  Turning right...
+
+WHEN STOPPED:
+  ==================================================
+     LoRa MODE CHANGE: STOP
+     Signal: -48 dBm
+  ==================================================
+
+  >>> STOP MODE - Rover disabled <<<
+
+================================================================================
+
+TROUBLESHOOTING:
+────────────────────────────────────────────────────────────────────────────
+
+PROBLEM: Script can't find serial devices
+SOLUTION:
+  ✓ Run: ls /dev/ttyUSB* /dev/ttyACM*
+  ✓ Verify both Arduino and Heltec are connected via USB
+  ✓ Try different USB ports
+  ✓ Check USB cables (must be data cables, not charge-only)
+
+PROBLEM: "Could not connect to Arduino"
+SOLUTION:
+  ✓ Make sure Arduino sketch is uploaded
+  ✓ Try unplugging and replugging Arduino
+  ✓ Check Arduino shows up in Arduino IDE
+
+PROBLEM: "Could not connect to Heltec receiver"
+SOLUTION:
+  ✓ Make sure receiver sketch is uploaded to Heltec
+  ✓ Check Heltec display shows "Waiting..."
+  ✓ Try different USB cable
+
+PROBLEM: Rover doesn't respond to button presses
+SOLUTION:
+  ✓ Check transmitter display shows "Sent OK"
+  ✓ Check receiver display updates when button pressed
+  ✓ Verify SYNC_WORD matches in both sketches
+  ✓ Check antennas are connected
+  ✓ Move transmitter closer for testing
+
+PROBLEM: Motors don't move in AUTONOMOUS mode
+SOLUTION:
+  ✓ Check Arduino serial output (115200 baud)
+  ✓ Verify motor driver is powered
+  ✓ Check motor connections
+  ✓ Test Arduino independently first
+
+PROBLEM: Ultrasonic sensors show wrong values
+SOLUTION:
+  ✓ Check sensor wiring (TRIG and ECHO pins)
+  ✓ IMPORTANT: Use voltage divider on ECHO pins (5V → 3.3V)
+  ✓ Check sensor power (VCC and GND)
+  ✓ Test sensors individually
+
+PROBLEM: Permission denied on /dev/ttyUSB*
+SOLUTION:
+  ✓ Add user to dialout group:
+    sudo usermod -a -G dialout $USER
+  ✓ Log out and log back in
+  ✓ Or run with sudo (not recommended)
+
+================================================================================
+
+TESTING PROCEDURE:
+────────────────────────────────────────────────────────────────────────────
+
+1. BENCH TEST (rover on blocks, wheels off ground):
+   a. Power on Raspberry Pi
+   b. Run rover script
+   c. Verify starts in STOP mode
+   d. Press transmitter button
+   e. Wheels should start spinning (no obstacle detected)
+   f. Wave hand in front of sensors
+   g. Rover should react (slow down, stop, turn)
+   h. Press button again
+   i. Wheels should stop immediately
+
+2. FLOOR TEST (rover on ground):
+   a. Clear open area for testing
+   b. Run rover script
+   c. Enable AUTONOMOUS mode
+   d. Rover should explore and avoid obstacles
+   e. Test emergency stop by pressing button
+   f. Rover should stop immediately
+
+3. RANGE TEST (LoRa communication):
+   a. Enable AUTONOMOUS mode
+   b. Walk away with transmitter
+   c. Press button at various distances
+   d. Note RSSI value on receiver display
+   e. Typical indoor range: 50-100+ meters
+
+================================================================================
+
+SAFETY TIPS:
+────────────────────────────────────────────────────────────────────────────
+
+  ⚠ Always start in STOP mode (enforced by software)
+  ⚠ Keep transmitter within range at all times
+  ⚠ Test in open area first
+  ⚠ Have physical kill switch ready (unplug battery)
+  ⚠ Don't test near stairs or drop-offs
+  ⚠ Watch for pets and small children
+  ⚠ Keep backup transmitter battery charged
+
+================================================================================
+
+CUSTOMIZATION:
+────────────────────────────────────────────────────────────────────────────
+
+In rover_controller_with_lora.py, you can adjust:
+
+  DEFAULT_SPEED = 150        # How fast it goes (0-255)
+  TURN_SPEED = 120           # Speed for turning
+
+  CRITICAL_DISTANCE = 20     # Stop distance (cm)
+  WARNING_DISTANCE = 40      # Slow down distance (cm)
+  SAFE_DISTANCE = 60         # Full speed distance (cm)
+
+  BACKUP_DURATION = 0.5      # How long to back up (seconds)
+  TURN_DURATION = 0.7        # How long to turn (seconds)
+
+================================================================================
+
+NEXT STEPS:
+────────────────────────────────────────────────────────────────────────────
+
+  1. ✓ Upload all Arduino code
+  2. ✓ Test LoRa communication (transmitter → receiver)
+  3. ✓ Test motors independently
+  4. ✓ Test sensors independently
+  5. ⃞ Run integrated system
+  6. ⃞ Tune parameters for your environment
+  7. ⃞ Have fun!
+
+================================================================================

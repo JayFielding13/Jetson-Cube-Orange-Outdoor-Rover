@@ -1,0 +1,196 @@
+(venv) jay@RoboPi:~/rover_project $ nano bluetooth_smart_navigator_v5
+(venv) jay@RoboPi:~/rover_project $ python3 bluetooth_smart_navigator_v5
+✅ Bluetooth (bleak) library available
+================================================================================
+🤖 BLUETOOTH SMART NAVIGATOR V5
+================================================================================
+
+INTELLIGENT NAVIGATION FEATURES:
+  ✅ Ultrasonic obstacle detection and avoidance
+  ✅ Enhanced stuck recovery system
+  ✅ Arduino gatekeeper integration
+  ✅ Real-time Bluetooth beacon ranging (0.8m - 11.2m)
+  ✅ Working RSSI values with noise reduction
+  ✅ Thread-safe callback-based BLE scanning
+  🚶 PROVEN: Forward movement signal strength tracking
+  🔄 PROVEN: Turn-and-test behavior for course corrections
+  🧠 NEW: Intelligent obstacle avoidance (turn only until clear)
+  📊 NEW: RSSI smoothing to reduce distance jumps
+  🎯 NEW: Enhanced approach stability
+  🏁 NEW: Precise target hold at 0.5m ±0.15m
+  ✅ Safety-first design with ultrasonic priority
+  ✅ Clean shutdown with no task warnings
+
+SMART NAVIGATION BEHAVIOR:
+  🔍 SEARCHING: Look for BlueCharm signal
+  🚶 FORWARD_TRACKING: Move forward while monitoring signal
+  🔄 TURN_TESTING: Test left/right turns when signal degrades
+  🧠 SMART_AVOIDING: Turn only until path is clear
+  🎯 APPROACHING: Gentle approach to target
+  🏁 HOLDING: Maintain precise 0.5m distance
+  🛡️ SAFETY: Ultrasonic overrides all Bluetooth behavior
+
+INTELLIGENT IMPROVEMENTS:
+  🧠 Smart turning: Stop when clear >80cm | Min 0.8s | Max 4.0s
+  📊 RSSI smoothing: 30% new data | Distance smoothing: 40% new data
+  🎯 Outlier rejection: >2x distance change rejection
+  📈 Signal tracking: 2dBm improvement | 3dBm degradation triggers
+
+🚀 Bluetooth Smart Navigator V5 Initialized
+📊 Navigation: Danger=30.0cm | Caution=60.0cm | Safe=100.0cm
+📡 Bluetooth: Enabled | Target: DD:34:02:09:CA:1E
+🚶 Tracking: Target distance 0.5m ±0.15m | Influence 35%
+📈 Signal: 2dBm improvement | 3dBm degradation triggers
+🧠 Smart Turn: Stop when clear >80.0cm | Min 0.8s
+📊 RSSI Smoothing: 30% new data | Outlier rejection >2.0x
+🛡️ Safety: Ultrasonic navigation takes absolute priority
+✅ Arduino connected on /dev/ttyUSB0
+📡 Starting BlueCharm smart tracking thread...
+📡 BlueCharm smart tracking scanner started
+📡 BlueCharm smart tracking scanner ready
+🚀 Smart Navigator V5 started
+🧠 Ready for intelligent navigation with smart obstacle avoidance
+✅ Smart Navigator V5 ready - switch to autonomous mode
+📡 BlueCharm smart tracking will activate automatically
+🧠 Rover will use intelligent navigation with minimal turning
+📊 RSSI smoothing will reduce distance reading jumps
+Press Ctrl+C to stop...
+📡 Starting BLE smart tracking scanner...
+📡 BLE smart tracking scanner active
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: No signal | Det: 0 | Runtime: 2s
+📡 Stopping BLE smart tracking scanner...
+📡 Starting BLE smart tracking scanner...
+📡 BLE smart tracking scanner active
+📡 Stopping BLE smart tracking scanner...
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: No signal | Det: 0 | Runtime: 5s
+🔄 SEARCH PATTERN: Looking for signal...
+📡 Starting BLE smart tracking scanner...
+📡 BLE smart tracking scanner active
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 22.4m (-86dBm PASS) | Det: 1 | Runtime: 8s
+📡 Stopping BLE smart tracking scanner...
+📡 Starting BLE smart tracking scanner...
+📡 BLE smart tracking scanner active
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 22.4m (-86dBm PASS) | Det: 1 | Runtime: 11s
+📡 Stopping BLE smart tracking scanner...
+📡 Starting BLE smart tracking scanner...
+📡 BLE smart tracking scanner active
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 18.6m (-81dBm PASS) | Det: 2 | Runtime: 14s
+🔄 SEARCH PATTERN: Looking for signal...
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 18.6m (-81dBm PASS) | Det: 2 | Runtime: 17s
+📡 BlueCharm PASSIVE #5:
+   RSSI: -80dBm (raw: -80) | Distance: ~15.0m | Avg: -81dBm
+   Outliers rejected: 1
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 15.0m (-80dBm PASS) | Outliers: 1 | Det: 5 | Runtime:  20s
+🔄 SEARCH PATTERN: Looking for signal...
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 15.0m (-77dBm PASS) | Outliers: 2 | Det: 6 | Runtime:  23s
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 15.0m (-74dBm PASS) | Outliers: 3 | Det: 7 | Runtime:  26s
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 15.0m (-75dBm PASS) | Outliers: 4 | Det: 8 | Runtime:  29s
+🔄 SEARCH PATTERN: Looking for signal...
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 15.0m (-74dBm PASS) | Outliers: 5 | Det: 9 | Runtime:  32s
+📡 BlueCharm PASSIVE #10:
+   RSSI: -75dBm (raw: -78) | Distance: ~15.0m | Avg: -78dBm
+   Outliers rejected: 6
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 15.0m (-73dBm PASS) | Outliers: 7 | Det: 11 | Runtime:  35s
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 15.0m (-72dBm PASS) | Outliers: 8 | Det: 12 | Runtime:  38s
+🔄 SEARCH PATTERN: Looking for signal...
+📡 Stopping BLE smart tracking scanner...
+📡 Starting BLE smart tracking scanner...
+📡 BLE smart tracking scanner active
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 15.0m (-74dBm PASS) | Outliers: 10 | Det: 14 | Runtime : 41s
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 15.0m (-74dBm PASS) | Outliers: 10 | Det: 14 | Runtime : 44s
+📡 BlueCharm PASSIVE #15:
+   RSSI: -73dBm (raw: -74) | Distance: ~15.0m | Avg: -74dBm
+   Outliers rejected: 11
+🔄 SEARCH PATTERN: Looking for signal...
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 15.0m (-73dBm PASS) | Outliers: 12 | Det: 16 | Runtime : 47s
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 15.0m (-73dBm PASS) | Outliers: 12 | Det: 16 | Runtime : 50s
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 15.0m (-76dBm PASS) | Outliers: 13 | Det: 17 | Runtime : 53s
+🔄 SEARCH PATTERN: Looking for signal...
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 15.0m (-75dBm PASS) | Outliers: 14 | Det: 18 | Runtime : 56s
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 15.0m (-75dBm PASS) | Outliers: 14 | Det: 18 | Runtime : 59s
+📡 BlueCharm PASSIVE #20:
+   RSSI: -80dBm (raw: -92) | Distance: ~13.5m | Avg: -74dBm
+   Outliers rejected: 15
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 13.5m (-80dBm PASS) | Outliers: 15 | Det: 20 | Runtime : 62s
+🔄 SEARCH PATTERN: Looking for signal...
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 13.5m (-73dBm PASS) | Outliers: 17 | Det: 22 | Runtime : 65s
+📡 BlueCharm PASSIVE #25:
+   RSSI: -70dBm (raw: -64) | Distance: ~13.5m | Avg: -74dBm
+   Outliers rejected: 20
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 13.5m (-70dBm PASS) | Outliers: 20 | Det: 25 | Runtime : 68s
+🔄 SEARCH PATTERN: Looking for signal...
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 13.5m (-70dBm PASS) | Outliers: 20 | Det: 25 | Runtime : 71s
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 13.5m (-70dBm PASS) | Outliers: 20 | Det: 25 | Runtime : 74s
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 13.5m (-70dBm PASS) | Outliers: 20 | Det: 25 | Runtime : 77s
+🔄 SEARCH PATTERN: Looking for signal...
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 13.5m (-70dBm PASS) | Outliers: 21 | Det: 26 | Runtime : 80s
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 13.5m (-70dBm PASS) | Outliers: 23 | Det: 28 | Runtime : 83s
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 13.5m (-70dBm PASS) | Outliers: 23 | Det: 28 | Runtime : 86s
+🔄 SEARCH PATTERN: Looking for signal...
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 13.5m (-71dBm PASS) | Outliers: 24 | Det: 29 | Runtime : 89s
+📡 BlueCharm PASSIVE #30:
+   RSSI: -70dBm (raw: -68) | Distance: ~13.5m | Avg: -71dBm
+   Outliers rejected: 25
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 13.5m (-70dBm PASS) | Outliers: 25 | Det: 30 | Runtime : 92s
+🔄 SEARCH PATTERN: Looking for signal...
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 13.5m (-68dBm PASS) | Outliers: 26 | Det: 31 | Runtime : 95s
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 13.5m (-70dBm PASS) | Outliers: 29 | Det: 34 | Runtime : 98s
+📡 BlueCharm PASSIVE #35:
+   RSSI: -68dBm (raw: -68) | Distance: ~13.5m | Avg: -69dBm
+   Outliers rejected: 30
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 13.5m (-68dBm PASS) | Outliers: 30 | Det: 35 | Runtime : 101s
+🔄 SEARCH PATTERN: Looking for signal...
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 13.5m (-69dBm PASS) | Outliers: 32 | Det: 37 | Runtime : 104s
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 13.5m (-69dBm PASS) | Outliers: 33 | Det: 38 | Runtime : 107s
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 13.5m (-68dBm PASS) | Outliers: 34 | Det: 39 | Runtime : 110s
+📡 BlueCharm PASSIVE #40:
+   RSSI: -68dBm (raw: -66) | Distance: ~13.5m | Avg: -68dBm
+   Outliers rejected: 35
+🔄 SEARCH PATTERN: Looking for signal...
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 13.5m (-69dBm PASS) | Outliers: 36 | Det: 41 | Runtime : 113s
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 13.5m (-68dBm PASS) | Outliers: 37 | Det: 42 | Runtime : 116s
+🔄 SEARCH PATTERN: Looking for signal...
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 13.5m (-68dBm PASS) | Outliers: 37 | Det: 42 | Runtime : 119s
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 13.5m (-71dBm PASS) | Outliers: 38 | Det: 43 | Runtime : 122s
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 13.5m (-71dBm PASS) | Outliers: 39 | Det: 44 | Runtime : 125s
+🔄 SEARCH PATTERN: Looking for signal...
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 13.5m (-71dBm PASS) | Outliers: 39 | Det: 44 | Runtime : 128s
+📡 BlueCharm PASSIVE #45:
+   RSSI: -68dBm (raw: -64) | Distance: ~13.5m | Avg: -69dBm
+   Outliers rejected: 40
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 13.5m (-69dBm PASS) | Outliers: 42 | Det: 47 | Runtime : 131s
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 13.5m (-68dBm PASS) | Outliers: 43 | Det: 48 | Runtime : 134s
+🔄 SEARCH PATTERN: Looking for signal...
+^C
+🛑 Shutdown requested by user...
+🛑 Stopping Smart Navigator V5...
+📊 Final runtime: 135.3 seconds
+📊 === Smart Navigator V5 Statistics ===
+   Runtime: 135 seconds
+   Distance measurements: 897
+   Obstacle avoidances: 0
+   Emergency stops: 0
+   Stuck recoveries: 0
+🧠 === Smart Navigation Statistics ===
+   Smart turns: 0
+   Tracking activations: 0
+   Approach activations: 0
+   Hold activations: 0
+   Target reaches: 0
+   Signal improvements: 1
+   Course corrections: 0
+   Turn tests: 0
+📊 === RSSI Smoothing Statistics ===
+   Outliers rejected: 44
+📡 === Bluetooth Ranging Statistics ===
+   Total detections: 49
+   Callback events: 49
+   Detection rate: 0.36/sec
+   Callback rate: 0.36/sec
+   Strongest RSSI: -67.21628407593057 dBm
+   Signal timeouts: 0
+   Average RSSI: -68.7 dBm
+   Average smoothed distance: 13.5m
+   Navigation rate: 6.6 measurements/sec
+👋 Smart Navigator V5 shutdown complete
+(venv) jay@RoboPi:~/rover_project $

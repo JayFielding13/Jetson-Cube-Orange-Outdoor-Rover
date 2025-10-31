@@ -1,0 +1,367 @@
+================================================================================
+                          WIRING GUIDE
+              Heltec LoRa WiFi 32 V3 - Cutoff Switch System
+================================================================================
+
+BOARD OVERVIEW:
+The Heltec LoRa WiFi 32 V3 has the LoRa radio pins hardwired internally.
+You only need to connect external components (button, LED, power, etc.)
+
+================================================================================
+TRANSMITTER BOARD (REMOTE CONTROL)
+================================================================================
+
+ILLUMINATED BUTTON CONNECTION (with LED):
+┌─────────────────────────────────────────────┐
+│                                             │
+│    [Illuminated Momentary Button]          │
+│         ____                                │
+│        |    |  LED inside                  │
+│        | /  |                              │
+│        |/   |                              │
+│    ────┴────┴────                          │
+│    │  │    │   │                           │
+│   SW1 SW2  +  GND (LED-)                   │
+│    │  │    │   │                           │
+│    │  │    │   │                           │
+│ GPIO47 GND  │   │                          │
+│    │   │  GPIO48 │                         │
+│    │   │    │    │                         │
+│   └┴───┴────┴────┴──┐                      │
+│   │  HELTEC BOARD   │                      │
+│   │   (Transmitter) │                      │
+│   └─────────────────┘                      │
+└─────────────────────────────────────────────┘
+
+WIRING FOR ILLUMINATED BUTTON (4 pins):
+  Button Switch Pin 1 → GPIO 47 (button signal)
+  Button Switch Pin 2 → GND (button ground)
+  Button LED + (Anode) → GPIO 48 (LED control)
+  Button LED - (Cathode) → GND (LED ground)
+
+WIRING FOR SIMPLE BUTTON (2 pins, no LED):
+  Button Pin 1 → GPIO 47 (on Heltec board)
+  Button Pin 2 → GND (on Heltec board)
+
+LED BEHAVIOR:
+  - STOP mode: LED blinks (500ms on/off) - "Ready, waiting"
+  - AUTONOMOUS mode: LED solid ON - "Rover active"
+
+NOTES:
+  - GPIO 47 is configured with internal pull-up resistor for button
+  - Button pressed = LOW signal, released = HIGH signal
+  - GPIO 47 and 48 are safe to use (don't conflict with OLED or LoRa)
+  - Most illuminated buttons have built-in current-limiting resistor
+  - If your button doesn't have resistor, add 220Ω resistor in series with LED+
+
+POWER OPTIONS:
+
+Option 1: USB Power (for testing)
+  - Connect USB cable to computer
+  - Board powered via USB
+
+Option 2: Battery Power (for portable use)
+  - Connect LiPo battery to JST connector on board
+  - Recommended: 3.7V 500mAh or larger
+  - Board has built-in charging circuit when USB connected
+
+ANTENNA:
+  - Connect LoRa antenna to the antenna connector
+  - DO NOT operate without antenna (can damage radio)
+
+================================================================================
+RECEIVER BOARD (ON ROVER)
+================================================================================
+
+CONNECTION TO RASPBERRY PI:
+┌─────────────────────────────────────────┐
+│                                         │
+│    ┌────────────────┐                   │
+│    │  HELTEC BOARD  │                   │
+│    │   (Receiver)   │                   │
+│    └───────┬────────┘                   │
+│            │ USB Cable                  │
+│            │                            │
+│    ┌───────▼────────┐                   │
+│    │  RASPBERRY PI  │                   │
+│    │                │                   │
+│    └────────────────┘                   │
+│                                         │
+└─────────────────────────────────────────┘
+
+WIRING:
+  Heltec USB port → Raspberry Pi USB port
+
+This single USB connection provides:
+  ✓ Power to Heltec board
+  ✓ Serial communication (data transfer)
+
+SERIAL PORT ON RASPBERRY PI:
+  The Heltec will appear as:
+    /dev/ttyUSB0  OR  /dev/ttyACM0
+
+  To find it, run on Pi:
+    ls /dev/ttyUSB* /dev/ttyACM*
+
+OPTIONAL: STATUS LED
+If you want a visual indicator on the rover:
+
+   GPIO 21 ──┬──[220Ω]──[LED]──┬── GND
+             │                 │
+         Anode (+)         Cathode (-)
+
+LED States:
+  - OFF = STOP mode
+  - ON = AUTONOMOUS mode
+
+ANTENNA:
+  - Connect LoRa antenna to the antenna connector
+  - Critical for receiving signals reliably
+
+================================================================================
+ALTERNATIVE: DIRECT GPIO CONNECTION (Advanced)
+================================================================================
+
+If you want to use GPIO pins instead of USB for serial communication:
+
+Heltec Receiver → Raspberry Pi:
+  Heltec TX (GPIO 43) → Pi RX (GPIO 15 / Pin 10)
+  Heltec RX (GPIO 44) → Pi TX (GPIO 14 / Pin 8)
+  Heltec GND → Pi GND
+  Heltec 3V3 → Pi 3.3V (if not using USB power)
+
+WARNING:
+  - This is more complex
+  - USB method is recommended for simplicity
+  - Requires modifying Arduino code to use Serial1 or Serial2
+
+================================================================================
+BOARD PINOUT REFERENCE - Heltec LoRa WiFi 32 V3
+================================================================================
+
+IMPORTANT PINS:
+┌──────────────────────────────────────┐
+│         TOP VIEW (USB at bottom)     │
+│                                      │
+│  3V3  ○                         ○ GND│
+│   21  ○  <-- Use for Button/LED      │
+│   47  ○                              │
+│   48  ○                              │
+│   45  ○                              │
+│   46  ○                              │
+│    0  ○                              │
+│   35  ○                       ○ 5V   │
+│   36  ○                       ○ GND  │
+│   37  ○                       ○ VBAT │
+│                                      │
+│         [USB Connector]              │
+└──────────────────────────────────────┘
+
+PRE-WIRED LoRa PINS (Internal - No Connection Needed):
+  SCK:   GPIO 9
+  MISO:  GPIO 11
+  MOSI:  GPIO 10
+  CS:    GPIO 8
+  RST:   GPIO 12
+  DIO1:  GPIO 14
+  BUSY:  GPIO 13
+
+OLED DISPLAY PINS (Internal - No Connection Needed):
+  SDA:   GPIO 17
+  SCL:   GPIO 18
+  RST:   GPIO 21 (shared with user GPIO)
+
+POWER PINS:
+  Vext:  GPIO 36 (controls external 3.3V power - used for display)
+  3V3:   3.3V output (max 500mA)
+  5V:    5V output (when powered via USB)
+  GND:   Ground
+
+================================================================================
+BUTTON SPECIFICATIONS
+================================================================================
+
+RECOMMENDED BUTTON TYPE:
+  - Momentary push button (normally open)
+  - SPST (Single Pole Single Throw)
+  - Any voltage rating (signal is 3.3V)
+
+EXAMPLES:
+  ✓ Tactile push button (6mm x 6mm)
+  ✓ Panel mount momentary switch
+  ✓ Arcade-style button
+  ✓ Any momentary switch rated for 3.3V or higher
+
+AVOID:
+  ✗ Toggle switches (latching)
+  ✗ Normally closed switches
+  ✗ DPDT switches (unnecessarily complex)
+
+================================================================================
+POWER REQUIREMENTS
+================================================================================
+
+TRANSMITTER:
+  Operating Voltage: 3.3V (regulated internally)
+  Input Voltage: 3.7V (battery) or 5V (USB)
+  Current Draw:
+    - Sleep: ~0.8 mA
+    - Idle: ~50 mA
+    - Transmitting: ~120 mA peak
+
+  Battery Life Estimate (with 500mAh battery):
+    - Occasional use: Several hours
+    - Continuous use: ~3-4 hours
+
+RECEIVER:
+  Operating Voltage: 3.3V (regulated internally)
+  Input Voltage: 5V (USB from Pi)
+  Current Draw:
+    - Sleep: ~0.8 mA
+    - Receiving: ~15 mA
+    - Peak: ~50 mA
+
+  Powered by Raspberry Pi USB (typically 500mA available)
+
+================================================================================
+WIRE GAUGE RECOMMENDATIONS
+================================================================================
+
+For Button Connections:
+  - 22-28 AWG wire (standard hookup wire)
+  - Length: Keep under 1 meter for reliability
+  - Use solid core or stranded wire
+
+For Power Connections (if using external power):
+  - 20-22 AWG wire
+  - Keep connections short
+  - Use proper crimp connectors
+
+================================================================================
+ASSEMBLY TIPS
+================================================================================
+
+1. TEST BEFORE ASSEMBLING:
+   - Upload code first
+   - Test on breadboard
+   - Verify communication works
+   - Then move to permanent installation
+
+2. ANTENNA PLACEMENT:
+   - Keep antennas vertical when possible
+   - Keep away from metal enclosures
+   - Don't bend or coil antenna wire
+
+3. BUTTON DEBOUNCING:
+   - Debouncing handled in software
+   - No external capacitors needed
+   - Any standard button will work
+
+4. MOUNTING:
+   - Use standoffs or double-sided tape
+   - Keep away from motors (electrical noise)
+   - Ensure good ventilation (board can get warm)
+
+5. CABLE MANAGEMENT:
+   - Strain relief on wires
+   - Avoid pinching wires
+   - Label connections
+
+================================================================================
+TESTING PROCEDURE
+================================================================================
+
+STEP 1: Transmitter Test (Before Wiring Button)
+  1. Upload transmitter code
+  2. Open Serial Monitor (115200 baud)
+  3. You should see "LoRa Ready" message
+  4. Display shows "STOP" and "Ready"
+
+STEP 2: Add Button to Transmitter
+  1. Power off board
+  2. Connect button: one pin to GPIO 21, other to GND
+  3. Power on board
+  4. Press button - display should toggle between STOP/AUTONOMOUS
+
+STEP 3: Receiver Test (No Pi Connected)
+  1. Upload receiver code
+  2. Connect USB power
+  3. Display shows "Waiting..."
+  4. Press transmitter button
+  5. Receiver display should update to show received command
+
+STEP 4: Connect Receiver to Raspberry Pi
+  1. Connect receiver to Pi via USB
+  2. On Pi, run: ls /dev/ttyUSB* /dev/ttyACM*
+  3. Note the device name
+  4. Monitor serial: screen /dev/ttyUSB0 115200
+  5. Press transmitter button
+  6. You should see: MODE:STOP or MODE:AUTONOMOUS
+
+STEP 5: Range Test
+  1. With both boards working, test range
+  2. Walk around with transmitter
+  3. Note where signal drops (RSSI on receiver display)
+  4. Typical indoor range: 50-100+ meters
+
+================================================================================
+TROUBLESHOOTING - HARDWARE
+================================================================================
+
+PROBLEM: No display output
+CHECK:
+  ✓ Vext pin initialized correctly in code (digitalWrite(Vext, LOW))
+  ✓ Display initialization in code
+  ✓ Try different USB cable/power source
+
+PROBLEM: Button not working
+CHECK:
+  ✓ Button wired to correct pins (GPIO 21 and GND)
+  ✓ Button is momentary (not latching)
+  ✓ Check Serial Monitor for "Button pressed" messages
+  ✓ Try shorting GPIO 21 to GND directly (bypass button)
+
+PROBLEM: No LoRa communication
+CHECK:
+  ✓ Antennas connected on BOTH boards
+  ✓ Sync words match in both codes
+  ✓ Frequency matches (915.0 MHz for US)
+  ✓ Boards powered properly
+  ✓ Check Serial Monitor for error codes
+
+PROBLEM: Pi not seeing serial device
+CHECK:
+  ✓ USB cable is data cable (not charge-only)
+  ✓ Run dmesg | tail after connecting
+  ✓ Try different USB port on Pi
+  ✓ Check if user is in dialout group
+
+================================================================================
+SAFETY WARNINGS
+================================================================================
+
+⚠ DO NOT operate LoRa radio without antenna connected
+⚠ Do not exceed 22 dBm transmission power (legal limit)
+⚠ Use correct frequency for your region (915 MHz US, 868 MHz EU, etc.)
+⚠ LiPo batteries can be dangerous if mishandled - never puncture or short
+⚠ Do not reverse polarity on power connections
+⚠ Keep boards away from water and conductive materials
+
+================================================================================
+MAINTENANCE
+================================================================================
+
+PERIODIC CHECKS:
+  □ Verify antenna connections are secure
+  □ Check for loose wires
+  □ Test battery voltage (should be 3.6-4.2V for LiPo)
+  □ Clean dust from boards
+  □ Check USB cable for wear
+
+BATTERY CARE (if using battery on transmitter):
+  □ Don't discharge below 3.0V
+  □ Store at ~3.7-3.8V if not using for extended time
+  □ Check for swelling (replace if swollen)
+  □ Use appropriate charger
+
+================================================================================

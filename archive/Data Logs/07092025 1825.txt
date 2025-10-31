@@ -1,0 +1,160 @@
+(venv) jay@RoboPi:~/rover_project $ (venv) jay@RoboPi:~/rover_project $ python3 autonomous_bluetooth_tracker.py
+✅ Using system Bluetooth commands
+============================================================
+📡 AUTONOMOUS BLUETOOTH TRACKER
+============================================================
+
+Features:
+  - Dual TP-Link UB500 antenna direction finding
+  - BlueCharm transmitter tracking
+  - Park-on-target mission completion
+  - Ultrasonic obstacle avoidance
+  - RSSI-based ranging and bearing
+
+🎯 Bluetooth Tracker Initialized
+🚗 Mission: Park on BlueCharm (within 0.2m)
+📡 Antenna separation: 0.3m
+🔍 Tracking MAC: DD:34:02:09:CA:1E
+✅ Arduino connected on /dev/ttyUSB1
+📡 Found Bluetooth adapters: ['hci2', 'hci1', 'hci0']
+✅ Dual antenna setup: hci0 (left), hci1 (right)
+✅ Enabled hci0
+✅ Enabled hci1
+🔄 Starting BLE scan #1 for BlueCharm_190853
+🚀 Bluetooth Tracker started
+🎯 Ready for autonomous tracking
+✅ Tracker ready - switch to autonomous mode
+📡 Place BlueCharm_190853 on floor for rover to find
+🎯 Mission: Rover will navigate to and park on BlueCharm
+Press Ctrl+C to stop...
+📡 Scanning with LEFT antenna (hci0)...
+🔍 BLE scanning with hci0...
+⏱️ HCI scanning for 3 seconds on hci0...
+🎛️ MODE STABLE: MANUAL → AUTONOMOUS
+✅ AUTONOMOUS MODE STABLE - Rover ready to track!
+🔍 BT DATA: detected=False, distance=0.0m, bearing=0.0°
+🔍 SEARCH PATTERN: L=-60, R=60 | Time in state: 6.0s
+🚗 MOTOR: L=-60, R=60 | State: SEARCHING | Target: False
+📊 HCI scan got 137 lines
+✅ Found target on hci0: DD:34:02:09:CA:1E (unknown)
+📶 hci0 detected target: -55dBm
+📡 Scanning with RIGHT antenna (hci1)...
+🔍 BLE scanning with hci1...
+🔍 BT DATA: detected=False, distance=0.0m, bearing=0.0°
+🔍 SEARCH PATTERN: L=-60, R=60 | Time in state: 6.5s
+🚗 MOTOR: L=-60, R=60 | State: SEARCHING | Target: False
+🔍 BT DATA: detected=False, distance=0.0m, bearing=0.0°
+🔍 SEARCH PATTERN: L=-60, R=60 | Time in state: 7.0s
+🚗 MOTOR: L=-60, R=60 | State: SEARCHING | Target: False
+⏱️ HCI scanning for 3 seconds on hci1...
+🔍 BT DATA: detected=False, distance=0.0m, bearing=0.0°
+🔍 SEARCH PATTERN: L=-60, R=60 | Time in state: 7.5s
+🚗 MOTOR: L=-60, R=60 | State: SEARCHING | Target: False
+🔍 BT DATA: detected=False, distance=0.0m, bearing=0.0°
+🔍 SEARCH PATTERN: L=-60, R=60 | Time in state: 8.0s
+🔍 SEARCH FORWARD: L=60, R=60
+🚗 MOTOR: L=60, R=60 | State: SEARCHING | Target: False
+🔍 BT DATA: detected=False, distance=0.0m, bearing=0.0°
+🔍 SEARCH PATTERN: L=-60, R=60 | Time in state: 8.5s
+🔍 SEARCH FORWARD: L=60, R=60
+🚗 MOTOR: L=60, R=60 | State: SEARCHING | Target: False
+🧭 AUTONOMOUS | SEARCHING | Obstacle: 200.0cm | RC: ❌
+📡 Target: NOT DETECTED | Last scan: 6.5s ago | Total scans: 1
+🔍 BT DATA: detected=False, distance=0.0m, bearing=0.0°
+🔍 SEARCH PATTERN: L=-60, R=60 | Time in state: 9.0s
+🔍 SEARCH FORWARD: L=60, R=60
+🚗 MOTOR: L=60, R=60 | State: SEARCHING | Target: False
+🔍 BT DATA: detected=False, distance=0.0m, bearing=0.0°
+🔍 SEARCH PATTERN: L=-60, R=60 | Time in state: 9.5s
+🔍 SEARCH FORWARD: L=60, R=60
+🚗 MOTOR: L=60, R=60 | State: SEARCHING | Target: False
+🔍 BT DATA: detected=False, distance=0.0m, bearing=0.0°
+🔍 SEARCH PATTERN: L=-60, R=60 | Time in state: 10.0s
+🚗 MOTOR: L=-60, R=60 | State: SEARCHING | Target: False
+📊 HCI scan got 139 lines
+🔄 Trying bluetoothctl method on hci1...
+🔍 BT DATA: detected=False, distance=0.0m, bearing=0.0°
+🔍 SEARCH PATTERN: L=-60, R=60 | Time in state: 10.5s
+🚗 MOTOR: L=-60, R=60 | State: SEARCHING | Target: False
+🔄 RC UNSTABLE - Stable: AUTONOMOUS | Raw: AUTONOMOUS | Unstable: 0.4s
+   💡 RC signal unstable - check connections/interference
+📊 Bluetoothctl found 0 devices
+🔄 Trying hciscan method on hci1...
+❌ Basic scan error on hci1: Command '['sudo', 'hcitool', '-i', 'hci1', 'scan']' timed out after 10 seconds
+📊 Scan results: Left=-55dBm, Right=-100dBm
+✅ Signal detected! Processing...
+🎯 TARGET FLAG SET: target_detected = True
+📡 Target detected: 5.6m @ 90° (Q:90%)
+   RSSI: L=-55dBm R=-100dBm
+🔄 Starting BLE scan #2 for BlueCharm_190853
+📡 Scanning with LEFT antenna (hci0)...
+🔍 BLE scanning with hci0...
+⏱️ HCI scanning for 3 seconds on hci0...
+📊 HCI scan got 142 lines
+🔄 Trying bluetoothctl method on hci0...
+📊 Bluetoothctl found 0 devices
+🔄 Trying hciscan method on hci0...
+🎛️ MODE STABLE: AUTONOMOUS → ASSISTED
+🛑 AUTONOMOUS MODE STABLE - Rover stopping
+❌ Basic scan error on hci0: Command '['sudo', 'hcitool', '-i', 'hci0', 'scan']' timed out after 10 seconds
+📡 Scanning with RIGHT antenna (hci1)...
+🔍 BLE scanning with hci1...
+⏱️ HCI scanning for 3 seconds on hci1...
+🎛️ MODE STABLE: ASSISTED → AUTONOMOUS
+✅ AUTONOMOUS MODE STABLE - Rover ready to track!
+📊 HCI scan got 139 lines
+✅ Found target on hci1: DD:34:02:09:CA:1E (unknown)
+📶 hci1 detected target: -59dBm
+📊 Scan results: Left=-100dBm, Right=-59dBm
+✅ Signal detected! Processing...
+🔄 TARGET UPDATE: target_detected remains True
+📡 Target detected: 10.0m @ 45° (Q:45%)
+   RSSI: L=-77.5dBm R=-79.5dBm
+🔄 Starting BLE scan #3 for BlueCharm_190853
+📡 Scanning with LEFT antenna (hci0)...
+🔍 BLE scanning with hci0...
+⏱️ HCI scanning for 3 seconds on hci0...
+📊 HCI scan got 142 lines
+🔄 Trying bluetoothctl method on hci0...
+📊 Bluetoothctl found 0 devices
+🔄 Trying hciscan method on hci0...
+❌ Basic scan error on hci0: Command '['sudo', 'hcitool', '-i', 'hci0', 'scan']' timed out after 10 seconds
+📡 Scanning with RIGHT antenna (hci1)...
+🔍 BLE scanning with hci1...
+⏱️ HCI scanning for 3 seconds on hci1...
+📊 HCI scan got 138 lines
+✅ Found target on hci1: DD:34:02:09:CA:1E (unknown)
+📶 hci1 detected target: -58dBm
+📊 Scan results: Left=-100dBm, Right=-58dBm
+✅ Signal detected! Processing...
+🔄 TARGET UPDATE: target_detected remains True
+📡 Target detected: 8.9m @ 0° (Q:82%)
+   RSSI: L=-100dBm R=-59dBm
+🎛️ MODE STABLE: AUTONOMOUS → ASSISTED
+🛑 AUTONOMOUS MODE STABLE - Rover stopping
+🔄 Starting BLE scan #4 for BlueCharm_190853
+📡 Scanning with LEFT antenna (hci0)...
+🔍 BLE scanning with hci0...
+🎛️ MODE STABLE: ASSISTED → MANUAL
+⏱️ HCI scanning for 3 seconds on hci0...
+📊 HCI scan got 139 lines
+🔄 Trying bluetoothctl method on hci0...
+📊 Bluetoothctl found 0 devices
+🔄 Trying hciscan method on hci0...
+^C
+🛑 Shutdown requested by user...
+🛑 Stopping Bluetooth Tracker...
+📊 HCI basic scan output: 0 chars
+📡 Scanning with RIGHT antenna (hci1)...
+🔍 BLE scanning with hci1...
+📊 Final runtime: 79.7 seconds
+📊 === Bluetooth Tracking Statistics ===
+   Runtime: 80 seconds
+   Bluetooth scans: 4
+   Target detections: 3
+   Detection rate: 75.0%
+   Obstacle avoidances: 0
+   Target approaches: 0
+   Signal losses: 0
+👋 Tracker shutdown complete
+(venv) jay@RoboPi:~/rover_project $

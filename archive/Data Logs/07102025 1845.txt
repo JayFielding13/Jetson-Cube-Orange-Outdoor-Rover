@@ -1,0 +1,371 @@
+(venv) jay@RoboPi:~/rover_project $ nano test_callback_only.py
+(venv) jay@RoboPi:~/rover_project $ python3 test_callback_only.py
+✅ Bleak library imported
+🔍 Simple Callback Scanner Test
+========================================
+Target: DD:34:02:09:CA:1E
+Looking for ANY BLE devices and specifically BlueCharm...
+
+📡 Starting callback scanner...
+✅ Scanner started - listening for 30 seconds...
+📡 BLE Device detected: 26:6A:0E:8B:49:BF | None
+📡 BLE Device detected: 2C:B7:19:15:B6:00 | None
+📡 BLE Device detected: 58:D3:49:EA:C4:AF | None
+📡 BLE Device detected: 30:AB:CB:F0:B9:9A | None
+📡 BLE Device detected: 50:DE:06:6C:A4:A8 | None
+📡 BLE Device detected: 30:48:2E:40:27:80 | None
+📡 BLE Device detected: 26:6A:0E:8B:49:BF | None
+📡 BLE Device detected: 0C:A4:7F:B2:99:8A | None
+📡 BLE Device detected: 6F:7C:21:EF:0E:D7 | None
+📡 BLE Device detected: 62:B9:9F:9F:A9:F8 | None
+📡 BLE Device detected: F2:93:4B:AA:5B:8B | Tacx Neo 2T 31591
+📡 BLE Device detected: 44:73:D6:86:3F:60 | MeetUp Soft Remote
+📡 BLE Device detected: 30:24:A9:33:82:60 | HP OfficeJet 250
+📡 BLE Device detected: EF:98:16:3F:DD:20 | KICKR CORE CD98
+📡 BLE Device detected: 1C:AF:4A:20:0B:89 | None
+📡 BLE Device detected: 30:AF:7E:C2:3F:F3 | None
+📡 BLE Device detected: C5:C4:1A:D8:D9:9F | None
+📡 BLE Device detected: 32:AC:71:44:08:E8 | None
+📡 BLE Device detected: 45:3C:40:FC:9E:56 | None
+📡 BLE Device detected: DD:34:02:09:CA:1E | BlueCharm_190853
+🎯 BLUECHARM FOUND! Detection #1
+   Address: DD:34:02:09:CA:1E
+   Name: BlueCharm_190853
+   RSSI: -50 dBm
+   Distance: ~0.4m
+   Time: 18:44:07
+
+📡 BLE Device detected: 24:FC:E5:21:06:AC | [TV] Samsung 7 Series (50)
+📡 BLE Device detected: 2C:B7:19:15:B6:00 | None
+📡 BLE Device detected: 1C:24:CC:E1:A2:4D | None
+📡 BLE Device detected: 6F:7C:21:EF:0E:D7 | None
+📡 BLE Device detected: 72:09:7B:00:4C:A3 | None
+📡 BLE Device detected: 30:48:2E:40:27:80 | None
+📡 BLE Device detected: 44:73:D6:86:3F:60 | MeetUp Soft Remote
+📡 BLE Device detected: 30:48:2E:40:27:80 | None
+📡 BLE Device detected: 0C:A4:7F:B2:99:8A | None
+📡 BLE Device detected: E3:C9:B9:72:69:9D | N036D
+📡 BLE Device detected: 32:AC:71:44:08:E8 | None
+📡 BLE Device detected: DD:34:02:09:CA:1E | BlueCharm_190853
+🎯 BLUECHARM FOUND! Detection #2
+   Address: DD:34:02:09:CA:1E
+   Name: BlueCharm_190853
+   RSSI: -50 dBm
+   Distance: ~0.4m
+   Time: 18:44:08
+
+📡 BLE Device detected: 58:D3:49:EA:C4:AF | None
+📡 BLE Device detected: 15:C4:23:04:CC:CC | Kuna
+📡 BLE Device detected: 2C:B7:19:15:B6:00 | None
+📡 BLE Device detected: 30:AB:CB:F0:B9:9A | None
+📡 BLE Device detected: 1C:24:CC:E1:A2:4D | None
+📡 BLE Device detected: 30:AF:7E:C2:3F:F3 | None
+📡 BLE Device detected: 1C:AF:4A:20:0B:89 | None
+📡 BLE Device detected: 58:D3:49:EA:C4:AF | None
+📡 BLE Device detected: 62:B9:9F:9F:A9:F8 | None
+📡 BLE Device detected: 32:AC:71:44:08:E8 | None
+📡 BLE Device detected: 44:73:D6:86:3F:60 | MeetUp Soft Remote
+📡 BLE Device detected: 15:C4:23:04:CC:CC | Kuna
+📡 BLE Device detected: 30:AF:7E:C2:3F:F3 | None
+📡 BLE Device detected: 1C:24:CC:E1:A2:4D | None
+📡 BLE Device detected: 58:D3:49:EA:C4:AF | None
+📡 BLE Device detected: EF:98:16:3F:DD:20 | KICKR CORE CD98
+📡 BLE Device detected: 45:3C:40:FC:9E:56 | None
+📡 BLE Device detected: 44:73:D6:86:3F:60 | MeetUp Soft Remote
+📡 BLE Device detected: 30:48:2E:40:27:80 | None
+📡 BLE Device detected: 30:AF:7E:C2:3F:F3 | None
+📡 BLE Device detected: 62:B9:9F:9F:A9:F8 | None
+⏱️ 5s elapsed | BlueCharm detections: 2
+📡 BLE Device detected: D3:98:F1:01:C0:9B | None
+📡 BLE Device detected: 1C:24:CC:E1:A2:4D | None
+📡 BLE Device detected: 58:D3:49:EA:C4:AF | None
+📡 BLE Device detected: C5:C4:1A:D8:D9:9F | None
+📡 BLE Device detected: 58:D3:49:EA:C4:AF | None
+📡 BLE Device detected: 26:6A:0E:8B:49:BF | None
+📡 BLE Device detected: 15:C4:23:04:CC:CC | Kuna
+📡 BLE Device detected: 50:DE:06:6C:A4:A8 | None
+📡 BLE Device detected: 30:48:2E:40:27:80 | None
+📡 BLE Device detected: 44:73:D6:86:3F:60 | MeetUp Soft Remote
+📡 BLE Device detected: 15:C4:23:04:CC:CC | Kuna
+📡 BLE Device detected: 1C:24:CC:E1:A2:4D | None
+📡 BLE Device detected: 58:D3:49:EA:C4:AF | None
+📡 BLE Device detected: 50:DE:06:6C:A4:A8 | None
+📡 BLE Device detected: 24:FC:E5:21:06:AC | [TV] Samsung 7 Series (50)
+📡 BLE Device detected: 45:3C:40:FC:9E:56 | None
+📡 BLE Device detected: 62:B9:9F:9F:A9:F8 | None
+📡 BLE Device detected: 32:AC:71:44:08:E8 | None
+📡 BLE Device detected: DD:34:02:09:CA:1E | BlueCharm_190853
+🎯 BLUECHARM FOUND! Detection #3
+   Address: DD:34:02:09:CA:1E
+   Name: BlueCharm_190853
+   RSSI: -50 dBm
+   Distance: ~0.4m
+   Time: 18:44:15
+
+📡 BLE Device detected: 30:48:2E:40:27:80 | None
+📡 BLE Device detected: 72:09:7B:00:4C:A3 | None
+📡 BLE Device detected: 2C:B7:19:15:B6:00 | None
+📡 BLE Device detected: 45:3C:40:FC:9E:56 | None
+📡 BLE Device detected: 58:D3:49:EA:C4:AF | None
+📡 BLE Device detected: 1C:AF:4A:20:0B:89 | None
+📡 BLE Device detected: 30:AB:CB:F0:B9:9A | None
+📡 BLE Device detected: FC:B9:7E:4A:63:69 | None
+📡 BLE Device detected: 6F:7C:21:EF:0E:D7 | None
+📡 BLE Device detected: 30:48:2E:40:27:80 | None
+📡 BLE Device detected: 15:C4:23:04:CC:CC | Kuna
+📡 BLE Device detected: 45:3C:40:FC:9E:56 | None
+📡 BLE Device detected: 58:D3:49:EA:C4:AF | None
+📡 BLE Device detected: 44:73:D6:86:3F:60 | MeetUp Soft Remote
+📡 BLE Device detected: 35:BC:3F:FF:54:5A | None
+📡 BLE Device detected: 1C:24:CC:E1:A2:4D | None
+📡 BLE Device detected: FC:B9:7E:4A:63:69 | None
+📡 BLE Device detected: 30:24:A9:33:82:60 | HP OfficeJet 250
+📡 BLE Device detected: D3:98:F1:01:C0:9B | None
+📡 BLE Device detected: 30:24:A9:33:82:60 | HP OfficeJet 250
+📡 BLE Device detected: 50:DE:06:6C:A4:A8 | None
+📡 BLE Device detected: EF:98:16:3F:DD:20 | KICKR CORE CD98
+📡 BLE Device detected: 1C:AF:4A:20:0B:89 | None
+📡 BLE Device detected: 58:D3:49:EA:C4:AF | None
+📡 BLE Device detected: 6F:7C:21:EF:0E:D7 | None
+⏱️ 10s elapsed | BlueCharm detections: 3
+📡 BLE Device detected: 62:B9:9F:9F:A9:F8 | None
+📡 BLE Device detected: 44:73:D6:86:3F:60 | MeetUp Soft Remote
+📡 BLE Device detected: DD:34:02:09:CA:1E | BlueCharm_190853
+🎯 BLUECHARM FOUND! Detection #4
+   Address: DD:34:02:09:CA:1E
+   Name: BlueCharm_190853
+   RSSI: -50 dBm
+   Distance: ~0.4m
+   Time: 18:44:17
+
+📡 BLE Device detected: 30:48:2E:40:27:80 | None
+📡 BLE Device detected: F2:93:4B:AA:5B:8B | Tacx Neo 2T 31591
+📡 BLE Device detected: FC:B9:7E:4A:63:69 | None
+📡 BLE Device detected: 1C:24:CC:E1:A2:4D | None
+📡 BLE Device detected: 2C:B7:19:15:B6:00 | None
+📡 BLE Device detected: 32:AC:71:44:08:E8 | None
+📡 BLE Device detected: 6F:7C:21:EF:0E:D7 | None
+📡 BLE Device detected: 30:24:A9:33:82:60 | HP OfficeJet 250
+📡 BLE Device detected: 50:DE:06:6C:A4:A8 | None
+📡 BLE Device detected: 30:48:2E:40:27:80 | None
+📡 BLE Device detected: 24:FC:E5:21:06:AC | [TV] Samsung 7 Series (50)
+📡 BLE Device detected: 50:DE:06:6C:A4:A8 | None
+📡 BLE Device detected: 62:B9:9F:9F:A9:F8 | None
+📡 BLE Device detected: 45:3C:40:FC:9E:56 | None
+📡 BLE Device detected: EF:98:16:3F:DD:20 | KICKR CORE CD98
+📡 BLE Device detected: FC:B9:7E:4A:63:69 | None
+📡 BLE Device detected: 72:09:7B:00:4C:A3 | None
+📡 BLE Device detected: 24:FC:E5:21:06:AC | [TV] Samsung 7 Series (50)
+📡 BLE Device detected: 30:AB:CB:F0:B9:9A | None
+📡 BLE Device detected: 0C:A4:7F:B2:99:8A | None
+📡 BLE Device detected: 15:C4:23:04:CC:CC | Kuna
+📡 BLE Device detected: DD:34:02:09:CA:1E | BlueCharm_190853
+🎯 BLUECHARM FOUND! Detection #5
+   Address: DD:34:02:09:CA:1E
+   Name: BlueCharm_190853
+   RSSI: -50 dBm
+   Distance: ~0.4m
+   Time: 18:44:18
+
+📡 BLE Device detected: 24:FC:E5:21:06:AC | [TV] Samsung 7 Series (50)
+📡 BLE Device detected: 2C:B7:19:15:B6:00 | None
+📡 BLE Device detected: 1C:AF:4A:20:0B:89 | None
+📡 BLE Device detected: EF:98:16:3F:DD:20 | KICKR CORE CD98
+📡 BLE Device detected: 30:24:A9:33:82:60 | HP OfficeJet 250
+📡 BLE Device detected: 15:C4:23:04:CC:CC | Kuna
+📡 BLE Device detected: 0C:A4:7F:B2:99:8A | None
+📡 BLE Device detected: 24:FC:E5:21:06:AC | [TV] Samsung 7 Series (50)
+📡 BLE Device detected: 26:6A:0E:8B:49:BF | None
+📡 BLE Device detected: 30:AF:7E:C2:3F:F3 | None
+📡 BLE Device detected: C5:C4:1A:D8:D9:9F | None
+📡 BLE Device detected: 2C:B7:19:15:B6:00 | None
+📡 BLE Device detected: 45:3C:40:FC:9E:56 | None
+📡 BLE Device detected: 32:58:92:FF:80:2E | None
+📡 BLE Device detected: 45:3C:40:FC:9E:56 | None
+📡 BLE Device detected: 30:AF:7E:C2:3F:F3 | None
+⏱️ 15s elapsed | BlueCharm detections: 5
+📡 BLE Device detected: 15:C4:23:04:CC:CC | Kuna
+📡 BLE Device detected: 32:AC:71:44:08:E8 | None
+📡 BLE Device detected: DD:34:02:09:CA:1E | BlueCharm_190853
+🎯 BLUECHARM FOUND! Detection #6
+   Address: DD:34:02:09:CA:1E
+   Name: BlueCharm_190853
+   RSSI: -52 dBm
+   Distance: ~0.4m
+   Time: 18:44:22
+
+📡 BLE Device detected: 26:6A:0E:8B:49:BF | None
+📡 BLE Device detected: EF:98:16:3F:DD:20 | KICKR CORE CD98
+📡 BLE Device detected: 58:D3:49:EA:C4:AF | None
+📡 BLE Device detected: 30:AB:CB:F0:B9:9A | None
+📡 BLE Device detected: 24:FC:E5:21:06:AC | [TV] Samsung 7 Series (50)
+📡 BLE Device detected: 45:3C:40:FC:9E:56 | None
+📡 BLE Device detected: 24:FC:E5:21:06:AC | [TV] Samsung 7 Series (50)
+📡 BLE Device detected: 1C:AF:4A:20:0B:89 | None
+📡 BLE Device detected: 58:D3:49:EA:C4:AF | None
+📡 BLE Device detected: 6F:7C:21:EF:0E:D7 | None
+📡 BLE Device detected: 44:73:D6:86:3F:60 | MeetUp Soft Remote
+📡 BLE Device detected: 72:09:7B:00:4C:A3 | None
+📡 BLE Device detected: DD:34:02:09:CA:1E | BlueCharm_190853
+🎯 BLUECHARM FOUND! Detection #7
+   Address: DD:34:02:09:CA:1E
+   Name: BlueCharm_190853
+   RSSI: -52 dBm
+   Distance: ~0.4m
+   Time: 18:44:24
+
+📡 BLE Device detected: 30:48:2E:40:27:80 | None
+📡 BLE Device detected: 62:B9:9F:9F:A9:F8 | None
+📡 BLE Device detected: FC:B9:7E:4A:63:69 | None
+📡 BLE Device detected: 0C:A4:7F:B2:99:8A | None
+📡 BLE Device detected: 58:D3:49:EA:C4:AF | None
+📡 BLE Device detected: 24:FC:E5:21:06:AC | [TV] Samsung 7 Series (50)
+📡 BLE Device detected: 30:AF:7E:C2:3F:F3 | None
+📡 BLE Device detected: 15:C4:23:04:CC:CC | Kuna
+📡 BLE Device detected: 30:24:A9:33:82:60 | HP OfficeJet 250
+📡 BLE Device detected: EF:98:16:3F:DD:20 | KICKR CORE CD98
+📡 BLE Device detected: 44:73:D6:86:3F:60 | MeetUp Soft Remote
+📡 BLE Device detected: 2C:B7:19:15:B6:00 | None
+📡 BLE Device detected: 32:AC:71:44:08:E8 | None
+📡 BLE Device detected: FC:B9:7E:4A:63:69 | None
+📡 BLE Device detected: DD:34:02:09:CA:1E | BlueCharm_190853
+🎯 BLUECHARM FOUND! Detection #8
+   Address: DD:34:02:09:CA:1E
+   Name: BlueCharm_190853
+   RSSI: -52 dBm
+   Distance: ~0.4m
+   Time: 18:44:25
+
+📡 BLE Device detected: 1C:AF:4A:20:0B:89 | None
+📡 BLE Device detected: FC:B9:7E:4A:63:69 | None
+📡 BLE Device detected: 58:D3:49:EA:C4:AF | None
+📡 BLE Device detected: 24:FC:E5:21:06:AC | [TV] Samsung 7 Series (50)
+📡 BLE Device detected: 15:C4:23:04:CC:CC | Kuna
+📡 BLE Device detected: 62:B9:9F:9F:A9:F8 | None
+📡 BLE Device detected: 0C:A4:7F:B2:99:8A | None
+📡 BLE Device detected: 50:DE:06:6C:A4:A8 | None
+📡 BLE Device detected: FC:B9:7E:4A:63:69 | None
+📡 BLE Device detected: 58:D3:49:EA:C4:AF | None
+📡 BLE Device detected: 30:AB:CB:F0:B9:9A | None
+📡 BLE Device detected: DD:34:02:09:CA:1E | BlueCharm_190853
+🎯 BLUECHARM FOUND! Detection #9
+   Address: DD:34:02:09:CA:1E
+   Name: BlueCharm_190853
+   RSSI: -52 dBm
+   Distance: ~0.4m
+   Time: 18:44:26
+
+📡 BLE Device detected: 45:3C:40:FC:9E:56 | None
+📡 BLE Device detected: 1C:AF:4A:20:0B:89 | None
+📡 BLE Device detected: 30:AF:7E:C2:3F:F3 | None
+📡 BLE Device detected: 6F:7C:21:EF:0E:D7 | None
+📡 BLE Device detected: 24:FC:E5:21:06:AC | [TV] Samsung 7 Series (50)
+📡 BLE Device detected: 58:D3:49:EA:C4:AF | None
+📡 BLE Device detected: 1C:24:CC:E1:A2:4D | None
+⏱️ 20s elapsed | BlueCharm detections: 9
+📡 BLE Device detected: 30:AB:CB:F0:B9:9A | None
+📡 BLE Device detected: 2C:B7:19:15:B6:00 | None
+📡 BLE Device detected: DD:34:02:09:CA:1E | BlueCharm_190853
+🎯 BLUECHARM FOUND! Detection #10
+   Address: DD:34:02:09:CA:1E
+   Name: BlueCharm_190853
+   RSSI: -52 dBm
+   Distance: ~0.4m
+   Time: 18:44:27
+
+📡 BLE Device detected: 44:73:D6:86:3F:60 | MeetUp Soft Remote
+📡 BLE Device detected: 0C:A4:7F:B2:99:8A | None
+📡 BLE Device detected: F2:93:4B:AA:5B:8B | Tacx Neo 2T 31591
+📡 BLE Device detected: EF:98:16:3F:DD:20 | KICKR CORE CD98
+📡 BLE Device detected: 30:AB:CB:F0:B9:9A | None
+📡 BLE Device detected: 50:DE:06:6C:A4:A8 | None
+📡 BLE Device detected: 1C:24:CC:E1:A2:4D | None
+📡 BLE Device detected: FC:B9:7E:4A:63:69 | None
+📡 BLE Device detected: 1C:AF:4A:20:0B:89 | None
+📡 BLE Device detected: 45:3C:40:FC:9E:56 | None
+📡 BLE Device detected: 26:6A:0E:8B:49:BF | None
+📡 BLE Device detected: D3:98:F1:01:C0:9B | None
+📡 BLE Device detected: 24:FC:E5:21:06:AC | [TV] Samsung 7 Series (50)
+📡 BLE Device detected: 0C:A4:7F:B2:99:8A | None
+📡 BLE Device detected: 30:48:2E:40:27:80 | None
+📡 BLE Device detected: 30:24:A9:33:82:60 | HP OfficeJet 250
+📡 BLE Device detected: 2C:B7:19:15:B6:00 | None
+📡 BLE Device detected: 30:24:A9:33:82:60 | HP OfficeJet 250
+📡 BLE Device detected: 32:AC:71:44:08:E8 | None
+📡 BLE Device detected: 72:09:7B:00:4C:A3 | None
+📡 BLE Device detected: 15:C4:23:04:CC:CC | Kuna
+📡 BLE Device detected: 30:AB:CB:F0:B9:9A | None
+📡 BLE Device detected: 58:D3:49:EA:C4:AF | None
+📡 BLE Device detected: 45:98:11:62:4B:71 | None
+📡 BLE Device detected: C5:C4:1A:D8:D9:9F | None
+📡 BLE Device detected: 30:24:A9:33:82:60 | HP OfficeJet 250
+📡 BLE Device detected: 62:B9:9F:9F:A9:F8 | None
+📡 BLE Device detected: 2C:B7:19:15:B6:00 | None
+📡 BLE Device detected: 32:AC:71:44:08:E8 | None
+📡 BLE Device detected: 6F:7C:21:EF:0E:D7 | None
+📡 BLE Device detected: 44:73:D6:86:3F:60 | MeetUp Soft Remote
+📡 BLE Device detected: FC:B9:7E:4A:63:69 | None
+📡 BLE Device detected: 58:D3:49:EA:C4:AF | None
+📡 BLE Device detected: 30:48:2E:40:27:80 | None
+📡 BLE Device detected: 0A:D5:B3:D7:1B:FB | None
+📡 BLE Device detected: 30:AB:CB:F0:B9:9A | None
+📡 BLE Device detected: 1C:24:CC:E1:A2:4D | None
+📡 BLE Device detected: 24:FC:E5:21:06:AC | [TV] Samsung 7 Series (50)
+📡 BLE Device detected: 62:B9:9F:9F:A9:F8 | None
+📡 BLE Device detected: 2C:B7:19:15:B6:00 | None
+📡 BLE Device detected: 58:D3:49:EA:C4:AF | None
+📡 BLE Device detected: 6F:7C:21:EF:0E:D7 | None
+📡 BLE Device detected: 1C:AF:4A:20:0B:89 | None
+📡 BLE Device detected: EF:98:16:3F:DD:20 | KICKR CORE CD98
+📡 BLE Device detected: 45:3C:40:FC:9E:56 | None
+📡 BLE Device detected: 2C:B7:19:15:B6:00 | None
+📡 BLE Device detected: 1D:32:5C:E0:A5:5B | None
+⏱️ 25s elapsed | BlueCharm detections: 10
+📡 BLE Device detected: 10:CA:BF:14:9D:75 | None
+📡 BLE Device detected: FC:B9:7E:51:F5:A8 | None
+📡 BLE Device detected: 1B:7A:CA:DB:D0:02 | None
+📡 BLE Device detected: 62:B9:9F:9F:A9:F8 | None
+📡 BLE Device detected: 24:FC:E5:21:06:AC | [TV] Samsung 7 Series (50)
+📡 BLE Device detected: 72:09:7B:00:4C:A3 | None
+📡 BLE Device detected: 45:3C:40:FC:9E:56 | None
+📡 BLE Device detected: 30:AB:CB:F0:B9:9A | None
+📡 BLE Device detected: 24:FC:E5:21:06:AC | [TV] Samsung 7 Series (50)
+📡 BLE Device detected: 45:3C:40:FC:9E:56 | None
+📡 BLE Device detected: 6F:7C:21:EF:0E:D7 | None
+📡 BLE Device detected: 0C:A4:7F:B2:99:8A | None
+📡 BLE Device detected: DD:34:02:09:CA:1E | BlueCharm_190853
+🎯 BLUECHARM FOUND! Detection #11
+   Address: DD:34:02:09:CA:1E
+   Name: BlueCharm_190853
+   RSSI: -68 dBm
+   Distance: ~2.8m
+   Time: 18:44:34
+
+📡 BLE Device detected: EF:98:16:3F:DD:20 | KICKR CORE CD98
+📡 BLE Device detected: 15:C4:23:04:CC:CC | Kuna
+📡 BLE Device detected: 1C:AF:4A:20:0B:89 | None
+📡 BLE Device detected: 45:3C:40:FC:9E:56 | None
+📡 BLE Device detected: 24:FC:E5:21:06:AC | [TV] Samsung 7 Series (50)
+📡 BLE Device detected: 2C:B7:19:15:B6:00 | None
+📡 BLE Device detected: 6F:7C:21:EF:0E:D7 | None
+📡 BLE Device detected: 30:AB:CB:F0:B9:9A | None
+📡 BLE Device detected: 6F:7C:21:EF:0E:D7 | None
+📡 BLE Device detected: 45:3C:40:FC:9E:56 | None
+📡 BLE Device detected: 2C:B7:19:15:B6:00 | None
+📡 BLE Device detected: 0C:A4:7F:B2:99:8A | None
+📡 BLE Device detected: DD:34:02:09:CA:1E | BlueCharm_190853
+🎯 BLUECHARM FOUND! Detection #12
+   Address: DD:34:02:09:CA:1E
+   Name: BlueCharm_190853
+   RSSI: -66 dBm
+   Distance: ~2.2m
+   Time: 18:44:36
+
+📡 BLE Device detected: 10:CA:BF:14:9D:75 | None
+⏱️ 30s elapsed | BlueCharm detections: 12
+📡 Stopping scanner...
+
+✅ Test complete!
+   Total BlueCharm detections: 12
+🎉 SUCCESS: Callback scanning works!
+(venv) jay@RoboPi:~/rover_project $

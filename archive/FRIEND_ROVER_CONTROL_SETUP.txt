@@ -1,0 +1,317 @@
+================================================================================
+                    REMOTE ROVER CONTROL SETUP INSTRUCTIONS
+================================================================================
+
+This guide will help you remotely control Jay's rover through a secure VPN
+connection using QGroundControl. You'll have full access to centimeter-accurate
+RTK GPS positioning and Follow Me functionality.
+
+================================================================================
+STEP 1: INSTALL WIREGUARD VPN CLIENT
+================================================================================
+
+WINDOWS:
+--------
+1. Download WireGuard from: https://www.wireguard.com/install/
+2. Run the installer and follow the setup wizard
+3. Launch WireGuard application
+
+MAC:
+----
+1. Option A: Download from https://www.wireguard.com/install/
+2. Option B: Using Homebrew: "brew install wireguard-tools"
+3. Launch WireGuard application
+
+LINUX (Ubuntu/Debian):
+-----------------------
+1. Open terminal and run: "sudo apt install wireguard"
+2. For GUI: "sudo apt install wireguard-tools network-manager-config-connectivity-ubuntu"
+
+================================================================================
+STEP 2: CONFIGURE VPN CONNECTION
+================================================================================
+
+1. Jay will send you a file called "friend_client.conf"
+   - This file contains your secure VPN configuration
+   - Keep this file private and secure
+
+2. Import the configuration:
+
+   WINDOWS/MAC (GUI):
+   ------------------
+   - Open WireGuard application
+   - Click "Add Tunnel" or "Import tunnel(s) from file"
+   - Select the "friend_client.conf" file
+   - Click "Activate" to connect
+
+   LINUX (Command Line):
+   ---------------------
+   - Save the file as: /etc/wireguard/rovervpn.conf
+   - Connect with: "sudo wg-quick up rovervpn"
+   - Disconnect with: "sudo wg-quick down rovervpn"
+
+3. Test VPN Connection:
+   - Open terminal/command prompt
+   - Type: "ping 10.8.0.1"
+   - You should see successful ping responses
+   - If ping fails, contact Jay to troubleshoot
+
+VPN Network Layout:
+- Your VPN IP: 10.8.0.2
+- Jay's Base Station: 10.8.0.1
+- Rover Control Port: 10.8.0.1:5760
+
+================================================================================
+STEP 3: INSTALL QGROUNDCONTROL
+================================================================================
+
+WINDOWS:
+--------
+1. Go to: https://docs.qgroundcontrol.com/master/en/getting_started/download_and_install.html
+2. Download "QGroundControl-installer.exe"
+3. Run installer and follow setup wizard
+4. Launch QGroundControl
+
+MAC:
+----
+1. Go to: https://docs.qgroundcontrol.com/master/en/getting_started/download_and_install.html
+2. Download "QGroundControl.dmg"
+3. Open DMG and drag QGroundControl to Applications
+4. Launch from Applications folder
+
+LINUX:
+------
+1. Download "QGroundControl.AppImage" from the website above
+2. Make it executable: "chmod +x QGroundControl.AppImage"
+3. Run with: "./QGroundControl.AppImage"
+
+================================================================================
+STEP 4: CONNECT TO ROVER SYSTEM
+================================================================================
+
+1. Make sure VPN is connected (ping 10.8.0.1 should work)
+
+2. Open QGroundControl application
+
+3. Add Rover Connection:
+   - Click the gear icon (⚙️) in top-right corner
+   - Select "Comm Links" from left menu
+   - Click "Add" button
+   - Configure connection:
+     * Name: "Jay's Rover"
+     * Type: "TCP"
+     * Host Address: 10.8.0.1
+     * Port Number: 5760
+   - Click "OK"
+
+4. Connect to Rover:
+   - In Comm Links list, find "Jay's Rover"
+   - Click "Connect" button
+   - Wait for connection (may take 10-30 seconds)
+
+5. Verify Connection:
+   - Top bar should show vehicle information
+   - GPS icon should be green with satellite count (12+)
+   - Map should show rover location
+   - Vehicle status should appear in left panel
+
+================================================================================
+STEP 5: BASIC ROVER OPERATION
+================================================================================
+
+INTERFACE OVERVIEW:
+-------------------
+- Left Sidebar: Setup, Plan, Fly, Analyze tabs
+- Main Area: Map showing rover position
+- Top Bar: Flight mode, GPS status, battery info
+- Right Panel: Telemetry data
+
+IMPORTANT SAFETY NOTES:
+-----------------------
+- ALWAYS coordinate with Jay before taking control
+- Jay maintains emergency stop capability locally
+- Monitor GPS signal strength (keep >10 satellites)
+- Watch battery levels and signal quality
+- Respect any geofences or operational boundaries
+
+BASIC CONTROLS:
+---------------
+
+1. Flight Modes (Top bar dropdown):
+   - Manual: Direct stick control (if enabled)
+   - Auto: Executes pre-planned missions
+   - Guided: Point-and-click navigation
+   - Follow Me: Rover follows your position
+
+2. Follow Me Mode:
+   - Select "Follow Me" from flight mode dropdown
+   - Set follow distance: 5-10 meters recommended
+   - Rover will follow the base station position
+   - Move around to test - rover should follow
+
+3. Mission Planning:
+   - Click "Plan" tab in left sidebar
+   - Click on map to add waypoints
+   - Right-click waypoints to modify
+   - Click "Upload" to send mission to rover
+   - Switch to "Fly" tab and select "Auto" mode to start
+
+4. Manual Control:
+   - If enabled, use on-screen joysticks
+   - Left stick: Forward/backward, turn left/right
+   - Be gentle with inputs
+   - Switch to "Manual" mode for direct control
+
+================================================================================
+STEP 6: MONITORING AND SAFETY
+================================================================================
+
+KEY INDICATORS TO WATCH:
+-------------------------
+
+GPS Status:
+- Green GPS icon = Good signal
+- Satellite count: 10+ satellites ideal
+- HDOP value: <1.0 for RTK accuracy
+- Position type: "RTK Fixed" for centimeter precision
+
+Vehicle Health:
+- Battery voltage (if available)
+- Signal strength between rover and base
+- System warnings in message panel
+- Emergency stop status
+
+Communication:
+- "Connected" status in QGroundControl
+- Message timestamps (should be recent)
+- Telemetry update rate (should be steady)
+
+EMERGENCY PROCEDURES:
+---------------------
+
+Connection Lost:
+1. Check VPN connection (ping 10.8.0.1)
+2. Try reconnecting in QGroundControl
+3. Contact Jay immediately
+4. Jay can take local control
+
+Rover Malfunction:
+1. Immediately notify Jay
+2. Do not attempt to override safety systems
+3. Jay has local emergency stop capability
+4. Document any error messages
+
+Signal Issues:
+1. Check GPS satellite count (need 8+ minimum)
+2. Verify "RTK Fixed" status for precision
+3. If GPS degrades, consider stopping operation
+4. Strong winds or obstacles can affect GPS
+
+================================================================================
+STEP 7: ADVANCED FEATURES
+================================================================================
+
+MISSION PLANNING:
+-----------------
+- Create complex waypoint missions
+- Set speeds, altitudes, and actions at each point
+- Save and load mission files
+- Execute automated survey patterns
+
+VIDEO INTEGRATION:
+------------------
+- If Jay adds cameras, video will appear in QGroundControl
+- Multiple camera angles possible
+- Recording and streaming capabilities
+
+TELEMETRY LOGGING:
+------------------
+- QGroundControl automatically logs all telemetry
+- Review flights in "Analyze" tab
+- Share log files for troubleshooting
+- Export GPS tracks and mission data
+
+MULTI-VEHICLE:
+--------------
+- System can support multiple rovers simultaneously
+- Each gets unique vehicle ID and connection
+- Switch between vehicles in QGroundControl
+
+================================================================================
+TROUBLESHOOTING GUIDE
+================================================================================
+
+CANNOT CONNECT VPN:
+-------------------
+- Verify configuration file is correct
+- Check internet connection
+- Ensure router port forwarding is configured
+- Contact Jay to verify server status
+- Try different network (mobile hotspot)
+
+QGROUNDCONTROL WON'T CONNECT:
+-----------------------------
+- Confirm VPN is connected (ping 10.8.0.1)
+- Check connection settings (10.8.0.1:5760)
+- Restart QGroundControl application
+- Try removing and re-adding connection
+- Verify Jay's systems are running
+
+POOR GPS PERFORMANCE:
+---------------------
+- Check satellite count (need 8+ minimum)
+- Look for "RTK Fixed" status
+- Metallic objects can interfere with GPS
+- Weather conditions affect signal
+- Wait for better satellite geometry
+
+ROVER NOT RESPONDING:
+---------------------
+- Verify "Armed" status in QGroundControl
+- Check flight mode is appropriate
+- Ensure rover has battery power
+- Look for error messages in QGroundControl
+- Contact Jay for local diagnosis
+
+SLOW OR CHOPPY CONTROL:
+-----------------------
+- Check internet connection speed
+- Monitor ping times to 10.8.0.1
+- Close unnecessary applications
+- Use wired internet if possible
+- Reduce update rates in QGroundControl settings
+
+================================================================================
+CONTACT INFORMATION
+================================================================================
+
+For technical support or emergencies:
+- Primary: Contact Jay directly
+- Include screenshots of any error messages
+- Note the time when issues occurred
+- Describe what you were doing when problems started
+
+System Status Check:
+- VPN Connected: ping 10.8.0.1
+- QGC Connected: Vehicle info visible
+- GPS Status: Green icon, 10+ satellites
+- RTK Status: "RTK Fixed" for best accuracy
+
+================================================================================
+HAVE FUN AND BE SAFE!
+================================================================================
+
+You now have access to a high-precision rover with centimeter-accurate GPS
+positioning. This is cutting-edge technology - use it responsibly and enjoy
+the experience of remote robotic control!
+
+Remember:
+- Always coordinate with Jay
+- Monitor all safety indicators
+- Start with simple movements
+- Progress to more complex missions
+- Document cool achievements to share!
+
+Questions? Contact Jay!
+
+================================================================================

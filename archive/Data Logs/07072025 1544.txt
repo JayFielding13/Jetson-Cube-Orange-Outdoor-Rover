@@ -1,0 +1,52 @@
+(venv) jay@RoboPi:~/rover_project $ python3 autonomous_lidar_single_scan.py
+✅ RPLidar library found
+============================================================
+🚀 SINGLE-SCAN LIDAR NAVIGATOR
+============================================================
+
+Solution: Fresh scan each cycle to avoid buffer overflow
+Features: 4-quadrant analysis with dynamic readings
+
+🚀 Single-Scan Navigator Initialized
+🎯 Solves buffer overflow with fresh scans each cycle
+✅ Arduino connected on /dev/ttyUSB0
+✅ LiDAR connected on /dev/ttyUSB1
+🚀 Single-Scan Navigator started
+🧭 Fresh scan navigation active
+✅ Single-Scan Navigator ready
+Press Ctrl+C to stop...
+⚠️ Slowing down - obstacle at 62.0cm
+Too many bytes in the input buffer: 4010/3000. Cleaning buffer...
+⚠️ Fresh scan failed: Incorrect descriptor starting bytes
+🔍 Exploration turn left
+⚠️ Fresh scan failed: too many values to unpack (expected 2)
+🧭 Scan #3 (0.002s) | Front: 198.7cm | SIM: 0pts
+   Quadrants: L:147cm R:107cm Rear:200cm
+   Averages:  L:172cm R:122cm Rear:200cm
+⚠️ Fresh scan failed: too many values to unpack (expected 2)
+🔍 Exploration complete
+⚠️ Fresh scan failed: too many values to unpack (expected 2)
+⚠️ Fresh scan failed: too many values to unpack (expected 2)
+🧭 Scan #6 (0.002s) | Front: 199.9cm | SIM: 0pts
+   Quadrants: L:139cm R:101cm Rear:200cm
+   Averages:  L:164cm R:116cm Rear:200cm
+⚠️ Fresh scan failed: too many values to unpack (expected 2)
+⚠️ Fresh scan failed: too many values to unpack (expected 2)
+🔍 Exploration turn left
+⚠️ Fresh scan failed: too many values to unpack (expected 2)
+🧭 Scan #9 (0.002s) | Front: 20.9cm | SIM: 0pts
+   Quadrants: L:127cm R:100cm Rear:200cm
+   Averages:  L:152cm R:115cm Rear:200cm
+⚠️ Fresh scan failed: too many values to unpack (expected 2)
+🔍 Exploration complete
+⚠️ Fresh scan failed: too many values to unpack (expected 2)
+⚠️ Fresh scan failed: too many values to unpack (expected 2)
+🧭 Scan #12 (0.002s) | Front: 189.0cm | SIM: 0pts
+   Quadrants: L:113cm R:105cm Rear:200cm
+   Averages:  L:138cm R:120cm Rear:200cm
+⚠️ Fresh scan failed: too many values to unpack (expected 2)
+⚠️ Fresh scan failed: too many values to unpack (expected 2)
+⚠️ Fresh scan failed: too many values to unpack (expected 2)
+🧭 Scan #15 (0.002s) | Front: 178.0cm | SIM: 0pts
+   Quadrants: L:101cm R:114cm Rear:200cm
+   Averages:  L:126cm R:129cm Rear:200cm

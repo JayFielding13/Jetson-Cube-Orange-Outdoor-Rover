@@ -1,0 +1,148 @@
+(venv) jay@RoboPi:~/rover_project $ pip uninstall rplidar -y
+WARNING: Skipping rplidar as it is not installed.
+(venv) jay@RoboPi:~/rover_project $ pip uninstall rplidar -y
+WARNING: Skipping rplidar as it is not installed.
+(venv) jay@RoboPi:~/rover_project $ pip install rplidar-robotica breezyslam numpy scipy
+Looking in indexes: https://pypi.org/simple, https://www.piwheels.org/simple
+ERROR: Could not find a version that satisfies the requirement rplidar-robotica (from versions: none)
+ERROR: No matching distribution found for rplidar-robotica
+(venv) jay@RoboPi:~/rover_project $ pip install --upgrade pip
+Looking in indexes: https://pypi.org/simple, https://www.piwheels.org/simple
+Requirement already satisfied: pip in ./venv/lib/python3.11/site-packages (23.0.1)
+Collecting pip
+  Downloading pip-25.1.1-py3-none-any.whl (1.8 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 6.5 MB/s eta 0:00:00
+Installing collected packages: pip
+  Attempting uninstall: pip
+    Found existing installation: pip 23.0.1
+    Uninstalling pip-23.0.1:
+      Successfully uninstalled pip-23.0.1
+Successfully installed pip-25.1.1
+(venv) jay@RoboPi:~/rover_project $ pip install git+https://github.com/Roboticia/rplidar.git
+Looking in indexes: https://pypi.org/simple, https://www.piwheels.org/simple
+Collecting git+https://github.com/Roboticia/rplidar.git
+  Cloning https://github.com/Roboticia/rplidar.git to /tmp/pip-req-build-2j5n1gsd
+  Running command git clone --filter=blob:none --quiet https://github.com/Roboticia/rplidar.git /tmp/pip-req-build-2j5n1gsd
+  Resolved https://github.com/Roboticia/rplidar.git to commit 787ff8d8072979b27d87d0b574875cc921a48d2e
+  Installing build dependencies ... done
+  Getting requirements to build wheel ... done
+  Preparing metadata (pyproject.toml) ... done
+Requirement already satisfied: pyserial in ./venv/lib/python3.11/site-packages (from rplidar-roboticia==0.9.5) (3.5)
+(venv) jay@RoboPi:~/rover_project $ pip install breezyslam
+Looking in indexes: https://pypi.org/simple, https://www.piwheels.org/simple
+ERROR: Could not find a version that satisfies the requirement breezyslam (from versions: none)
+ERROR: No matching distribution found for breezyslam
+(venv) jay@RoboPi:~/rover_project $ sudo apt update
+Get:1 http://archive.raspberrypi.com/debian bookworm InRelease [55.0 kB]
+Get:2 http://archive.raspberrypi.com/debian bookworm/main arm64 Packages [547 kB]
+Get:3 http://archive.raspberrypi.com/debian bookworm/main armhf Packages [547 kB]
+Hit:4 http://deb.debian.org/debian bookworm InRelease
+Get:5 http://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+Get:6 http://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Get:7 http://deb.debian.org/debian-security bookworm-security/main armhf Packages [253 kB]
+Get:8 http://deb.debian.org/debian-security bookworm-security/main arm64 Packages [268 kB]
+Get:9 http://deb.debian.org/debian-security bookworm-security/main Translation-en [163 kB]
+Fetched 1,936 kB in 6s (331 kB/s)
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+2 packages can be upgraded. Run 'apt list --upgradable' to see them.
+(venv) jay@RoboPi:~/rover_project $ sudo apt install build-essential cmake git python3-dev
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+build-essential is already the newest version (12.9).
+git is already the newest version (1:2.39.5-0+deb12u2).
+python3-dev is already the newest version (3.11.2-1+b1).
+The following additional packages will be installed:
+  cmake-data libarchive13 libjsoncpp25 librhash0 libuv1
+Suggested packages:
+  cmake-doc cmake-format elpa-cmake-mode ninja-build lrzip
+The following NEW packages will be installed:
+  cmake cmake-data libarchive13 libjsoncpp25 librhash0 libuv1
+0 upgraded, 6 newly installed, 0 to remove and 2 not upgraded.
+Need to get 9,482 kB of archives.
+After this operation, 38.0 MB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://deb.debian.org/debian bookworm/main arm64 libarchive13 arm64 3.6.2-1+deb12u2 [316 kB]
+Get:2 http://deb.debian.org/debian bookworm/main arm64 libjsoncpp25 arm64 1.9.5-4 [72.3 kB]
+Get:3 http://deb.debian.org/debian bookworm/main arm64 librhash0 arm64 1.4.3-3 [131 kB]
+Get:4 http://deb.debian.org/debian bookworm/main arm64 libuv1 arm64 1.44.2-1+deb12u1 [130 kB]
+Get:5 http://deb.debian.org/debian bookworm/main arm64 cmake-data all 3.25.1-1 [2,026 kB]
+Get:6 http://deb.debian.org/debian bookworm/main arm64 cmake arm64 3.25.1-1 [6,806 kB]
+Fetched 9,482 kB in 1s (7,423 kB/s)
+Selecting previously unselected package libarchive13:arm64.
+(Reading database ... 79293 files and directories currently installed.)
+Preparing to unpack .../0-libarchive13_3.6.2-1+deb12u2_arm64.deb ...
+Unpacking libarchive13:arm64 (3.6.2-1+deb12u2) ...
+Selecting previously unselected package libjsoncpp25:arm64.
+Preparing to unpack .../1-libjsoncpp25_1.9.5-4_arm64.deb ...
+Unpacking libjsoncpp25:arm64 (1.9.5-4) ...
+Selecting previously unselected package librhash0:arm64.
+Preparing to unpack .../2-librhash0_1.4.3-3_arm64.deb ...
+Unpacking librhash0:arm64 (1.4.3-3) ...
+Selecting previously unselected package libuv1:arm64.
+Preparing to unpack .../3-libuv1_1.44.2-1+deb12u1_arm64.deb ...
+Unpacking libuv1:arm64 (1.44.2-1+deb12u1) ...
+Selecting previously unselected package cmake-data.
+Preparing to unpack .../4-cmake-data_3.25.1-1_all.deb ...
+Unpacking cmake-data (3.25.1-1) ...
+Selecting previously unselected package cmake.
+Preparing to unpack .../5-cmake_3.25.1-1_arm64.deb ...
+Unpacking cmake (3.25.1-1) ...
+Setting up libarchive13:arm64 (3.6.2-1+deb12u2) ...
+Setting up libuv1:arm64 (1.44.2-1+deb12u1) ...
+Setting up libjsoncpp25:arm64 (1.9.5-4) ...
+Setting up librhash0:arm64 (1.4.3-3) ...
+Setting up cmake-data (3.25.1-1) ...
+Setting up cmake (3.25.1-1) ...
+Processing triggers for man-db (2.11.2-2) ...
+Processing triggers for libc-bin (2.36-9+rpt2+deb12u12) ...
+(venv) jay@RoboPi:~/rover_project $ source venv/bin/activate
+(venv) jay@RoboPi:~/rover_project $ cd ~
+(venv) jay@RoboPi:~ $ git clone https://github.com/simondlevy/BreezySLAM.git
+Cloning into 'BreezySLAM'...
+remote: Enumerating objects: 1104, done.
+remote: Counting objects: 100% (2/2), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 1104 (delta 0), reused 0 (delta 0), pack-reused 1102 (from 2)
+Receiving objects: 100% (1104/1104), 1.17 MiB | 8.84 MiB/s, done.
+Resolving deltas: 100% (699/699), done.
+(venv) jay@RoboPi:~ $ cd BreezySLAM/python
+(venv) jay@RoboPi:~/BreezySLAM/python $ cd ~
+(venv) jay@RoboPi:~ $ git clone https://github.com/simondlevy/BreezySLAM.git
+fatal: destination path 'BreezySLAM' already exists and is not an empty directory.
+(venv) jay@RoboPi:~ $ cd BreezySLAM/python
+(venv) jay@RoboPi:~/BreezySLAM/python $ cd ../cpp
+(venv) jay@RoboPi:~/BreezySLAM/cpp $ make
+g++ -O3 -I../c -c -Wall -fPIC algorithms.cpp
+g++ -O3 -I../c -c -Wall -fPIC Scan.cpp
+g++ -O3 -I../c -c -Wall -fPIC Map.cpp
+g++ -O3 -I../c -c -Wall -fPIC WheeledRobot.cpp
+gcc -O3 -c -Wall -fPIC ../c/coreslam.c
+gcc -O3 -c -Wall -fPIC  ../c/coreslam_sisd.c
+gcc -O3 -c -Wall -fPIC ../c/random.c
+gcc -O3 -c -Wall -fPIC ../c/ziggurat.c
+g++ -O3 -shared algorithms.o Scan.o Map.o WheeledRobot.o \
+                        coreslam.o coreslam_sisd.o random.o ziggurat.o \
+          -o libbreezyslam.so -lm
+(venv) jay@RoboPi:~/BreezySLAM/cpp $ cd ../python
+(venv) jay@RoboPi:~/BreezySLAM/python $ pip install .
+Looking in indexes: https://pypi.org/simple, https://www.piwheels.org/simple
+Processing /home/jay/BreezySLAM/python
+  Installing build dependencies ... done
+  Getting requirements to build wheel ... done
+  Preparing metadata (pyproject.toml) ... done
+Building wheels for collected packages: BreezySLAM
+  Building wheel for BreezySLAM (pyproject.toml) ... done
+  Created wheel for BreezySLAM: filename=breezyslam-0.1-cp311-cp311-linux_aarch64.whl size=57917 sha256=7d551b34e7b8a13d97e809eeae9ec70bc30e0ffc96c9b8adfd0eae53d6a8a813
+  Stored in directory: /tmp/pip-ephem-wheel-cache-s30t2gbu/wheels/31/f3/66/77c0a547961228c897cc64d217c1c8bf01bb8250924212304b
+Successfully built BreezySLAM
+Installing collected packages: BreezySLAM
+Successfully installed BreezySLAM-0.1
+(venv) jay@RoboPi:~/BreezySLAM/python $ cd ~/rover_project
+(venv) jay@RoboPi:~/rover_project $ python
+Python 3.11.2 (main, Apr 28 2025, 14:11:48) [GCC 12.2.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> from breezyslam.algorithms import RMHC_SLAM
+>>>

@@ -1,0 +1,81 @@
+===============================================================================
+RGB LED QUICK REFERENCE - ROVER PROJECT
+===============================================================================
+
+🔧 WIRING CONNECTIONS (Common Cathode RGB LED):
+   Pi GPIO 22 (Pin 15) → 220Ω Resistor → Red LED Anode
+   Pi GPIO 23 (Pin 16) → 220Ω Resistor → Green LED Anode  
+   Pi GPIO 24 (Pin 18) → 220Ω Resistor → Blue LED Anode
+   Pi GND (Pin 6)      → LED Common Cathode
+
+📍 GPIO PIN LOCATIONS:
+   Looking at Pi with USB ports on right:
+   Row 1: [3V3] [5V ]
+   Row 2: [2  ] [5V ]  
+   Row 3: [3  ] [GND] ← LED Common
+   Row 4: [4  ] [14 ]
+   Row 5: [GND] [15 ]
+   Row 6: [17 ] [18 ]
+   Row 7: [27 ] [GND]
+   Row 8: [22]→ [23]→ RED    GREEN
+   Row 9: [3V3] [24]→ BLUE
+   
+🎨 LED STATUS COLORS:
+   🔴 RED (Solid):      Failsafe Mode
+   🟢 GREEN (Solid):    Manual RC Mode  
+   🔵 BLUE (Solid):     Autonomous Mode - Strong Signal
+   🟣 PURPLE (Dim):     Autonomous Mode - Weak Signal
+   🟡 YELLOW (Blinking): Searching for Beacon
+   🔴 RED (Blinking):   Signal Lost
+
+⚡ PARTS LIST:
+   □ 1x Common Cathode RGB LED
+   □ 3x 220Ω Resistors (Red-Red-Brown)
+   □ 4x Jumper Wires
+   □ Small breadboard (optional)
+
+🔌 WIRING STEPS:
+   1. Power OFF the Raspberry Pi
+   2. Insert resistors between GPIO pins and LED anodes
+   3. Connect LED common cathode to Pi GND
+   4. Double-check all connections
+   5. Power ON and run test sequence
+
+🧪 TESTING:
+   Run this command to test LEDs:
+   sudo python3 -c "
+   import RPi.GPIO as GPIO
+   from rover_controller_with_bluetooth import RGBLEDController
+   GPIO.setmode(GPIO.BCM)
+   led = RGBLEDController(22, 23, 24)
+   led.test_sequence()
+   led.cleanup()
+   GPIO.cleanup()
+   "
+
+⚠️  SAFETY CHECKLIST:
+   □ Pi powered OFF during wiring
+   □ Resistors installed (prevents LED burnout)
+   □ Correct polarity (long leg = anode)
+   □ No short circuits
+   □ All connections secure
+
+🔍 TROUBLESHOOTING:
+   No Light: Check power, wiring, resistors
+   Wrong Colors: Verify red/green/blue pin assignments
+   Dim Light: Use smaller resistor (150Ω min)
+   Flickering: Check loose connections
+
+📏 RESISTOR COLOR CODES:
+   220Ω: Red-Red-Brown-Gold
+   330Ω: Orange-Orange-Brown-Gold
+   470Ω: Yellow-Purple-Brown-Gold
+
+💡 LED IDENTIFICATION:
+   Common Cathode: Longest leg is usually cathode (-)
+   Common Anode: Longest leg is usually anode (+)
+   Test with 3V battery and 220Ω resistor to verify
+
+===============================================================================
+Print this page for easy reference during installation!
+===============================================================================

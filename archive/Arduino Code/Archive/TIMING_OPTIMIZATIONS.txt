@@ -1,0 +1,171 @@
+===============================================================================
+ARDUINO TIMING OPTIMIZATIONS - ELIMINATING JERKY MOVEMENT
+===============================================================================
+
+PROBLEM IDENTIFIED:
+==================
+Arduino was being overwhelmed by trying to do everything at once:
+- Ultrasonic sensor reading (blocking 30ms pulseIn!)
+- RC signal processing
+- Serial communication and JSON output
+- State machine logic
+- Motor control updates
+
+This caused the main loop to freeze periodically, resulting in jerky movement.
+
+ROOT CAUSE ANALYSIS:
+===================
+
+1. BLOCKING ULTRASONIC SENSOR:
+   - pulseIn() was blocking for up to 30ms waiting for echo
+   - During this time, motor control was frozen
+   - Reading every 100ms was too frequent
+
+2. EXCESSIVE SERIAL OUTPUT:
+   - JSON messages every 500ms consumed significant processing time
+   - String concatenation and serial transmission are expensive operations
+
+3. NO TASK PRIORITIZATION:
+   - All tasks running at same frequency regardless of importance
+   - Motor control (time-critical) mixed with sensor reading (less critical)
+
+OPTIMIZATIONS IMPLEMENTED:
+=========================
+
+1. TASK FREQUENCY PRIORITIZATION:
+   
+   HIGH FREQUENCY (Every 5ms loop):
+   - Motor control and state machine
+   - RC signal validity checking
+   - Mode switching logic
+   
+   MEDIUM FREQUENCY (Every 50ms):
+   - RC data processing and transmission
+   - Status LED updates
+   
+   LOW FREQUENCY (Every 200ms):
+   - Ultrasonic sensor reading (with blocking pulseIn)
+   
+   VERY LOW FREQUENCY (1-2 seconds):
+   - JSON status reports
+
+2. ULTRASONIC SENSOR OPTIMIZATIONS:
+   - Timeout reduced: 30ms → 10ms (faster response)
+   - Reading interval increased: 100ms → 200ms (less frequent)
+   - Moved to low-frequency task group
+
+3. SERIAL COMMUNICATION OPTIMIZATIONS:
+   - Sensor reports: 500ms → 1000ms intervals
+   - Roaming status: 1000ms → 2000ms intervals
+   - Reduced JSON output frequency
+
+4. MAIN LOOP OPTIMIZATIONS:
+   - Loop delay reduced: 10ms → 5ms
+   - Motor control now runs at ~200Hz instead of ~100Hz
+   - Critical tasks separated from heavy processing
+
+TIMING BREAKDOWN:
+================
+
+BEFORE OPTIMIZATION:
+- Main loop: 10ms delay + blocking operations
+- Effective motor update rate: ~50-100Hz (inconsistent)
+- Ultrasonic blocking: Up to 30ms every 100ms
+- Total processing jitter: High
+
+AFTER OPTIMIZATION:
+- Main loop: 5ms delay, motor control prioritized
+- Motor update rate: ~200Hz (consistent)
+- Ultrasonic blocking: Up to 10ms every 200ms
+- Total processing jitter: Minimal
+
+TASK SCHEDULING:
+===============
+
+LOOP CYCLE (5ms):
+├── Motor Control (time-critical)
+├── Signal Validity
+└── Mode Updates
+
+EVERY 50ms:
+├── RC Data Processing
+└── LED Updates
+
+EVERY 200ms:
+└── Ultrasonic Sensor (blocking operation isolated)
+
+EVERY 1-2 SECONDS:
+└── Status Reports (non-critical)
+
+EXPECTED IMPROVEMENTS:
+=====================
+
+MOTOR CONTROL:
+- Smoother, more responsive movement
+- Consistent update rate (~200Hz)
+- No more freezing during sensor reads
+
+SENSOR PERFORMANCE:
+- Still responsive to obstacles (200ms is fast enough)
+- Reduced false readings from shorter timeout
+- Less interference with motor control
+
+OVERALL BEHAVIOR:
+- Confident straight-line movement
+- Smooth transitions between speeds
+- Reliable obstacle detection without movement jitter
+
+VERIFICATION METHODS:
+====================
+
+SMOOTH MOVEMENT INDICATORS:
+- No visible jerking or stuttering
+- Consistent motor sound (no fluctuations)
+- Smooth acceleration/deceleration
+- Stable straight-line travel
+
+DASHBOARD MONITORING:
+- Motor speed values should be stable
+- State transitions should be clean
+- Distance readings updated every 200ms (acceptable)
+
+AUDIO FEEDBACK:
+- Motor sound should be steady, not choppy
+- No clicking or stuttering noises
+- Smooth pitch changes during speed transitions
+
+FURTHER TUNING OPTIONS:
+======================
+
+IF STILL JERKY:
+- Increase ultrasonic interval to 300ms
+- Reduce JSON output to every 3-5 seconds
+- Consider removing some serial output entirely
+
+IF TOO SLOW TO RESPOND:
+- Decrease ultrasonic timeout to 5ms
+- Increase motor control frequency (reduce main delay to 3ms)
+
+IF SENSOR ISSUES:
+- Increase ultrasonic timeout back to 15ms
+- Add sensor reading validation
+
+PERFORMANCE MONITORING:
+======================
+
+GOOD PERFORMANCE SIGNS:
+- Steady motor speeds in dashboard
+- Clean state transitions
+- Responsive but not twitchy obstacle avoidance
+- Consistent timing in status reports
+
+POOR PERFORMANCE SIGNS:
+- Fluctuating motor speeds
+- Delayed reactions to RC input
+- Irregular status report timing
+- Visible movement stuttering
+
+===============================================================================
+These optimizations should eliminate the jerky movement by prioritizing
+time-critical motor control over heavy sensor processing!
+===============================================================================

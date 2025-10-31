@@ -1,0 +1,433 @@
+SSH Dashboard Terminal Log
+Session Date: 2025-07-16 19:54:04
+Connected to: 192.168.254.65:22
+Username: jay
+==================================================
+
+Uploading bluetooth_lidar_navigator_v7.py...
+Successfully uploaded bluetooth_lidar_navigator_v7.py to /home/jay/rover_project/bluetooth_lidar_navigator_v7.py
+$ cd ~/rover_project && source venv/bin/activate && echo 'Starting program...' && python3 -u /home/jay/rover_project/bluetooth_lidar_navigator_v7.py
+Starting program...
+✅ Visualization (matplotlib) library available
+✅ Bluetooth (bleak) library available
+✅ LiDAR (rplidar) library available
+================================================================================
+🤖 BLUETOOTH LIDAR NAVIGATOR V7
+================================================================================
+
+ENHANCED FEATURES:
+  ✅ All proven V6 Bluetooth navigation capabilities
+  ✅ Integrated RPLidar A1 for 360° obstacle detection
+  ✅ Multi-sensor fusion (ultrasonic + LiDAR)
+  ✅ Enhanced obstacle avoidance with sector analysis
+  ✅ Improved turn direction selection using LiDAR data
+  ✅ Real-time path clearance assessment
+  ✅ Fallback to ultrasonic if LiDAR fails
+  ✅ Thread-safe LiDAR data processing
+  ✅ Enhanced navigation decision making
+  🔍 Automatic USB device detection and assignment
+  🛡️ Intelligent port conflict resolution
+  🔄 Robust fallback system for device connections
+  📊 Real-time LiDAR visualization display
+
+LIDAR ENHANCEMENTS:
+  🔄 360° obstacle detection vs single-direction ultrasonic
+  🎯 Sector-based path analysis (8 directions)
+  🧠 Intelligent turn direction selection
+  📏 Enhanced distance fusion for better accuracy
+  🚧 Real-time obstacle mapping
+  ✅ Graceful degradation if LiDAR unavailable
+
+DEVICE DETECTION:
+  🔍 Automatic USB port scanning and identification
+  🤖 Arduino detection via JSON protocol recognition
+  📡 LiDAR detection via RPLidar protocol handshake
+  🔄 Smart fallback to common port configurations
+  🛡️ Port conflict prevention and resolution
+  📋 Detailed device information reporting
+
+NAVIGATION MODES:
+  🔍 SEARCHING: Enhanced search with LiDAR-guided turns
+  🚶 FORWARD_TRACKING: Movement with multi-sensor obstacle awareness
+  🔄 TURN_TESTING: Enhanced turn selection using LiDAR data
+  🧠 SMART_AVOIDING: Sector-based obstacle avoidance
+  🎯 APPROACHING: Sensor-fusion approach control
+  🏁 HOLDING: Enhanced position maintenance
+  🛡️ SAFETY: Multi-sensor emergency override
+
+SENSOR STATUS:
+  ✅ LiDAR Ready
+  ✅ Bluetooth Ready
+  ✅ Visualization Ready
+
+🔍 USB Device Detector initialized
+🤖 Robot Physical Profile Loaded:
+   Dimensions: 35.0cm × 28.0cm
+   LiDAR Position: 23.0cm from front, 13.0cm from left
+   Safe Distances: F=28.0cm R=17.0cm L=18.0cm R=20.0cm
+   Corridor Requirements: 38.0cm normal, 34.0cm tight
+🔄 LiDAR Processor initialized
+📏 Range: 100-8000mm
+🚧 Obstacle threshold: 800mm
+✅ Clear path threshold: 1200mm
+📊 Real-time visualization enabled
+🚀 Bluetooth LiDAR Navigator V7 - Enhanced Object Detection
+📊 Navigation: Danger=30.0cm | Caution=60.0cm | Safe=100.0cm
+🔄 LiDAR: Enabled | Danger=38cm | Caution=53cm | Safe=68cm
+📡 Bluetooth: Enabled | Target: DD:34:02:09:CA:1E
+🚶 Tracking: Target distance 0.28m ±0.15m
+📈 Signal: 1.0dBm improvement | 2.0dBm degradation
+🛡️ Safety: Ultrasonic + LiDAR fusion for enhanced obstacle detection
+🔍 Starting device detection...
+🔍 === USB Device Detection Started ===
+🔍 Scanning for USB devices...
+📋 Found 2 USB serial devices:
+   1. /dev/ttyUSB1 - CP2102 USB to UART Bridge Controller - CP2102 USB to UART Bridge Controller
+      VID:PID = 10C4:EA60
+      Manufacturer: Silicon Labs
+   2. /dev/ttyUSB0 - USB Serial
+      VID:PID = 1A86:7523
+      Manufacturer: None
+
+🧪 Testing ports for device identification...
+
+📍 Testing /dev/ttyUSB1...
+🤖 Testing for Arduino on /dev/ttyUSB1...
+❌ No Arduino detected on /dev/ttyUSB1
+📡 Testing for LiDAR on /dev/ttyUSB1...
+✅ LiDAR detected on /dev/ttyUSB1
+   Model: 24
+   Firmware: (1, 29)
+   Hardware: 7
+
+📍 Testing /dev/ttyUSB0...
+🤖 Testing for Arduino on /dev/ttyUSB0...
+✅ Arduino detected on /dev/ttyUSB0 at 115200 baud
+   Sample data: {'ch1': 0, 'ch2': 0, 'ch9': -992, 'valid': True, 'mode': 0, 'emergency': False, 'distance': None, 'pi_command_valid': False, 'gatekeeper_mode': 'FAILSAFE'}
+
+📊 Detection Results:
+   Arduino candidates: 1
+   LiDAR candidates: 1
+✅ Arduino assigned to: /dev/ttyUSB0 @ 115200 baud
+✅ LiDAR assigned to: /dev/ttyUSB1
+
+📋 Final Device Assignment:
+   Arduino: /dev/ttyUSB0
+   LiDAR: /dev/ttyUSB1
+📍 Using detected Arduino: /dev/ttyUSB0 @ 115200 baud
+✅ Arduino connected on /dev/ttyUSB0
+📍 Using detected LiDAR: /dev/ttyUSB1
+🔗 Connecting to RPLidar A1 on /dev/ttyUSB1
+📋 LiDAR Device info: {'model': 24, 'firmware': (1, 29), 'hardware': 7, 'serialnumber': 'EF83EDF9C7E29BCEA7E39EF27F504304'}
+💚 LiDAR Health: ('Good', 0)
+🔄 Starting LiDAR motor...
+✅ LiDAR connected and ready
+📊 Setting up real-time LiDAR visualization...
+📊 Visualization setup complete
+📊 Starting real-time LiDAR visualization...
+⚠️ No display available or SSH session detected - disabling visualization
+📊 LiDAR data collection continues normally without visualization
+📡 LiDAR scanning started
+✅ LiDAR navigation enhancement enabled
+📡 Starting BlueCharm tracking thread...📡 BlueCharm tracking scanner started
+
+🚀 Enhanced Navigator V7 started with LiDAR + Ultrasonic + Bluetooth
+🎯 Ready for enhanced object detection and navigation
+📡 BlueCharm tracking scanner ready✅ Enhanced Navigator V7 ready with LiDAR + Ultrasonic + Bluetooth
+
+📡 Switch to autonomous mode for enhanced navigation
+🔄 LiDAR will provide 360° obstacle detection
+🎯 Multi-sensor fusion ensures robust navigation
+Press Ctrl+C to stop...
+⚠️ Arduino communication timeout
+⚠️ Arduino communication timeout
+⚠️ Arduino communication timeout
+⚠️ Arduino communication timeout
+⚠️ Arduino communication timeout
+⚠️ Arduino communication timeout
+⚠️ Arduino communication timeout
+📡 LiDAR scan #10: 89 points
+📡 LiDAR scan #20: 92 points
+📡 LiDAR scan #30: 88 points
+📡 LiDAR scan #40: 94 points
+📡 LiDAR scan #50: 99 points
+🔄 ENHANCED SEARCH: Looking for signal...
+❌ Navigation error: 'BluetoothLidarNavigator' object has no attribute 'log_robot_aware_status'
+📡 Starting BLE scanner...
+📡 BLE scanner active
+📡 LiDAR scan #60: 93 points
+📡 Stopping BLE scanner...
+📡 LiDAR scan #70: 94 points
+❌ Navigation error: 'BluetoothLidarNavigator' object has no attribute 'log_robot_aware_status'
+📡 LiDAR scan #80: 97 points
+📡 Starting BLE scanner...
+📡 BLE scanner active
+🚶 TRACKING MODE: BlueCharm at 3.5m - forward tracking activated
+📡 SIGNAL DETECTED: Switching to forward_tracking mode (3.5m)
+📡 LiDAR scan #90: 97 points
+🏁 TRACKING INITIALIZED: Starting at 3.5m
+🚶 ENHANCED TRACKING: 3.5m signal stable (t=0.5s)
+❌ Navigation error: 'BluetoothLidarNavigator' object has no attribute 'log_robot_aware_status'
+📡 Stopping BLE scanner...
+📡 LiDAR scan #100: 97 points
+📡 Starting BLE scanner...
+📡 BLE scanner active
+📡 LiDAR scan #110: 108 points
+❌ Navigation error: 'BluetoothLidarNavigator' object has no attribute 'log_robot_aware_status'
+📡 LiDAR scan #120: 116 points
+🚨 WRONG DIRECTION: Distance increased 2.1m (3.5m → 5.6m)
+🔄 IMMEDIATE COURSE CORRECTION: Turning around to find BlueCharm
+📡 LiDAR scan #130: 114 points
+🔄 ENHANCED TESTING: left turn for signal improvement
+🔄 TRYING RIGHT: Left turn didn't help, testing right
+🏠 ROBOT-AWARE CONFINED SPACE: sectors=4/8
+   Robot needs: 35.0cm×28.0cm + margins
+   Actual clearances: F=47cm L=117cm R=133cm
+🏠 CONFINED: No forward path - switching to back & turn strategy
+🏠 CONFINED: Backing up to create maneuvering space (0.0s)
+❌ Navigation error: 'BluetoothLidarNavigator' object has no attribute 'log_robot_aware_status'
+📡 LiDAR scan #140: 107 points
+📡 LiDAR scan #150: 116 points
+🏠 CONFINED: Backing up to create maneuvering space (1.5s)
+🏠 CONFINED: Backing up to create maneuvering space (2.0s)
+🏠 CONFINED: Backing up to create maneuvering space (2.5s)
+📡 LiDAR scan #160: 108 points
+🏠 CONFINED: Backing up to create maneuvering space (3.0s)
+❌ Navigation error: 'BluetoothLidarNavigator' object has no attribute 'log_robot_aware_status'
+📡 LiDAR scan #170: 101 points
+🌟 ROBOT ESCAPED: 6/8 sectors, normal corridor, 60cm front clearance
+🔄 MAX TURN TIME: Resuming forward tracking after 5.0s turn
+🏁 TRACKING INITIALIZED: Starting at 5.3m
+🚶 ENHANCED TRACKING: 5.0m signal stable (t=0.5s)
+📡 LiDAR scan #180: 101 points
+❌ Navigation error: 'BluetoothLidarNavigator' object has no attribute 'log_robot_aware_status'
+📡 LiDAR scan #190: 118 points
+📡 BlueCharm TRACKING #5:
+   RSSI: -74dBm (raw: -74) | Distance: ~5.4m | Avg: -73dBm
+📡 LiDAR scan #200: 124 points
+🏠 ROBOT-AWARE CONFINED SPACE: sectors=4/8
+   Robot needs: 35.0cm×28.0cm + margins
+   Actual clearances: F=46cm L=115cm R=132cm
+🏠 CONFINED: No forward path - switching to back & turn strategy
+🏠 CONFINED: Backing up to create maneuvering space (0.0s)
+🏠 CONFINED: Backing up to create maneuvering space (0.5s)
+❌ Navigation error: 'BluetoothLidarNavigator' object has no attribute 'log_robot_aware_status'
+📡 LiDAR scan #210: 116 points
+🏠 CONFINED: Backing up to create maneuvering space (2.0s)
+📡 LiDAR scan #220: 98 points
+🏠 CONFINED: Backing up to create maneuvering space (2.5s)
+🏠 CONFINED: Backing up to create maneuvering space (3.0s)
+🏠 CONFINED: Backing up to create maneuvering space (3.5s)
+❌ Navigation error: 'BluetoothLidarNavigator' object has no attribute 'log_robot_aware_status'
+📡 LiDAR scan #230: 103 points
+🏠 CONFINED: Enhanced turn left (scores: L=3079 R=2840)
+📡 LiDAR scan #240: 94 points
+🏠 CONFINED: Enhanced turn left (scores: L=3077 R=2832)
+📡 Stopping BLE scanner...
+🏠 CONFINED: Enhanced turn right (scores: L=2631 R=2958)
+📡 LiDAR scan #250: 101 points
+🌟 ROBOT ESCAPED: 6/8 sectors, normal corridor, 56cm front clearance
+❌ Navigation error: 'BluetoothLidarNavigator' object has no attribute 'log_robot_aware_status'
+📡 Starting BLE scanner...
+📡 BLE scanner active
+📡 LiDAR scan #260: 102 points
+🚶 ENHANCED TRACKING: 5.8m signal stable (t=12.0s)
+📡 LiDAR scan #270: 104 points
+❌ Navigation error: 'BluetoothLidarNavigator' object has no attribute 'log_robot_aware_status'
+📡 LiDAR scan #280: 107 points
+🔄 ENHANCED STUCK: Max turn time reached - backing up (count: 1)
+📡 LiDAR scan #290: 112 points
+❌ Navigation error: 'BluetoothLidarNavigator' object has no attribute 'log_robot_aware_status'
+📡 LiDAR scan #300: 105 points
+🧠 ENHANCED RETRY: Switching to right turn (stuck: 1)
+📡 LiDAR scan #310: 113 points
+📡 BlueCharm TRACKING↗ #10:
+   RSSI: -75dBm (raw: -76) | Distance: ~5.9m | Avg: -74dBm
+🏠 ROBOT-AWARE CONFINED SPACE: sectors=4/8
+   Robot needs: 35.0cm×28.0cm + margins
+   Actual clearances: F=68cm L=101cm R=503cm
+🏠 CONFINED: Turning toward clearest side (right)
+🏠 CONFINED: Turning toward clearest side (right)
+❌ Navigation error: 'BluetoothLidarNavigator' object has no attribute 'log_robot_aware_status'
+📡 LiDAR scan #320: 111 points
+🏠 CONFINED: No forward path - switching to back & turn strategy
+🏠 CONFINED: Backing up to create maneuvering space (2.0s)
+📡 LiDAR scan #330: 109 points
+🏠 CONFINED: Backing up to create maneuvering space (2.5s)
+🏠 CONFINED: Backing up to create maneuvering space (3.0s)
+🏠 CONFINED: Backing up to create maneuvering space (3.5s)
+❌ Navigation error: 'BluetoothLidarNavigator' object has no attribute 'log_robot_aware_status'
+📡 LiDAR scan #340: 108 points
+🏠 CONFINED: Enhanced turn right (scores: L=2188 R=3093)
+📡 LiDAR scan #350: 113 points
+🏠 CONFINED: Enhanced turn right (scores: L=2186 R=3161)
+🏠 CONFINED: Enhanced turn right (scores: L=2154 R=6317)
+📡 LiDAR scan #360: 113 points
+🏠 CONFINED: Enhanced turn right (scores: L=2160 R=3613)
+❌ Navigation error: 'BluetoothLidarNavigator' object has no attribute 'log_robot_aware_status'
+📡 LiDAR scan #370: 111 points
+🏠 CONFINED: Careful forward probe after enhanced turn
+🏠 CONFINED: Careful forward probe after enhanced turn
+🏠 CONFINED: Careful forward probe after enhanced turn
+📡 LiDAR scan #380: 114 points
+🏠 CONFINED: Careful forward probe after enhanced turn
+❌ Navigation error: 'BluetoothLidarNavigator' object has no attribute 'log_robot_aware_status'
+📡 LiDAR scan #390: 108 points
+🏠 CONFINED: Backing up to create maneuvering space (1.0s)
+🏠 CONFINED: Backing up to create maneuvering space (1.5s)
+📡 LiDAR scan #400: 126 points
+🏠 CONFINED: Backing up to create maneuvering space (2.0s)
+🏠 CONFINED: Backing up to create maneuvering space (2.5s)
+❌ Navigation error: 'BluetoothLidarNavigator' object has no attribute 'log_robot_aware_status'
+📡 LiDAR scan #410: 113 points
+🌟 ROBOT ESCAPED: 6/8 sectors, normal corridor, 122cm front clearance
+✅ ENHANCED CLEAR: Path clear via robot_aware_fusion + LiDAR at 125.0cm - resuming forward_tracking
+📡 LiDAR scan #420: 110 points
+🚨 WRONG DIRECTION: Distance increased 2.4m (5.3m → 7.7m)
+🔄 IMMEDIATE COURSE CORRECTION: Turning around to find BlueCharm
+🔄 ENHANCED TESTING: right turn for signal improvement
+⚠️ NO IMPROVEMENT: Continuing forward tracking
+❌ Navigation error: 'BluetoothLidarNavigator' object has no attribute 'log_robot_aware_status'
+📡 LiDAR scan #430: 99 points
+📡 BlueCharm TRACKING↗ #15:
+   RSSI: -75dBm (raw: -74) | Distance: ~6.3m | Avg: -75dBm
+🏁 TRACKING INITIALIZED: Starting at 6.1m
+📡 LiDAR scan #440: 106 points
+🏠 ROBOT-AWARE CONFINED SPACE: sectors=3/8
+   Robot needs: 35.0cm×28.0cm + margins
+   Actual clearances: F=101cm L=101cm R=102cm
+🏠 CONFINED: No forward path - switching to back & turn strategy
+🏠 CONFINED: Backing up to create maneuvering space (0.0s)
+❌ Navigation error: 'BluetoothLidarNavigator' object has no attribute 'log_robot_aware_status'
+📡 LiDAR scan #450: 108 points
+📡 LiDAR scan #460: 113 points
+🏠 CONFINED: Backing up to create maneuvering space (1.5s)
+🏠 CONFINED: Backing up to create maneuvering space (2.0s)
+🏠 CONFINED: Backing up to create maneuvering space (2.5s)
+📡 LiDAR scan #470: 98 points
+🏠 CONFINED: Backing up to create maneuvering space (3.0s)
+❌ Navigation error: 'BluetoothLidarNavigator' object has no attribute 'log_robot_aware_status'
+📡 LiDAR scan #480: 94 points
+🏠 CONFINED: Enhanced turn right (scores: L=2414 R=2554)
+🌟 ROBOT ESCAPED: 6/8 sectors, normal corridor, 108cm front clearance
+🚨 WRONG DIRECTION: Distance increased 2.9m (6.1m → 9.0m)
+🔄 IMMEDIATE COURSE CORRECTION: Turning around to find BlueCharm
+📡 LiDAR scan #490: 88 points
+🔄 ENHANCED TESTING: right turn for signal improvement
+✅ ENHANCED TEST SUCCESS: right improved by 3.8dBm - continuing right
+❌ Navigation error: 'BluetoothLidarNavigator' object has no attribute 'log_robot_aware_status'
+📡 LiDAR scan #500: 107 points
+🔄 SIGNAL DEGRADING: right turn making signal worse (-8.9dBm) - resuming forward
+🏁 TRACKING INITIALIZED: Starting at 16.3m
+🚶 ENHANCED TRACKING: 12.7m signal ↘degrading (t=0.5s)
+📡 LiDAR scan #510: 100 points
+❌ Navigation error: 'BluetoothLidarNavigator' object has no attribute 'log_robot_aware_status'
+📡 BlueCharm TRACKING↘ #20:
+   RSSI: -74dBm (raw: -70) | Distance: ~7.1m | Avg: -77dBm
+📡 LiDAR scan #520: 92 points
+🏠 ROBOT-AWARE CONFINED SPACE: sectors=4/8
+   Robot needs: 35.0cm×28.0cm + margins
+   Actual clearances: F=97cm L=115cm R=122cm
+🏠 CONFINED: No forward path - switching to back & turn strategy
+🏠 CONFINED: Backing up to create maneuvering space (0.0s)
+📡 LiDAR scan #530: 95 points
+🏠 CONFINED: Backing up to create maneuvering space (0.5s)
+🌟 ROBOT ESCAPED: 6/8 sectors, normal corridor, 106cm front clearance
+🔄 SIGNAL DEGRADING: Testing enhanced turn after 4.0s tracking
+🔄 ENHANCED TESTING: right turn for signal improvement
+❌ Navigation error: 'BluetoothLidarNavigator' object has no attribute 'log_robot_aware_status'
+📡 LiDAR scan #540: 114 points
+⚠️ NO IMPROVEMENT: Continuing forward tracking
+📡 LiDAR scan #550: 104 points
+🏁 TRACKING INITIALIZED: Starting at 9.3m
+🚶 ENHANCED TRACKING: 9.4m signal ↗improving (t=0.5s)
+📡 LiDAR scan #560: 111 points
+🏠 ROBOT-AWARE CONFINED SPACE: sectors=4/8
+   Robot needs: 35.0cm×28.0cm + margins
+   Actual clearances: F=96cm L=115cm R=121cm
+🏠 CONFINED: No forward path - switching to back & turn strategy
+🏠 CONFINED: Backing up to create maneuvering space (0.0s)
+❌ Navigation error: 'BluetoothLidarNavigator' object has no attribute 'log_robot_aware_status'
+📡 LiDAR scan #570: 109 points
+🏠 CONFINED: Backing up to create maneuvering space (1.5s)
+🏠 CONFINED: Backing up to create maneuvering space (2.0s)
+🌟 ROBOT ESCAPED: 6/8 sectors, normal corridor, 103cm front clearance
+📡 LiDAR scan #580: 96 points
+❌ Navigation error: 'BluetoothLidarNavigator' object has no attribute 'log_robot_aware_status'
+📡 LiDAR scan #590: 101 points
+🏠 ROBOT-AWARE CONFINED SPACE: sectors=4/8
+   Robot needs: 35.0cm×28.0cm + margins
+   Actual clearances: F=97cm L=116cm R=121cm
+🏠 CONFINED: No forward path - switching to back & turn strategy
+🏠 CONFINED: Backing up to create maneuvering space (0.0s)
+🏠 CONFINED: Backing up to create maneuvering space (0.5s)
+📡 LiDAR scan #600: 113 points
+📡 BlueCharm TRACKING↗ #25:
+   RSSI: -78dBm (raw: -80) | Distance: ~8.6m | Avg: -77dBm
+🌟 ROBOT ESCAPED: 6/8 sectors, normal corridor, 102cm front clearance
+❌ Navigation error: 'BluetoothLidarNavigator' object has no attribute 'log_robot_aware_status'
+📡 Stopping BLE scanner...
+📡 LiDAR scan #610: 90 points
+📡 Starting BLE scanner...
+📡 BLE scanner active
+📡 LiDAR scan #620: 124 points
+🏠 ROBOT-AWARE CONFINED SPACE: sectors=4/8
+   Robot needs: 35.0cm×28.0cm + margins
+   Actual clearances: F=93cm L=115cm R=122cm
+🏠 CONFINED: No forward path - switching to back & turn strategy
+🏠 CONFINED: Backing up to create maneuvering space (0.0s)
+🏠 CONFINED: Backing up to create maneuvering space (0.5s)
+❌ Navigation error: 'BluetoothLidarNavigator' object has no attribute 'log_robot_aware_status'
+📡 LiDAR scan #630: 103 points
+🏠 CONFINED: Backing up to create maneuvering space (2.0s)
+📡 LiDAR scan #640: 102 points
+🏠 CONFINED: Backing up to create maneuvering space (2.5s)
+🏠 CONFINED: Backing up to create maneuvering space (3.0s)
+🌟 ROBOT ESCAPED: 6/8 sectors, normal corridor, 105cm front clearance
+❌ Navigation error: 'BluetoothLidarNavigator' object has no attribute 'log_robot_aware_status'
+📡 LiDAR scan #650: 102 points
+📡 LiDAR scan #660: 108 points
+📡 LiDAR scan #670: 116 points
+🏠 ROBOT-AWARE CONFINED SPACE: sectors=4/8
+   Robot needs: 35.0cm×28.0cm + margins
+   Actual clearances: F=95cm L=115cm R=121cm
+🏠 CONFINED: No forward path - switching to back & turn strategy
+🏠 CONFINED: Backing up to create maneuvering space (0.0s)
+❌ Navigation error: 'BluetoothLidarNavigator' object has no attribute 'log_robot_aware_status'
+📡 LiDAR scan #680: 121 points
+🏠 CONFINED: Backing up to create maneuvering space (1.5s)
+🏠 CONFINED: Backing up to create maneuvering space (2.0s)
+🏠 CONFINED: Backing up to create maneuvering space (2.5s)
+📡 LiDAR scan #690: 112 points
+🌟 ROBOT ESCAPED: 6/8 sectors, normal corridor, 103cm front clearance
+❌ Navigation error: 'BluetoothLidarNavigator' object has no attribute 'log_robot_aware_status'
+📡 LiDAR scan #700: 104 points
+📡 LiDAR scan #710: 116 points
+❌ Navigation error: 'BluetoothLidarNavigator' object has no attribute 'log_robot_aware_status'
+📡 LiDAR scan #720: 98 points
+🏠 ROBOT-AWARE CONFINED SPACE: sectors=4/8
+   Robot needs: 35.0cm×28.0cm + margins
+   Actual clearances: F=87cm L=113cm R=125cm
+🏠 CONFINED: No forward path - switching to back & turn strategy
+🏠 CONFINED: Backing up to create maneuvering space (0.0s)
+📡 BlueCharm TRACKING↗ #30:
+   RSSI: -79dBm (raw: -84) | Distance: ~8.1m | Avg: -75dBm
+📡 LiDAR scan #730: 115 points
+🏠 CONFINED: Backing up to create maneuvering space (0.5s)
+🏠 CONFINED: Backing up to create maneuvering space (1.0s)
+🏠 CONFINED: Backing up to create maneuvering space (1.5s)
+❌ Navigation error: 'BluetoothLidarNavigator' object has no attribute 'log_robot_aware_status'
+📡 LiDAR scan #740: 114 points
+📡 Stopping BLE scanner...
+📡 LiDAR scan #750: 109 points
+📡 LiDAR scan #760: 111 points
+
+Attempting to stop program...
+
+^C (Interrupt signal sent)
+^C
+🛑 Shutdown requested by user...
+🛑 Stopping Enhanced Navigator V7...
+SIGTERM sent to Python processes
+No Python processes running
+

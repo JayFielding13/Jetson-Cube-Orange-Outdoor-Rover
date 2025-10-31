@@ -1,0 +1,131 @@
+SSH Dashboard Terminal Log
+Session Date: 2025-07-21 19:07:34
+Connected to: 192.168.254.65:22
+Username: jay
+==================================================
+
+Disconnected from Raspberry Pi
+Connected to Raspberry Pi
+$ cd ~/rover_project && source venv/bin/activate && echo 'Rover environment activated' && pwd && which python
+Rover environment activated
+/home/jay/rover_project
+/home/jay/rover_project/venv/bin/python
+Uploading bluetooth_lidar_navigator_v8_lite.py...
+Successfully uploaded bluetooth_lidar_navigator_v8_lite.py to /home/jay/rover_project/bluetooth_lidar_navigator_v8_lite.py
+$ cd ~/rover_project && source venv/bin/activate && echo 'Starting program...' && python3 -u /home/jay/rover_project/bluetooth_lidar_navigator_v8_lite.py
+Starting program...
+✅ Bluetooth (bleak) library available
+✅ LiDAR (rplidar) library available
+================================================================================
+🚀 BLUETOOTH LIDAR NAVIGATOR V8-LITE
+================================================================================
+
+CORE FUNCTIONALITY ONLY:
+  ✅ Fixed LiDAR left/right orientation (CRITICAL)
+  ✅ LiDAR-enhanced navigation without visualization
+  ✅ Optimized Bluetooth target tracking
+  ✅ Multi-sensor fusion (LiDAR + Ultrasonic)
+  ✅ Robot body-aware obstacle avoidance
+  ✅ Automatic USB device detection
+  ✅ Fast autonomous mode response
+
+REMOVED FOR PERFORMANCE:
+  ❌ LiDAR visualization (caused Pi overload)
+  ❌ Matplotlib and GUI components
+  ❌ Excessive debug output
+
+SENSOR STATUS:
+  ✅ LiDAR Ready (Navigation Only)
+  ✅ Bluetooth Ready
+
+🔍 USB Device Detector initialized
+🤖 Robot Physical Profile Loaded:
+   Dimensions: 35.0cm × 28.0cm
+   LiDAR Position: 23.0cm from front, 13.0cm from left
+   Safe Distances: F=28.0cm R=17.0cm L=18.0cm R=20.0cm
+   Corridor Requirements: 38.0cm normal, 34.0cm tight
+🔄 LiDAR Processor initialized (LITE - NO VISUALIZATION)
+📏 Range: 100-8000mm
+🚧 Obstacle threshold: 600mm
+✅ Clear path threshold: 900mm
+🚀 Bluetooth LiDAR Navigator V8-LITE
+📊 Navigation: Danger=12.0cm | Caution=20.0cm | Safe=35.0cm
+🔄 LiDAR: Danger=12.0cm | Caution=20.0cm
+📡 Bluetooth: Target 0.3m ±0.2m
+🎯 LITE: No visualization - core navigation only
+🔍 Starting device detection...
+🔍 === USB Device Detection Started ===
+🔍 Scanning for USB devices...
+📋 Found 2 USB serial devices:
+   1. /dev/ttyUSB1 - USB Serial
+      VID:PID = 1A86:7523
+   2. /dev/ttyUSB0 - CP2102 USB to UART Bridge Controller - CP2102 USB to UART Bridge Controller
+      VID:PID = 10C4:EA60
+      Manufacturer: Silicon Labs
+\n🧪 Testing ports for device identification...
+\n📍 Testing /dev/ttyUSB1...
+🤖 Testing for Arduino on /dev/ttyUSB1...
+❌ No Arduino detected on /dev/ttyUSB1
+📡 Testing for LiDAR on /dev/ttyUSB1...
+❌ LiDAR test failed on /dev/ttyUSB1: Descriptor length mismatch
+\n📍 Testing /dev/ttyUSB0...
+🤖 Testing for Arduino on /dev/ttyUSB0...
+❌ No Arduino detected on /dev/ttyUSB0
+📡 Testing for LiDAR on /dev/ttyUSB0...
+✅ LiDAR detected on /dev/ttyUSB0
+   Model: 24
+   Firmware: (1, 29)
+   Hardware: 7
+\n📊 Detection Results:
+   Arduino candidates: 0
+   LiDAR candidates: 1
+❌ No Arduino detected on any port
+✅ LiDAR assigned to: /dev/ttyUSB0
+\n📋 Final Device Assignment:
+   Arduino: Not found
+   LiDAR: /dev/ttyUSB0
+❌ No Arduino detected and no manual configuration provided
+❌ Arduino connection failed - continuing without Arduino
+📍 Using detected LiDAR: /dev/ttyUSB0
+🔗 Connecting to RPLidar A1 on /dev/ttyUSB0
+📋 LiDAR Device info: {'model': 24, 'firmware': (1, 29), 'hardware': 7, 'serialnumber': 'EF83EDF9C7E29BCEA7E39EF27F504304'}
+💚 LiDAR Health: ('Good', 0)
+🔄 Starting LiDAR motor...
+✅ LiDAR connected and ready
+📡 LiDAR scanning started - NAVIGATION ONLY
+✅ LiDAR navigation enhancement enabled
+📡 Starting BlueCharm tracking thread...
+📡 BlueCharm tracking scanner ready
+🚀 Navigator V8-LITE started with LiDAR + Ultrasonic + Bluetooth (NO VISUALIZATION)📡 Starting BLE scanner...
+
+🎯 Ready for core navigation functionality
+✅ Navigator V8-LITE ready with LiDAR + Ultrasonic + Bluetooth
+📡 Switch to autonomous mode for navigation
+🚀 Core navigation optimized for performance
+Press Ctrl+C to stop...
+📡 BLE scanner active
+🚶 TRACKING MODE: BlueCharm at 11.7m
+📡 Navigation scan #100: 105 points, 8/8 clear
+📡 Navigation scan #200: 100 points, 8/8 clear
+📡 BLE scanner stopped
+📡 Starting BLE scanner...
+📡 BLE scanner active
+📡 BlueCharm TRACK #20: -72dBm | ~4.8m
+📡 Navigation scan #300: 102 points, 8/8 clear
+📡 Navigation scan #400: 96 points, 8/8 clear
+📡 BLE scanner stopped
+📡 Starting BLE scanner...
+📡 BLE scanner active
+📡 BlueCharm TRACK #40: -73dBm | ~5.6m
+📡 Navigation scan #500: 104 points, 8/8 clear
+🧭 SECTORS: {'front': '1085mm', 'front_right': '1089mm', 'right': '4734mm', 'back_right': '1476mm', 'back': '1823mm', 'back_left': '1294mm', 'left': '1398mm', 'front_left': '1116mm'}
+
+Attempting to stop program...
+
+^C (Interrupt signal sent)
+^C\n🛑 Shutdown requested by user...
+🛑 Stopping Navigator V8-LITE...
+⏳ Waiting for threads to stop...
+SIGTERM sent to Python processes
+No Python processes running
+

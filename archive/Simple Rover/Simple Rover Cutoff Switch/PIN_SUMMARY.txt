@@ -1,0 +1,85 @@
+================================================================================
+                        PIN CONFIGURATION SUMMARY
+                    Simple Rover LoRa Cutoff Switch
+================================================================================
+
+TRANSMITTER WIRING (Remote Control):
+────────────────────────────────────
+
+  Illuminated Button → Heltec Board:
+
+    Button Switch Pin 1  →  GPIO 47
+    Button Switch Pin 2  →  GND
+    Button LED + (anode) →  GPIO 48
+    Button LED - (cathode) → GND
+
+  Why GPIO 47 & 48?
+    ✓ Safe to use - no conflicts with OLED or LoRa
+    ✓ GPIO 21 is shared with OLED reset - avoid it!
+    ✓ These pins have internal pull-up capability
+
+
+RECEIVER WIRING (On Rover):
+────────────────────────────
+
+  Heltec Board → Raspberry Pi:
+
+    USB cable from Heltec to any USB port on Pi
+    (This provides both power and serial communication)
+
+  Serial Port on Pi:
+    /dev/ttyUSB0  or  /dev/ttyACM0
+    Baud rate: 115200
+
+
+CHANNEL CONFIGURATION:
+──────────────────────
+
+  Both boards must have MATCHING sync words!
+
+  Default: 0x12
+
+  To change for multiple rovers:
+    Rover 1: 0x12
+    Rover 2: 0x34
+    Rover 3: 0x56
+    etc.
+
+
+LED BEHAVIOR:
+─────────────
+
+  STOP Mode:       LED BLINKS (500ms interval)
+  AUTONOMOUS Mode: LED SOLID ON
+
+
+QUICK TEST:
+───────────
+
+  1. Upload code to both boards
+  2. Connect button to transmitter (GPIO 47, 48, GND, GND)
+  3. Power on both boards
+  4. Press button - LED should toggle between blink and solid
+  5. Receiver display should show "STOP" or "AUTONOMOUS"
+
+
+TROUBLESHOOTING:
+────────────────
+
+  Button not working?
+    → Check GPIO 47 and GND connections
+    → Watch Serial Monitor when pressing button
+
+  LED not working?
+    → Check GPIO 48 and GND connections
+    → Try swapping LED + and - wires
+
+  LoRa not communicating?
+    → Check antennas connected to both boards
+    → Verify sync words match in both codes
+
+  Pi not seeing serial?
+    → Run: ls /dev/ttyUSB* /dev/ttyACM*
+    → Try different USB cable or port
+
+================================================================================

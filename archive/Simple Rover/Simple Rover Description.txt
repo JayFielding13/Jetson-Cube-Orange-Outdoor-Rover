@@ -1,0 +1,117 @@
+Obstacle-Avoidance Robot - Hardware Configuration Summary
+System Architecture
+Main Controller: Raspberry Pi 4
+Motor Controller: Arduino Nano (connected via USB to Pi)
+Motor Driver: MDDS30 (configured for PWM+DIR mode)
+Sensors: 2× HC-SR04 Ultrasonic sensors
+Drive System: Differential drive tracked chassis
+Raspberry Pi GPIO Connections
+Left HC-SR04 Ultrasonic Sensor
+VCC: Pi 5V (Physical Pin 2)
+GND: Pi GND (Physical Pin 6)
+TRIG: GPIO 23 (Physical Pin 16) - direct connection
+ECHO: GPIO 24 (Physical Pin 18) - through voltage divider
+Right HC-SR04 Ultrasonic Sensor
+VCC: Pi 5V (Physical Pin 4) - can share 5V rail
+GND: Pi GND (Physical Pin 9) - can share ground
+TRIG: GPIO 17 (Physical Pin 11) - direct connection
+ECHO: GPIO 27 (Physical Pin 13) - through voltage divider
+Voltage Divider Circuit (for EACH ECHO pin)
+Purpose: Drops 5V ECHO signal to safe 3.3V for Pi GPIO
+
+Configuration:
+
+Sensor ECHO (5V)
+    |
+[2kΩ] [2kΩ]  ← Two 2kΩ resistors in PARALLEL (= 1kΩ equivalent)
+    |
+    ├─────> TO Pi GPIO PIN (reads ~3.3V here)
+    |
+  [2kΩ]  ← Single 2kΩ resistor
+    |
+   GND
+Connection Points:
+
+ECHO wire → one end of parallel resistor pair
+Other end of parallel pair → Pi GPIO + one end of single 2kΩ resistor
+Other end of single 2kΩ → GND
+Build TWO of these circuits: One for GPIO 24 (left sensor), one for GPIO 27 (right sensor)
+
+Arduino Nano Pin Assignments
+Connection to Raspberry Pi
+USB connection to Pi for serial communication and power
+MDDS30 Motor Driver Control Pins
+Left Motor (Channel 1):
+
+PWM (Speed): Arduino Pin D5 (PWM-capable)
+DIR (Direction): Arduino Pin D4 (digital)
+Right Motor (Channel 2):
+
+PWM (Speed): Arduino Pin D6 (PWM-capable)
+DIR (Direction): Arduino Pin D7 (digital)
+MDDS30 Configuration
+Must be configured for Sign-Magnitude PWM Input mode via DIP switches
+Check MDDS30 user manual for correct DIP switch settings
+This mode uses one PWM pin (speed) + one DIR pin (direction) per motor
+Sensor Mounting
+Sensor angle: 30 degrees outward from center
+Spacing: (待定 - user will provide dimensions)
+Height: (待定 - user will provide dimensions)
+Communication Protocol
+Pi ↔ Arduino (Serial/USB)
+Simple text commands sent from Pi to Arduino:
+
+Suggested command format (to be finalized):
+
+F<speed> = Forward at speed (0-255)
+B<speed> = Backward at speed (0-255)
+L<speed> = Turn left at speed (0-255)
+R<speed> = Turn right at speed (0-255)
+S = Stop both motors
+Arduino receives commands, translates to appropriate PWM+DIR signals for MDDS30
+
+Robot Physical Dimensions
+Chassis Specifications
+Width: 10 inches (25.4 cm)
+Length: 13 inches (33.0 cm)
+Total Height: 7.5 inches (19.0 cm)
+Drive Type: Tank-style differential drive with zero-radius turning capability
+Turning Circle: Can spin in place; turning diameter equals robot length (13 inches)
+Top Speed: Approximately 1 meter per second (100 cm/s)
+Sensor Mounting Details
+Sensor Separation: 5 inches (12.7 cm) center-to-center
+Sensor Position: Each sensor 2.5 inches (6.35 cm) from robot centerline
+Sensor Height: 3.25 inches (8.3 cm) from ground to sensor center
+Sensor Location: Mounted at front edge of 13-inch length (no overhang)
+Sensor Angle: 30 degrees outward from centerline (per sensor)
+Detection Coverage Analysis
+Coverage Pattern: Forward + peripheral vision with overlapping center zones
+Detectable Obstacles: Walls, desk legs, table legs, floor objects (power strips, cables)
+Beam Height: Well-suited for typical office obstacles at floor level
+Blind Spots: May not detect very thin vertical obstacles (thin poles, ankles)
+Performance Characteristics
+Reaction Time: At 1 m/s speed with 0.1s sensor reading interval, robot moves only 10 cm between readings
+Stopping Distance: Short - slow speed allows quick stops
+Maneuverability: Excellent - zero-radius turning enables tight spaces navigation
+Clearance: Low profile (7.5") allows passage under most desks/tables
+Target Environment
+Location: Indoor office spaces
+Obstacles: Walls, desk legs, furniture, floor cables/power strips
+Operating Mode: Autonomous wandering with obstacle avoidance
+Software Architecture Overview
+Raspberry Pi Software (Python)
+Reads both HC-SR04 sensors
+Implements obstacle avoidance logic
+Sends movement commands to Arduino via serial
+Single source of truth for all decisions
+Arduino Software (C++)
+Receives serial commands from Pi
+Generates clean PWM signals for motor speed
+Controls direction pins
+Performs 3.3V to 5V level shifting
+No autonomous decision-making (just executes Pi commands)
+Mission
+Autonomous wandering in indoor office environment with obstacle avoidance
+
+Last Updated: 2025-10-10 Hardware verified and ready for software development
+

@@ -1,0 +1,826 @@
+(venv) jay@RoboPi:~/rover_project $ python3 bluetooth_tracking_navigator_v4
+✅ Bluetooth (bleak) library available
+================================================================================
+🤖 BLUETOOTH TRACKING NAVIGATOR V4
+================================================================================
+
+FORWARD MOVEMENT SIGNAL TRACKING FEATURES:
+  ✅ Ultrasonic obstacle detection and avoidance
+  ✅ Enhanced stuck recovery system
+  ✅ Arduino gatekeeper integration
+  ✅ Real-time Bluetooth beacon ranging (0.8m - 11.2m)
+  ✅ Working RSSI values (-57dBm to -80dBm)
+  ✅ Thread-safe callback-based BLE scanning
+  🚶 NEW: Forward movement signal strength tracking
+  🔄 NEW: Turn-and-test behavior for course corrections
+  ⚡ NEW: Proper motor speeds (80+) that actually move rover
+  🎯 NEW: Straight-line approach with signal monitoring
+  🏁 NEW: Precise target hold at 0.5m ±0.15m
+  ✅ Safety-first design with ultrasonic priority
+  ✅ Clean shutdown with no task warnings
+
+FORWARD TRACKING BEHAVIOR:
+  🔍 SEARCHING: Look for BlueCharm signal
+  🚶 FORWARD_TRACKING: Move forward while monitoring signal
+  🔄 TURN_TESTING: Test left/right turns when signal degrades
+  🎯 APPROACHING: Gentle approach to target
+  🏁 HOLDING: Maintain precise 0.5m distance
+  🛡️ SAFETY: Ultrasonic overrides all Bluetooth behavior
+
+SIGNAL TRACKING ALGORITHM:
+  📈 2dBm improvement threshold to continue direction
+  📉 3dBm degradation threshold triggers turn test
+  🎯 Target: 0.5m ±0.15m with micro-adjustments
+  ⚡ Motor speeds: 40-100 (guaranteed movement)
+
+🚀 Bluetooth Tracking Navigator V4 Initialized
+📊 Navigation: Danger=30.0cm | Caution=60.0cm | Safe=100.0cm
+📡 Bluetooth: Enabled | Target: DD:34:02:09:CA:1E
+🚶 Tracking: Target distance 0.5m ±0.15m | Influence 35%
+📈 Signal: 2dBm improvement | 3dBm degradation triggers
+⚡ Motor: Min speeds 40-80 (proper movement)
+🛡️ Safety: Ultrasonic navigation takes absolute priority
+✅ Arduino connected on /dev/ttyUSB0
+📡 Starting BlueCharm tracking thread...
+📡 BlueCharm tracking scanner started
+📡 BlueCharm tracking scanner ready
+🚀 Tracking Navigator V4 started
+🚶 Ready for autonomous forward movement signal tracking
+✅ Tracking Navigator V4 ready - switch to autonomous mode
+📡 BlueCharm forward tracking will activate automatically
+🚶 Rover will move forward and track signal strength changes
+Press Ctrl+C to stop...
+📡 Starting BLE tracking scanner...
+📡 BLE tracking scanner active
+📡 Stopping BLE tracking scanner...
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: No signal | Det: 0 | Runtime: 6s
+🔄 SEARCH PATTERN: Looking for signal...
+📡 Starting BLE tracking scanner...
+📡 BLE tracking scanner active
+📡 Stopping BLE tracking scanner...
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: No signal | Det: 0 | Runtime: 9s
+📡 Starting BLE tracking scanner...
+📡 BLE tracking scanner active
+📡 Stopping BLE tracking scanner...
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: No signal | Det: 0 | Runtime: 12s
+🚨 EMERGENCY! Obstacle at 28.0cm - overriding tracking
+🔄 STUCK: Backing up (count: 1)
+📡 Starting BLE tracking scanner...
+📡 BLE tracking scanner active
+🧭 AUTONOMOUS | BACKING | US: 200.0cm | BT: No signal | Det: 0 | Runtime: 15s
+   Stuck counter: 1/5
+🔄 RETRY: Switching to right turn (stuck: 1)
+✅ CLEAR: Path ahead at 200.0cm - resuming searching
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 8.9m (-78dBm PASS) | Det: 1 | Runtime: 18s
+   Stuck counter: 1/5
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 8.9m (-78dBm PASS) | Det: 2 | Runtime: 21s
+📡 Stopping BLE tracking scanner...
+🚨 EMERGENCY! Obstacle at 18.5cm - overriding tracking
+🔄 STUCK: Backing up (count: 1)
+📡 Starting BLE tracking scanner...
+📡 BLE tracking scanner active
+🧭 AUTONOMOUS | BACKING | US: 200.0cm | BT: 8.9m (-78dBm PASS) | Det: 2 | Runtime: 24s
+   Stuck counter: 1/5
+🔄 RETRY: Switching to left turn (stuck: 1)
+🧭 AUTONOMOUS | AVOIDING | US: 200.0cm | BT: 7.1m (-76dBm PASS) | Det: 3 | Runtime: 27s
+   Stuck counter: 1/5
+✅ CLEAR: Path ahead at 200.0cm - resuming searching
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 5.6m (-74dBm PASS) | Det: 4 | Runtime: 30s
+   Stuck counter: 1/5
+📡 BlueCharm PASSIVE #5:
+   RSSI: -82dBm | Distance: ~14.1m | Avg: -78dBm
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 7.1m (-76dBm PASS) | Det: 7 | Runtime: 33s
+🔄 SEARCH PATTERN: Looking for signal...
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 7.1m (-76dBm PASS) | Det: 7 | Runtime: 36s
+🚶 TRACKING MODE: BlueCharm at 2.2m - forward tracking
+📡 BlueCharm TRACKING↗ #10:
+   RSSI: -66dBm | Distance: ~2.2m | Avg: -76dBm
+📡 SIGNAL DETECTED: Switching to forward_tracking mode (2.2m)
+🚶 FORWARD TRACKING: 2.2m signal ↗improving
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 2.2m (-66dBm TRACK↗) | Det: 10 | Runtime: 39s
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 2.2m (-66dBm TRACK↗) | Det: 10 | Runtime: 42s
+🚶 FORWARD TRACKING: 7.1m signal ↗improving
+🚶 FORWARD TRACKING: 7.1m signal ↗improving
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 4.5m (-72dBm TRACK↗) | Det: 12 | Runtime: 45s
+🚶 FORWARD TRACKING: 4.5m signal ↗improving
+🚶 FORWARD TRACKING: 4.5m signal ↗improving
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 2.8m (-68dBm TRACK↗) | Det: 13 | Runtime: 48s
+📡 BlueCharm TRACKING↗ #15:
+   RSSI: -72dBm | Distance: ~4.5m | Avg: -74dBm
+🚶 FORWARD TRACKING: 5.6m signal ↗improving
+🚶 FORWARD TRACKING: 5.6m signal ↗improving
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 5.6m (-74dBm TRACK↗) | Det: 16 | Runtime: 51s
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 5.6m (-74dBm TRACK↗) | Det: 16 | Runtime: 54s
+🚶 FORWARD TRACKING: 5.6m signal ↗improving
+🚶 FORWARD TRACKING: 5.6m signal ↗improving
+📡 Stopping BLE tracking scanner...
+📡 Starting BLE tracking scanner...
+📡 BLE tracking scanner active
+🚶 FORWARD TRACKING: 4.5m signal ↗improving
+🔄 SIGNAL DEGRADING: Testing left turn for improvement
+🧭 AUTONOMOUS | TURN_TESTING | US: 200.0cm | BT: 7.1m (-76dBm TRACK↘) | Det: 18 | Runtime: 63s
+🔄 TESTING: left turn for signal improvement
+🔄 TESTING: left turn for signal improvement
+🔄 TESTING: left turn for signal improvement
+📡 BlueCharm TRACKING↘ #20:
+   RSSI: -74dBm | Distance: ~5.6m | Avg: -73dBm
+✅ TURN TEST SUCCESS: left improved by 2.0dBm
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 5.6m (-74dBm TRACK↗) | Det: 20 | Runtime: 66s
+🚶 FORWARD TRACKING: 5.6m signal ↗improving
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 5.6m (-74dBm TRACK↗) | Det: 22 | Runtime: 69s
+🔄 SIGNAL DEGRADING: Testing left turn for improvement
+🔄 TESTING: left turn for signal improvement
+🔄 TESTING: left turn for signal improvement
+🔄 TESTING: left turn for signal improvement
+🧭 AUTONOMOUS | TURN_TESTING | US: 200.0cm | BT: 11.2m (-80dBm TRACK↘) | Det: 23 | Runtime: 72s
+🔄 TRYING RIGHT: Left turn didn't help, testing right
+🔄 TESTING: right turn for signal improvement
+🔄 TESTING: right turn for signal improvement
+🔄 TESTING: right turn for signal improvement
+🧭 AUTONOMOUS | TURN_TESTING | US: 200.0cm | BT: 4.5m (-72dBm TRACK↘) | Det: 24 | Runtime: 75s
+📡 BlueCharm TRACKING↗ #25:
+   RSSI: -66dBm | Distance: ~2.2m | Avg: -73dBm
+✅ TURN TEST SUCCESS: right improved by 14.0dBm
+🚶 FORWARD TRACKING: 2.2m signal ↗improving
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 2.8m (-68dBm TRACK↗) | Det: 26 | Runtime: 78s
+🚶 FORWARD TRACKING: 2.8m signal ↗improving
+🚶 FORWARD TRACKING: 2.8m signal ↗improving
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 2.8m (-68dBm TRACK↗) | Det: 26 | Runtime: 81s
+🚶 FORWARD TRACKING: 5.6m signal ↗improving
+🚶 FORWARD TRACKING: 5.6m signal ↗improving
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 5.6m (-74dBm TRACK↗) | Det: 27 | Runtime: 84s
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 5.6m (-74dBm TRACK↗) | Det: 28 | Runtime: 87s
+🔄 SIGNAL DEGRADING: Testing left turn for improvement
+🚨 EMERGENCY! Obstacle at 26.6cm - overriding tracking
+📡 BlueCharm TRACKING↘ #30:
+   RSSI: -80dBm | Distance: ~11.2m | Avg: -74dBm
+✅ CLEAR: Path ahead at 200.0cm - resuming forward_tracking
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 5.6m (-74dBm TRACK↘) | Det: 31 | Runtime: 90s
+🚶 FORWARD TRACKING: 5.6m signal ↘degrading
+🔄 SIGNAL DEGRADING: Testing left turn for improvement
+🧭 AUTONOMOUS | TURN_TESTING | US: 200.0cm | BT: 5.6m (-74dBm TRACK↘) | Det: 31 | Runtime: 93s
+🔄 TESTING: left turn for signal improvement
+🚨 EMERGENCY! Obstacle at 18.1cm - overriding tracking
+🧭 AUTONOMOUS | AVOIDING | US: 200.0cm | BT: 11.2m (-80dBm TRACK↘) | Det: 32 | Runtime: 96s
+✅ CLEAR: Path ahead at 200.0cm - resuming forward_tracking
+🚶 FORWARD TRACKING: 28.2m signal ↘degrading
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 8.9m (-78dBm TRACK↘) | Det: 34 | Runtime: 99s
+🔄 SIGNAL DEGRADING: Testing left turn for improvement
+🔄 TESTING: left turn for signal improvement
+🔄 TESTING: left turn for signal improvement
+🔄 TESTING: left turn for signal improvement
+🧭 AUTONOMOUS | TURN_TESTING | US: 200.0cm | BT: 8.9m (-78dBm TRACK↘) | Det: 34 | Runtime: 102s
+🔄 TRYING RIGHT: Left turn didn't help, testing right
+🔄 TESTING: right turn for signal improvement
+🔄 TESTING: right turn for signal improvement
+🔄 TESTING: right turn for signal improvement
+🧭 AUTONOMOUS | TURN_TESTING | US: 200.0cm | BT: 8.9m (-78dBm TRACK↘) | Det: 34 | Runtime: 105s
+⚠️ NO IMPROVEMENT: Continuing forward tracking
+🚶 FORWARD TRACKING: 8.9m signal ↘degrading
+📡 BlueCharm TRACKING↘ #35:
+   RSSI: -76dBm | Distance: ~7.1m | Avg: -76dBm
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 8.9m (-78dBm TRACK↗) | Det: 36 | Runtime: 108s
+🚨 EMERGENCY! Obstacle at 19.7cm - overriding tracking
+📡 Stopping BLE tracking scanner...
+📡 Starting BLE tracking scanner...
+📡 BLE tracking scanner active
+📡 Signal timeout (16.9s) - ending all tracking modes
+✅ CLEAR: Path ahead at 200.0cm - resuming searching
+🚶 TRACKING MODE: BlueCharm at 2.8m - forward tracking
+📡 SIGNAL DETECTED: Switching to forward_tracking mode (2.8m)
+🚶 FORWARD TRACKING: 2.8m signal stable
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 2.8m (-68dBm TRACK) | Det: 37 | Runtime: 126s
+📡 BlueCharm TRACKING↗ #40:
+   RSSI: -72dBm | Distance: ~4.5m | Avg: -76dBm
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 4.5m (-72dBm TRACK↗) | Det: 40 | Runtime: 129s
+🚶 FORWARD TRACKING: 2.2m signal ↗improving
+🚶 FORWARD TRACKING: 2.2m signal ↗improving
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 2.2m (-66dBm TRACK↗) | Det: 41 | Runtime: 132s
+🚶 FORWARD TRACKING: 2.2m signal ↗improving
+🚶 FORWARD TRACKING: 2.2m signal ↗improving
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 2.2m (-66dBm TRACK↗) | Det: 41 | Runtime: 135s
+🚨 EMERGENCY! Obstacle at 21.4cm - overriding tracking
+🔄 STUCK: Backing up (count: 1)
+🔄 RETRY: Switching to left turn (stuck: 1)
+🧭 AUTONOMOUS | AVOIDING | US: 200.0cm | BT: 2.2m (-66dBm TRACK↗) | Det: 41 | Runtime: 138s
+   Stuck counter: 1/5
+📡 Signal timeout (10.4s) - ending all tracking modes
+✅ CLEAR: Path ahead at 200.0cm - resuming searching
+🚶 TRACKING MODE: BlueCharm at 2.2m - forward tracking
+📡 SIGNAL DETECTED: Switching to forward_tracking mode (2.2m)
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 2.2m (-66dBm TRACK) | Det: 42 | Runtime: 141s
+   Stuck counter: 1/5
+🚶 FORWARD TRACKING: 2.2m signal stable
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 2.8m (-68dBm TRACK↗) | Det: 44 | Runtime: 144s
+   Stuck counter: 1/5
+🚶 FORWARD TRACKING: 2.8m signal ↗improving
+🚶 FORWARD TRACKING: 2.8m signal ↗improving
+📡 BlueCharm TRACKING↗ #45:
+   RSSI: -72dBm | Distance: ~4.5m | Avg: -73dBm
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 4.5m (-72dBm TRACK↗) | Det: 45 | Runtime: 147s
+🔄 SIGNAL DEGRADING: Testing left turn for improvement
+🔄 TESTING: left turn for signal improvement
+🔄 TESTING: left turn for signal improvement
+🧭 AUTONOMOUS | TURN_TESTING | US: 200.0cm | BT: 2.8m (-68dBm TRACK↘) | Det: 46 | Runtime: 150s
+🔄 TESTING: left turn for signal improvement
+🔄 TRYING RIGHT: Left turn didn't help, testing right
+🔄 TESTING: right turn for signal improvement
+🔄 TESTING: right turn for signal improvement
+🧭 AUTONOMOUS | TURN_TESTING | US: 200.0cm | BT: 2.8m (-68dBm TRACK↘) | Det: 46 | Runtime: 153s
+🔄 TESTING: right turn for signal improvement
+⚠️ NO IMPROVEMENT: Continuing forward tracking
+🚶 FORWARD TRACKING: 2.8m signal ↘degrading
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 2.8m (-68dBm TRACK↘) | Det: 46 | Runtime: 156s
+🔄 SIGNAL DEGRADING: Testing left turn for improvement
+🔄 TESTING: left turn for signal improvement
+🔄 TESTING: left turn for signal improvement
+🧭 AUTONOMOUS | TURN_TESTING | US: 200.0cm | BT: 1.8m (-64dBm TRACK↘) | Det: 47 | Runtime: 159s
+🔄 TESTING: left turn for signal improvement
+✅ TURN TEST SUCCESS: left improved by 4.0dBm
+🚶 FORWARD TRACKING: 1.8m signal ↗improving
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 1.8m (-64dBm TRACK↗) | Det: 47 | Runtime: 162s
+🚶 FORWARD TRACKING: 1.4m signal ↗improving
+📡 BlueCharm TRACKING↗ #50:
+   RSSI: -60dBm | Distance: ~1.1m | Avg: -68dBm
+🚶 FORWARD TRACKING: 1.1m signal ↗improving
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 1.1m (-60dBm TRACK↗) | Det: 50 | Runtime: 165s
+🚨 EMERGENCY! Obstacle at 15.1cm - overriding tracking
+🔄 STUCK: Backing up (count: 1)
+📡 Stopping BLE tracking scanner...
+📡 Starting BLE tracking scanner...
+📡 BLE tracking scanner active
+🔄 RETRY: Switching to right turn (stuck: 1)
+🧭 AUTONOMOUS | AVOIDING | US: 28.3cm | BT: 1.1m (-60dBm TRACK↗) | Det: 54 | Runtime: 171s
+   Stuck counter: 1/5
+✅ CLEAR: Path ahead at 200.0cm - resuming forward_tracking
+🎯 APPROACH MODE: BlueCharm at 0.9m - gentle approach
+📡 BlueCharm APPROACH #55:
+   RSSI: -58dBm | Distance: ~0.9m | Avg: -65dBm
+🎯 SWITCHING TO APPROACH: 0.9m
+🎯 APPROACHING: Moving toward 0.9m signal at 60 speed
+🚨 EMERGENCY! Obstacle at 22.7cm - overriding tracking
+🧭 AUTONOMOUS | AVOIDING | US: 22.7cm | BT: 0.9m (-58dBm APPR) | Det: 55 | Runtime: 174s
+   Stuck counter: 1/5
+✅ CLEAR: Path ahead at 200.0cm - resuming approaching
+🎯 APPROACHING: Moving toward 0.9m signal at 60 speed
+🧭 AUTONOMOUS | APPROACHING | US: 200.0cm | BT: 0.9m (-58dBm APPR) | Det: 55 | Runtime: 177s
+🎯 APPROACHING: Moving toward 0.7m signal at 60 speed
+🧭 AUTONOMOUS | APPROACHING | US: 200.0cm | BT: 0.7m (-56dBm APPR) | Det: 56 | Runtime: 180s
+🎯 APPROACHING: Moving toward 0.7m signal at 60 speed
+🏁 TARGET HOLD: BlueCharm at 0.4m - holding position
+🎯 SWITCHING TO HOLD: 0.4m - target reached
+🏁 TARGET PERFECT: Holding 0.4m distance
+🧭 AUTONOMOUS | HOLDING | US: 200.0cm | BT: 0.3m (-46dBm HOLD) | Det: 58 | Runtime: 183s
+📡 BlueCharm HOLDING #60:
+   RSSI: -46dBm | Distance: ~0.3m | Avg: -59dBm
+📏 ADJUST FARTHER: 0.3m → 0.5m
+📏 ADJUST FARTHER: 0.3m → 0.5m
+🧭 AUTONOMOUS | HOLDING | US: 200.0cm | BT: 0.3m (-46dBm HOLD) | Det: 61 | Runtime: 186s
+📏 ADJUST FARTHER: 0.3m → 0.5m
+📏 ADJUST FARTHER: 0.3m → 0.5m
+🧭 AUTONOMOUS | HOLDING | US: 200.0cm | BT: 0.3m (-46dBm HOLD) | Det: 61 | Runtime: 189s
+📏 ADJUST FARTHER: 0.3m → 0.5m
+🚨 EMERGENCY! Obstacle at 22.0cm - overriding tracking
+🔄 STUCK: Backing up (count: 1)
+🧭 AUTONOMOUS | BACKING | US: 200.0cm | BT: 0.3m (-46dBm HOLD) | Det: 61 | Runtime: 192s
+   Stuck counter: 1/5
+🔄 RETRY: Switching to right turn (stuck: 1)
+🧭 AUTONOMOUS | AVOIDING | US: 200.0cm | BT: 8.9m (-78dBm HOLD) | Det: 64 | Runtime: 195s
+✅ CLEAR: Path ahead at 200.0cm - resuming holding
+📏 ADJUST CLOSER: 8.9m → 0.5m
+📡 HOLD LOST: Signal lost or too far - returning to search
+📡 SIGNAL DETECTED: Switching to holding mode (8.9m)
+📏 ADJUST CLOSER: 8.9m → 0.5m
+📡 HOLD LOST: Signal lost or too far - returning to search
+📡 SIGNAL DETECTED: Switching to holding mode (8.9m)
+🧭 AUTONOMOUS | HOLDING | US: 200.0cm | BT: 8.9m (-78dBm HOLD) | Det: 64 | Runtime: 198s
+📏 ADJUST CLOSER: 8.9m → 0.5m
+📡 HOLD LOST: Signal lost or too far - returning to search
+📡 SIGNAL DETECTED: Switching to holding mode (8.9m)
+📏 ADJUST CLOSER: 8.9m → 0.5m
+📡 HOLD LOST: Signal lost or too far - returning to search
+📡 SIGNAL DETECTED: Switching to holding mode (8.9m)
+📏 ADJUST CLOSER: 8.9m → 0.5m
+📡 HOLD LOST: Signal lost or too far - returning to search
+📡 SIGNAL DETECTED: Switching to holding mode (8.9m)
+🧭 AUTONOMOUS | HOLDING | US: 200.0cm | BT: 8.9m (-78dBm HOLD) | Det: 64 | Runtime: 201s
+📏 ADJUST CLOSER: 8.9m → 0.5m
+📡 HOLD LOST: Signal lost or too far - returning to search
+📡 SIGNAL DETECTED: Switching to holding mode (8.9m)
+📏 ADJUST CLOSER: 8.9m → 0.5m
+📡 HOLD LOST: Signal lost or too far - returning to search
+📡 SIGNAL DETECTED: Switching to holding mode (8.9m)
+📏 ADJUST CLOSER: 8.9m → 0.5m
+📡 HOLD LOST: Signal lost or too far - returning to search
+📡 SIGNAL DETECTED: Switching to holding mode (8.9m)
+🧭 AUTONOMOUS | HOLDING | US: 200.0cm | BT: 8.9m (-78dBm HOLD) | Det: 64 | Runtime: 204s
+📏 ADJUST CLOSER: 8.9m → 0.5m
+📡 HOLD LOST: Signal lost or too far - returning to search
+📡 Signal timeout (10.6s) - ending all tracking modes
+📡 BlueCharm PASSIVE #65:
+   RSSI: -72dBm | Distance: ~4.5m | Avg: -57dBm
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 7.1m (-76dBm PASS) | Det: 66 | Runtime: 207s
+🚨 EMERGENCY! Obstacle at 22.6cm - overriding tracking
+🔄 STUCK: Backing up (count: 1)
+🧭 AUTONOMOUS | BACKING | US: 200.0cm | BT: 7.1m (-76dBm PASS) | Det: 66 | Runtime: 210s
+   Stuck counter: 1/5
+🔄 RETRY: Switching to left turn (stuck: 1)
+🚶 TRACKING MODE: BlueCharm at 2.8m - forward tracking
+🧭 AUTONOMOUS | AVOIDING | US: 200.0cm | BT: 2.8m (-68dBm TRACK↘) | Det: 67 | Runtime: 213s
+   Stuck counter: 1/5
+✅ CLEAR: Path ahead at 200.0cm - resuming forward_tracking
+🚶 FORWARD TRACKING: 2.8m signal ↘degrading
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 2.2m (-66dBm TRACK↘) | Det: 68 | Runtime: 216s
+🔄 SIGNAL DEGRADING: Testing left turn for improvement
+🔄 TESTING: left turn for signal improvement
+🔄 TESTING: left turn for signal improvement
+🔄 TESTING: left turn for signal improvement
+🧭 AUTONOMOUS | TURN_TESTING | US: 200.0cm | BT: 11.2m (-80dBm TRACK↗) | Det: 69 | Runtime: 219s
+🔄 TRYING RIGHT: Left turn didn't help, testing right
+🔄 TESTING: right turn for signal improvement
+🔄 TESTING: right turn for signal improvement
+📡 BlueCharm TRACKING↗ #70:
+   RSSI: -64dBm | Distance: ~1.8m | Avg: -59dBm
+🔄 TESTING: right turn for signal improvement
+🧭 AUTONOMOUS | TURN_TESTING | US: 200.0cm | BT: 1.8m (-64dBm TRACK↗) | Det: 70 | Runtime: 222s
+✅ TURN TEST SUCCESS: right improved by 2.0dBm
+🚶 FORWARD TRACKING: 3.5m signal ↗improving
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 3.5m (-70dBm TRACK↗) | Det: 71 | Runtime: 225s
+🚶 FORWARD TRACKING: 1.8m signal ↗improving
+🚶 FORWARD TRACKING: 1.8m signal ↗improving
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 1.8m (-64dBm TRACK↗) | Det: 73 | Runtime: 228s
+🚶 FORWARD TRACKING: 1.8m signal ↗improving
+🚶 FORWARD TRACKING: 1.8m signal ↗improving
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 1.8m (-64dBm TRACK↗) | Det: 74 | Runtime: 231s
+📡 BlueCharm TRACKING↗ #75:
+   RSSI: -62dBm | Distance: ~1.4m | Avg: -64dBm
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 1.4m (-62dBm TRACK↗) | Det: 75 | Runtime: 234s
+🚶 FORWARD TRACKING: 1.4m signal ↗improving
+🚶 FORWARD TRACKING: 1.4m signal ↗improving
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 1.4m (-62dBm TRACK↗) | Det: 75 | Runtime: 237s
+🚶 FORWARD TRACKING: 1.4m signal ↗improving
+🚶 FORWARD TRACKING: 1.4m signal ↗improving
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 1.4m (-62dBm TRACK↗) | Det: 76 | Runtime: 240s
+🚶 FORWARD TRACKING: 1.4m signal ↗improving
+🚶 FORWARD TRACKING: 1.4m signal ↗improving
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 1.4m (-62dBm TRACK↗) | Det: 76 | Runtime: 243s
+🔄 SIGNAL DEGRADING: Testing left turn for improvement
+🔄 TESTING: left turn for signal improvement
+🧭 AUTONOMOUS | TURN_TESTING | US: 200.0cm | BT: 11.2m (-80dBm TRACK↘) | Det: 78 | Runtime: 246s
+🔄 TESTING: left turn for signal improvement
+🔄 TESTING: left turn for signal improvement
+🔄 TRYING RIGHT: Left turn didn't help, testing right
+🔄 TESTING: right turn for signal improvement
+🧭 AUTONOMOUS | TURN_TESTING | US: 200.0cm | BT: 30.0m (-90dBm TRACK↘) | Det: 79 | Runtime: 249s
+📡 BlueCharm TRACKING↘ #80:
+   RSSI: -72dBm | Distance: ~4.5m | Avg: -70dBm
+🔄 TESTING: right turn for signal improvement
+🔄 TESTING: right turn for signal improvement
+✅ TURN TEST SUCCESS: right improved by 8.0dBm
+🚶 FORWARD TRACKING: 4.5m signal ↗improving
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 4.5m (-72dBm TRACK↗) | Det: 82 | Runtime: 252s
+🚶 FORWARD TRACKING: 4.5m signal ↗improving
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 4.5m (-72dBm TRACK↗) | Det: 83 | Runtime: 255s
+🚶 FORWARD TRACKING: 4.5m signal ↗improving
+🚨 EMERGENCY! Obstacle at 29.5cm - overriding tracking
+🔄 STUCK: Backing up (count: 1)
+🧭 AUTONOMOUS | BACKING | US: 200.0cm | BT: 4.5m (-72dBm TRACK↗) | Det: 83 | Runtime: 258s
+   Stuck counter: 1/5
+🔄 RETRY: Switching to right turn (stuck: 1)
+✅ CLEAR: Path ahead at 200.0cm - resuming forward_tracking
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 14.1m (-82dBm TRACK↗) | Det: 84 | Runtime: 261s
+   Stuck counter: 1/5
+🚶 FORWARD TRACKING: 14.1m signal ↗improving
+📡 BlueCharm TRACKING↗ #85:
+   RSSI: -70dBm | Distance: ~3.5m | Avg: -71dBm
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 3.5m (-70dBm TRACK↗) | Det: 85 | Runtime: 264s
+   Stuck counter: 1/5
+🚶 FORWARD TRACKING: 4.5m signal ↗improving
+🚶 FORWARD TRACKING: 4.5m signal ↗improving
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 5.6m (-74dBm TRACK↗) | Det: 87 | Runtime: 267s
+🚶 FORWARD TRACKING: 5.6m signal ↗improving
+🚶 FORWARD TRACKING: 5.6m signal ↗improving
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 5.6m (-74dBm TRACK↗) | Det: 87 | Runtime: 270s
+🚶 FORWARD TRACKING: 5.6m signal ↗improving
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 5.6m (-74dBm TRACK↗) | Det: 87 | Runtime: 273s
+🚶 FORWARD TRACKING: 5.6m signal ↗improving
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 17.8m (-84dBm TRACK↗) | Det: 88 | Runtime: 276s
+🔄 SIGNAL DEGRADING: Testing left turn for improvement
+🔄 TESTING: left turn for signal improvement
+📡 BlueCharm TRACKING↘ #90:
+   RSSI: -72dBm | Distance: ~4.5m | Avg: -75dBm
+🔄 TESTING: left turn for signal improvement
+🔄 TESTING: left turn for signal improvement
+🧭 AUTONOMOUS | TURN_TESTING | US: 200.0cm | BT: 4.5m (-72dBm TRACK↗) | Det: 91 | Runtime: 279s
+✅ TURN TEST SUCCESS: left improved by 6.0dBm
+🚶 FORWARD TRACKING: 5.6m signal ↗improving
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 5.6m (-74dBm TRACK↗) | Det: 94 | Runtime: 282s
+🚶 FORWARD TRACKING: 5.6m signal ↗improving
+🚶 FORWARD TRACKING: 5.6m signal ↗improving
+📡 BlueCharm TRACKING↗ #95:
+   RSSI: -70dBm | Distance: ~3.5m | Avg: -74dBm
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 3.5m (-70dBm TRACK↗) | Det: 95 | Runtime: 285s
+🚨 EMERGENCY! Obstacle at 22.6cm - overriding tracking
+🔄 STUCK: Backing up (count: 1)
+🧭 AUTONOMOUS | BACKING | US: 200.0cm | BT: 3.5m (-70dBm TRACK↗) | Det: 95 | Runtime: 288s
+   Stuck counter: 1/5
+🔄 RETRY: Switching to left turn (stuck: 1)
+✅ CLEAR: Path ahead at 200.0cm - resuming forward_tracking
+🚶 FORWARD TRACKING: 4.5m signal ↗improving
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 4.5m (-72dBm TRACK↗) | Det: 97 | Runtime: 291s
+   Stuck counter: 1/5
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 5.6m (-74dBm TRACK↗) | Det: 99 | Runtime: 294s
+   Stuck counter: 1/5
+🚶 FORWARD TRACKING: 5.6m signal ↗improving
+📡 BlueCharm TRACKING↘ #100:
+   RSSI: -80dBm | Distance: ~11.2m | Avg: -75dBm
+🔄 SIGNAL DEGRADING: Testing left turn for improvement
+🔄 TESTING: left turn for signal improvement
+🔄 TESTING: left turn for signal improvement
+🧭 AUTONOMOUS | TURN_TESTING | US: 200.0cm | BT: 3.5m (-70dBm TRACK↘) | Det: 102 | Runtime: 297s
+🔄 TESTING: left turn for signal improvement
+✅ TURN TEST SUCCESS: left improved by 10.0dBm
+🚶 FORWARD TRACKING: 3.5m signal ↗improving
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 3.5m (-70dBm TRACK↗) | Det: 102 | Runtime: 300s
+🚶 FORWARD TRACKING: 7.1m signal ↗improving
+🚶 FORWARD TRACKING: 7.1m signal ↗improving
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 7.1m (-76dBm TRACK↗) | Det: 103 | Runtime: 303s
+🚶 FORWARD TRACKING: 7.1m signal ↗improving
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 7.1m (-76dBm TRACK↗) | Det: 103 | Runtime: 306s
+🚶 FORWARD TRACKING: 4.5m signal ↗improving
+🚨 EMERGENCY! Obstacle at 26.5cm - overriding tracking
+🔄 STUCK: Backing up (count: 1)
+🧭 AUTONOMOUS | BACKING | US: 25.5cm | BT: 4.5m (-72dBm TRACK↗) | Det: 104 | Runtime: 309s
+   Stuck counter: 1/5
+🔄 RETRY: Switching to right turn (stuck: 1)
+🧭 AUTONOMOUS | AVOIDING | US: 200.0cm | BT: 4.5m (-72dBm TRACK↗) | Det: 104 | Runtime: 312s
+   Stuck counter: 1/5
+📡 BlueCharm TRACKING↗ #105:
+   RSSI: -78dBm | Distance: ~8.9m | Avg: -74dBm
+✅ CLEAR: Path ahead at 200.0cm - resuming forward_tracking
+🚶 FORWARD TRACKING: 8.9m signal ↘degrading
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 5.6m (-74dBm TRACK↘) | Det: 107 | Runtime: 315s
+🔄 SIGNAL DEGRADING: Testing left turn for improvement
+🔄 TESTING: left turn for signal improvement
+🔄 TESTING: left turn for signal improvement
+🧭 AUTONOMOUS | TURN_TESTING | US: 200.0cm | BT: 14.1m (-82dBm TRACK↘) | Det: 108 | Runtime: 318s
+🔄 TESTING: left turn for signal improvement
+🔄 TRYING RIGHT: Left turn didn't help, testing right
+🔄 TESTING: right turn for signal improvement
+🔄 TESTING: right turn for signal improvement
+🧭 AUTONOMOUS | TURN_TESTING | US: 200.0cm | BT: 11.2m (-80dBm TRACK↘) | Det: 109 | Runtime: 321s
+🔄 TESTING: right turn for signal improvement
+⚠️ NO IMPROVEMENT: Continuing forward tracking
+🚶 FORWARD TRACKING: 11.2m signal ↘degrading
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 11.2m (-80dBm TRACK↘) | Det: 109 | Runtime: 324 s
+🔄 SIGNAL DEGRADING: Testing left turn for improvement
+🔄 TESTING: left turn for signal improvement
+🚨 EMERGENCY! Obstacle at 13.4cm - overriding tracking
+🧭 AUTONOMOUS | AVOIDING | US: 200.0cm | BT: 11.2m (-80dBm TRACK↘) | Det: 109 | Runtime: 327s
+✅ CLEAR: Path ahead at 200.0cm - resuming forward_tracking
+📡 Signal timeout (10.5s) - ending all tracking modes
+⚠️ Unknown navigation state - defaulting to search
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: No signal | Det: 109 | Runtime: 330s
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: No signal | Det: 109 | Runtime: 333s
+📡 BlueCharm PASSIVE #110:
+   RSSI: -76dBm | Distance: ~7.1m | Avg: -76dBm
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 7.1m (-76dBm PASS) | Det: 110 | Runtime: 336s
+🔄 SEARCH PATTERN: Looking for signal...
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 7.1m (-76dBm PASS) | Det: 110 | Runtime: 339s
+🚨 EMERGENCY! Obstacle at 17.2cm - overriding tracking
+🔄 STUCK: Backing up (count: 1)
+🧭 AUTONOMOUS | BACKING | US: 200.0cm | BT: 7.1m (-76dBm PASS) | Det: 110 | Runtime: 342s
+   Stuck counter: 1/5
+🔄 RETRY: Switching to right turn (stuck: 1)
+🧭 AUTONOMOUS | AVOIDING | US: 200.0cm | BT: 8.9m (-78dBm PASS) | Det: 111 | Runtime: 345s
+✅ CLEAR: Path ahead at 200.0cm - resuming searching
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 3.5m (-70dBm PASS) | Det: 112 | Runtime: 348s
+🚨 EMERGENCY! Obstacle at 25.9cm - overriding tracking
+🔄 STUCK: Backing up (count: 1)
+🧭 AUTONOMOUS | BACKING | US: 24.5cm | BT: 3.5m (-70dBm PASS) | Det: 112 | Runtime: 351s
+   Stuck counter: 1/5
+🔄 RETRY: Switching to left turn (stuck: 1)
+🧭 AUTONOMOUS | AVOIDING | US: 200.0cm | BT: 5.6m (-74dBm PASS) | Det: 113 | Runtime: 354s
+   Stuck counter: 1/5
+✅ CLEAR: Path ahead at 200.0cm - resuming searching
+📡 BlueCharm PASSIVE #115:
+   RSSI: -78dBm | Distance: ~8.9m | Avg: -76dBm
+🚨 EMERGENCY! Obstacle at 19.8cm - overriding tracking
+🚶 TRACKING MODE: BlueCharm at 2.2m - forward tracking
+🧭 AUTONOMOUS | AVOIDING | US: 200.0cm | BT: 2.2m (-66dBm TRACK↗) | Det: 116 | Runtime: 357s
+✅ CLEAR: Path ahead at 200.0cm - resuming forward_tracking
+🚶 FORWARD TRACKING: 2.8m signal ↗improving
+🚨 EMERGENCY! Obstacle at 29.4cm - overriding tracking
+🧭 AUTONOMOUS | AVOIDING | US: 29.4cm | BT: 11.2m (-80dBm TRACK↗) | Det: 118 | Runtime: 360s
+📡 BlueCharm TRACKING↘ #120:
+   RSSI: -70dBm | Distance: ~3.5m | Avg: -75dBm
+✅ CLEAR: Path ahead at 200.0cm - resuming forward_tracking
+🚶 FORWARD TRACKING: 3.5m signal ↘degrading
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 3.5m (-70dBm TRACK↘) | Det: 120 | Runtime: 363s
+🚨 EMERGENCY! Obstacle at 28.7cm - overriding tracking
+✅ CLEAR: Path ahead at 200.0cm - resuming forward_tracking
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 30.0m (-90dBm TRACK↘) | Det: 121 | Runtime: 366 s
+🚶 FORWARD TRACKING: 30.0m signal ↘degrading
+🚨 EMERGENCY! Obstacle at 18.4cm - overriding tracking
+🧭 AUTONOMOUS | AVOIDING | US: 200.0cm | BT: 5.6m (-74dBm TRACK↘) | Det: 122 | Runtime: 369s
+✅ CLEAR: Path ahead at 200.0cm - resuming forward_tracking
+🚶 FORWARD TRACKING: 5.6m signal ↘degrading
+🚨 EMERGENCY! Obstacle at 23.0cm - overriding tracking
+🧭 AUTONOMOUS | AVOIDING | US: 23.0cm | BT: 5.6m (-74dBm TRACK↘) | Det: 122 | Runtime: 372s
+✅ CLEAR: Path ahead at 200.0cm - resuming forward_tracking
+🚶 FORWARD TRACKING: 8.9m signal ↘degrading
+📡 BlueCharm TRACKING↘ #125:
+   RSSI: -74dBm | Distance: ~5.6m | Avg: -76dBm
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 5.6m (-74dBm TRACK↘) | Det: 125 | Runtime: 375s
+🚨 EMERGENCY! Obstacle at 24.9cm - overriding tracking
+✅ CLEAR: Path ahead at 200.0cm - resuming forward_tracking
+🚶 FORWARD TRACKING: 5.6m signal ↘degrading
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 5.6m (-74dBm TRACK↘) | Det: 125 | Runtime: 378s
+🚨 EMERGENCY! Obstacle at 29.8cm - overriding tracking
+✅ CLEAR: Path ahead at 200.0cm - resuming forward_tracking
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 5.6m (-74dBm TRACK↘) | Det: 125 | Runtime: 381s
+🚶 FORWARD TRACKING: 5.6m signal ↘degrading
+🚨 EMERGENCY! Obstacle at 24.2cm - overriding tracking
+🧭 AUTONOMOUS | AVOIDING | US: 200.0cm | BT: 5.6m (-74dBm TRACK↗) | Det: 126 | Runtime: 384s
+✅ CLEAR: Path ahead at 200.0cm - resuming forward_tracking
+🚶 FORWARD TRACKING: 5.6m signal ↗improving
+🚨 EMERGENCY! Obstacle at 21.4cm - overriding tracking
+🧭 AUTONOMOUS | AVOIDING | US: 21.4cm | BT: 5.6m (-74dBm TRACK↗) | Det: 126 | Runtime: 387s
+✅ CLEAR: Path ahead at 200.0cm - resuming forward_tracking
+🚶 FORWARD TRACKING: 8.9m signal ↗improving
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 8.9m (-78dBm TRACK↗) | Det: 127 | Runtime: 390s
+🚶 FORWARD TRACKING: 8.9m signal ↗improving
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 8.9m (-78dBm TRACK↗) | Det: 127 | Runtime: 393s
+🚶 FORWARD TRACKING: 8.9m signal ↗improving
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 8.9m (-78dBm TRACK↗) | Det: 127 | Runtime: 396s
+🚶 FORWARD TRACKING: 8.9m signal ↗improving
+🚶 FORWARD TRACKING: 8.9m signal ↗improving
+🚨 EMERGENCY! Obstacle at 27.1cm - overriding tracking
+🔄 STUCK: Backing up (count: 1)
+📡 Signal timeout (10.7s) - ending all tracking modes
+🧭 AUTONOMOUS | BACKING | US: 20.7cm | BT: No signal | Det: 127 | Runtime: 399s
+   Stuck counter: 1/5
+🔄 RETRY: Switching to left turn (stuck: 1)
+🧭 AUTONOMOUS | AVOIDING | US: 200.0cm | BT: 4.5m (-72dBm PASS) | Det: 129 | Runtime: 402s
+   Stuck counter: 1/5
+✅ CLEAR: Path ahead at 200.0cm - resuming searching
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 4.5m (-72dBm PASS) | Det: 129 | Runtime: 405s
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 4.5m (-72dBm PASS) | Det: 129 | Runtime: 408s
+📡 BlueCharm PASSIVE #130:
+   RSSI: -80dBm | Distance: ~11.2m | Avg: -76dBm
+🔄 SEARCH PATTERN: Looking for signal...
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 11.2m (-80dBm PASS) | Det: 130 | Runtime: 411s
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 11.2m (-80dBm PASS) | Det: 130 | Runtime: 414s
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 8.9m (-78dBm PASS) | Det: 131 | Runtime: 417s
+🔄 SEARCH PATTERN: Looking for signal...
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 8.9m (-78dBm PASS) | Det: 131 | Runtime: 420s
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 11.2m (-80dBm PASS) | Det: 132 | Runtime: 423s
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 4.5m (-72dBm PASS) | Det: 133 | Runtime: 426s
+🔄 SEARCH PATTERN: Looking for signal...
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 3.5m (-70dBm PASS) | Det: 134 | Runtime: 429s
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 3.5m (-70dBm PASS) | Det: 134 | Runtime: 432s
+🚶 TRACKING MODE: BlueCharm at 2.8m - forward tracking
+📡 BlueCharm TRACKING↗ #135:
+   RSSI: -68dBm | Distance: ~2.8m | Avg: -77dBm
+📡 SIGNAL DETECTED: Switching to forward_tracking mode (2.8m)
+🚶 FORWARD TRACKING: 2.8m signal ↗improving
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 2.8m (-68dBm TRACK↗) | Det: 135 | Runtime: 435s
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 4.5m (-72dBm TRACK↗) | Det: 136 | Runtime: 438s
+🚶 FORWARD TRACKING: 4.5m signal ↗improving
+🚶 FORWARD TRACKING: 4.5m signal ↗improving
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 4.5m (-72dBm TRACK↗) | Det: 136 | Runtime: 441s
+🚶 FORWARD TRACKING: 4.5m signal ↗improving
+🚶 FORWARD TRACKING: 4.5m signal ↗improving
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 4.5m (-72dBm TRACK↗) | Det: 136 | Runtime: 444s
+🚶 FORWARD TRACKING: 4.5m signal ↗improving
+🚶 FORWARD TRACKING: 2.2m signal ↗improving
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 2.2m (-66dBm TRACK↗) | Det: 138 | Runtime: 447s
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 2.2m (-66dBm TRACK↗) | Det: 139 | Runtime: 450s
+🚶 FORWARD TRACKING: 2.2m signal ↗improving
+🚶 FORWARD TRACKING: 2.2m signal ↗improving
+📡 BlueCharm TRACKING↗ #140:
+   RSSI: -68dBm | Distance: ~2.8m | Avg: -73dBm
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 2.8m (-68dBm TRACK↗) | Det: 140 | Runtime: 453s
+🚶 FORWARD TRACKING: 2.8m signal ↗improving
+🚶 FORWARD TRACKING: 2.8m signal ↗improving
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 2.8m (-68dBm TRACK↗) | Det: 140 | Runtime: 456s
+🚶 FORWARD TRACKING: 2.8m signal ↗improving
+🚨 EMERGENCY! Obstacle at 22.8cm - overriding tracking
+🔄 STUCK: Backing up (count: 1)
+🧭 AUTONOMOUS | BACKING | US: 22.8cm | BT: 2.8m (-68dBm TRACK↗) | Det: 140 | Runtime: 459s
+   Stuck counter: 1/5
+🔄 RETRY: Switching to right turn (stuck: 1)
+🧭 AUTONOMOUS | AVOIDING | US: 200.0cm | BT: 4.5m (-72dBm TRACK↗) | Det: 141 | Runtime: 462s
+   Stuck counter: 1/5
+✅ CLEAR: Path ahead at 200.0cm - resuming forward_tracking
+🚶 FORWARD TRACKING: 4.5m signal ↗improving
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 4.5m (-72dBm TRACK↗) | Det: 142 | Runtime: 465s
+🔄 SIGNAL DEGRADING: Testing left turn for improvement
+🔄 TESTING: left turn for signal improvement
+🧭 AUTONOMOUS | TURN_TESTING | US: 200.0cm | BT: 5.6m (-74dBm TRACK↘) | Det: 143 | Runtime: 468s
+🚨 EMERGENCY! Obstacle at 27.9cm - overriding tracking
+📡 BlueCharm TRACKING↘ #145:
+   RSSI: -72dBm | Distance: ~4.5m | Avg: -72dBm
+✅ CLEAR: Path ahead at 200.0cm - resuming forward_tracking
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 4.5m (-72dBm TRACK↘) | Det: 145 | Runtime: 471s
+🚶 FORWARD TRACKING: 4.5m signal ↘degrading
+🔄 SIGNAL DEGRADING: Testing left turn for improvement
+🧭 AUTONOMOUS | TURN_TESTING | US: 200.0cm | BT: 4.5m (-72dBm TRACK↘) | Det: 145 | Runtime: 474s
+🔄 TESTING: left turn for signal improvement
+🔄 TESTING: left turn for signal improvement
+🔄 TESTING: left turn for signal improvement
+🧭 AUTONOMOUS | TURN_TESTING | US: 200.0cm | BT: 4.5m (-72dBm TRACK↗) | Det: 148 | Runtime: 476s
+🔄 TRYING RIGHT: Left turn didn't help, testing right
+🔄 TESTING: right turn for signal improvement
+🔄 TESTING: right turn for signal improvement
+🔄 TESTING: right turn for signal improvement
+🧭 AUTONOMOUS | TURN_TESTING | US: 200.0cm | BT: 4.5m (-72dBm TRACK↗) | Det: 148 | Runtime: 480s
+⚠️ NO IMPROVEMENT: Continuing forward tracking
+🚶 FORWARD TRACKING: 4.5m signal ↗improving
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 2.2m (-66dBm TRACK↗) | Det: 149 | Runtime: 483s
+📡 BlueCharm TRACKING↗ #150:
+   RSSI: -66dBm | Distance: ~2.2m | Avg: -70dBm
+🚶 FORWARD TRACKING: 2.2m signal ↗improving
+🚶 FORWARD TRACKING: 2.2m signal ↗improving
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 7.1m (-76dBm TRACK↗) | Det: 151 | Runtime: 486s
+🚨 EMERGENCY! Obstacle at 17.4cm - overriding tracking
+🔄 STUCK: Backing up (count: 1)
+🧭 AUTONOMOUS | BACKING | US: 200.0cm | BT: 2.2m (-66dBm TRACK↗) | Det: 152 | Runtime: 489s
+   Stuck counter: 1/5
+🔄 RETRY: Switching to right turn (stuck: 1)
+🧭 AUTONOMOUS | AVOIDING | US: 200.0cm | BT: 2.2m (-66dBm TRACK↗) | Det: 152 | Runtime: 492s
+   Stuck counter: 1/5
+✅ CLEAR: Path ahead at 200.0cm - resuming forward_tracking
+🚶 FORWARD TRACKING: 2.2m signal ↗improving
+🚨 EMERGENCY! Obstacle at 24.1cm - overriding tracking
+🧭 AUTONOMOUS | AVOIDING | US: 24.1cm | BT: 2.2m (-66dBm TRACK↗) | Det: 153 | Runtime: 495s
+   Stuck counter: 1/5
+✅ CLEAR: Path ahead at 200.0cm - resuming forward_tracking
+📡 BlueCharm TRACKING↗ #155:
+   RSSI: -66dBm | Distance: ~2.2m | Avg: -70dBm
+🚶 FORWARD TRACKING: 2.2m signal ↗improving
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 2.2m (-66dBm TRACK↗) | Det: 155 | Runtime: 498s
+🚶 FORWARD TRACKING: 2.2m signal ↗improving
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 2.2m (-66dBm TRACK↗) | Det: 155 | Runtime: 501s
+🚶 FORWARD TRACKING: 2.2m signal ↗improving
+🔄 SIGNAL DEGRADING: Testing left turn for improvement
+🔄 TESTING: left turn for signal improvement
+🧭 AUTONOMOUS | TURN_TESTING | US: 200.0cm | BT: 11.2m (-80dBm TRACK↘) | Det: 156 | Runtime: 504s
+🔄 TESTING: left turn for signal improvement
+🔄 TESTING: left turn for signal improvement
+🔄 TRYING RIGHT: Left turn didn't help, testing right
+🔄 TESTING: right turn for signal improvement
+🧭 AUTONOMOUS | TURN_TESTING | US: 200.0cm | BT: 2.8m (-68dBm TRACK↘) | Det: 157 | Runtime: 507s
+🔄 TESTING: right turn for signal improvement
+🔄 TESTING: right turn for signal improvement
+✅ TURN TEST SUCCESS: right improved by 8.0dBm
+🚶 FORWARD TRACKING: 4.5m signal ↗improving
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 4.5m (-72dBm TRACK↗) | Det: 159 | Runtime: 510s
+🚨 EMERGENCY! Obstacle at 22.6cm - overriding tracking
+✅ CLEAR: Path ahead at 200.0cm - resuming forward_tracking
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 4.5m (-72dBm TRACK↗) | Det: 159 | Runtime: 513s
+🚶 FORWARD TRACKING: 4.5m signal ↗improving
+📡 BlueCharm TRACKING↗ #160:
+   RSSI: -76dBm | Distance: ~7.1m | Avg: -71dBm
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 7.1m (-76dBm TRACK↗) | Det: 160 | Runtime: 516s
+🚶 FORWARD TRACKING: 7.1m signal ↗improving
+🚶 FORWARD TRACKING: 7.1m signal ↗improving
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 7.1m (-76dBm TRACK↗) | Det: 160 | Runtime: 519s
+🚶 FORWARD TRACKING: 2.8m signal ↗improving
+🚶 FORWARD TRACKING: 4.5m signal ↗improving
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 4.5m (-72dBm TRACK↗) | Det: 162 | Runtime: 522s
+🚨 EMERGENCY! Obstacle at 15.6cm - overriding tracking
+🔄 STUCK: Backing up (count: 1)
+🧭 AUTONOMOUS | BACKING | US: 200.0cm | BT: 4.5m (-72dBm TRACK↗) | Det: 162 | Runtime: 525s
+   Stuck counter: 1/5
+🔄 RETRY: Switching to left turn (stuck: 0)
+✅ CLEAR: Path ahead at 200.0cm - resuming forward_tracking
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 4.5m (-72dBm TRACK↗) | Det: 162 | Runtime: 528s
+🚶 FORWARD TRACKING: 4.5m signal ↗improving
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 2.8m (-68dBm TRACK↗) | Det: 163 | Runtime: 531s
+🚶 FORWARD TRACKING: 7.1m signal ↗improving
+📡 BlueCharm TRACKING↗ #165:
+   RSSI: -74dBm | Distance: ~5.6m | Avg: -72dBm
+🚨 EMERGENCY! Obstacle at 8.0cm - overriding tracking
+🔄 STUCK: Backing up (count: 1)
+🧭 AUTONOMOUS | BACKING | US: 7.3cm | BT: 7.1m (-76dBm TRACK↘) | Det: 166 | Runtime: 534s
+   Stuck counter: 1/5
+🔄 RETRY: Switching to right turn (stuck: 1)
+🧭 AUTONOMOUS | AVOIDING | US: 8.4cm | BT: 7.1m (-76dBm TRACK↘) | Det: 168 | Runtime: 537s
+🔄 STUCK: Backing up (count: 1)
+🧭 AUTONOMOUS | BACKING | US: 8.0cm | BT: 7.1m (-76dBm TRACK↘) | Det: 168 | Runtime: 540s
+   Stuck counter: 1/5
+🔄 RETRY: Switching to left turn (stuck: 1)
+🧭 AUTONOMOUS | AVOIDING | US: 8.1cm | BT: 7.1m (-76dBm TRACK↘) | Det: 168 | Runtime: 543s
+   Stuck counter: 1/5
+📡 BlueCharm TRACKING↘ #170:
+   RSSI: -76dBm | Distance: ~7.1m | Avg: -74dBm
+🔄 STUCK: Backing up (count: 1)
+🧭 AUTONOMOUS | BACKING | US: 8.5cm | BT: 7.1m (-76dBm TRACK↘) | Det: 170 | Runtime: 546s
+   Stuck counter: 1/5
+🔄 RETRY: Switching to right turn (stuck: 1)
+🧭 AUTONOMOUS | AVOIDING | US: 8.4cm | BT: 7.1m (-76dBm TRACK↘) | Det: 171 | Runtime: 549s
+   Stuck counter: 1/5
+📡 Stopping BLE tracking scanner...
+📡 Starting BLE tracking scanner...
+📡 BLE tracking scanner active
+✅ CLEAR: Path ahead at 200.0cm - resuming forward_tracking
+🚶 FORWARD TRACKING: 2.2m signal ↗improving
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 2.2m (-66dBm TRACK↗) | Det: 172 | Runtime: 555s
+   Stuck counter: 1/5
+🚨 EMERGENCY! Obstacle at 25.4cm - overriding tracking
+🔄 STUCK: Backing up (count: 1)
+🧭 AUTONOMOUS | BACKING | US: 25.3cm | BT: 17.8m (-84dBm TRACK↗) | Det: 173 | Runtime: 558s
+   Stuck counter: 1/5
+🔄 RETRY: Switching to left turn (stuck: 1)
+🧭 AUTONOMOUS | AVOIDING | US: 200.0cm | BT: 17.8m (-84dBm TRACK↗) | Det: 173 | Runtime: 561s
+   Stuck counter: 1/5
+✅ CLEAR: Path ahead at 200.0cm - resuming forward_tracking
+🚶 FORWARD TRACKING: 1.8m signal ↗improving
+📡 BlueCharm TRACKING↗ #175:
+   RSSI: -68dBm | Distance: ~2.8m | Avg: -73dBm
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 2.8m (-68dBm TRACK↗) | Det: 175 | Runtime: 564s
+   Stuck counter: 1/5
+🚶 FORWARD TRACKING: 2.2m signal ↗improving
+🚶 FORWARD TRACKING: 2.2m signal ↗improving
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 2.2m (-66dBm TRACK↗) | Det: 176 | Runtime: 567s
+🚶 FORWARD TRACKING: 2.2m signal ↗improving
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 2.2m (-66dBm TRACK↗) | Det: 176 | Runtime: 570s
+🚶 FORWARD TRACKING: 2.2m signal ↗improving
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 2.8m (-68dBm TRACK↗) | Det: 178 | Runtime: 573s
+🚶 FORWARD TRACKING: 2.8m signal ↗improving
+📡 Stopping BLE tracking scanner...
+📡 Starting BLE tracking scanner...
+📡 BLE tracking scanner active
+🚶 FORWARD TRACKING: 2.8m signal ↗improving
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 2.8m (-68dBm TRACK↗) | Det: 178 | Runtime: 582s
+📡 Signal timeout (10.1s) - ending all tracking modes
+⚠️ Unknown navigation state - defaulting to search
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 7.1m (-76dBm PASS) | Det: 179 | Runtime: 585s
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 7.1m (-76dBm PASS) | Det: 179 | Runtime: 588s
+🔄 SEARCH PATTERN: Looking for signal...
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 7.1m (-76dBm PASS) | Det: 179 | Runtime: 591s
+🚨 EMERGENCY! Obstacle at 14.0cm - overriding tracking
+🚶 TRACKING MODE: BlueCharm at 2.8m - forward tracking
+📡 BlueCharm TRACKING↘ #180:
+   RSSI: -68dBm | Distance: ~2.8m | Avg: -72dBm
+🧭 AUTONOMOUS | AVOIDING | US: 200.0cm | BT: 2.8m (-68dBm TRACK↘) | Det: 180 | Runtime: 594s
+✅ CLEAR: Path ahead at 200.0cm - resuming forward_tracking
+🚶 FORWARD TRACKING: 5.6m signal ↘degrading
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 5.6m (-74dBm TRACK↘) | Det: 181 | Runtime: 597s
+🔄 SIGNAL DEGRADING: Testing left turn for improvement
+🔄 TESTING: left turn for signal improvement
+🧭 AUTONOMOUS | TURN_TESTING | US: 200.0cm | BT: 5.6m (-74dBm TRACK↘) | Det: 181 | Runtime: 600s
+🔄 TESTING: left turn for signal improvement
+🔄 TESTING: left turn for signal improvement
+🔄 TRYING RIGHT: Left turn didn't help, testing right
+🔄 TESTING: right turn for signal improvement
+🧭 AUTONOMOUS | TURN_TESTING | US: 200.0cm | BT: 5.6m (-74dBm TRACK↘) | Det: 181 | Runtime: 603s
+🔄 TESTING: right turn for signal improvement
+🔄 TESTING: right turn for signal improvement
+⚠️ NO IMPROVEMENT: Continuing forward tracking
+🚶 FORWARD TRACKING: 5.6m signal ↘degrading
+🧭 AUTONOMOUS | FORWARD_TRACKING | US: 200.0cm | BT: 5.6m (-74dBm TRACK↘) | Det: 181 | Runtime: 606s
+📡 Signal timeout (10.6s) - ending all tracking modes
+⚠️ Unknown navigation state - defaulting to search
+🧭 AUTONOMOUS | SEARCHING | US: 200.0cm | BT: 7.1m (-76dBm PASS) | Det: 182 | Runtime: 609s
+🚨 EMERGENCY! Obstacle at 16.4cm - overriding tracking
+🧭 AUTONOMOUS | AVOIDING | US: 7.0cm | BT: 8.9m (-78dBm PASS) | Det: 183 | Runtime: 612s
+🔄 STUCK: Backing up (count: 1)
+🧭 AUTONOMOUS | BACKING | US: 7.0cm | BT: 5.6m (-74dBm PASS) | Det: 184 | Runtime: 615s
+   Stuck counter: 1/5
+🔄 RETRY: Switching to left turn (stuck: 1)
+📡 BlueCharm PASSIVE #185:
+   RSSI: -76dBm | Distance: ~7.1m | Avg: -72dBm
+🧭 AUTONOMOUS | AVOIDING | US: 7.0cm | BT: 7.1m (-76dBm PASS) | Det: 185 | Runtime: 618s
+   Stuck counter: 1/5
+📡 Stopping BLE tracking scanner...
+^C
+🛑 Shutdown requested by user...
+🛑 Stopping Tracking Navigator V4...
+📊 Final runtime: 638.0 seconds
+📊 === Tracking Navigator V4 Statistics ===
+   Runtime: 638 seconds
+   Distance measurements: 4158
+   Obstacle avoidances: 36
+   Emergency stops: 127
+   Stuck recoveries: 0
+🚶 === Forward Movement Tracking Statistics ===
+   Tracking activations: 7
+   Approach activations: 1
+   Hold activations: 1
+   Target reaches: 1
+   Signal improvements: 14
+   Course corrections: 17
+   Turn tests: 22
+📡 === Bluetooth Ranging Statistics ===
+   Total detections: 185
+   Callback events: 185
+   Detection rate: 0.29/sec
+   Callback rate: 0.29/sec
+   Strongest RSSI: -42 dBm
+   Signal timeouts: 7
+   Average RSSI: -72.1 dBm
+   Navigation rate: 6.5 measurements/sec
+👋 Tracking Navigator V4 shutdown complete
+(venv) jay@RoboPi:~/rover_project $
