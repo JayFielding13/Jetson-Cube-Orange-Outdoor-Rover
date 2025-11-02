@@ -1,9 +1,26 @@
 # Current TODO List - Mobile RTK Rover Project
-**Last Updated**: November 1, 2025 - End of Day Session
+**Last Updated**: November 2, 2025 - End of Day Session
 
 ---
 
-## ✅ COMPLETED TODAY (November 1, 2025)
+## ✅ COMPLETED TODAY (November 2, 2025)
+
+### Survey Mode UI/UX Improvements
+- [x] Fix geofence fence post rendering (all posts now visible)
+- [x] Add magenta fence posts for saved geofences
+- [x] Add "Fence Posts" layer toggle checkbox
+- [x] Reorganize layout: waypoints left column, geofences right column
+- [x] Add centered two-row control bar (zoom controls + layer checkboxes)
+- [x] Remove "SURVEY MAP" title header (freed 35px for map space)
+- [x] Move Mode indicator to bottom statistics bar
+- [x] Fix waypoint menu overflow issue
+- [x] Add point-in-polygon helper function (for future geofence enforcement)
+- [x] Add statistics display to bottom control bar (Waypoints, Geofences, GPS Fix, Mode)
+- [x] Deploy and test all Survey Mode improvements
+
+---
+
+## ✅ COMPLETED PREVIOUSLY (November 1, 2025)
 
 ### MAVROS2 Migration & RTK GPS Integration
 - [x] Fix GPS satellite count display (was showing 0)
