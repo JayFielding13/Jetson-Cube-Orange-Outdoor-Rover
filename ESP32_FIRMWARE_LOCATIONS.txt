@@ -1,0 +1,60 @@
+ESP32 Ultrasonic Firmware - File Locations
+==========================================
+
+COMPILED BINARY FILES (Ready to flash):
+---------------------------------------
+Directory: esp32_ultrasonic/.pio/build/esp32dev/
+
+1. Bootloader (flash at 0x1000):
+   esp32_ultrasonic/.pio/build/esp32dev/bootloader.bin
+
+2. Partitions (flash at 0x8000):
+   esp32_ultrasonic/.pio/build/esp32dev/partitions.bin
+
+3. Firmware (flash at 0x10000):
+   esp32_ultrasonic/.pio/build/esp32dev/firmware.bin
+
+
+SOURCE CODE FILES:
+-----------------
+1. Original Arduino sketch:
+   esp32_ultrasonic_raw.ino
+
+2. PlatformIO version:
+   esp32_ultrasonic/src/main.cpp
+
+3. PlatformIO project:
+   esp32_ultrasonic/platformio.ini
+
+
+FULL PATHS:
+----------
+Bootloader:
+/home/jay/Desktop/Mini Rover Development/Jetson Cube Orange Outdoor Rover/esp32_ultrasonic/.pio/build/esp32dev/bootloader.bin
+
+Partitions:
+/home/jay/Desktop/Mini Rover Development/Jetson Cube Orange Outdoor Rover/esp32_ultrasonic/.pio/build/esp32dev/partitions.bin
+
+Firmware:
+/home/jay/Desktop/Mini Rover Development/Jetson Cube Orange Outdoor Rover/esp32_ultrasonic/.pio/build/esp32dev/firmware.bin
+
+
+UPLOAD COMMAND:
+--------------
+cd "/home/jay/Desktop/Mini Rover Development/Jetson Cube Orange Outdoor Rover/esp32_ultrasonic"
+platformio run --target upload
+
+
+FIRMWARE SIZE:
+-------------
+Program: 270,833 bytes (20.7% of 1,310,720 bytes flash)
+RAM:     21,608 bytes (6.6% of 327,680 bytes RAM)
+Status:  Compiled successfully ✓
+
+
+CONFIGURATION:
+-------------
+Mode: DEBUG_MODE = false (JSON production mode)
+Baud: 115200
+Update rate: 10 Hz
+Max distance: 6.0 meters

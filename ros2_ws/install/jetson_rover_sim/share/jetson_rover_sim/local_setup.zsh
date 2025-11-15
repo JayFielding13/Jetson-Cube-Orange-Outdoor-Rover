@@ -1,0 +1,1 @@
+/home/jay/Desktop/Mini Rover Development/ros2_ws/build/jetson_rover_sim/ament_cmake_environment_hooks/local_setup.zsh

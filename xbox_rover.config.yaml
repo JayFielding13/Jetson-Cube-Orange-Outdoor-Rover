@@ -1,0 +1,25 @@
+teleop_twist_joy_node:
+  ros__parameters:
+    # Left stick vertical (up/down) - Forward/Backward
+    axis_linear:
+      x: 1
+    scale_linear:
+      x: 0.7
+    scale_linear_turbo:
+      x: 1.5
+
+    # Left stick horizontal (left/right) - Rotation
+    axis_angular:
+      yaw: 0
+    scale_angular:
+      yaw: 0.8  # Increased from 0.4 for better turning response
+    scale_angular_turbo:
+      yaw: 1.2
+
+    # No deadman switch - always enabled
+    enable_button: -1  # -1 means no button required
+    enable_turbo_button: 5  # Right bumper for turbo (optional)
+
+    # Invert axes if needed
+    inverted_reverse: false
+    require_enable_button: false  # Disable deadman requirement

@@ -115,7 +115,9 @@
       "Bash(then echo \"Jetson is online!\")",
       "Bash(exit 0)",
       "Bash(fi)",
-      "Bash(cd:*)"
+      "Bash(cd:*)",
+      "Bash(pkill:*)",
+      "Bash(python3:*)"
     ],
     "deny": [],
     "ask": []

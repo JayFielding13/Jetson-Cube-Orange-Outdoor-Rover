@@ -1,0 +1,38 @@
+[Unit]
+Description=Ultrasonic Sensor ROS2 Bridge
+After=network.target multi-user.target
+Wants=network.target
+# Start after MAVROS2 since they share ROS2 environment
+After=jetson-mavros2.service
+
+[Service]
+Type=simple
+User=jay
+Group=jay
+WorkingDirectory=/home/jay
+
+# ROS2 environment
+Environment="ROS_DOMAIN_ID=42"
+Environment="ROS_LOCALHOST_ONLY=0"
+
+# Source ROS2 setup (runs in bash)
+ExecStartPre=/bin/bash -c 'source /opt/ros/humble/setup.bash'
+
+# Run the ultrasonic bridge
+ExecStart=/bin/bash -c 'source /opt/ros/humble/setup.bash && exec python3 /home/jay/ultrasonic_bridge.py'
+
+# Restart on failure
+Restart=always
+RestartSec=5
+
+# Standard output/error logging
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=jetson-ultrasonic
+
+# Process limits
+LimitNOFILE=65536
+Nice=-5
+
+[Install]
+WantedBy=multi-user.target

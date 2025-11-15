@@ -1,0 +1,12 @@
+[console_scripts]
+apriltag_detector = jetson_rover_bridge.apriltag_detector:main
+apriltag_follower = jetson_rover_bridge.apriltag_follower:main
+apriltag_follower_reactive = jetson_rover_bridge.apriltag_follower_reactive:main
+gps_bridge = jetson_rover_bridge.gps_bridge:main
+http_bridge = jetson_rover_bridge.http_bridge:main
+interactive_map = jetson_rover_bridge.interactive_map:main
+obstacle_detector_lidar = jetson_rover_bridge.obstacle_detector_lidar:main
+obstacle_detector_ultrasonic = jetson_rover_bridge.obstacle_detector_ultrasonic:main
+obstacle_fusion = jetson_rover_bridge.obstacle_fusion:main
+reactive_obstacle_avoidance = jetson_rover_bridge.reactive_obstacle_avoidance:main
+
