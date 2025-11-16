@@ -12,9 +12,9 @@ teleop_twist_joy_node:
     axis_angular:
       yaw: 0
     scale_angular:
-      yaw: 0.8  # Increased from 0.4 for better turning response
+      yaw: 2.5  # Increased to match real robot rotation speed
     scale_angular_turbo:
-      yaw: 1.2
+      yaw: 3.5
 
     # No deadman switch - always enabled
     enable_button: -1  # -1 means no button required
