@@ -43,6 +43,9 @@ setup(
             'wander_behavior = jetson_rover_bridge.wander_behavior:main',
             'exploration_behavior = jetson_rover_bridge.exploration_behavior:main',
             'motion_smoother = jetson_rover_bridge.motion_smoother:main',
+            'apriltag_mover = jetson_rover_bridge.apriltag_mover:main',
+            'follow_apriltag_behavior = jetson_rover_bridge.follow_apriltag_behavior:main',
+            'person_waypoint_driver = jetson_rover_bridge.person_waypoint_driver:main',
         ],
     },
 )

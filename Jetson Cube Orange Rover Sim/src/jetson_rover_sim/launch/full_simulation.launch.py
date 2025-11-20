@@ -17,6 +17,13 @@ def generate_launch_description():
     pkg_name = 'jetson_rover_sim'
     pkg_share = FindPackageShare(package=pkg_name).find(pkg_name)
 
+    # Set up Gazebo model path for custom models (person_with_apriltag)
+    models_path = os.path.join(pkg_share, 'models')
+    if 'GAZEBO_MODEL_PATH' in os.environ:
+        os.environ['GAZEBO_MODEL_PATH'] = models_path + ':' + os.environ['GAZEBO_MODEL_PATH']
+    else:
+        os.environ['GAZEBO_MODEL_PATH'] = models_path
+
     # Paths
     urdf_file = os.path.join(pkg_share, 'urdf', 'jetson_rover_gazebo.xacro')
     gazebo_pkg_share = get_package_share_directory('gazebo_ros')
@@ -49,13 +56,13 @@ def generate_launch_description():
 
     declare_x_pose = DeclareLaunchArgument(
         'x_pose',
-        default_value='0.0',
+        default_value='-2.0',
         description='X position of the robot'
     )
 
     declare_y_pose = DeclareLaunchArgument(
         'y_pose',
-        default_value='0.0',
+        default_value='5.0',
         description='Y position of the robot'
     )
 

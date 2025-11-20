@@ -9,6 +9,14 @@
       <real_time_update_rate>1000</real_time_update_rate>
     </physics>
 
+    <!-- Gazebo ROS State Plugin (enables set_entity_state service) -->
+    <plugin name="gazebo_ros_state" filename="libgazebo_ros_state.so">
+      <ros>
+        <namespace>/gazebo</namespace>
+      </ros>
+      <update_rate>1.0</update_rate>
+    </plugin>
+
     <!-- Lighting -->
     <include>
       <uri>model://sun</uri>
@@ -406,54 +414,11 @@
       </link>
     </model>
 
-    <!-- AprilTag marker hidden in dead-end corridor -->
-    <!-- Tag 0 - challenging location requiring exploration to find -->
-    <!-- Bright colored marker representing AprilTag -->
-    <model name="apriltag_marker">
-      <pose>-5 7 0.5 -2.50618 1.39159 -0.399999</pose>  <!-- Repositioned for camera visibility -->
-      <static>true</static>
-      <link name="link">
-        <!-- White background board -->
-        <visual name="board">
-          <geometry>
-            <box>
-              <size>0.4 0.02 0.4</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>1 1 1 1</ambient>
-            <diffuse>1 1 1 1</diffuse>
-          </material>
-        </visual>
-        <!-- Black center square (AprilTag pattern) -->
-        <visual name="pattern">
-          <pose>0 -0.015 0 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.25 0.01 0.25</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 0 0 1</ambient>
-            <diffuse>0 0 0 1</diffuse>
-          </material>
-        </visual>
-        <!-- Bright green indicator (easy to spot in camera) -->
-        <visual name="indicator">
-          <pose>0 -0.02 0 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>0.1 0.005 0.1</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0 1 0 1</ambient>
-            <diffuse>0 1 0 1</diffuse>
-            <emissive>0 0.5 0 1</emissive>
-          </material>
-        </visual>
-      </link>
-    </model>
+    <!-- Include person model from external file (enables plugins to load correctly) -->
+    <include>
+      <uri>model://person_with_apriltag</uri>
+      <pose>-5 7 0 0 0 0</pose>
+    </include>
 
     <!-- Geofence boundary markers (for testing geofence logic) -->
     <model name="geofence_corner_ne">

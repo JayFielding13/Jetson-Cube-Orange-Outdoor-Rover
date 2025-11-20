@@ -27,3 +27,12 @@ Thumbs.db
 *.tmp
 *.bak
 *.backup
+
+# ROS2 Build Artifacts
+ros2_ws/build/
+ros2_ws/install/
+ros2_ws/log/
+
+# Gazebo/RViz Generated Files
+*.gv
+*.pdf

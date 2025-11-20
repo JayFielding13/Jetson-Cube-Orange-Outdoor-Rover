@@ -93,10 +93,68 @@ The ultrasonic sensor Gazebo plugins were previously disabled due to a ROS2 Humb
 - **GPS**: HERE 3+ RTK (5mm horizontal, 10mm vertical accuracy)
 - **Ultrasonic**: AJ-SR04M (20cm-6m range, 70° cone, 20 Hz)
 
+## Simulation vs Hardware
+
+### Simulation-Only Features
+Features that currently work **only in simulation**:
+
+1. **AprilTag Following** (New Development)
+   - `apriltag_mover.py` - Moves AprilTag in simulation for testing
+   - `follow_apriltag_behavior.py` - Behavior tree for following AprilTags
+   - `person_waypoint_driver.py` - Waypoint navigation for person tracking
+   - Launch files: `follow_apriltag.launch.py`, `follow_moving_apriltag.launch.py`
+   - Model: `person_with_apriltag/` - Person model with attached AprilTag
+
+2. **Gazebo Sensor Simulation**
+   - Lidar, GPS, Camera use Gazebo plugins
+   - Ultrasonic sensors simulated as ray sensors (vs ESP32 hardware)
+
+### Hardware-Only Features
+Features that only work on the physical robot:
+
+1. **ESP32 Ultrasonic Sensors** - Physical ESP32 microcontrollers with real ultrasonics
+2. **MAVLink Communication** - Direct Cube Orange autopilot connection
+3. **Physical PWM Control** - Direct motor control hardware
+
+### Hybrid Features
+Features that work in both but may behave differently:
+
+1. **Obstacle Avoidance** - Works in both, but sensor characteristics differ
+2. **Xbox Controller** - Works in both, but may need different scaling
+
+## Related Documentation
+
+All detailed simulation guides are in the **parent directory**:
+
+### Setup & Quickstart
+- `DESKTOP_SETUP_NOV15_2025.md` - Complete desktop simulation setup
+- `DESKTOP_QUICKSTART.md` - Quick start guide
+- `install_ros2_gazebo.sh` - Automated installation script
+
+### Simulation Guides
+- `LOCAL_SIMULATION_GUIDE.md` - Local simulation instructions
+- `DISTRIBUTED_SIMULATION_GUIDE.md` - Multi-machine setup
+- `ROS2_GAZEBO_QUICKSTART.md` - ROS2 Gazebo basics
+
+### Testing & Development
+- `APRILTAG_FOLLOW_TESTING_GUIDE.md` - AprilTag following tests
+- `MOTION_TUNING_GUIDE.md` - Motion parameter tuning
+- `DIFF_DRIVE_FIX.md` - Differential drive troubleshooting
+
+### Launch Scripts (in parent directory)
+- `launch_local_sim.sh` - Local simulation
+- `launch_desktop_sim.sh` - Desktop with GUI
+- `launch_desktop_sim_headless.sh` - Headless mode
+- `ros2_distributed_setup.sh` - Distributed setup
+
 ## Development Notes
 
 This simulation is part of the Jetson Cube Orange Outdoor Rover project. The goal is to develop and test autonomous navigation algorithms in simulation before deploying to the real hardware.
 
+**Best Practice**: Always test new behaviors in simulation first, then verify on hardware.
+
 Recent changes:
+- 2025-11-19: Added AprilTag following behaviors (simulation only)
+- 2025-11-19: Created simulation vs hardware feature documentation
 - 2025-11-15: Re-enabled ultrasonic sensor Gazebo plugins
 - 2025-11-15: Tuned Xbox controller rotation scaling to match real robot
