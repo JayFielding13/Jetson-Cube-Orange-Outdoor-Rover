@@ -1,0 +1,18 @@
+[Unit]
+Description=ROS 2 Sensor Bridge (HTTP API)
+Requires=jetson-rplidar.service jetson-camera.service
+After=network.target jetson-rplidar.service jetson-camera.service
+
+[Service]
+Type=simple
+User=jay
+WorkingDirectory=/home/jay
+Environment="ROS_DOMAIN_ID=42"
+ExecStart=/bin/bash -c 'source /opt/ros/humble/setup.bash && python3 /home/jay/ros2_sensor_bridge.py'
+Restart=always
+RestartSec=5
+StandardOutput=append:/var/log/jetson-sensor-bridge.log
+StandardError=append:/var/log/jetson-sensor-bridge.log
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,19 @@
+[Unit]
+Description=RTK RTCM MQTT Forwarder to MAVROS2
+After=network.target jetson-mavros2.service
+Requires=jetson-mavros2.service
+PartOf=jetson-mavros2.service
+
+[Service]
+Type=simple
+User=jay
+WorkingDirectory=/home/jay
+Environment="ROS_DOMAIN_ID=42"
+ExecStart=/bin/bash -c "source /opt/ros/humble/setup.bash && python3 /home/jay/rtcm_mqtt_forwarder.py"
+Restart=always
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

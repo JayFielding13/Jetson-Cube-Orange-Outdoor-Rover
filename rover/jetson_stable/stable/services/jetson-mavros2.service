@@ -1,0 +1,17 @@
+[Unit]
+Description=MAVROS2 - MAVLink ROS 2 Bridge for Cube Orange
+After=network.target
+
+[Service]
+Type=simple
+User=jay
+WorkingDirectory=/home/jay
+Environment="ROS_DOMAIN_ID=42"
+ExecStart=/bin/bash -c "source /opt/ros/humble/setup.bash && ros2 launch /home/jay/mavros_cube_orange.launch.py"
+Restart=on-failure
+RestartSec=5
+StandardOutput=append:/var/log/jetson-mavros2.log
+StandardError=append:/var/log/jetson-mavros2.log
+
+[Install]
+WantedBy=multi-user.target

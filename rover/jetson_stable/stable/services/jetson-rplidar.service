@@ -1,0 +1,19 @@
+[Unit]
+Description=RPLidar A1 ROS 2 Node
+After=network.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=jay
+WorkingDirectory=/home/jay
+Environment="ROS_DOMAIN_ID=42"
+ExecStartPre=/bin/bash -c 'chmod 666 /dev/ttyUSB0 2>/dev/null || true'
+ExecStart=/bin/bash -c 'source /opt/ros/humble/setup.bash && ros2 launch rplidar_ros rplidar_a1_launch.py'
+Restart=always
+RestartSec=5
+StandardOutput=append:/var/log/jetson-rplidar.log
+StandardError=append:/var/log/jetson-rplidar.log
+
+[Install]
+WantedBy=multi-user.target

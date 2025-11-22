@@ -1,0 +1,18 @@
+[Unit]
+Description=ROS 2 Unified Bridge - MAVROS2 Integration (HTTP API)
+Requires=jetson-rplidar.service jetson-camera.service jetson-mavros2.service
+After=network.target jetson-rplidar.service jetson-camera.service jetson-mavros2.service
+
+[Service]
+Type=simple
+User=jay
+WorkingDirectory=/home/jay
+Environment="ROS_DOMAIN_ID=42"
+ExecStart=/bin/bash -c "source /opt/ros/humble/setup.bash && python3 /home/jay/ros2_unified_bridge.py"
+Restart=always
+RestartSec=5
+StandardOutput=append:/var/log/jetson-unified-bridge.log
+StandardError=append:/var/log/jetson-unified-bridge.log
+
+[Install]
+WantedBy=multi-user.target

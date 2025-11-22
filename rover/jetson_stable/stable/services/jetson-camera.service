@@ -1,0 +1,17 @@
+[Unit]
+Description=USB Camera ROS 2 Node
+After=network.target
+
+[Service]
+Type=simple
+User=jay
+Environment="ROS_DOMAIN_ID=42"
+ExecStartPre=/bin/bash -c 'chmod 666 /dev/video0 2>/dev/null || true'
+ExecStart=/bin/bash -c 'source /opt/ros/humble/setup.bash && ros2 run usb_cam usb_cam_node_exe --ros-args -p video_device:=/dev/video0 -p image_width:=640 -p image_height:=480 -p framerate:=30.0'
+Restart=always
+RestartSec=5
+StandardOutput=append:/var/log/jetson-camera.log
+StandardError=append:/var/log/jetson-camera.log
+
+[Install]
+WantedBy=multi-user.target

@@ -10,7 +10,7 @@ This is a professional-grade autonomous outdoor rover platform combining:
 - **Jetson Orin Nano** - Main compute platform running ROS2 Humble
 - **Cube Orange+** - Flight controller running ArduRover firmware
 - **HERE 3+ GPS** - RTK-capable GPS with centimeter-level accuracy
-- **RPLidar A1** - 360° 2D laser scanner for obstacle detection
+- **RPLidar A1** - 360 degree 2D laser scanner for obstacle detection
 - **USB Camera** - Vision system for future object detection
 
 **Key Features:**
@@ -19,7 +19,86 @@ This is a professional-grade autonomous outdoor rover platform combining:
 - MAVROS2 integration with Cube Orange
 - Real-time telemetry via UDP/HTTP
 - Web-based dashboard control and visualization
-- Autonomous navigation capabilities
+- Reactive obstacle avoidance (VFH algorithm)
+- AprilTag visual tracking and following
+
+---
+
+## Project Structure
+
+```
+Jetson Cube Orange Outdoor Rover/
+├── simulation/              # Desktop Gazebo/RViz simulation
+│   ├── ros2_ws/src/jetson_rover_sim/   # Simulation ROS2 package
+│   ├── launch_local_sim.sh             # Launch simulation locally
+│   └── run_xbox_controller.sh          # Xbox controller teleop
+│
+├── rover/                   # Real hardware (Jetson deployment)
+│   ├── scripts/             # Python scripts for Jetson
+│   │   ├── jetson_rover_server.py      # Main control server
+│   │   ├── config.py                   # GPIO pins, thresholds
+│   │   └── ultrasonic_bridge.py        # Sensor ROS2 node
+│   ├── firmware/            # ESP32 ultrasonic sensor firmware
+│   ├── config/              # Configuration files
+│   └── systemd/             # Auto-start service files
+│
+├── shared/                  # Code for both simulation & real hardware
+│   └── ros2_ws/src/jetson_rover_bridge/  # HTTP API, obstacle avoidance
+│
+├── docs/                    # All documentation
+│   ├── guides/              # Setup and how-to guides
+│   ├── session_logs/        # Development session notes
+│   └── architecture/        # System design documents
+│
+├── tools/                   # Development utilities
+│   └── bin/                 # CLI tools (arduino-cli)
+│
+└── archive/                 # Legacy code
+```
+
+### Directory Purposes
+
+| Directory | Description |
+|-----------|-------------|
+| `simulation/` | Everything for desktop testing - Gazebo worlds, URDF models, RViz configs |
+| `rover/` | Code deployed to the physical Jetson rover - scripts, firmware, services |
+| `shared/` | ROS2 packages that work identically with simulation or real hardware |
+| `docs/` | Consolidated documentation - guides, session logs, architecture docs |
+
+---
+
+## Quick Start
+
+### Simulation (Desktop Development)
+
+```bash
+# Build simulation workspace
+cd simulation/ros2_ws
+source /opt/ros/humble/setup.bash
+colcon build
+source install/setup.bash
+
+# Launch full simulation
+ros2 launch jetson_rover_sim full_simulation.launch.py
+
+# Or use the convenience script
+./simulation/launch_local_sim.sh
+```
+
+### Real Hardware (Jetson Deployment)
+
+See the [Deployment Checklist](docs/DEPLOYMENT_CHECKLIST.md) for full procedures.
+
+```bash
+# SSH to Jetson (via Tailscale VPN)
+ssh jay@100.91.191.47
+
+# Check services
+sudo systemctl status jetson-*
+
+# Monitor RTK GPS
+~/monitor_rtk_fix.sh
+```
 
 ---
 
@@ -27,172 +106,126 @@ This is a professional-grade autonomous outdoor rover platform combining:
 
 ### Hardware Components
 
-| Component | Model | IP Address | Connection | Purpose |
-|-----------|-------|------------|------------|---------|
-| **Main Computer** | Jetson Orin Nano 8GB | 192.168.254.100 | WiFi | ROS2, sensors, autonomy |
-| **Flight Controller** | Cube Orange+ | - | USB (MAVROS2) | Motor control, GPS |
-| **Control Terminal** | Raspberry Pi 5 | 192.168.254.127 | WiFi | Dashboard, control UI |
-| **RTK Base Station** | Raspberry Pi (RTKPi) | 192.168.254.165 | WiFi | RTCM corrections |
-| **GPS Module** | HERE 3+ RTK GPS | - | CAN (via Cube) | Position, heading |
-| **LiDAR** | RPLidar A1 | - | USB | Obstacle detection |
-| **Camera** | USB Webcam | - | USB | Vision (future) |
+| Component | Model | Tailscale IP | Hostname | Purpose |
+|-----------|-------|--------------|----------|---------|
+| **Main Computer** | Jetson Orin Nano 8GB | 100.91.191.47 | jetson1 | ROS2, sensors, autonomy |
+| **Flight Controller** | Cube Orange+ | - | - | Motor control, GPS |
+| **Control Terminal** | Raspberry Pi 5 | 100.73.233.124 | beaconpi | Dashboard, control UI |
+| **RTK Base Station** | Raspberry Pi (RTKPi) | 100.66.67.11 | rtkpi | RTCM corrections |
+| **Ubuntu Desktop** | Development PC | 100.73.129.15 | jay-desktop | Simulation, development |
+| **GPS Module** | HERE 3+ RTK GPS | - | - | Position, heading |
+| **LiDAR** | RPLidar A1 | - | - | Obstacle detection |
+| **Ultrasonic** | 6x AJ-SR04M | - | - | 360 degree proximity |
+| **Camera** | USB Webcam | - | - | Vision, AprilTag detection |
 
-### Network Architecture
+### Network Architecture (Tailscale VPN)
+
+All devices are connected via Tailscale mesh VPN for secure access from anywhere.
 
 ```
 ┌──────────────────────────────────────────────────────┐
-│                 192.168.254.0/24                      │
-│                   WiFi Network                        │
+│              Tailscale Mesh VPN (100.x.x.x)          │
 └──────────────────────────────────────────────────────┘
-           │              │              │
-    ┌──────▼──────┐ ┌────▼─────┐ ┌─────▼──────┐
-    │   Jetson    │ │   Pi 5   │ │   RTKPi    │
-    │ .254.100    │ │ .254.127 │ │ .254.165   │
-    │             │ │          │ │            │
-    │ ROS2 Humble │ │Dashboard │ │RTCM Server │
-    │ MAVROS2     │ │Control UI│ │MQTT Broker │
-    └─────┬───────┘ └──────────┘ └────────────┘
-          │
-      ┌───▼────┐
-      │  Cube  │
-      │Orange+ │
-      │        │
-      │ArduRover
-      └────┬───┘
-           │
-      ┌────▼────┐
-      │ HERE 3+ │
-      │RTK GPS  │
-      └─────────┘
+     │              │              │              │
+┌────▼─────┐ ┌─────▼─────┐ ┌─────▼─────┐ ┌──────▼──────┐
+│  Jetson  │ │ beaconpi  │ │  rtkpi    │ │jay-desktop  │
+│100.91.   │ │100.73.    │ │100.66.    │ │100.73.      │
+│191.47    │ │233.124    │ │67.11      │ │129.15       │
+│          │ │           │ │           │ │             │
+│ROS2+MAV  │ │ Dashboard │ │RTCM Server│ │ Simulation  │
+└────┬─────┘ └───────────┘ └───────────┘ └─────────────┘
+     │
+ ┌───▼────┐
+ │  Cube  │
+ │Orange+ │
+ │ArduRover
+ └────┬───┘
+      │
+ ┌────▼────┐
+ │ HERE 3+ │
+ │RTK GPS  │
+ └─────────┘
 ```
 
 ### Software Stack
 
-**Jetson Orin Nano (192.168.254.100):**
+**Jetson Orin Nano (100.91.191.47 / jetson1):**
 ```
 ROS2 Humble
 ├── MAVROS2                    # Cube Orange communication
 ├── RPLidar ROS2 Driver        # Laser scanner
 ├── USB Camera Driver          # Vision input
+├── Ultrasonic Bridge          # ESP32 sensor data
 ├── ROS2 Unified Bridge        # HTTP/UDP telemetry (port 5001)
+├── Reactive Obstacle Avoidance # VFH steering algorithm
 ├── RTCM Forwarder             # RTK corrections to GPS
 └── Jetson Rover Server        # Legacy control (port 5000)
 ```
 
 ---
 
-## Quick Start
+## ROS2 Packages
 
-### 1. Power On Sequence
+### jetson_rover_sim (Simulation)
 
-1. Power on RTK Base Station (192.168.254.165)
-2. Wait for base station GPS lock (~60 seconds)
-3. Power on Jetson Orin Nano (192.168.254.100)
-4. Wait for all ROS2 services to start (~30 seconds)
-5. Power on Raspberry Pi 5 Dashboard (192.168.254.127)
-6. Launch dashboard: `python3 09_dashboard_enhanced.py`
+Location: `simulation/ros2_ws/src/jetson_rover_sim/`
 
-### 2. Verify System Status
+Provides Gazebo simulation with:
+- Full URDF model with accurate dimensions
+- Simulated sensors (LiDAR, camera, GPS, ultrasonics)
+- Test world environments
+- RViz visualization configs
 
-**Check Jetson Services:**
-```bash
-ssh jay@192.168.254.100
-sudo systemctl status jetson-mavros2
-sudo systemctl status jetson-unified-bridge
-sudo systemctl status jetson-rplidar
-sudo systemctl status jetson-rtcm-forwarder
-```
+**Launch files:**
+- `full_simulation.launch.py` - Complete Gazebo + RViz setup
+- `spawn_rover.launch.py` - Spawn in Gazebo only
+- `view_rover.launch.py` - View model without physics
 
-**Check GPS Status:**
-```bash
-curl http://192.168.254.100:5001/api/gps | python3 -m json.tool
-```
+### jetson_rover_bridge (Shared)
 
-Expected output:
-- `fix_type`: 6 (RTK Fixed) or 5 (RTK Float)
-- `satellites_visible`: >15
-- `hdop`: <0.5
+Location: `shared/ros2_ws/src/jetson_rover_bridge/`
 
-### 3. Dashboard Control
+Provides unified interface for simulation and real hardware:
+- HTTP REST API (port 5001)
+- GPS format conversion
+- AprilTag detection and following
+- Reactive obstacle avoidance (VFH)
+- Multi-sensor fusion (LiDAR + ultrasonic)
 
-On Raspberry Pi 5 (192.168.254.127):
-```bash
-cd ~/robot-control-terminal
-DISPLAY=:0 python3 09_dashboard_enhanced.py
-```
-
-**Dashboard Features:**
-- Real-time GPS visualization
-- LiDAR obstacle view
-- Camera feed
-- Waypoint navigation
-- Geofence management
-- Follow-me mode
-- Survey mode with fence posts
+**Launch files:**
+- `ground_control_bridge.launch.py` - HTTP + GPS bridge
+- `apriltag_follow_test.launch.py` - Full obstacle avoidance test
 
 ---
 
-## System Services
+## HTTP API Reference
 
-### Jetson Systemd Services
-
-| Service | Port | Description | Auto-start |
-|---------|------|-------------|------------|
-| `jetson-mavros2.service` | - | MAVROS2 ROS2 node for Cube Orange | ✓ |
-| `jetson-unified-bridge.service` | 5001 | ROS2 HTTP/UDP telemetry bridge | ✓ |
-| `jetson-rplidar.service` | - | RPLidar A1 ROS2 driver | ✓ |
-| `jetson-rtcm-forwarder.service` | - | MQTT to MAVROS2 RTK bridge | ✓ |
-| `jetson-rover-server.service` | 5000 | Legacy rover control server | ✓ |
-
-### Service Management
-
-**View logs:**
-```bash
-sudo journalctl -u jetson-mavros2 -f
-sudo journalctl -u jetson-unified-bridge -f
-sudo journalctl -u jetson-rtcm-forwarder -f
+### Base URL
+```
+Simulation: http://localhost:5001/api
+Real Robot: http://100.91.191.47:5001/api  (via Tailscale)
 ```
 
-**Restart services:**
-```bash
-sudo systemctl restart jetson-mavros2
-sudo systemctl restart jetson-unified-bridge
-```
+### Endpoints
+
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| `/api/health` | GET | Health check |
+| `/api/status` | GET | Robot status + GPS + odometry |
+| `/api/gps` | GET | GPS data with RTK status |
+| `/api/arm` | POST | ARM motors |
+| `/api/disarm` | POST | DISARM motors |
+| `/api/target` | POST | Send GPS waypoint |
+| `/api/stop` | POST | Emergency stop |
 
 ---
 
 ## RTK GPS System
 
-### RTK Architecture
-
-```
-RTK Base Station (192.168.254.165)
-          │
-          │ MQTT (RTCM corrections)
-          │
-          ▼
-   RTCM Forwarder (Jetson)
-          │
-          │ MAVLink GPS_RTCM_DATA
-          │
-          ▼
-    Cube Orange+
-          │
-          ▼
-     HERE 3+ GPS
-```
-
 ### RTK Status Monitoring
 
-**Check RTK corrections flow:**
 ```bash
-ssh jay@192.168.254.100
-sudo journalctl -u jetson-rtcm-forwarder -n 20
-```
-
-**Monitor GPS fix type:**
-```bash
-ssh jay@192.168.254.100
+ssh jay@100.91.191.47
 ~/monitor_rtk_fix.sh
 ```
 
@@ -203,7 +236,7 @@ ssh jay@192.168.254.100
 - 3 = 3D Fix (standard GPS, 2-5m accuracy)
 - 4 = DGPS
 - 5 = RTK Float (10-50cm accuracy)
-- 6 = RTK Fixed (<5cm accuracy) ✓ TARGET
+- 6 = RTK Fixed (<5cm accuracy) - TARGET
 
 ### RTK Convergence Time
 
@@ -213,238 +246,77 @@ ssh jay@192.168.254.100
 | Warm Start | 1-5 minutes | 2-15 minutes |
 | Hot Start | 30s-2 minutes | 1-5 minutes |
 
-**Requirements for RTK Fixed:**
-- Base station <20km away
-- 15+ satellites visible
-- HDOP <0.5
-- Clear sky view
-- RTCM corrections flowing (2-5 Hz)
-
 ---
 
-## ROS2 Topics
+## System Services (Jetson)
 
-### Key Topics
+| Service | Port | Description |
+|---------|------|-------------|
+| `jetson-mavros2.service` | - | MAVROS2 for Cube Orange |
+| `jetson-unified-bridge.service` | 5001 | HTTP/UDP telemetry bridge |
+| `jetson-rplidar.service` | - | RPLidar A1 driver |
+| `jetson-rtcm-forwarder.service` | - | RTK corrections forwarder |
+| `jetson-rover-server.service` | 5000 | Legacy control server |
 
-**GPS & Navigation:**
+**Service management:**
 ```bash
-/mavros/global_position/global     # GPS position (NavSatFix)
-/mavros/gps1/raw                   # Raw GPS data (GPSRAW)
-/mavros/gps1/rtk                   # RTK status
-/mavros/gps_rtk/send_rtcm          # RTCM corrections input
-```
+# View logs
+sudo journalctl -u jetson-mavros2 -f
 
-**Sensors:**
-```bash
-/scan                              # RPLidar laser scan
-/camera/image_raw                  # Camera feed
-/camera/image_raw/compressed       # Compressed camera
-```
-
-**Control:**
-```bash
-/mavros/rc/override                # RC override commands
-/mavros/setpoint_velocity/cmd_vel  # Velocity commands
-```
-
-### Topic Inspection
-
-```bash
-# List all topics
-ros2 topic list
-
-# View topic data
-ros2 topic echo /mavros/gps1/raw --once
-
-# Check topic frequency
-ros2 topic hz /scan
-
-# View topic info
-ros2 topic info /mavros/global_position/global
-```
-
----
-
-## HTTP API Reference
-
-### Base URL
-```
-http://192.168.254.100:5001/api
-```
-
-### Endpoints
-
-**GPS Data:**
-```bash
-GET /api/gps
-```
-Returns:
-```json
-{
-  "latitude": 45.123456,
-  "longitude": -122.123456,
-  "altitude": 123.45,
-  "fix_type": 6,
-  "satellites_visible": 17,
-  "hdop": 0.07,
-  "timestamp": 1234567890.123
-}
-```
-
-**LiDAR Scan:**
-```bash
-GET /api/lidar/scan
-```
-
-**Camera Feed:**
-```bash
-GET /api/camera/latest
-```
-
-**Rover Control:**
-```bash
-POST /api/control/arm
-POST /api/control/disarm
-POST /api/waypoint
-```
-
----
-
-## File Locations
-
-### Jetson Orin Nano (192.168.254.100)
-
-**ROS2 Launch Files:**
-```
-~/mavros_cube_orange.launch.py        # MAVROS2 launch configuration
-```
-
-**Service Scripts:**
-```
-~/ros2_unified_bridge.py              # HTTP/UDP telemetry bridge
-~/rtcm_mqtt_forwarder.py              # MQTT to MAVROS2 forwarder
-```
-
-**Monitoring Tools:**
-```
-~/monitor_rtk_fix.sh                  # RTK status monitor
-~/monitor_gps_acquisition.sh          # GPS acquisition monitor
-```
-
-**Service Configs:**
-```
-/etc/systemd/system/jetson-mavros2.service
-/etc/systemd/system/jetson-unified-bridge.service
-/etc/systemd/system/jetson-rplidar.service
-/etc/systemd/system/jetson-rtcm-forwarder.service
-```
-
-**Logs:**
-```
-/var/log/jetson-rover-server.log
-/var/log/jetson-rplidar.log
-/var/log/jetson-sensor-bridge.log
-```
-
-### Development Machine
-
-**Session Notes:**
-```
-SESSION_LOG_NOV01_2025.md             # MAVROS2 migration & RTK integration
-SESSION_LOG_NOV02_2025.md             # Survey mode UI improvements
-NEXT_SESSION_TODO_NOV02.md            # Next session tasks
-```
-
-**Configuration:**
-```
-config.py                             # System configuration
-jetson_rover_server.py                # Legacy server
-jetson_rover_server_mavlink.py        # MAVLink server
+# Restart services
+sudo systemctl restart jetson-mavros2
+sudo systemctl restart jetson-unified-bridge
 ```
 
 ---
 
 ## Current Status
 
-### ✅ Completed Features
+### Completed Features
 
-**Core System:**
-- [x] ROS2 Humble installed and configured
-- [x] MAVROS2 integration with Cube Orange
+- [x] ROS2 Humble integration
+- [x] MAVROS2 with Cube Orange
+- [x] RTK GPS corrections forwarding
 - [x] RPLidar A1 integration
+- [x] 6x Ultrasonic sensor array (ESP32)
 - [x] USB camera integration
+- [x] Gazebo simulation environment
+- [x] Reactive obstacle avoidance (VFH algorithm)
+- [x] AprilTag detection and following
+- [x] Multi-sensor fusion (LiDAR + ultrasonic)
+- [x] Web dashboard with real-time visualization
 - [x] Systemd auto-start services
 
-**RTK GPS:**
-- [x] RTK corrections forwarding (MQTT → MAVROS2)
-- [x] GPS satellite count display
-- [x] RTK status monitoring
-- [x] GPSRAW message format migration
+### In Progress
 
-**Dashboard:**
-- [x] Real-time GPS visualization
-- [x] LiDAR obstacle view
-- [x] Camera feed display
-- [x] Waypoint navigation
-- [x] Geofence management with fence posts
-- [x] Survey mode with statistics
-- [x] Follow-me mode
-
-### 🔄 In Progress
-
-**Immediate Priority:**
-- [ ] Monitor RTK convergence to Fixed status (fix_type 6)
-- [ ] Verify <5cm accuracy with RTK Fixed
-- [ ] Document RTK convergence time
-
-**High Priority:**
-- [ ] Unified bridge graceful shutdown (signal handlers)
-- [ ] Consolidate rover servers (ports 5000 + 5001)
+- [ ] RTK Fixed convergence optimization
 - [ ] Battery monitoring from MAVROS2
-
-### 📋 Future Enhancements
-
-**Medium Priority:**
-- [ ] Obstacle visualization on dashboard map
-- [ ] SLAM (slam_toolbox)
 - [ ] Nav2 autonomous navigation
-- [ ] Object detection (YOLOv8)
 
-**Nice to Have:**
+### Future Enhancements
+
+- [ ] SLAM mapping (slam_toolbox)
+- [ ] YOLOv8 object detection
 - [ ] rosbag2 recording
-- [ ] Udev rules for USB devices
-- [ ] Performance optimization
 
 ---
 
-## Configuration Parameters
+## Documentation
 
-### GPS Settings
+All documentation is in the `docs/` directory:
 
-**Cube Orange Parameters:**
-```
-GPS_TYPE = 1              # AUTO
-GPS_AUTO_CONFIG = 1       # Enable auto-config
-GPS_INJECT_TO = 1         # Inject to first GPS
-GPS_TYPE2 = 0             # No second GPS
-```
+| Document | Description |
+|----------|-------------|
+| [Deployment Checklist](docs/DEPLOYMENT_CHECKLIST.md) | Pre-operation checklist |
+| [Desktop Quickstart](docs/guides/DESKTOP_QUICKSTART.md) | Desktop dev environment setup |
+| [ROS2 Gazebo Quickstart](docs/guides/ROS2_GAZEBO_QUICKSTART.md) | ROS2 + Gazebo installation |
+| [Reactive Avoidance Testing](docs/architecture/REACTIVE_AVOIDANCE_TESTING.md) | Obstacle avoidance testing |
+| [AprilTag Follow Guide](docs/architecture/APRILTAG_FOLLOW_TESTING_GUIDE.md) | Visual tracking testing |
 
-### Network Settings
-
-```python
-JETSON_IP = "192.168.254.100"
-DASHBOARD_IP = "192.168.254.127"
-RTK_BASE_IP = "192.168.254.165"
-NETWORK = "192.168.254.0/24"
-GATEWAY = "192.168.254.254"
-```
-
-### ROS2 Settings
-
-```bash
-ROS_DOMAIN_ID=42
-ROS_LOCALHOST_ONLY=0
-```
+Hardware-specific docs are in `rover/`:
+- ESP32 wiring diagrams
+- Ultrasonic sensor setup
+- Systemd service configuration
 
 ---
 
@@ -452,62 +324,38 @@ ROS_LOCALHOST_ONLY=0
 
 ### GPS Not Achieving RTK Fixed
 
-**Check RTCM corrections flow:**
 ```bash
-ssh jay@192.168.254.100
+# Check RTCM corrections flow
+ssh jay@100.91.191.47
 sudo journalctl -u jetson-rtcm-forwarder -f
-```
-Should see: "RTCM Stats: XXXXX bytes, XX messages"
+# Should see: "RTCM Stats: XXXXX bytes, XX messages"
 
-**Check MAVROS RTK topic:**
-```bash
-export ROS_DOMAIN_ID=42
-source /opt/ros/humble/setup.bash
+# Check MAVROS RTK topic
 ros2 topic hz /mavros/gps_rtk/send_rtcm
+# Should show 1-5 Hz
 ```
-Should show 1-5 Hz
 
-**Verify base station:**
+### Simulation Not Starting
+
 ```bash
-ping 192.168.254.165
-ssh jay@192.168.254.165
-sudo systemctl status gps-publisher
+# Rebuild workspaces
+cd simulation/ros2_ws && colcon build
+cd shared/ros2_ws && colcon build
+
+# Source both
+source /opt/ros/humble/setup.bash
+source simulation/ros2_ws/install/setup.bash
+source shared/ros2_ws/install/setup.bash
 ```
 
 ### Service Won't Start
 
-**Check logs:**
 ```bash
+# Check logs
 sudo journalctl -u jetson-mavros2 -n 50
-```
 
-**Restart all services:**
-```bash
-sudo systemctl restart jetson-mavros2
-sudo systemctl restart jetson-unified-bridge
-sudo systemctl restart jetson-rtcm-forwarder
-```
-
-### Dashboard Freeze
-
-**Kill and restart:**
-```bash
-ssh jay@192.168.254.127
-pkill -9 -f '09_dashboard_enhanced.py'
-cd ~/robot-control-terminal
-DISPLAY=:0 python3 09_dashboard_enhanced.py &
-```
-
-### High CPU/Temperature
-
-**Check power mode:**
-```bash
-sudo /usr/sbin/nvpmodel -q
-```
-
-**Monitor with jtop:**
-```bash
-sudo jtop
+# Restart all services
+sudo systemctl restart jetson-*
 ```
 
 ---
@@ -517,20 +365,12 @@ sudo jtop
 ### Pre-Operation Checklist
 
 - [ ] RTK base station powered and GPS locked
-- [ ] Jetson all services running (systemctl status)
-- [ ] GPS fix type ≥ 3 (preferably 5 or 6)
-- [ ] Satellite count ≥ 10
+- [ ] Jetson all services running
+- [ ] GPS fix type >= 3 (preferably 5 or 6)
+- [ ] Satellite count >= 10
 - [ ] Dashboard connected and responsive
 - [ ] Clear area for testing (30m+ radius)
 - [ ] Emergency stop accessible
-
-### Operating Limits
-
-- **GPS Requirements:** 10+ satellites, HDOP <2.0
-- **RTK Requirements:** 15+ satellites, base <20km, HDOP <0.5
-- **Weather:** No rain (electronics protection needed)
-- **Temperature:** -10°C to 50°C operating range
-- **Testing Area:** Open field, clear sky view, no obstacles
 
 ---
 
@@ -538,50 +378,4 @@ sudo jtop
 
 **Project Designer:** Anatoly "Tolya" Makarov
 **Hardware/Software Development:** Jay
-**Documentation Date:** November 7, 2025
-
----
-
-## Related Documentation
-
-- `SYSTEMD_SERVICES.md` - Service configuration details
-- `SESSION_NOTES_OCT31_ROS2.md` - ROS2 integration session
-- `SESSION_LOG_NOV01_2025.md` - MAVROS2 & RTK integration
-- `SESSION_LOG_NOV02_2025.md` - Survey mode improvements
-- `NEXT_SESSION_TODO_NOV02.md` - Upcoming tasks
-- `DEPLOYMENT_CHECKLIST.md` - Deployment procedures
-
----
-
-## Quick Reference Commands
-
-**SSH to Jetson:**
-```bash
-ssh jay@192.168.254.100
-```
-
-**Check all services:**
-```bash
-sudo systemctl status jetson-*
-```
-
-**Monitor RTK:**
-```bash
-~/monitor_rtk_fix.sh
-```
-
-**View GPS data:**
-```bash
-curl http://192.168.254.100:5001/api/gps | python3 -m json.tool
-```
-
-**Deploy dashboard:**
-```bash
-scp 09_dashboard_enhanced.py jay@192.168.254.127:~/robot-control-terminal/
-ssh jay@192.168.254.127 "pkill -9 python3; cd ~/robot-control-terminal && DISPLAY=:0 python3 09_dashboard_enhanced.py &"
-```
-
----
-
-**Last Updated:** November 7, 2025
-**System Status:** Operational - RTK converging
+**Last Updated:** November 21, 2025

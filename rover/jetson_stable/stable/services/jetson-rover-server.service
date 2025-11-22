@@ -1,0 +1,17 @@
+[Unit]
+Description=Jetson Rover Control Server (MAVLink → Cube Orange)
+After=network.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=jay
+WorkingDirectory=/home/jay
+ExecStart=/usr/bin/python3 /home/jay/jetson_rover_server.py
+Restart=always
+RestartSec=5
+StandardOutput=append:/var/log/jetson-rover-server.log
+StandardError=append:/var/log/jetson-rover-server.log
+
+[Install]
+WantedBy=multi-user.target
